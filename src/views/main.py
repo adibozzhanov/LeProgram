@@ -9,15 +9,6 @@
 import sys
 from PyQt5 import QtCore, QtGui, QtWidgets
 
-def createWindow():
-    app = QtWidgets.QApplication(sys.argv)
-    MainWindow = QtWidgets.QMainWindow()
-    ui = Ui_MainWindow()
-    ui.setupUi(MainWindow)
-    MainWindow.show()
-    sys.exit(app.exec_())
-
-
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
