@@ -6,7 +6,7 @@
 #
 # WARNING! All changes made in this file will be lost!
 
-import sys
+
 from PyQt5 import QtCore, QtGui, QtWidgets
 
 
@@ -17,10 +17,10 @@ class Ui_MainWindow(object):
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
         self.pushButton = QtWidgets.QPushButton(self.centralwidget)
-        self.pushButton.setGeometry(QtCore.QRect(300, 330, 181, 101))
+        self.pushButton.setGeometry(QtCore.QRect(50, 260, 181, 101))
         self.pushButton.setObjectName("pushButton")
         self.label = QtWidgets.QLabel(self.centralwidget)
-        self.label.setGeometry(QtCore.QRect(270, 90, 221, 131))
+        self.label.setGeometry(QtCore.QRect(280, 60, 221, 131))
         font = QtGui.QFont()
         font.setPointSize(20)
         self.label.setFont(font)
@@ -42,12 +42,12 @@ class Ui_MainWindow(object):
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
-        self.pushButton.setText(_translate("MainWindow", "ME BUTTON"))
+        self.pushButton.setText(_translate("MainWindow", "COOL BUTTON"))
         self.label.setText(_translate("MainWindow", "MA LABEL"))
 
 
-       
 if __name__ == "__main__":
+    import sys
     app = QtWidgets.QApplication(sys.argv)
     MainWindow = QtWidgets.QMainWindow()
     ui = Ui_MainWindow()

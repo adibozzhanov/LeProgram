@@ -17,21 +17,21 @@
    <widget class="QPushButton" name="pushButton">
     <property name="geometry">
      <rect>
-      <x>300</x>
-      <y>330</y>
+      <x>50</x>
+      <y>260</y>
       <width>181</width>
       <height>101</height>
      </rect>
     </property>
     <property name="text">
-     <string>ME BUTTON</string>
+     <string>COOL BUTTON</string>
     </property>
    </widget>
    <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
-      <x>270</x>
-      <y>90</y>
+      <x>280</x>
+      <y>60</y>
       <width>221</width>
       <height>131</height>
      </rect>
