@@ -10,13 +10,11 @@ class View:
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self.MainWindow)
         self.ui.pushButton.clicked.connect(self.changeLabel)
-        
+
     def run(self):
         self.MainWindow.show()
         sys.exit(self.app.exec_())
 
 
     def changeLabel(self):
-        self.ui.label.setText("My label")
-
-    
+        self.ui.label.setText("Hey hot stuff;)")
