@@ -8,7 +8,21 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 # Top Frame - always there on top
 
 
-
+# Colors
+# dark blue-green
+# 23, 161, 145
+#
+# darker cream
+# 246, 247, 200
+#
+# cream
+# 255, 255, 242
+#
+# yellow
+# 255, 253, 78
+#
+# dark blue
+# 24, 35, 32
 
 
 class View:
