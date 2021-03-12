@@ -8,11 +8,6 @@ lepDB = mysql.connector.connect(
     database = "lepDatabase"
 )
 
-def createDB():
-    lepCursor = lepDB.cursor()
-    lepCursor.execute("CREATE DATABASE lepDatabase")
-    lepCursor.close()
-
 def createUserTable():
     lepCursor = lepDB.cursor()
     lepCursor.execute("CREATE TABLE Users (UserID int PRIMARY KEY AUTO_INCREMENT, LibraryID int, FOREIGN  KEY(LibraryID) REFERENCES Library(LibraryID), UserName VARCHAR(50))")
@@ -55,12 +50,12 @@ def createTagsTable():
     lepCusor.close()
 
 def createAllTables():
-    #createLibaryTable()
-    #createTestTable()
-    #createTagsTable()
-    #createTestToLibraryTable()
-    #createTagsToTestTable()
-    #createUserTable()
+    createLibaryTable()
+    createTestTable()
+    createTagsTable()
+    createTestToLibraryTable()
+    createTagsToTestTable()
+    createUserTable()
     createTaskTable()
     createAnswersTable()
 
