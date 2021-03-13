@@ -47,6 +47,4 @@ class Controller:
     def getTask(self,id):
 
         pass
-
-    def get
         
