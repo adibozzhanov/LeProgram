@@ -16,6 +16,7 @@ class Node(object): #can later add the function right to the node
         self.variables = set()
         self.formula = formula #input is dict and output bool
         self.symbol = symbol #string:)
+        self.displayStr = None
         self.str = None
 
     def addChild(self, obj):
@@ -24,9 +25,13 @@ class Node(object): #can later add the function right to the node
     def getVariables(self):
         return self.variables.copy()
 
-    def getExpressionString(self):
+    def getString(self):
         if not self.str: self.str = self.createString()
         return self.str
+
+    def getDisplayString(self):
+        if not self.displayStr: self.displayStr = self.createDisplayString()
+        return self.displayStr
 
     def getTableRow(self, dict): #returns all values (I guess this type of stuff could be useful for logic gates)
         # [total value, [all values for the table], index of last value]
@@ -55,13 +60,23 @@ class Node(object): #can later add the function right to the node
         else:
             print("ERROR:) too many kids hun")
 
-    def createString(self):
+    def createDisplayString(self):
         if len(self.children)==2:
-            return ("(" + self.children[0].createString() + " " +self.symbol + " " + self.children[1].createString() + ")")
+            return ("(" + self.children[0].getDisplayString() + " " +self.symbol + " " + self.children[1].getDisplayString() + ")")
         elif len(self.children)==1:
-            return ( self.symbol + self.children[0].createString() )
+            return ( self.symbol + self.children[0].getDisplayString() )
         elif len(self.children)==0:
             return (self.symbol)
+        else:
+            print("ERROR:) too many kids hun")
+
+    def createString(self):
+        if len(self.children)==2:
+            return ("(" + self.children[0].getString() + " " +self.data + " " + self.children[1].getString() + ")")
+        elif len(self.children)==1:
+            return ( self.data + self.children[0].getString() )
+        elif len(self.children)==0:
+            return (self.data)
         else:
             print("ERROR:) too many kids hun")
 

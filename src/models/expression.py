@@ -1,5 +1,5 @@
 import sys
-from lexparse import Node, getExpressionTree
+from lexparse import Node
 
 NOT = "/NOT"
 AND = "/AND"
@@ -7,17 +7,13 @@ OR = "/OR"
 TOP = "/TOP"
 BOT = "/BOT"
 
-# in node
-# def getExpressionString(self):
-# def getTableRow(self, dict):
-# def getVariables(self):
 
 #/NOT (/NOT a /AND a /AND /BOT) /IMP a /XOR /NOT /NOT /TOP
 
 #/NOT (/NOT b /AND a /AND /BOT) /IMP c /XOR /NOT /NOT /TOP
 
 
-class logicEx(object): #can later add the function right to the node
+class Expression(object): #can later add the function right to the node
     def __init__(self, exTree):
         self.exTree = exTree
         self.str = exTree.getString()
@@ -27,7 +23,7 @@ class logicEx(object): #can later add the function right to the node
         self.tableFinalColumn = None
         self.satisfiable = None
         self.valid = None
-        self.fdnf = None
+        self.fdnf = None #i dont think we actually need to store them as trees:)
         self.dnf = None
         self.fdnfStr = None
         self.dnfStr = None
