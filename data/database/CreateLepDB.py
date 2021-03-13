@@ -2,7 +2,7 @@ import mysql.connector
 
 lepDB = mysql.connector.connect(
     host="localhost",
-    user="root",
+    user="kyouma",
     password="root",
     port="3306",
 )
