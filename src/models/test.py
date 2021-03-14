@@ -19,6 +19,8 @@ class Test:
             # LOAD DATA FROM THE DATABASE
             # self.description = ""
             # self.name = None
+        self.tasksAnswered=0
+        self.correctAnswers=0
 
     def setName(self, newName):
         self.name = newName
@@ -64,3 +66,16 @@ class Test:
     def __loadTask(self, taskId):
         t = Task(taskId=taskId)
         self.tasks[t.getTaskId()] = t
+
+    def resetTest(self):
+        for id, task in self.tasks.items():
+            task.removeAnswerGiven()
+        self.tasksAnswered=0
+        self.correctAnswers=0
+
+    def addTaskAnswerGiven(self, taskId, answerId):
+        self.tasksAnswered+=1
+        task = self.tasks[taskId]
+        task.addAnswerGiven(answerId)
+        if task.validityOfGivenAnswer():
+            self.correctAnswers+=1

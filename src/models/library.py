@@ -21,7 +21,7 @@ class Library:
 
     def addTestAndGetId(self):
         t = Test()
-        self.tasks[t.getTestId()] = t
+        self.tests[t.getTestId()] = t
         # UPDATE THE DATABASE
         return t.getTestId()
 
