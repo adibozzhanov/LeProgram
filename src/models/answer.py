@@ -7,9 +7,9 @@ class Answer:
     # can either be initialized by the answerId if it is already in the database
     # or by giving the taskID to create a new answer
     def __init__(self, taskId=None, answerId=None):
-        if not answerId:
-            self.id = counter
-            counter+=1
+        if answerId is None:
+            self.id = type(self).counter
+            type(self).counter+=1
             self.taskId = taskId
             self.expression = None
             self.isCorrect = False

@@ -1,5 +1,4 @@
-import Expression
-import Answer
+from answer import Answer
 
 # using answer ids to reference them or something like the index? as in their order in the task
 
@@ -8,9 +7,9 @@ class Task:
     # can either be initialized by the taskId if it is already in the database
     # or by giving the testID to create a new task
     def __init__(self, testId=None, taskId=None):
-        if not taskId:
-            self.id = counter
-            counter+=1
+        if taskId is None:
+            self.id = type(self).counter
+            type(self).counter+=1
             self.testId = testId
             self.statement = ""
             self.expression = None
@@ -18,11 +17,11 @@ class Task:
             # ADD A NEW TASK IN THE DATABASE
         else:
             self.id = taskId
+            self.answers = None # only when requested
             # LOAD DATA FROM THE DATABASE
             # self.testId = testId
             # self.statement = ""
             # self.expression = None
-            # self.answers = []
 
     def setExpression(self, newExpressionTree):
         self.expression = Expression(newExpressionTree)
@@ -51,11 +50,20 @@ class Task:
     def getExpression(self):
         return self.expression
 
-    def getAnswerIds(self): #either keep the following 2 or the one after them
-        return list(self.answers)
-
     def getAnswer(self, answerId):
+        if self.answers is None:
+            ids=[] #GET ALL THE ANSWER IDS FROME THE DATABASE
+            for i in ids:
+                self.__loadAnswer(i)
         return self.answers[answerId]
 
-    def getAnswers(self, answerId):
+    def getAnswers(self):
+        if self.answers is None:
+            ids=[] #GET ALL THE ANSWER IDS FROME THE DATABASE
+            for i in ids:
+                self.__loadAnswer(i)
         return self.answers
+
+    def __loadAnswer(self, answerId):
+        a = Answer(answerId=answerId)
+        self.answers[a.getAnswerId()] = a

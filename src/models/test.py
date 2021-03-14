@@ -1,14 +1,13 @@
-import Expression
-import Answer
+from task import Task
 
 class Test:
     counter = 0
     # can either be initialized by the testId if it is already in the database
     # or by creating a new task if no id is given
     def __init__(self, testId=None):
-        if not testId:
-            self.id = counter
-            counter+=1
+        if testId is None:
+            self.id = type(self).counter
+            type(self).counter+=1
             self.name = None
             self.description = ""
             self.tasks = {}
@@ -16,11 +15,10 @@ class Test:
             # ADD A NEW TEST IN THE DATABASE
         else:
             self.id = testId
+            self.tasks = None # only create the task instances when they ate requested
             # LOAD DATA FROM THE DATABASE
-            # self.testId = testId
-            # self.statement = ""
-            # self.expression = None
-            # self.answers = []
+            # self.description = ""
+            # self.name = None
 
     def setName(self, newName):
         self.name = newName
@@ -48,3 +46,21 @@ class Test:
 
     def getDescription(self):
         return self.description
+
+    def getTask(self, taskId):
+        if self.tasks is None:
+            ids=[] #GET ALL THE ANSWER IDS FROME THE DATABASE
+            for i in ids:
+                self.__loadTask(i)
+        return self.tasks[taskId]
+
+    def getTasks(self):
+        if self.tasks is None:
+            ids=[] #GET ALL THE ANSWER IDS FROME THE DATABASE
+            for i in ids:
+                self.__loadTask(i)
+        return self.tasks
+
+    def __loadTask(self, taskId):
+        t = Task(taskId=taskId)
+        self.tasks[t.getTaskId()] = t
