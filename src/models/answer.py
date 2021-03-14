@@ -13,7 +13,7 @@ class Answer:
             self.taskId = taskId
             self.expression = None
             self.isCorrect = False
-            # ADD A NEW ANSWER IN THE DATABASE
+            # ADD A NEW ANSWER TO THE DATABASE
         else:
             self.id = answerId
             # LOAD THE 3 VARIABLES FROM THE DATABASE
@@ -21,16 +21,26 @@ class Answer:
             #self.taskId = taskId
             #self.expression = Expression(expressionTree)
 
-    def updateExpression(self, newExpressionTree):
+    def setExpression(self, newExpressionTree):
         self.expression = Expression(newExpressionTree)
         # UPDATE THE DATABASE
 
-    def makeCorrect(self):
+    def setCorrect(self):
         self.isCorrect = True
         # UPDATE THE DATABASE
 
-    def makeIncorrect(self):
+    def setIncorrect(self):
         self.isCorrect = False
         # UPDATE THE DATABASE
 
-    
+    def getAnswerId(self):
+        return self.id
+
+    def getTaskId(self): #not sure if needed
+        return self.taskId
+
+    def getExpression(self):
+        return self.expression
+
+    def getIsCorrect(self):
+        return self.isCorrect

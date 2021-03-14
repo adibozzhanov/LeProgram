@@ -32,30 +32,30 @@ class Expression(object): #can later add the function right to the node
         return self.str
 
     def getTruthTable(self):
-        if not self.truthTable: self.generateAll()
+        if not self.truthTable: self.__generateAll()
         return self.truthTable
 
     def getDNF(self):
-        if not self.fdnfStr: self.generateAll()
+        if not self.fdnfStr: self.__generateAll()
         return self.fdnfStr
 
     def getSimplified(self):
-        if not self.dnfStr: self.generateAll()
+        if not self.dnfStr: self.__generateAll()
         return self.dnfStr
 
     def getSatisfiable(self):
-        if not self.satisfiable: self.generateAll()
+        if not self.satisfiable: self.__generateAll()
         return self.satisfiable
 
     def getValid(self):
-        if not self.valid: self.generateAll()
+        if not self.valid: self.__generateAll()
         return self.valid
 
-    def generateAll(self):
-        self.generateTable()
-        self.generateFDNF()
+    def __generateAll(self):
+        self.__generateTable()
+        self.__generateFDNF()
 
-    def generateTable(self): #edge case str len =1 v 0
+    def __generateTable(self): #edge case str len =1 v 0
         var = sorted(self.variableValues)
         table = []
         self.valid = True
@@ -90,7 +90,7 @@ class Expression(object): #can later add the function right to the node
         #        r.pop()
         self.truthTable = table
 
-    def generateFDNF(self):
+    def __generateFDNF(self):
         #if self.valid: print("DNF:",TOP)
         #elif not self.satisfiable : print("DNF:",BOT)
         if len(self.variableValues)==0:
