@@ -1,6 +1,5 @@
 import sys
-from views.py.main import Ui_MainWindow
-from views.py.home import homeFrame
+from views.main import Ui_MainWindow
 from PyQt5 import QtCore, QtGui, QtWidgets
 
 
