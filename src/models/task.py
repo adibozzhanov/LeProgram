@@ -22,6 +22,7 @@ class Task:
             # self.testId = testId
             # self.statement = ""
             # self.expression = None
+        self.answerGivenId = None
 
     def setExpression(self, newExpressionTree):
         self.expression = Expression(newExpressionTree)
@@ -67,3 +68,17 @@ class Task:
     def __loadAnswer(self, answerId):
         a = Answer(answerId=answerId)
         self.answers[a.getAnswerId()] = a
+
+    def addAnswerGiven(self, answerId):
+        self.answerGivenId = answerId
+
+    def getAnswerGiven(self):
+        return self.answers[self.answerGivenId]
+
+    def removeAnswerGiven(self):
+        self.answerGivenId = None
+
+    def validityOfGivenAnswer(self):
+        a = self.getAnswerGiven()
+        if a is None: return None
+        return a.getIsCorrect()
