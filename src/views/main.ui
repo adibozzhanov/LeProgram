@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1858</width>
+    <width>2190</width>
     <height>1080</height>
    </rect>
   </property>
@@ -52,17 +52,17 @@
          <property name="frameShadow">
           <enum>QFrame::Raised</enum>
          </property>
-         <widget class="QFrame" name="TopFrame">
+         <widget class="QFrame" name="menuBar">
           <property name="geometry">
            <rect>
             <x>0</x>
             <y>0</y>
-            <width>1881</width>
+            <width>2141</width>
             <height>85</height>
            </rect>
           </property>
           <property name="sizePolicy">
-           <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+           <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
             <horstretch>0</horstretch>
             <verstretch>0</verstretch>
            </sizepolicy>
@@ -96,7 +96,7 @@
             <number>9</number>
            </property>
            <item>
-            <spacer name="horizontalSpacer">
+            <spacer name="leftSpacer">
              <property name="orientation">
               <enum>Qt::Horizontal</enum>
              </property>
@@ -112,7 +112,7 @@
             </spacer>
            </item>
            <item>
-            <widget class="QPushButton" name="pushButton_8">
+            <widget class="QPushButton" name="homeButton">
              <property name="minimumSize">
               <size>
                <width>0</width>
@@ -154,7 +154,7 @@ color: rgb(246, 247, 200);
             </widget>
            </item>
            <item>
-            <widget class="QPushButton" name="pushButton_7">
+            <widget class="QPushButton" name="askLepButton">
              <property name="minimumSize">
               <size>
                <width>0</width>
@@ -195,7 +195,7 @@ selection-background-color: rgb(233, 234, 189);</string>
             </widget>
            </item>
            <item>
-            <widget class="QPushButton" name="pushButton_6">
+            <widget class="QPushButton" name="randomQsButton">
              <property name="minimumSize">
               <size>
                <width>0</width>
@@ -236,7 +236,7 @@ selection-background-color: rgb(233, 234, 189);</string>
             </widget>
            </item>
            <item>
-            <widget class="QPushButton" name="pushButton_5">
+            <widget class="QPushButton" name="newTestButton">
              <property name="minimumSize">
               <size>
                <width>0</width>
@@ -276,7 +276,7 @@ selection-background-color: rgb(233, 234, 189);</string>
             </widget>
            </item>
            <item>
-            <spacer name="horizontalSpacer_3">
+            <spacer name="rightSpacer1">
              <property name="orientation">
               <enum>Qt::Horizontal</enum>
              </property>
@@ -292,7 +292,7 @@ selection-background-color: rgb(233, 234, 189);</string>
             </spacer>
            </item>
            <item>
-            <spacer name="horizontalSpacer_4">
+            <spacer name="rightSpacer2">
              <property name="orientation">
               <enum>Qt::Horizontal</enum>
              </property>
@@ -308,7 +308,23 @@ selection-background-color: rgb(233, 234, 189);</string>
             </spacer>
            </item>
            <item>
-            <widget class="QPushButton" name="pushButton_11">
+            <spacer name="rightSpacer3">
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+             <property name="sizeType">
+              <enum>QSizePolicy::Preferred</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>40</width>
+               <height>20</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item>
+            <widget class="QPushButton" name="userButton">
              <property name="minimumSize">
               <size>
                <width>0</width>
@@ -349,7 +365,7 @@ selection-background-color: rgb(233, 234, 189);</string>
            </item>
           </layout>
          </widget>
-         <widget class="QLabel" name="label">
+         <widget class="QLabel" name="mainLibraryLabel">
           <property name="geometry">
            <rect>
             <x>180</x>
@@ -370,14 +386,19 @@ selection-background-color: rgb(233, 234, 189);</string>
            <string>Main Library</string>
           </property>
          </widget>
-         <widget class="QListWidget" name="listWidget">
+         <widget class="QPlainTextEdit" name="searchBar">
           <property name="geometry">
            <rect>
             <x>170</x>
-            <y>320</y>
-            <width>201</width>
-            <height>381</height>
+            <y>300</y>
+            <width>381</width>
+            <height>51</height>
            </rect>
+          </property>
+          <property name="font">
+           <font>
+            <pointsize>18</pointsize>
+           </font>
           </property>
           <property name="autoFillBackground">
            <bool>true</bool>
@@ -385,12 +406,429 @@ selection-background-color: rgb(233, 234, 189);</string>
           <property name="styleSheet">
            <string notr="true">background-color: rgb(246, 247, 200);</string>
           </property>
+          <property name="placeholderText">
+           <string>🔍 Search for a test here</string>
+          </property>
+         </widget>
+         <widget class="QScrollArea" name="mainLibraryScroller">
+          <property name="geometry">
+           <rect>
+            <x>580</x>
+            <y>300</y>
+            <width>1001</width>
+            <height>681</height>
+           </rect>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-color: rgb(246, 247, 200);</string>
+          </property>
+          <property name="verticalScrollBarPolicy">
+           <enum>Qt::ScrollBarAlwaysOn</enum>
+          </property>
+          <property name="horizontalScrollBarPolicy">
+           <enum>Qt::ScrollBarAlwaysOff</enum>
+          </property>
+          <property name="widgetResizable">
+           <bool>true</bool>
+          </property>
+          <widget class="QWidget" name="scrollAreaWidgetContents">
+           <property name="geometry">
+            <rect>
+             <x>0</x>
+             <y>0</y>
+             <width>982</width>
+             <height>679</height>
+            </rect>
+           </property>
+           <widget class="QFrame" name="testFrame1">
+            <property name="geometry">
+             <rect>
+              <x>50</x>
+              <y>50</y>
+              <width>871</width>
+              <height>91</height>
+             </rect>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background-color: rgb(23, 161, 145);</string>
+            </property>
+            <property name="frameShape">
+             <enum>QFrame::StyledPanel</enum>
+            </property>
+            <property name="frameShadow">
+             <enum>QFrame::Raised</enum>
+            </property>
+            <widget class="QLabel" name="testLabel1">
+             <property name="geometry">
+              <rect>
+               <x>26</x>
+               <y>20</y>
+               <width>171</width>
+               <height>41</height>
+              </rect>
+             </property>
+             <property name="font">
+              <font>
+               <pointsize>22</pointsize>
+              </font>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">color: rgb(255, 255, 242);</string>
+             </property>
+             <property name="text">
+              <string>Test 1</string>
+             </property>
+            </widget>
+            <widget class="QPushButton" name="pushButton_9">
+             <property name="geometry">
+              <rect>
+               <x>890</x>
+               <y>20</y>
+               <width>151</width>
+               <height>51</height>
+              </rect>
+             </property>
+             <property name="font">
+              <font>
+               <pointsize>14</pointsize>
+              </font>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">background-color: rgb(255, 253, 78);</string>
+             </property>
+             <property name="text">
+              <string>Start</string>
+             </property>
+            </widget>
+            <widget class="QPushButton" name="viewButton1">
+             <property name="geometry">
+              <rect>
+               <x>500</x>
+               <y>20</y>
+               <width>151</width>
+               <height>51</height>
+              </rect>
+             </property>
+             <property name="font">
+              <font>
+               <pointsize>14</pointsize>
+              </font>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">background-color: rgb(246, 247, 200);</string>
+             </property>
+             <property name="text">
+              <string>View</string>
+             </property>
+            </widget>
+            <widget class="QPushButton" name="startButton1">
+             <property name="geometry">
+              <rect>
+               <x>690</x>
+               <y>20</y>
+               <width>151</width>
+               <height>51</height>
+              </rect>
+             </property>
+             <property name="font">
+              <font>
+               <pointsize>14</pointsize>
+              </font>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">background-color: rgb(255, 253, 78);</string>
+             </property>
+             <property name="text">
+              <string>Start</string>
+             </property>
+            </widget>
+           </widget>
+           <widget class="QFrame" name="testFrame2">
+            <property name="geometry">
+             <rect>
+              <x>50</x>
+              <y>180</y>
+              <width>871</width>
+              <height>91</height>
+             </rect>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background-color: rgb(23, 161, 145);</string>
+            </property>
+            <property name="frameShape">
+             <enum>QFrame::StyledPanel</enum>
+            </property>
+            <property name="frameShadow">
+             <enum>QFrame::Raised</enum>
+            </property>
+            <widget class="QLabel" name="testLabel2">
+             <property name="geometry">
+              <rect>
+               <x>26</x>
+               <y>20</y>
+               <width>171</width>
+               <height>41</height>
+              </rect>
+             </property>
+             <property name="font">
+              <font>
+               <pointsize>22</pointsize>
+              </font>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">color: rgb(255, 255, 242);</string>
+             </property>
+             <property name="text">
+              <string>Test 2</string>
+             </property>
+            </widget>
+            <widget class="QPushButton" name="pushButton_17">
+             <property name="geometry">
+              <rect>
+               <x>890</x>
+               <y>20</y>
+               <width>151</width>
+               <height>51</height>
+              </rect>
+             </property>
+             <property name="font">
+              <font>
+               <pointsize>14</pointsize>
+              </font>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">background-color: rgb(255, 253, 78);</string>
+             </property>
+             <property name="text">
+              <string>Start</string>
+             </property>
+            </widget>
+            <widget class="QPushButton" name="viewButton2">
+             <property name="geometry">
+              <rect>
+               <x>500</x>
+               <y>20</y>
+               <width>151</width>
+               <height>51</height>
+              </rect>
+             </property>
+             <property name="font">
+              <font>
+               <pointsize>14</pointsize>
+              </font>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">background-color: rgb(246, 247, 200);</string>
+             </property>
+             <property name="text">
+              <string>View</string>
+             </property>
+            </widget>
+            <widget class="QPushButton" name="startButton2">
+             <property name="geometry">
+              <rect>
+               <x>690</x>
+               <y>20</y>
+               <width>151</width>
+               <height>51</height>
+              </rect>
+             </property>
+             <property name="font">
+              <font>
+               <pointsize>14</pointsize>
+              </font>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">background-color: rgb(255, 253, 78);</string>
+             </property>
+             <property name="text">
+              <string>Start</string>
+             </property>
+            </widget>
+           </widget>
+           <widget class="QFrame" name="testFrame3">
+            <property name="geometry">
+             <rect>
+              <x>50</x>
+              <y>310</y>
+              <width>871</width>
+              <height>91</height>
+             </rect>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background-color: rgb(23, 161, 145);</string>
+            </property>
+            <property name="frameShape">
+             <enum>QFrame::StyledPanel</enum>
+            </property>
+            <property name="frameShadow">
+             <enum>QFrame::Raised</enum>
+            </property>
+            <widget class="QLabel" name="testLabel3">
+             <property name="geometry">
+              <rect>
+               <x>26</x>
+               <y>20</y>
+               <width>171</width>
+               <height>41</height>
+              </rect>
+             </property>
+             <property name="font">
+              <font>
+               <pointsize>22</pointsize>
+              </font>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">color: rgb(255, 255, 242);</string>
+             </property>
+             <property name="text">
+              <string>Test 3</string>
+             </property>
+            </widget>
+            <widget class="QPushButton" name="pushButton_20">
+             <property name="geometry">
+              <rect>
+               <x>890</x>
+               <y>20</y>
+               <width>151</width>
+               <height>51</height>
+              </rect>
+             </property>
+             <property name="font">
+              <font>
+               <pointsize>14</pointsize>
+              </font>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">background-color: rgb(255, 253, 78);</string>
+             </property>
+             <property name="text">
+              <string>Start</string>
+             </property>
+            </widget>
+            <widget class="QPushButton" name="viewButton3">
+             <property name="geometry">
+              <rect>
+               <x>500</x>
+               <y>20</y>
+               <width>151</width>
+               <height>51</height>
+              </rect>
+             </property>
+             <property name="font">
+              <font>
+               <pointsize>14</pointsize>
+              </font>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">background-color: rgb(246, 247, 200);</string>
+             </property>
+             <property name="text">
+              <string>View</string>
+             </property>
+            </widget>
+            <widget class="QPushButton" name="startButton3">
+             <property name="geometry">
+              <rect>
+               <x>690</x>
+               <y>20</y>
+               <width>151</width>
+               <height>51</height>
+              </rect>
+             </property>
+             <property name="font">
+              <font>
+               <pointsize>14</pointsize>
+              </font>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">background-color: rgb(255, 253, 78);</string>
+             </property>
+             <property name="text">
+              <string>Start</string>
+             </property>
+            </widget>
+           </widget>
+          </widget>
+         </widget>
+         <widget class="QLabel" name="decorLabel">
+          <property name="geometry">
+           <rect>
+            <x>1840</x>
+            <y>140</y>
+            <width>261</width>
+            <height>901</height>
+           </rect>
+          </property>
+          <property name="font">
+           <font>
+            <pointsize>48</pointsize>
+           </font>
+          </property>
+          <property name="text">
+           <string>[decor]</string>
+          </property>
+         </widget>
+         <widget class="QFrame" name="checkBoxFrame">
+          <property name="geometry">
+           <rect>
+            <x>170</x>
+            <y>380</y>
+            <width>381</width>
+            <height>601</height>
+           </rect>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-color: rgb(246, 247, 200);</string>
+          </property>
           <property name="frameShape">
-           <enum>QFrame::NoFrame</enum>
+           <enum>QFrame::StyledPanel</enum>
           </property>
-          <property name="showDropIndicator" stdset="0">
-           <bool>false</bool>
+          <property name="frameShadow">
+           <enum>QFrame::Raised</enum>
           </property>
+          <widget class="QCheckBox" name="myTestsCheckBox">
+           <property name="geometry">
+            <rect>
+             <x>50</x>
+             <y>40</y>
+             <width>181</width>
+             <height>31</height>
+            </rect>
+           </property>
+           <property name="font">
+            <font>
+             <pointsize>18</pointsize>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">background-color: rgb(246, 247, 200);</string>
+           </property>
+           <property name="text">
+            <string>My Tests</string>
+           </property>
+          </widget>
+          <widget class="QCheckBox" name="preGeneratedTestsCheckBox">
+           <property name="geometry">
+            <rect>
+             <x>50</x>
+             <y>110</y>
+             <width>181</width>
+             <height>31</height>
+            </rect>
+           </property>
+           <property name="font">
+            <font>
+             <pointsize>18</pointsize>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">background-color: rgb(246, 247, 200);</string>
+           </property>
+           <property name="text">
+            <string>Pre-Generated Tests</string>
+           </property>
+          </widget>
          </widget>
         </widget>
        </item>
