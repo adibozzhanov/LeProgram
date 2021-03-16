@@ -23,25 +23,21 @@ class Expression(object): #can later add the function right to the node
         self.tableFinalColumn = None
         self.satisfiable = None
         self.valid = None
-        self.fdnf = None #i dont think we actually need to store them as trees:)
         self.dnf = None
-        self.fdnfStr = None
-        self.dnfStr = None
 
     def getString(self):
         return self.str
+
+    def getDisplayString(self):
+        return self.displayStr
 
     def getTruthTable(self):
         if not self.truthTable: self.__generateAll()
         return self.truthTable
 
     def getDNF(self):
-        if not self.fdnfStr: self.__generateAll()
-        return self.fdnfStr
-
-    def getSimplified(self):
-        if not self.dnfStr: self.__generateAll()
-        return self.dnfStr
+        if not self.dnf: self.__generateAll()
+        return self.dnf
 
     def getSatisfiable(self):
         if not self.satisfiable: self.__generateAll()
@@ -53,7 +49,7 @@ class Expression(object): #can later add the function right to the node
 
     def __generateAll(self):
         self.__generateTable()
-        self.__generateFDNF()
+        self.__generateDNF()
 
     def __generateTable(self): #edge case str len =1 v 0
         var = sorted(self.variableValues)
@@ -90,12 +86,11 @@ class Expression(object): #can later add the function right to the node
         #        r.pop()
         self.truthTable = table
 
-    def __generateFDNF(self):
+    def __generateDNF(self):
         #if self.valid: print("DNF:",TOP)
         #elif not self.satisfiable : print("DNF:",BOT)
         if len(self.variableValues)==0:
-            self.fdnf = self.exTree
-            self.fdnfStr = self.displayStr
+            self.dnf = self.displayStr
         else:
             var = sorted(self.variableValues)
             rows=[]
@@ -107,10 +102,9 @@ class Expression(object): #can later add the function right to the node
                         if r[c][0]:
                             cols.append(var[c])
                         else:
-                            cols.append(NOT + var[c])
-                    rows.append(AND.join(cols))
-            self.fdnf = getExpressionTree(OR.join(rows))
-            self.fdnfStr = self.fdnf.getDisplayString()
+                            cols.append("¬" + var[c])
+                    rows.append("(" + " ∧ ".join(cols) + ")")
+            self.dnf = (" ∨ ".join(rows))
 
 
     def printSimpleTable(self): #FOR TESTING
@@ -122,9 +116,9 @@ class Expression(object): #can later add the function right to the node
                 else:
                     print(c[self.tableFinalColumn], end= '\t')
             print()
-        print("\nVALID:", self.valid)
-        print("SATISFIABLE:", self.satisfiable)
-        print("DNF with too many parenthesis:",self.fdnfStr)
+        print("\nVALID:", self.getValid())
+        print("SATISFIABLE:", self.getSatisfiable())
+        print("DNF:",self.getDNF())
 
 
 

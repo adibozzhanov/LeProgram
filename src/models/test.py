@@ -79,3 +79,9 @@ class Test:
         task.addAnswerGiven(answerId)
         if task.validityOfGivenAnswer():
             self.correctAnswers+=1
+
+    def getProgression(self):
+        return [self.tasksAnswered,len(self.tasks)]
+
+    def getScore(self):
+        return [self.correctAnswers,len(self.tasks)]

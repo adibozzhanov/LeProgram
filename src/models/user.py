@@ -1,4 +1,6 @@
 from library import Library
+from parser import Node, getExpressionTree
+from expression import Expression
 
 class User:
     counter = 0
@@ -51,3 +53,20 @@ if __name__ == '__main__': #testing
         a.setCorrect()
         t.addTaskAnswerGiven(taskId,answerId)
         print(t.tasksAnswered, t.correctAnswers)
+        print(t.getScore())
+        while True:
+            try:
+                text = input('>')
+            except EOFError:
+                break
+            if text:
+                print("-"*20, "TREE:")
+                tree = getExpressionTree(text)
+                ex = Expression(tree)
+                print("-"*20, "THE EXPRESSION:")
+                print("ex: ",ex.getString())
+                print("ex: ",ex.getDisplayString())
+                print("-"*20, "SIMPLIFIED TABLE:")
+                ex.printSimpleTable()
+
+#/NOT (/NOT b /AND a /AND /BOT) /IMP c /XOR /NOT /NOT /TOP
