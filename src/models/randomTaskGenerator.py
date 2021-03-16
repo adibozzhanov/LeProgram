@@ -21,10 +21,39 @@ class TaskGenerator:
     values = ['/TOP','/BOT']
     def __init__(self, complexity):
         self.complexity = complexity
-        self.variables = self.__generateVariables()
+        self.variables = ['/TOP','/BOT']
+        self.nrOfVariables = min(int(3+(complexity-3)/3),complexity)
+        self.unsatisfiableExpressions = []
+        self.validExpressions= []
+        self.__generateVariables()
+
+
+
+    def __generateVariables(self):
+        for i in range(self.nrOfVariables):
+            self.variables.append(chr(ord('a') + i))
+
+    def __generateExpressionString(self):
+        var = self.variables[2:]
+        while len(var)<=self.complexity:
+            var.append(random.choice(self.variables))
+        random.shuffle(var)
+        return self.__generateOperations(self.complexity, var)
+
+    def __generateOperations(self, c, var):
+        if c == 0:
+            ex = var.pop()
+        else:
+            split = random.randrange(c)
+            ex1 = self.__generateOperations(split, var)
+            ex2 = self.__generateOperations(c-1-split, var)
+            ex = "("+ ex1 + random.choice(type(self).binaryOp) + ex2 +")"
+        if random.random()<type(self).probabilityOfNot:
+            ex = type(self).notOp + ex
+        return ex
 
     def test(self):
-        text = self.__generateExpressionString(self.complexity)
+        text = self.__generateExpressionString()
         print(text)
         tree = getExpressionTree(text)
         ex = Expression(tree)
@@ -34,27 +63,18 @@ class TaskGenerator:
         print("-"*20, "SIMPLIFIED TABLE:")
         ex.printSimpleTable()
 
-    def __generateVariables(self):
-        var = type(self).values.copy()
-        for i in range(self.complexity+1):
-            var.append(chr(ord('a') + i))
-        return var
-
-    def __generateExpressionString(self, c):
-        if c == 0:
-            ex = random.choice(self.variables)
-        else:
-            split = random.randrange(c)
-            ex1 = self.__generateExpressionString(split)
-            ex2 = self.__generateExpressionString(c-1-split)
-            ex = "("+ ex1 + random.choice(type(self).binaryOp) + ex2 +")"
-        if random.random()<type(self).probabilityOfNot:
-            ex = type(self).notOp + ex
-        return ex
-
 if __name__ == '__main__':
-    g = TaskGenerator(2)
+    g = TaskGenerator(4)
     g.test()
+
+# generate the correct answers
+# if valid: ask to find valid
+# if unsatisfiable: ask to find unsatisfiable
+# else:
+#   generate more answers that do not have the same tt!
+#       if either valid or unsatisfiable then save for later
+# if enough valid or unsatisfiable (wrong answers) then ask to find invalid/satisfiable
+# else make a q about dfs
 
 
 # genreate the correct answer, and then more that fave a diff tt

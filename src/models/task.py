@@ -12,6 +12,7 @@ class Task:
             self.expression = None
             self.answers = {}
             # ADD A NEW TASK IN THE DATABASE
+            # OOO WAIT UNLESS testId IS NONE CAUSE THEN IT IS A RANDOMLY GENERATED TEST AND WE DO NOT NEED IT!
             self.id = 0 # GET THE NEW ID FROM THE DATABASE
         else:
             self.id = taskId
