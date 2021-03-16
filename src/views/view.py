@@ -1,55 +1,54 @@
 import sys
-from views.py.main import Ui_MainWindow
-from views.py.home import homeFrame
+
 from PyQt5 import QtCore, QtGui, QtWidgets
+from views.py.mainQt import Ui_MainWindow
+from views.py.home import Home
 
 
-# Frames:
-# Main Frame - gets constanty reloaded by user's actions
-# Top Frame - always there on top
-
-
-# Colors
-# dark blue-green
-# 23, 161, 145
-#
-# darker cream
-# 246, 247, 200
-#
-# cream
-# 255, 255, 242
-#
-# yellow
-# 255, 253, 78
-#
-# dark blue
-# 24, 35, 32
-
-
-class View:
-    def __init__(self):
-
-        # key  
-        self.displays = {} 
-        self.app = QtWidgets.QApplication(sys.argv)
-        self.MainWindow = QtWidgets.QMainWindow()
-        self.ui = Ui_MainWindow()
-        self.ui.setupUi(self.MainWindow)
-
-    
-
+class View(Ui_MainWindow):
 
     def run(self):
+        self.app = QtWidgets.QApplication(sys.argv)
+        self.MainWindow = QtWidgets.QMainWindow()
+        self.setupUi(self.MainWindow)
+        self.connectActions()
+
         self.MainWindow.show()
         sys.exit(self.app.exec_())
 
 
-    def updateMain(self, displayName):
-        # clears the main frame and loads new widgets in it
-        pass
 
+
+
+    def connectActions(self):
+        self.homeButton.clicked.connect(self.loadHome)
+        
+    def loadHome(self):
+        self.cleanMain()
+        self.currenctDisplay = Home(self.MainFrame)
+        self.MainFrame.show()
+
+        
 
     def cleanMain(self):
-        # removes all elements from the main frame
-        
+
         pass
+
+
+    def loadLep(self):
+
+        pass
+
+    def loadTest(self):
+
+        pass
+
+
+
+if __name__ == '__main__':
+    app = QtWidgets.QApplication(sys.argv)
+    MainWindow = QtWidgets.QMainWindow()
+    ui = mainWindow(MainWindow)
+    MainWindow.show()
+    sys.exit(app.exec_())
+

@@ -1,5 +1,5 @@
 import sys
-from views.py.main import mainWindow
+from views.view import View
 
 class Controller:
     def __init_(self):
@@ -7,7 +7,7 @@ class Controller:
 
     
     def run(self):
-        myView = mainWindow()
+        myView = View()
         myView.run()
 
 
