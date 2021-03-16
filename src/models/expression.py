@@ -20,6 +20,7 @@ class Expression(object): #can later add the function right to the node
         self.displayStr = exTree.getDisplayString()
         self.variableValues = dict.fromkeys(exTree.getVariables(), None)
         self.truthTable = None
+        self.simpleTable = None
         self.tableFinalColumn = None
         self.satisfiable = None
         self.valid = None
@@ -34,6 +35,10 @@ class Expression(object): #can later add the function right to the node
     def getTruthTable(self):
         if not self.truthTable: self.__generateAll()
         return self.truthTable
+
+    def getTableFinalColumn(self):
+        if not self.tableFinalColumn: self.__generateAll()
+        return self.tableFinalColumn
 
     def getDNF(self):
         if not self.dnf: self.__generateAll()
@@ -56,8 +61,9 @@ class Expression(object): #can later add the function right to the node
         table = []
         self.valid = True
         self.satisfiable = False
+        self.simpleTable = []
 
-        table.append(var + [self.str])
+        table.append(var + [self.displayStr])
         cols = len(var)
         rows = 2**cols
 
@@ -71,6 +77,7 @@ class Expression(object): #can later add the function right to the node
                 self.variableValues[var[col]] = b
             r = self.exTree.getTableRow(self.variableValues)
 
+            self.simpleTable.append(r[0])
             if r[0]:
                 self.satisfiable = True
             else:
@@ -89,8 +96,10 @@ class Expression(object): #can later add the function right to the node
     def __generateDNF(self):
         #if self.valid: print("DNF:",TOP)
         #elif not self.satisfiable : print("DNF:",BOT)
-        if len(self.variableValues)==0:
-            self.dnf = self.displayStr
+        if self.valid:
+            self.dnf = "⊤"
+        elif not self.satisfiable:
+            self.dnf= "⊥"
         else:
             var = sorted(self.variableValues)
             rows=[]
