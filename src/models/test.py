@@ -1,18 +1,16 @@
 from task import Task
 
 class Test:
-    counter = 0
     # can either be initialized by the testId if it is already in the database
     # or by creating a new task if no id is given
     def __init__(self, testId=None):
         if testId is None:
-            self.id = type(self).counter
-            type(self).counter+=1
             self.name = None
             self.description = ""
             self.tasks = {}
             self.tags = {} #we need a tag class? or what do we do with them
             # ADD A NEW TEST IN THE DATABASE
+            self.id = 0 # GET THE NEW ID FROM THE DATABASE
         else:
             self.id = testId
             self.tasks = None # only create the task instances when they ate requested

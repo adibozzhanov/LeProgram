@@ -1,15 +1,13 @@
 from test import Test
 
 class Library:
-    counter = 0
     def __init__(self, libraryId=None):
         if libraryId is None:
-            self.id = type(self).counter
-            type(self).counter+=1
             self.name = None
             self.tests = {}
             self.user = None
             # ADD A NEW LIB IN THE DATABASE
+            self.id = 0 # GET THE NEW ID FROM THE DATABASE
         else:
             self.id = libraryId
             self.tests = None
