@@ -15,6 +15,7 @@ class Answer:
             self.expression = None
             self.isCorrect = False
             # ADD A NEW ANSWER TO THE DATABASE
+            # OOO WAIT UNLESS taskId IS NONE CAUSE THEN IT IS A RANDOMLY GENERATED TEST AND WE DO NOT NEED IT!
             self.id = 0 # GET THE NEW ID FROM THE DATABASE
         else:
             self.id = answerId
