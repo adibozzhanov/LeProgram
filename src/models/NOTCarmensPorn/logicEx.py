@@ -27,7 +27,6 @@ class logicEx(object): #can later add the function right to the node
         self.tableFinalColumn = None
         self.satisfiable = None
         self.valid = None
-        self.fdnf = None
         self.dnf = None
         self.fdnfStr = None
         self.dnfStr = None
@@ -58,13 +57,13 @@ class logicEx(object): #can later add the function right to the node
     def generateAll(self):
         self.generateTable()
         self.generateFDNF()
+        self.generateDNF()
 
     def generateTable(self): #edge case str len =1 v 0
         var = sorted(self.variableValues)
         table = []
         self.valid = True
         self.satisfiable = False
-
         table.append(var + [self.str])
         cols = len(var)
         rows = 2**cols
@@ -98,7 +97,6 @@ class logicEx(object): #can later add the function right to the node
         #if self.valid: print("DNF:",TOP)
         #elif not self.satisfiable : print("DNF:",BOT)
         if len(self.variableValues)==0:
-            self.fdnf = self.exTree
             self.fdnfStr = self.displayStr
         else:
             var = sorted(self.variableValues)
@@ -111,11 +109,9 @@ class logicEx(object): #can later add the function right to the node
                         if r[c][0]:
                             cols.append(var[c])
                         else:
-                            cols.append(NOT + var[c])
-                    rows.append(AND.join(cols))
-            self.fdnf = getExpressionTree(OR.join(rows))
-            self.fdnfStr = self.fdnf.getDisplayString()
-
+                            cols.append("¬" + var[c])
+                    rows.append("(" + " ∧ ".join(cols) + ")")
+            self.fdnfStr = (" ∨ ".join(rows))
 
     def printSimpleTable(self): #FOR TESTING
         t = self.getTruthTable()
@@ -128,7 +124,7 @@ class logicEx(object): #can later add the function right to the node
             print()
         print("\nVALID:", self.valid)
         print("SATISFIABLE:", self.satisfiable)
-        print("DNF with too many parenthesis:",self.fdnfStr)
+        print("DNF:",self.fdnfStr)
 
 
 
