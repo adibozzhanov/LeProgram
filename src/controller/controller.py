@@ -1,6 +1,11 @@
 import sys
 from views.view import View
 
+DEFAULT_LIBRARY_ID = 1
+DEFAULT_USER_ID = 1
+
+
+
 class Controller:
     def __init_(self):
         pass

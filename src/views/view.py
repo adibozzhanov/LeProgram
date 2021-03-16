@@ -1,5 +1,5 @@
 import sys
-
+import sip
 from PyQt5 import QtCore, QtGui, QtWidgets
 from views.py.mainQt import Ui_MainWindow
 from views.py.home import Home
@@ -8,11 +8,13 @@ from views.py.home import Home
 class View(Ui_MainWindow):
 
     def run(self):
+        self.currentDisplay = None
+        self.masterFrame = None
         self.app = QtWidgets.QApplication(sys.argv)
         self.MainWindow = QtWidgets.QMainWindow()
         self.setupUi(self.MainWindow)
         self.connectActions()
-
+        self.loadHome()
         self.MainWindow.show()
         sys.exit(self.app.exec_())
 
@@ -22,26 +24,43 @@ class View(Ui_MainWindow):
 
     def connectActions(self):
         self.homeButton.clicked.connect(self.loadHome)
+        self.askLepButton.clicked.connect(self.loadLep)
+        self.userButton.clicked.connect(self.loadUser)
+        self.randomQsButton.clicked.connect(self.loadRandomQs)
+        self.newTestButton.clicked.connect(self.loadNewTest)
         
     def loadHome(self):
         self.cleanMain()
-        self.currenctDisplay = Home(self.MainFrame)
-        self.MainFrame.show()
+        self.masterFrame = QtWidgets.QFrame()
+        self.mainFrameLayout.addWidget(self.masterFrame)
+        self.currentDisplay = Home(self.masterFrame)
+
+    def loadNewTest(self):
+        self.cleanMain()
 
         
 
     def cleanMain(self):
-
-        pass
+        if self.masterFrame != None:
+            self.mainFrameLayout.removeWidget(self.masterFrame)
+            sip.delete(self.masterFrame)
+            self.masterFrame = None
+            self.currentDisplay = None
 
 
     def loadLep(self):
+        self.cleanMain()
 
-        pass
+    def loadRandomQs(self):
+        self.cleanMain()
+
 
     def loadTest(self):
 
         pass
+
+    def loadUser(self):
+        self.cleanMain()
 
 
 
