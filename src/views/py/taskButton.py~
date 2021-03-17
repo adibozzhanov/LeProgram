@@ -1,0 +1,15 @@
+from PyQt5 import QtCore, QtGui, QtWidgets
+from views.py.taskButtonQt import Ui_taskFrame
+
+
+class TaskButton(Ui_testButtonFrame):
+
+    def __init__(self, master, task):
+        self.task = task
+        self.setupUi(master)
+        if self.test != None:
+            self.taskNameLabel.setText(self.task.getName())
+
+    def getName(self):
+        return self.task.getName()
+
