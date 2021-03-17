@@ -12,8 +12,12 @@ class Task:
             self.expression = None
             self.answers = {}
             # ADD A NEW TASK IN THE DATABASE
+
+
+
             # OOO WAIT UNLESS testId IS NONE CAUSE THEN IT IS A RANDOMLY GENERATED TEST AND WE DO NOT NEED IT!
             self.id = 0 # GET THE NEW ID FROM THE DATABASE
+            # if testID is none dont bother with database and ID
         else:
             self.id = taskId
             self.answers = None # only when requested
@@ -38,11 +42,12 @@ class Task:
     def addNewAnswerAndGetId(self):
         a = Answer(taskId=self.id)
         self.answers[a.getAnswerId()] = a
-        # UPDATE THE DATABASE (wait not he answer class will do that anyway)
+        # UPDATE THE DATABASE (wait not the answer class will do that anyway)
         return a.getAnswerId()
 
     def addAnswer(self,a):
         self.answers[a.getAnswerId()] = a
+        # adding a premade answer instance no need for databse stuff
 
     def removeAnswer(self, answerId):
         del self.answers[answerId]

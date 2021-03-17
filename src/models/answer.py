@@ -9,7 +9,7 @@ class Answer:
     counter=0
     def __init__(self, taskId=None, answerId=None):
 
-        database = Database()
+        self.lepDB = Database()
 
         if answerId is None:
 
@@ -17,14 +17,27 @@ class Answer:
             self.expression = None
             self.isCorrect = False
             # ADD A NEW ANSWER TO THE DATABASE
+            self.id = self.lepDB.addNewAnswerDB(self.taskId)
+
             # OOO WAIT UNLESS taskId IS NONE CAUSE THEN IT IS A RANDOMLY GENERATED TEST AND WE DO NOT NEED IT!
-            self.id = 0 # GET THE NEW ID FROM THE DATABASE
+            #self.id = 0 # GET THE NEW ID FROM THE DATABASE
             if taskId is None: #no need to put int in a database but still needs an id to function during the test taking
                 self.id = type(self).counter
                 type(self).counter=type(self).counter%100+1
+
+
         else:
             self.id = answerId
             # LOAD THE 3 VARIABLES FROM THE DATABASE
+            answerInfoTuple = self.lepDB.loadAnswerDB(answerId)
+
+            self.taskId = answerInfoTuple[1]
+            answerExpString = answerInfoTuple[2] # The database stores the Answer expression as a string
+            if answerInfoTuple[3] == 0:
+                self.isCorrect = False
+            else:
+                self.isCorrect = True
+
             #self.isCorrect = False
             #self.taskId = taskId
             #self.expression = Expression(expressionTree)
@@ -32,18 +45,24 @@ class Answer:
     def setExpression(self, newExpression):
         self.expression = (newExpression)
         # UPDATE THE DATABASE
+        self.lepDB.updateAnswerExp(self.id, self.expression)
 
     def setExpressionFromTree(self, newExpressionTree):
         self.expression = Expression(newExpressionTree)
         # UPDATE THE DATABASE
+        self.lepDB.updateAnswerExp(self.id, self.expression.getString())
 
     def setCorrect(self):
         self.isCorrect = True
         # UPDATE THE DATABASE
+        self.lepDB.updateisCorrect(self.id, 1)
+
 
     def setIncorrect(self):
         self.isCorrect = False
         # UPDATE THE DATABASE
+        self.lepDB.updateisCorrect(self.id, 0)
+
 
     def getAnswerId(self):
         return self.id
