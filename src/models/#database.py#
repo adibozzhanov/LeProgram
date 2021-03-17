@@ -7,14 +7,14 @@ class Database:
         self.dataBasePath = self.getLepDBFilePath()
 
     def getLepDBFilePath(self):
-        basePath = path.dirname(__file__)
+        basePath = path.dirname(__file__)pp
         return path.abspath(path.join(basePath, "..", "..", "data/databases/lepDB.db"))
 
     def addTest(self, testObj):
         # testObj will be created before
         # data can be accessed through getter methods 
         pass
-p
+
     def getTest(self, testId):
         lepDB = sqlite3.connect(self.dataBasePath)
         lepDBCursor = lepDB.cursor()
