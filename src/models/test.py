@@ -31,7 +31,7 @@ class Test:
     def addTaskAndGetId(self):
         t = Task(testId=self.id)
         self.tasks[t.getTaskId()] = t
-        # UPDATE THE DATABASE
+        # UPDATE THE DATABASE (wait no the task class sould manage by itself)
         return t.getTaskId()
 
     def removeTask(self, taskId):

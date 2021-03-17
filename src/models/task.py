@@ -23,7 +23,11 @@ class Task:
             # self.expression = None
         self.answerGivenId = None
 
-    def setExpression(self, newExpressionTree):
+    def setExpression(self, newExpression):
+        self.expression = (newExpression)
+        # UPDATE THE DATABASE
+
+    def setExpressionFromTree(self, newExpressionTree):
         self.expression = Expression(newExpressionTree)
         # UPDATE THE DATABASE
 
@@ -31,11 +35,14 @@ class Task:
         self.statement = newStatement
         # UPDATE THE DATABASE
 
-    def addAnswerAndGetId(self):
+    def addNewAnswerAndGetId(self):
         a = Answer(taskId=self.id)
         self.answers[a.getAnswerId()] = a
-        # UPDATE THE DATABASE
+        # UPDATE THE DATABASE (wait not he answer class will do that anyway)
         return a.getAnswerId()
+
+    def addAnswer(self,a):
+        self.answers[a.getAnswerId()] = a
 
     def removeAnswer(self, answerId):
         del self.answers[answerId]
@@ -49,6 +56,9 @@ class Task:
 
     def getExpression(self):
         return self.expression
+
+    def getStatement(self):
+        return self.statement
 
     def getAnswer(self, answerId):
         if self.answers is None:

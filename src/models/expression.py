@@ -36,6 +36,10 @@ class Expression(object): #can later add the function right to the node
         if not self.truthTable: self.__generateAll()
         return self.truthTable
 
+    def getSimpleTable(self):
+        if not self.simpleTable: self.__generateAll()
+        return self.simpleTable
+
     def getTableFinalColumn(self):
         if not self.tableFinalColumn: self.__generateAll()
         return self.tableFinalColumn
