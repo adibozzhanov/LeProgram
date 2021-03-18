@@ -3,6 +3,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 from views.py.mainQt import Ui_MainWindow
 from views.py.home import Home
 from views.py.testPreview import TestPreview
+from views.py.randomPage import RandomPage
 
 class View(Ui_MainWindow):
 
@@ -49,6 +50,10 @@ class View(Ui_MainWindow):
 
     def loadRandomQs(self):
         self.cleanMain()
+        self.masterFrame = QtWidgets.QFrame()
+        self.mainFrameLayout.addWidget(self.masterFrame)
+        self.currentDisplay = RandomPage(self.masterFrame, self)
+        
 
     def loadTestPreview(self, test = None):
         self.cleanMain()
