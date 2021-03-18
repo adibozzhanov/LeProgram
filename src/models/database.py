@@ -49,7 +49,7 @@ class Database:
         lepDBCursor = lepDB.cursor()
 
         lepDBCursor.execute("""INSERT INTO answers (TaskID, AnswerExp, IsCorrect)
-                               VALUES (?, ?, ?)""", (taskID, "", 0))
+                               VALUES (?, ?, ?)""", (taskID, "", 0,))
 
         # Getting the last ID
         lepDBCursor.execute("SELECT max(AnswersID) FROM Answers")
@@ -72,36 +72,101 @@ class Database:
         lepDB.close()
         return answerTuple
 
-    def updateAnswerExp(self, answerID, newExpression):
+    def updateAnswerExp(self, answerID, newAnswerExpression):
         lepDB = sqlite3.connect(self.dataBasePath)
         lepDBCursor = lepDB.cursor()
 
         lepDBCursor.execute("""UPDATE Answers
                                SET (AnswerExp = ?)
-                               WHERE AnswersID = ?""", (newExpression, answerID))
+                               WHERE AnswersID = ?""", (newAnswerExpression, answerID,))
 
         lepDB.commit()
         lepDB.close()
 
     def updateIsCorrect(self, answerID, isCorrectUpdate):
-
         lepDB = sqlite3.connect(self.dataBasePath)
         lepDBCursor = lepDB.cursor()
 
         lepDBCursor.execute("""UPDATE Answers
                                SET (isCorrect = ?)
-                               WHERE AnswersID = ?""", (isCorrectUpdate, answerID))
+                               WHERE AnswersID = ?""", (isCorrectUpdate, answerID,))
 
         lepDB.commit()
         lepDB.close()
 
-    def addNewTaskdb(self):
-        pass
+    def deleteAnswer(self, answerID):
+        lepDB = sqlite3.connect(self.dataBasePath)
+        lepDBCursor = lepDB.cursor()
 
+        lepDBCursor.execute("""DELETE FROM Answers
+                               WHERE AnswersID = ?  """, (answerID,))
 
+        lepDB.commit()
+        lepDB.close()
 
+    def addNewTaskDB(self, testID):
+        lepDB = sqlite3.connect(self.dataBasePath)
+        lepDBCursor = lepDB.cursor()
 
+        lepDBCursor.execute("""INSERT INTO Task(TestID, QusetionStatement, QuestionExpression)
+                               VALUES(?, ?, ?)""", (testID, "", "",))
 
+        lepDBCursor.execute("SELECT max(TaskID) FROM Task")
+        lastTaskID = lepDBCursor.fetchone[0]
+
+        lepDB.commit()
+        lepDB.close()
+
+        return lastTaskID
+
+    def loadTaskDB(self, taskID):
+        lepDB = sqlite3.connect(self.dataBasePath)
+        lepDBCursor = lepDB.cursor()
+
+        lepDBCursor.execute("""SELECT * FROM Task 
+                               WHERE TaskID = ?""", (taskID,))
+        taskTuple = lepDBCursor.fetchone()
+
+        lepDB.commit()
+        lepDB.close()
+
+        return taskTuple
+
+    def updateTaskExp(self, taskID, newTaskExpression):
+        lepDB = sqlite3.connect(self.dataBasePath)
+        lepDBCursor = lepDB.cursor()
+
+        lepDBCursor.execute("""UPDATE Task
+                               SET (QuestionExpression = ?)
+                               WHERE TaskID = ?""", (newTaskExpression, taskID,))
+
+        lepDB.commit()
+        lepDB.close()
+
+    def updateTaskStatement(self, taskID, newTaskStatement):
+        lepDB = sqlite3.connect(self.dataBasePath)
+        lepDBCursor = lepDB.cursor()
+
+        lepDBCursor.execute("""UPDATE Task
+                               SET (QuestionStatement = ?)
+                               WHERE TaskID = ?""", (newTaskStatement, taskID,))
+
+        lepDB.commit()
+        lepDB.close()
+
+    def getAnswerIDfromTaskID(self, taskID):
+        lepDB = sqlite3.connect(self.dataBasePath)
+        lepDBCursor = lepDB.cursor()
+
+        lepDBCursor.execute("""SELECT answerID FROM Answers
+                               WHERE TaskID = ?""", (taskID,))
+
+        listOfAnswerID = lepDB.fetchall()
+
+        lepDB.commit()
+        lepDB.close()
+
+        return listOfAnswerID
 
 
 a = Database()
