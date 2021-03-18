@@ -6,22 +6,31 @@ class Task:
     # can either be initialized by the taskId if it is already in the database
     # or by giving the testID to create a new task
     def __init__(self, testId=None, taskId=None):
+
+        self.lepDB = Database()
+
         if taskId is None:
             self.testId = testId
             self.statement = ""
             self.expression = None
             self.answers = {}
             # ADD A NEW TASK IN THE DATABASE
-
-
+            self.id = self.lepDB.addNewTaskDB(self.testId)
 
             # OOO WAIT UNLESS testId IS NONE CAUSE THEN IT IS A RANDOMLY GENERATED TEST AND WE DO NOT NEED IT!
-            self.id = 0 # GET THE NEW ID FROM THE DATABASE
+            #self.id = 0 # GET THE NEW ID FROM THE DATABASE
             # if testID is none dont bother with database and ID
         else:
             self.id = taskId
             self.answers = None # only when requested
+
             # LOAD DATA FROM THE DATABASE
+            taskInfoTuple = self.lepDB.loadTaskDB(self.id)
+
+            self.testId = taskInfoTuple[1]
+            self.statement = taskInfoTuple[2]
+            self.expression = taskInfoTuple[3]
+
             # self.testId = testId
             # self.statement = ""
             # self.expression = None
@@ -30,14 +39,18 @@ class Task:
     def setExpression(self, newExpression):
         self.expression = (newExpression)
         # UPDATE THE DATABASE
+        self.lepDB.updateTaskExp(self.id, self.expression)
+
 
     def setExpressionFromTree(self, newExpressionTree):
         self.expression = Expression(newExpressionTree)
         # UPDATE THE DATABASE
+        self.lepDB.updateTaskExp(self.id, self.expression.getString())
 
     def setStatement(self, newStatement):
         self.statement = newStatement
         # UPDATE THE DATABASE
+        self.lepDB.updateTaskStatement(self.id, self.statement)
 
     def addNewAnswerAndGetId(self):
         a = Answer(taskId=self.id)
@@ -52,6 +65,7 @@ class Task:
     def removeAnswer(self, answerId):
         del self.answers[answerId]
         # UPDATE THE DATABASE
+        self.lepDB.deleteAnswer(answerId)
 
     def getTaskId(self):
         return self.id
@@ -67,16 +81,16 @@ class Task:
 
     def getAnswer(self, answerId):
         if self.answers is None:
-            ids=[] #GET ALL THE ANSWER IDS FROME THE DATABASE
+            ids = self.lepDB.getAnswerIDfromTaskID(self.id) #GET ALL THE ANSWER IDS FROME THE DATABASE
             for i in ids:
-                self.__loadAnswer(i)
+                self.__loadAnswer(i[0])
         return self.answers[answerId]
 
     def getAnswers(self):
         if self.answers is None:
-            ids=[] #GET ALL THE ANSWER IDS FROME THE DATABASE
+            ids=self.lepDB.getAnswerIDfromTaskID(self.id) #GET ALL THE ANSWER IDS FROME THE DATABASE
             for i in ids:
-                self.__loadAnswer(i)
+                self.__loadAnswer(i[0])
         return self.answers
 
     def __loadAnswer(self, answerId):

@@ -5,9 +5,11 @@ import sqlite3
 database = sqlite3.connect("lepDB.db")
 cur = database.cursor()
 
-cur.execute("SELECT * FROM Answers WHERE AnswersID = ?", (1,))
-answer = cur.fetchone()
-print(answer)
+cur.execute("""SELECT AnswersID FROM Answers
+               WHERE TaskID = ?""", (1,))
+answer = cur.fetchall()
+for a in answer:
+    print(a[0])
 database.close()
 
 # ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠰⣤⣤⢀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
