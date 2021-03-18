@@ -1,5 +1,4 @@
 import sys
-import sip
 from PyQt5 import QtCore, QtGui, QtWidgets
 from views.py.mainQt import Ui_MainWindow
 from views.py.home import Home
@@ -41,7 +40,7 @@ class View(Ui_MainWindow):
     def cleanMain(self):
         if self.masterFrame != None:
             self.mainFrameLayout.removeWidget(self.masterFrame)
-            sip.delete(self.masterFrame)
+            self.masterFrame.deleteLater()
             self.masterFrame = None
             self.currentDisplay = None
             
