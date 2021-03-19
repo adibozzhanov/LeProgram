@@ -5,12 +5,9 @@ import sqlite3
 database = sqlite3.connect("lepDB.db")
 cur = database.cursor()
 
-cur.execute("""SELECT AnswersID FROM Answers
-               WHERE TaskID = ?""", (1,))
-answer = cur.fetchall()
-for a in answer:
-    print(a[0])
-database.close()
+cur.execute("SELECT max(TaskID) FROM Task")
+answer = cur.fetchone()[0]
+print(answer)
 
 # ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠰⣤⣤⢀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
 # ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣀⣀⠀⠀⢿⣿⣦⠈⢄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀

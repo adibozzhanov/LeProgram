@@ -1,20 +1,29 @@
 from task import Task
+from database import Database
 
 class Test:
     # can either be initialized by the testId if it is already in the database
     # or by creating a new task if no id is given
     def __init__(self, testId=None):
+
+        self.lepDB = Database()
+
         if testId is None:
             self.name = None
             self.description = ""
             self.tasks = {}
             self.tags = {} #we need a tag class? or what do we do with them
             # ADD A NEW TEST IN THE DATABASE
-            self.id = 0 # GET THE NEW ID FROM THE DATABASE
+            self.id = self.lepDB.addNewTestDB()
+
+            #self.id = 0 # GET THE NEW ID FROM THE DATABASE
         else:
             self.id = testId
             self.tasks = None # only create the task instances when they ate requested
             # LOAD DATA FROM THE DATABASE
+            testInfoTuple = self.lepDB.loadTestDB(self.id)
+            self.name = testInfoTuple[1]
+            self.description = testInfoTuple[2]
             # self.description = ""
             # self.name = None
         self.tasksAnswered=0
@@ -50,6 +59,7 @@ class Test:
     def getTask(self, taskId):
         if self.tasks is None:
             ids=[] #GET ALL THE ANSWER IDS FROME THE DATABASE
+            # GET ALL THE TASK ID where it matches the testID, then get all answer id using the taskID
             for i in ids:
                 self.__loadTask(i)
         return self.tasks[taskId]
@@ -57,6 +67,7 @@ class Test:
     def getTasks(self):
         if self.tasks is None:
             ids=[] #GET ALL THE ANSWER IDS FROME THE DATABASE
+            # GET ALL THE TASK ID where it matches the testID, then get all answer id using the taskID
             for i in ids:
                 self.__loadTask(i)
         return self.tasks

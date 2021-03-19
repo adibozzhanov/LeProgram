@@ -1,4 +1,5 @@
 from answer import Answer
+from database import Database
 
 # using answer ids to reference them or something like the index? as in their order in the task
 
@@ -110,3 +111,5 @@ class Task:
         a = self.getAnswerGiven()
         if a is None: return None
         return a.getIsCorrect()
+
+a = Task()

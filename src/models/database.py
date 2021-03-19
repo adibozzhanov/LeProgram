@@ -1,5 +1,5 @@
 from os import path
-
+import sqlite3
 
 class Database:
 
@@ -8,7 +8,7 @@ class Database:
 
     def getLepDBFilePath(self):
         basePath = path.dirname(__file__)
-        return path.abspath(path.join(basePath, "..", "..", "data/databases/lepDB.db"))
+        return path.abspath(path.join(basePath, "..", "..", "data","database","lepDB.db"))
 
     def addTestDB(self, testObj):
         # testObj will be created before
@@ -108,11 +108,11 @@ class Database:
         lepDB = sqlite3.connect(self.dataBasePath)
         lepDBCursor = lepDB.cursor()
 
-        lepDBCursor.execute("""INSERT INTO Task(TestID, QusetionStatement, QuestionExpression)
+        lepDBCursor.execute("""INSERT INTO Task(TestID, QuestionStatement, QuestionExpression)
                                VALUES(?, ?, ?)""", (testID, "", "",))
 
         lepDBCursor.execute("SELECT max(TaskID) FROM Task")
-        lastTaskID = lepDBCursor.fetchone[0]
+        lastTaskID = lepDBCursor.fetchone()[0]
 
         lepDB.commit()
         lepDB.close()
@@ -168,6 +168,34 @@ class Database:
 
         return listOfAnswerID
 
+    def addNewTestDB(self):
+        lepDB = sqlite3.connect(self.dataBasePath)
+        lepDBCursor = lepDB.cursor()
+
+        lepDBCursor.execute("""INSERT INTO Test(TestName, TestDescription)
+                               VALUES(?, ?)""", ("", "",))
+
+        lepDBCursor.execute("SELECT max(TestID) FROM Test")
+        lastTestID = lepDBCursor.fetchone[0]
+
+        lepDB.commit()
+        lepDB.close()
+
+        return lastTestID
+
+    def loadTestDB(self, testID):
+        lepDB = sqlite3.connect(self.dataBasePath)
+        lepDBCursor = lepDB.cursor()
+
+        lepDBCursor.execute("""SELECT * FROM Test 
+                               WHERE TestID = ?""", (testID,))
+        testTuple = lepDBCursor.fetchone()
+
+        lepDB.commit()
+        lepDB.close()
+        return testTuple
+
+
 
 a = Database()
-#a.getLepDBFilePath()
+a.loadTestDB(1)
