@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'views/ui/askLePWidget.ui'
+# Form implementation generated from reading ui file 'views/ui/askLepWidget.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.4
 #
@@ -11,28 +11,26 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 
 
-class Ui_Form(object):
-    def setupUi(self, Form):
-        Form.setObjectName("Form")
-        Form.resize(506, 866)
-        self.askLepWidget = QtWidgets.QWidget(Form)
-        self.askLepWidget.setGeometry(QtCore.QRect(0, 0, 501, 851))
-        self.askLepWidget.setStyleSheet("background-color: rgb(246, 247, 200);")
-        self.askLepWidget.setObjectName("askLepWidget")
-        self.askLeProgramLabel = QtWidgets.QLabel(self.askLepWidget)
-        self.askLeProgramLabel.setGeometry(QtCore.QRect(30, 10, 241, 51))
+class Ui_askLepWidgetFrame(object):
+    def setupUi(self, askLepWidgetFrame):
+        askLepWidgetFrame.setObjectName("askLepWidgetFrame")
+        askLepWidgetFrame.resize(748, 866)
+        self.verticalLayout = QtWidgets.QVBoxLayout(askLepWidgetFrame)
+        self.verticalLayout.setObjectName("verticalLayout")
+        self.askLeProgramLabel = QtWidgets.QLabel(askLepWidgetFrame)
         font = QtGui.QFont()
         font.setPointSize(18)
         self.askLeProgramLabel.setFont(font)
         self.askLeProgramLabel.setObjectName("askLeProgramLabel")
-        self.blackLine = QtWidgets.QFrame(self.askLepWidget)
-        self.blackLine.setGeometry(QtCore.QRect(0, 70, 491, 8))
+        self.verticalLayout.addWidget(self.askLeProgramLabel)
+        self.blackLine = QtWidgets.QFrame(askLepWidgetFrame)
         self.blackLine.setStyleSheet("background-color: rgb(24, 35, 32);")
         self.blackLine.setFrameShape(QtWidgets.QFrame.HLine)
         self.blackLine.setFrameShadow(QtWidgets.QFrame.Sunken)
         self.blackLine.setObjectName("blackLine")
-        self.logicalExpressionLabel = QtWidgets.QLabel(self.askLepWidget)
-        self.logicalExpressionLabel.setGeometry(QtCore.QRect(30, 100, 451, 51))
+        self.verticalLayout.addWidget(self.blackLine)
+        self.logicalExpressionLabel = QtWidgets.QLabel(askLepWidgetFrame)
+        self.logicalExpressionLabel.setMaximumSize(QtCore.QSize(16777215, 80))
         font = QtGui.QFont()
         font.setPointSize(14)
         self.logicalExpressionLabel.setFont(font)
@@ -40,16 +38,23 @@ class Ui_Form(object):
 "color: rgb(255, 255, 242);")
         self.logicalExpressionLabel.setAlignment(QtCore.Qt.AlignCenter)
         self.logicalExpressionLabel.setObjectName("logicalExpressionLabel")
-        self.truthTableWidget = QtWidgets.QTableWidget(self.askLepWidget)
-        self.truthTableWidget.setGeometry(QtCore.QRect(30, 190, 451, 211))
+        self.verticalLayout.addWidget(self.logicalExpressionLabel)
+        self.truthTableWidget = QtWidgets.QTableWidget(askLepWidgetFrame)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Preferred)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.truthTableWidget.sizePolicy().hasHeightForWidth())
+        self.truthTableWidget.setSizePolicy(sizePolicy)
+        self.truthTableWidget.setMinimumSize(QtCore.QSize(500, 500))
         self.truthTableWidget.setBaseSize(QtCore.QSize(0, 0))
         self.truthTableWidget.setStyleSheet("background-color: rgb(255, 255, 242);")
         self.truthTableWidget.setLineWidth(-3)
         self.truthTableWidget.setObjectName("truthTableWidget")
         self.truthTableWidget.setColumnCount(0)
         self.truthTableWidget.setRowCount(0)
-        self.dnfFormTitleLabel = QtWidgets.QLabel(self.askLepWidget)
-        self.dnfFormTitleLabel.setGeometry(QtCore.QRect(30, 440, 171, 51))
+        self.verticalLayout.addWidget(self.truthTableWidget)
+        self.dnfFormTitleLabel = QtWidgets.QLabel(askLepWidgetFrame)
+        self.dnfFormTitleLabel.setMaximumSize(QtCore.QSize(16777215, 80))
         font = QtGui.QFont()
         font.setPointSize(14)
         self.dnfFormTitleLabel.setFont(font)
@@ -57,8 +62,8 @@ class Ui_Form(object):
 "color: rgb(255, 255, 242);")
         self.dnfFormTitleLabel.setAlignment(QtCore.Qt.AlignCenter)
         self.dnfFormTitleLabel.setObjectName("dnfFormTitleLabel")
-        self.dnfExpressionLabel = QtWidgets.QLabel(self.askLepWidget)
-        self.dnfExpressionLabel.setGeometry(QtCore.QRect(30, 520, 451, 51))
+        self.verticalLayout.addWidget(self.dnfFormTitleLabel)
+        self.dnfExpressionLabel = QtWidgets.QLabel(askLepWidgetFrame)
         font = QtGui.QFont()
         font.setPointSize(14)
         self.dnfExpressionLabel.setFont(font)
@@ -66,15 +71,26 @@ class Ui_Form(object):
 "background-color: rgb(255, 255, 242);")
         self.dnfExpressionLabel.setAlignment(QtCore.Qt.AlignCenter)
         self.dnfExpressionLabel.setObjectName("dnfExpressionLabel")
+        self.verticalLayout.addWidget(self.dnfExpressionLabel)
 
-        self.retranslateUi(Form)
-        QtCore.QMetaObject.connectSlotsByName(Form)
+        self.retranslateUi(askLepWidgetFrame)
+        QtCore.QMetaObject.connectSlotsByName(askLepWidgetFrame)
 
-    def retranslateUi(self, Form):
+    def retranslateUi(self, askLepWidgetFrame):
         _translate = QtCore.QCoreApplication.translate
-        Form.setWindowTitle(_translate("Form", "Form"))
-        self.askLeProgramLabel.setText(_translate("Form", "Ask Le Program"))
-        self.logicalExpressionLabel.setText(_translate("Form", "( ¬P ∨ ¬Q ) → ¬(Q ∧ R)"))
-        self.truthTableWidget.setWhatsThis(_translate("Form", "Truth Table"))
-        self.dnfFormTitleLabel.setText(_translate("Form", "DNF form:"))
-        self.dnfExpressionLabel.setText(_translate("Form", "DNF form (also the thing above is a table widget)"))
+        askLepWidgetFrame.setWindowTitle(_translate("askLepWidgetFrame", "Form"))
+        self.askLeProgramLabel.setText(_translate("askLepWidgetFrame", "Ask Le Program"))
+        self.logicalExpressionLabel.setText(_translate("askLepWidgetFrame", "( ¬P ∨ ¬Q ) → ¬(Q ∧ R)"))
+        self.truthTableWidget.setWhatsThis(_translate("askLepWidgetFrame", "Truth Table"))
+        self.dnfFormTitleLabel.setText(_translate("askLepWidgetFrame", "DNF form:"))
+        self.dnfExpressionLabel.setText(_translate("askLepWidgetFrame", "DNF form (also the thing above is a table widget)"))
+
+
+if __name__ == "__main__":
+    import sys
+    app = QtWidgets.QApplication(sys.argv)
+    askLepWidgetFrame = QtWidgets.QWidget()
+    ui = Ui_askLepWidgetFrame()
+    ui.setupUi(askLepWidgetFrame)
+    askLepWidgetFrame.show()
+    sys.exit(app.exec_())

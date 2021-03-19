@@ -1,20 +1,49 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="71891026-2f3b-42d7-addd-2059c62dd774" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/models/NOTCarmensPorn/logicEx.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/NOTCarmensPorn/logicEx.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/user.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/user.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/views/py/askLepWidget.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/py/askLepQt.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/py/askLepWidgetQt.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/py/askLepWidgetQt.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/py/randomPage.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/py/randomPage.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/ui/askLePWidget.ui" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/ui/askLePWidget.ui" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/view.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/view.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="JupyterTrust" id="42a3a38f-8887-45f0-bd6d-22717ce752ed" />
+  <component name="JupyterTrust" id="35b9f187-88e7-447b-8e33-3ef22285a599" />
   <component name="ProjectId" id="1pl8fuiiBeRtkCXrlTI5Q8xTF7A" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -24,6 +53,12 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -35,10 +70,22 @@
       <updated>1615746422573</updated>
       <workItem from="1615746423650" duration="1546000" />
       <workItem from="1615843002179" duration="4000" />
+      <workItem from="1616139589767" duration="3427000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

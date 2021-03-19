@@ -1,4 +1,3 @@
-
 from PyQt5 import QtCore, QtGui, QtWidgets
 
 from views.py.randomPageQt import Ui_randomQuestionFrame

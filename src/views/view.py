@@ -4,6 +4,7 @@ from views.py.mainQt import Ui_MainWindow
 from views.py.home import Home
 from views.py.testPreview import TestPreview
 from views.py.randomPage import RandomPage
+from views.py.askLepPage import AskLepPage
 
 class View(Ui_MainWindow):
 
@@ -47,6 +48,9 @@ class View(Ui_MainWindow):
             
     def loadLep(self):
         self.cleanMain()
+        self.masterFrame = QtWidgets.QFrame()
+        self.mainFrameLayout.addWidget(self.masterFrame)
+        self.currentDisplay = AskLepPage(self.masterFrame, self)
 
     def loadRandomQs(self):
         self.cleanMain()
