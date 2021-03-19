@@ -60,7 +60,7 @@
       <property name="minimumSize">
        <size>
         <width>0</width>
-        <height>85</height>
+        <height>125</height>
        </size>
       </property>
       <property name="maximumSize">
@@ -103,10 +103,22 @@
        </item>
        <item>
         <widget class="QPushButton" name="homeButton">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
          <property name="minimumSize">
           <size>
            <width>0</width>
            <height>48</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>16777215</width>
+           <height>80</height>
           </size>
          </property>
          <property name="font">
@@ -145,10 +157,22 @@ color: rgb(246, 247, 200);
        </item>
        <item>
         <widget class="QPushButton" name="askLepButton">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
          <property name="minimumSize">
           <size>
            <width>0</width>
            <height>48</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>16777215</width>
+           <height>80</height>
           </size>
          </property>
          <property name="font">
@@ -186,10 +210,22 @@ selection-background-color: rgb(233, 234, 189);</string>
        </item>
        <item>
         <widget class="QPushButton" name="randomQsButton">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
          <property name="minimumSize">
           <size>
            <width>0</width>
            <height>48</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>16777215</width>
+           <height>80</height>
           </size>
          </property>
          <property name="font">
@@ -227,10 +263,22 @@ selection-background-color: rgb(233, 234, 189);</string>
        </item>
        <item>
         <widget class="QPushButton" name="newTestButton">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
          <property name="minimumSize">
           <size>
            <width>0</width>
            <height>48</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>16777215</width>
+           <height>80</height>
           </size>
          </property>
          <property name="font">
@@ -255,7 +303,14 @@ selection-background-color: rgb(233, 234, 189);</string>
          </property>
          <property name="icon">
           <iconset>
-           <normaloff>../../res/ui icons/new test.png</normaloff>../../res/ui icons/new test.png</iconset>
+           <normaloff>../../res/ui icons/new test.png</normaloff>
+           <normalon>../../res/ui icons/new test.png</normalon>
+           <disabledoff>../../res/ui icons/new test.png</disabledoff>
+           <disabledon>../../res/ui icons/new test.png</disabledon>
+           <activeoff>../../res/ui icons/new test.png</activeoff>
+           <activeon>../../res/ui icons/new test.png</activeon>
+           <selectedoff>../../res/ui icons/new test.png</selectedoff>
+           <selectedon>../../res/ui icons/new test.png</selectedon>../../res/ui icons/new test.png</iconset>
          </property>
          <property name="iconSize">
           <size>
@@ -315,10 +370,22 @@ selection-background-color: rgb(233, 234, 189);</string>
        </item>
        <item>
         <widget class="QPushButton" name="userButton">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
          <property name="minimumSize">
           <size>
            <width>0</width>
            <height>48</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>16777215</width>
+           <height>80</height>
           </size>
          </property>
          <property name="font">
@@ -352,6 +419,22 @@ selection-background-color: rgb(233, 234, 189);</string>
           </size>
          </property>
         </widget>
+       </item>
+       <item>
+        <spacer name="horizontalSpacer">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeType">
+          <enum>QSizePolicy::Preferred</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>40</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
        </item>
       </layout>
      </widget>
