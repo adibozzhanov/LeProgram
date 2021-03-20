@@ -132,7 +132,7 @@ class Database:
 
         return taskTuple
 
-    def updateTaskExp(self, taskID, newTaskExpression):
+    def updateTaskExpDB(self, taskID, newTaskExpression):
         lepDB = sqlite3.connect(self.dataBasePath)
         lepDBCursor = lepDB.cursor()
 
@@ -143,7 +143,7 @@ class Database:
         lepDB.commit()
         lepDB.close()
 
-    def updateTaskStatement(self, taskID, newTaskStatement):
+    def updateTaskStatementDB(self, taskID, newTaskStatement):
         lepDB = sqlite3.connect(self.dataBasePath)
         lepDBCursor = lepDB.cursor()
 
@@ -154,7 +154,7 @@ class Database:
         lepDB.commit()
         lepDB.close()
 
-    def getAnswerIDfromTaskID(self, taskID):
+    def getAnswerIDfromTaskIDDB(self, taskID):
         lepDB = sqlite3.connect(self.dataBasePath)
         lepDBCursor = lepDB.cursor()
 
@@ -167,6 +167,16 @@ class Database:
         lepDB.close()
 
         return listOfAnswerID
+
+    def deleteTaskDB(self, taskID):
+        lepDB = sqlite3.connect(self.dataBasePath)
+        lepDBCursor = lepDB.cursor()
+
+        lepDBCursor.execute("""DELETE FROM Task
+                               WHERE TaskID = ?  """, (TaskID,))
+
+        lepDB.commit()
+        lepDB.close()
 
     def addNewTestDB(self):
         lepDB = sqlite3.connect(self.dataBasePath)
@@ -195,7 +205,40 @@ class Database:
         lepDB.close()
         return testTuple
 
+    def updateTestNameDB(self, testID, newName):
+        lepDB = sqlite3.connect(self.dataBasePath)
+        lepDBCursor = lepDB.cursor()
+
+        lepDBCursor.execute("""UPDATE Test
+                               SET (TestName = ?)
+                               WHERE TestID = ?""", (newName, testID,))
+
+        lepDB.commit()
+        lepDB.close()
+
+    def updateTestDescriptionDB(self, testID, newDescription):
+        lepDB = sqlite3.connect(self.dataBasePath)
+        lepDBCursor = lepDB.cursor()
+
+        lepDBCursor.execute("""UPDATE Test
+                               SET (TestName = ?)
+                               WHERE TestID = ?""", (newDescription, testID,))
+
+        lepDB.commit()
+        lepDB.close()
+
+    def getTaskIDFromTestIDDB(self, testID):
+        lepDB = sqlite3.connect(self.dataBasePath)
+        lepDBCursor = lepDB.cursor()
+
+        lepDBCursor.execute("""SELECT TaskID FROM Task
+                               WHERE TestID = ?""", (testID,))
+
+        listOfAnswerID = lepDB.fetchall()
+
+        lepDB.commit()
+        lepDB.close()
 
 
-a = Database()
-a.loadTestDB(1)
+#a = Database()
+#a.loadTestDB(1)
