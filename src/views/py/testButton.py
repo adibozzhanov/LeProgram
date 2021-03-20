@@ -8,7 +8,6 @@ class TestButton(Ui_testButtonFrame):
     def __init__(self, master, view,test):
         self.test = test
         self.setupUi(master)
-        view.connectTestPreview(self.viewButton)
         if self.test != None:
             self.testNameLabel.setText(self.test.getName())
 

@@ -6,13 +6,10 @@ from views.py.testButton import TestButton
 
 class Home(Ui_mainFrame):
 
-    def __init__(self, master, view):
+    def __init__(self, master, view, library):
         self.view = view
         self.testButtons = []
         self.setupUi(master)
-
-        for i in range(19):
-            self.addTestWidget()
 
     def addTestWidget(self,test = None):
         newFrame = QtWidgets.QFrame()

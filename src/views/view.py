@@ -7,34 +7,46 @@ from views.py.randomPage import RandomPage
 from views.py.askLepPage import AskLepPage
 
 class View(Ui_MainWindow):
-
-    def run(self):
+    
+    def __init__(self):
+        self.request = None
         self.currentDisplay = None
         self.masterFrame = None
         self.app = QtWidgets.QApplication(sys.argv)
         self.MainWindow = QtWidgets.QMainWindow()
         self.setupUi(self.MainWindow)
         self.connectActions()
-        self.loadHome()
+    
+
+    def run(self):
         self.MainWindow.show()
         sys.exit(self.app.exec_())
 
     def connectActions(self):
-        self.homeButton.clicked.connect(self.loadHome)
-        self.askLepButton.clicked.connect(self.loadLep)
-        self.userButton.clicked.connect(self.loadUser)
-        self.randomQsButton.clicked.connect(self.loadRandomQs)
-        self.newTestButton.clicked.connect(self.loadNewTest)
+        self.homeButton.clicked.connect(lambda: self.request("homePage"))
+        self.askLepButton.clicked.connect(lambda: self.request("askLep"))
+        self.userButton.clicked.connect(lambda: self.request("user"))
+        self.randomQsButton.clicked.connect(lambda: self.request("randomQuestions"))
+        self.newTestButton.clicked.connect(lambda:self.request("newTest"))
+        
 
-    def connectTestPreview(self, button):
-        button.clicked.connect(self.loadTestPreview)
+
+    def loadNotFound(self):
+        self.cleanMain()
+
         
+    def registerRequestHandler(self, handler):
+        # called by controller
+        # assigns request handler controller method to "self.request"
+        self.request = handler        
+
+
         
-    def loadHome(self):
+    def loadHome(self, library):
         self.cleanMain()
         self.masterFrame = QtWidgets.QFrame()
         self.mainFrameLayout.addWidget(self.masterFrame)
-        self.currentDisplay = Home(self.masterFrame, self)
+        self.currentDisplay = Home(self.masterFrame, self, library)
 
     def loadNewTest(self):
         self.cleanMain()
@@ -64,9 +76,6 @@ class View(Ui_MainWindow):
         self.masterFrame = QtWidgets.QFrame()
         self.mainFrameLayout.addWidget(self.masterFrame)
         self.currentDisplay = TestPreview(self.masterFrame, None)
-
-
-
 
     def loadUser(self):
         self.cleanMain()
