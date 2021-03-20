@@ -40,18 +40,18 @@ class Task:
     def setExpression(self, newExpression):
         self.expression = (newExpression)
         # UPDATE THE DATABASE
-        self.lepDB.updateTaskExp(self.id, self.expression)
+        self.lepDB.updateTaskExpDB(self.id, self.expression)
 
 
     def setExpressionFromTree(self, newExpressionTree):
         self.expression = Expression(newExpressionTree)
         # UPDATE THE DATABASE
-        self.lepDB.updateTaskExp(self.id, self.expression.getString())
+        self.lepDB.updateTaskExpDB(self.id, self.expression.getString())
 
     def setStatement(self, newStatement):
         self.statement = newStatement
         # UPDATE THE DATABASE
-        self.lepDB.updateTaskStatement(self.id, self.statement)
+        self.lepDB.updateTaskStatementDB(self.id, self.statement)
 
     def addNewAnswerAndGetId(self):
         a = Answer(taskId=self.id)
@@ -66,7 +66,7 @@ class Task:
     def removeAnswer(self, answerId):
         del self.answers[answerId]
         # UPDATE THE DATABASE
-        self.lepDB.deleteAnswer(answerId)
+        self.lepDB.deleteAnswerDB(answerId)
 
     def getTaskId(self):
         return self.id
@@ -82,14 +82,14 @@ class Task:
 
     def getAnswer(self, answerId):
         if self.answers is None:
-            ids = self.lepDB.getAnswerIDfromTaskID(self.id) #GET ALL THE ANSWER IDS FROME THE DATABASE
+            ids = [answerId] #GET ALL THE ANSWER IDS FROME THE DATABASE
             for i in ids:
                 self.__loadAnswer(i[0])
         return self.answers[answerId]
 
     def getAnswers(self):
         if self.answers is None:
-            ids=self.lepDB.getAnswerIDfromTaskID(self.id) #GET ALL THE ANSWER IDS FROME THE DATABASE
+            ids=self.lepDB.getAnswerIDfromTaskIDDB(self.id) #GET ALL THE ANSWER IDS FROME THE DATABASE
             for i in ids:
                 self.__loadAnswer(i[0])
         return self.answers
