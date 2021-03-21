@@ -1,11 +1,12 @@
 import sys
 from models.lexerParser import Node
+import models.stringSettings
 
-NOT = "/NOT"
-AND = "/AND"
-OR = "/OR"
-TOP = "/TOP"
-BOT = "/BOT"
+# NOT = "/NOT"
+# AND = "/AND"
+# OR = "/OR"
+# TOP = "/TOP"
+# BOT = "/BOT"
 
 
 #/NOT (/NOT a /AND a /AND /BOT) /IMP a /XOR /NOT /NOT /TOP
@@ -101,9 +102,9 @@ class Expression(object): #can later add the function right to the node
         #if self.valid: print("DNF:",TOP)
         #elif not self.satisfiable : print("DNF:",BOT)
         if self.valid:
-            self.dnf = "⊤"
+            self.dnf = topSym
         elif not self.satisfiable:
-            self.dnf= "⊥"
+            self.dnf= botSym
         else:
             var = sorted(self.variableValues)
             rows=[]
@@ -115,9 +116,9 @@ class Expression(object): #can later add the function right to the node
                         if r[c][0]:
                             cols.append(var[c])
                         else:
-                            cols.append("¬" + var[c])
-                    rows.append("(" + " ∧ ".join(cols) + ")")
-            self.dnf = (" ∨ ".join(rows))
+                            cols.append(notSym + var[c])
+                    rows.append("(" + (" " + andSym+ " ").join(cols) + ")")
+            self.dnf = ((" " + orSym+ " ").join(rows))
 
 
     def printSimpleTable(self): #FOR TESTING

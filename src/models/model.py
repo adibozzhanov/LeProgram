@@ -23,6 +23,9 @@ class Model():
         # returns None if fails
         return Expression(getExpressionTree(inputString))
 
+    def addNewUser(self):
+        return User()
+
     # adder methods
     # def addNewTest(self): # again why do we need this here the library has this mehtod,
     #     return Test()
