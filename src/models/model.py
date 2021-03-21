@@ -12,8 +12,8 @@ class Model():
     def getMainLibrary(self, libraryId=1):
         return Library(libraryId)
 
-    def getUser(self):
-        return User()
+    def getUser(self, userId):
+        return User(userId)
 
     def getRandomTaskGenerator(self, complexity):
         return TaskGenerator(complexity)
