@@ -46,7 +46,7 @@ class Library:
         if self.tests is None:
             ids=[testId] #GET ALL THE TEST IDS FROME THE DATABASE
             for i in ids:
-                self.__loadTest(i[0])
+                self.__loadTest(i)
         return self.tests[testId]
 
     def getTests(self):
