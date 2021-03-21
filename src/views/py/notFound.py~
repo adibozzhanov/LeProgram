@@ -1,0 +1,11 @@
+from PyQt5 import QtCore, QtGui, QtWidgets
+from views.py.notFoundQt import Ui_notFoundFrame
+
+
+class notFound(Ui_notFoundFrame):
+    def __init__(self,master,view,library):
+        self.view = view
+        self.setupUi(master)
+        
+
+    

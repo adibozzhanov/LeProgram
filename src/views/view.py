@@ -5,6 +5,7 @@ from views.py.home import Home
 from views.py.testPreview import TestPreview
 from views.py.randomPage import RandomPage
 from views.py.askLepPage import AskLepPage
+from views.py.notFound import NotFound
 
 class View(Ui_MainWindow):
     
@@ -30,10 +31,6 @@ class View(Ui_MainWindow):
         self.newTestButton.clicked.connect(lambda:self.request("newTest"))
         
 
-
-    def loadNotFound(self):
-        self.cleanMain()
-
         
     def registerRequestHandler(self, handler):
         # called by controller
@@ -44,8 +41,6 @@ class View(Ui_MainWindow):
         
     def loadHome(self, library):
         self.cleanMain()
-        self.masterFrame = QtWidgets.QFrame()
-        self.mainFrameLayout.addWidget(self.masterFrame)
         self.currentDisplay = Home(self.masterFrame, self, library)
 
     def loadNewTest(self):
@@ -55,27 +50,25 @@ class View(Ui_MainWindow):
         if self.masterFrame != None:
             self.mainFrameLayout.removeWidget(self.masterFrame)
             self.masterFrame.deleteLater()
-            self.masterFrame = None
-            self.currentDisplay = None
+        self.masterFrame = QtWidgets.QFrame()
+        self.mainFrameLayout.addWidget(self.masterFrame)
             
     def loadLep(self):
         self.cleanMain()
-        self.masterFrame = QtWidgets.QFrame()
-        self.mainFrameLayout.addWidget(self.masterFrame)
         self.currentDisplay = AskLepPage(self.masterFrame, self)
 
     def loadRandomQs(self):
         self.cleanMain()
-        self.masterFrame = QtWidgets.QFrame()
-        self.mainFrameLayout.addWidget(self.masterFrame)
         self.currentDisplay = RandomPage(self.masterFrame, self)
         
 
     def loadTestPreview(self, test = None):
         self.cleanMain()
-        self.masterFrame = QtWidgets.QFrame()
-        self.mainFrameLayout.addWidget(self.masterFrame)
         self.currentDisplay = TestPreview(self.masterFrame, None)
+
+    def loadNotFound(self):
+        self.cleanMain()
+        self.currentDisplay = NotFound(self.masterFrame, self)
 
     def loadUser(self):
         self.cleanMain()
