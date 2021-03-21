@@ -1,5 +1,5 @@
-from test import Test
-from database import Database
+from models.test import Test
+from models.database import Database
 
 class Library:
     def __init__(self, libraryId=None):

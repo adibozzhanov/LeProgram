@@ -1,5 +1,5 @@
-from expression import Expression
-from database import Database
+from models.expression import Expression
+from models.database import Database
 
 # the expression tree should be passed from the controller after it parsed the input
 

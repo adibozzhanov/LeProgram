@@ -1,5 +1,5 @@
-from answer import Answer
-from database import Database
+from models.answer import Answer
+from models.database import Database
 
 # using answer ids to reference them or something like the index? as in their order in the task
 

@@ -1,5 +1,5 @@
-from task import Task
-from database import Database
+from models.task import Task
+from models.database import Database
 
 class Test:
     # can either be initialized by the testId if it is already in the database
