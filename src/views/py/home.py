@@ -12,8 +12,8 @@ class Home(Ui_mainFrame):
         self.setupUi(master)
         tests = library.getTests()
         if tests != None:
-            for test in tests:
-                self.addTestWidget(test)
+            for testId in tests:
+                self.addTestWidget(tests[testId])
 
     def addTestWidget(self,test = None):
         newFrame = QtWidgets.QFrame()

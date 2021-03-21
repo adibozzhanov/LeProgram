@@ -44,6 +44,7 @@ class Library:
 
     def getTest(self, testId):
         if self.tests is None:
+            self.tests = {}
             ids=[testId] #GET ALL THE TEST IDS FROME THE DATABASE
             for i in ids:
                 self.__loadTest(i)
@@ -51,6 +52,7 @@ class Library:
 
     def getTests(self):
         if self.tests is None:
+            self.tests = {}
             ids=self.lepDB.getTestIDFromLibraryIDDB(self.id) #GET ALL THE TEST IDS FROME THE DATABASE
             for i in ids:
                 self.__loadTest(i[0])
