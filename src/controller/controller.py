@@ -25,9 +25,9 @@ class Controller:
             "homePage" : self.loadMainPage,
             "notFound" : self.view.loadNotFound,
             "askLep": self.view.loadLep,
-            "user": self.view.loadUser,
+            #"user": self.view.loadUser,
             "randomQuestions": self.view.loadRandomQs,
-            "newTest" : self.view.loadNewTest,
+            #"newTest" : self.view.loadNewTest,
             "testPreview": self.processTestPreview,
         }
         
