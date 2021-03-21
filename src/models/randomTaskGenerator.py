@@ -24,7 +24,7 @@ class TaskGenerator:
     def __init__(self, complexity):
         self.complexity = complexity
         self.variables = ['/TOP','/BOT']
-        self.nrOfVariables = min(int(3+(complexity-3)/3),complexity)
+        self.nrOfVariables = min(int(3+(complexity-3)/4),complexity)
         self.unsatisfiableAnswers = []
         self.validAnswers = []
         self.__generateVariables()
@@ -164,7 +164,7 @@ class TaskGenerator:
                 print(a.getIsCorrect(), a.getExpression().getDisplayString())
 
 if __name__ == '__main__':
-    g = TaskGenerator(4)
+    g = TaskGenerator(1)
     g.test()
 
 # generate the correct answers
