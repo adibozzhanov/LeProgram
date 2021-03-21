@@ -1,5 +1,5 @@
 from library import Library
-from parser import Node, getExpressionTree
+from lexerParser import Node, getExpressionTree
 from expression import Expression
 
 class User:

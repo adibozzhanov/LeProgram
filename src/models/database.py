@@ -1,5 +1,5 @@
 from os import path
-
+import sqlite3
 
 class Database:
 
@@ -8,7 +8,7 @@ class Database:
 
     def getLepDBFilePath(self):
         basePath = path.dirname(__file__)
-        return path.abspath(path.join(basePath, "..", "..", "data/databases/lepDB.db"))
+        return path.abspath(path.join(basePath, "..", "..", "data","database","lepDB.db"))
 
     def addTestDB(self, testObj):
         # testObj will be created before
@@ -108,11 +108,11 @@ class Database:
         lepDB = sqlite3.connect(self.dataBasePath)
         lepDBCursor = lepDB.cursor()
 
-        lepDBCursor.execute("""INSERT INTO Task(TestID, QusetionStatement, QuestionExpression)
+        lepDBCursor.execute("""INSERT INTO Task(TestID, QuestionStatement, QuestionExpression)
                                VALUES(?, ?, ?)""", (testID, "", "",))
 
         lepDBCursor.execute("SELECT max(TaskID) FROM Task")
-        lastTaskID = lepDBCursor.fetchone[0]
+        lastTaskID = lepDBCursor.fetchone()[0]
 
         lepDB.commit()
         lepDB.close()
@@ -132,7 +132,7 @@ class Database:
 
         return taskTuple
 
-    def updateTaskExp(self, taskID, newTaskExpression):
+    def updateTaskExpDB(self, taskID, newTaskExpression):
         lepDB = sqlite3.connect(self.dataBasePath)
         lepDBCursor = lepDB.cursor()
 
@@ -143,7 +143,7 @@ class Database:
         lepDB.commit()
         lepDB.close()
 
-    def updateTaskStatement(self, taskID, newTaskStatement):
+    def updateTaskStatementDB(self, taskID, newTaskStatement):
         lepDB = sqlite3.connect(self.dataBasePath)
         lepDBCursor = lepDB.cursor()
 
@@ -154,7 +154,7 @@ class Database:
         lepDB.commit()
         lepDB.close()
 
-    def getAnswerIDfromTaskID(self, taskID):
+    def getAnswerIDfromTaskIDDB(self, taskID):
         lepDB = sqlite3.connect(self.dataBasePath)
         lepDBCursor = lepDB.cursor()
 
@@ -168,6 +168,77 @@ class Database:
 
         return listOfAnswerID
 
+    def deleteTaskDB(self, taskID):
+        lepDB = sqlite3.connect(self.dataBasePath)
+        lepDBCursor = lepDB.cursor()
 
-a = Database()
-#a.getLepDBFilePath()
+        lepDBCursor.execute("""DELETE FROM Task
+                               WHERE TaskID = ?  """, (TaskID,))
+
+        lepDB.commit()
+        lepDB.close()
+
+    def addNewTestDB(self):
+        lepDB = sqlite3.connect(self.dataBasePath)
+        lepDBCursor = lepDB.cursor()
+
+        lepDBCursor.execute("""INSERT INTO Test(TestName, TestDescription)
+                               VALUES(?, ?)""", ("", "",))
+
+        lepDBCursor.execute("SELECT max(TestID) FROM Test")
+        lastTestID = lepDBCursor.fetchone[0]
+
+        lepDB.commit()
+        lepDB.close()
+
+        return lastTestID
+
+    def loadTestDB(self, testID):
+        lepDB = sqlite3.connect(self.dataBasePath)
+        lepDBCursor = lepDB.cursor()
+
+        lepDBCursor.execute("""SELECT * FROM Test 
+                               WHERE TestID = ?""", (testID,))
+        testTuple = lepDBCursor.fetchone()
+
+        lepDB.commit()
+        lepDB.close()
+        return testTuple
+
+    def updateTestNameDB(self, testID, newName):
+        lepDB = sqlite3.connect(self.dataBasePath)
+        lepDBCursor = lepDB.cursor()
+
+        lepDBCursor.execute("""UPDATE Test
+                               SET (TestName = ?)
+                               WHERE TestID = ?""", (newName, testID,))
+
+        lepDB.commit()
+        lepDB.close()
+
+    def updateTestDescriptionDB(self, testID, newDescription):
+        lepDB = sqlite3.connect(self.dataBasePath)
+        lepDBCursor = lepDB.cursor()
+
+        lepDBCursor.execute("""UPDATE Test
+                               SET (TestName = ?)
+                               WHERE TestID = ?""", (newDescription, testID,))
+
+        lepDB.commit()
+        lepDB.close()
+
+    def getTaskIDFromTestIDDB(self, testID):
+        lepDB = sqlite3.connect(self.dataBasePath)
+        lepDBCursor = lepDB.cursor()
+
+        lepDBCursor.execute("""SELECT TaskID FROM Task
+                               WHERE TestID = ?""", (testID,))
+
+        listOfAnswerID = lepDB.fetchall()
+
+        lepDB.commit()
+        lepDB.close()
+
+
+#a = Database()
+#a.loadTestDB(1)

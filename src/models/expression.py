@@ -1,5 +1,5 @@
 import sys
-from parser import Node
+from lexerParser import Node
 
 NOT = "/NOT"
 AND = "/AND"

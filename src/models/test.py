@@ -1,20 +1,29 @@
 from task import Task
+from database import Database
 
 class Test:
     # can either be initialized by the testId if it is already in the database
     # or by creating a new task if no id is given
     def __init__(self, testId=None):
+
+        self.lepDB = Database()
+
         if testId is None:
             self.name = None
             self.description = ""
             self.tasks = {}
             self.tags = {} #we need a tag class? or what do we do with them
             # ADD A NEW TEST IN THE DATABASE
-            self.id = 0 # GET THE NEW ID FROM THE DATABASE
+            self.id = self.lepDB.addNewTestDB()
+
+            #self.id = 0 # GET THE NEW ID FROM THE DATABASE
         else:
             self.id = testId
             self.tasks = None # only create the task instances when they ate requested
             # LOAD DATA FROM THE DATABASE
+            testInfoTuple = self.lepDB.loadTestDB(self.id)
+            self.name = testInfoTuple[1]
+            self.description = testInfoTuple[2]
             # self.description = ""
             # self.name = None
         self.tasksAnswered=0
@@ -23,20 +32,24 @@ class Test:
     def setName(self, newName):
         self.name = newName
         # UPDATE THE DATABASE
+        self.lepDB.updateTestNameDB(self, self.id, self.name)
 
     def setDescription(self, newDescription):
         self.description = newDescription
         # UPDATE THE DATABASE
+        self.lepDB.updateTestDescriptionDB(self.id, self.description)
 
     def addTaskAndGetId(self):
         t = Task(testId=self.id)
         self.tasks[t.getTaskId()] = t
-        # UPDATE THE DATABASE (wait no the task class sould manage by itself)
+        # UPDATE THE DATABASE (wait no the task class should manage by itself)
         return t.getTaskId()
 
     def removeTask(self, taskId):
         del self.tasks[taskId]
         # UPDATE THE DATABASE
+        self.lepDB.deleteTaskDB(taskId)
+
 
     def getTestId(self):
         return self.id
@@ -49,16 +62,16 @@ class Test:
 
     def getTask(self, taskId):
         if self.tasks is None:
-            ids=[] #GET ALL THE ANSWER IDS FROME THE DATABASE
+            ids=[taskId] #GET ALL THE TASK IDS FROME THE DATABASE
             for i in ids:
                 self.__loadTask(i)
         return self.tasks[taskId]
 
     def getTasks(self):
         if self.tasks is None:
-            ids=[] #GET ALL THE ANSWER IDS FROME THE DATABASE
+            ids=self.lepDB.getTaskIDFromTestIDDB(self.id) #GET ALL THE TASK IDS FROME THE DATABASE
             for i in ids:
-                self.__loadTask(i)
+                self.__loadTask(i[0])
         return self.tasks
 
     def __loadTask(self, taskId):
@@ -83,3 +96,4 @@ class Test:
 
     def getScore(self):
         return [self.correctAnswers,len(self.tasks)]
+

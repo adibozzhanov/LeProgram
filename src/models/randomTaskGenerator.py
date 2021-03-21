@@ -1,5 +1,5 @@
 import random
-from parser import Node, getExpressionTree
+from lexerParser import Node, getExpressionTree
 from task import Task
 from expression import Expression
 from answer import Answer
