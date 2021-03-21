@@ -57,7 +57,6 @@ class logicEx(object): #can later add the function right to the node
     def generateAll(self):
         self.generateTable()
         self.generateFDNF()
-        self.generateDNF()
 
     def generateTable(self): #edge case str len =1 v 0
         var = sorted(self.variableValues)

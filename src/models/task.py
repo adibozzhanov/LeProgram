@@ -112,4 +112,4 @@ class Task:
         if a is None: return None
         return a.getIsCorrect()
 
-a = Task()
+# a = Task()

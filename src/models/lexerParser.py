@@ -1,4 +1,5 @@
 from sly import Lexer, Parser
+import models.stringSettings
 
 def pprint_tree(node, file=None, _prefix="", _last=True):
     print(_prefix, "`- " if _last else "|- ", node.data, sep="", file=file)
@@ -98,14 +99,22 @@ class BasicLexer(Lexer):
 
     # Define tokens
     NAME = r'[a-zA-Z]'
-    NOT = r'/NOT'
-    AND = r'/AND'
-    OR  = r'/OR'
-    XOR = r'/XOR'
-    IMP = r'/IMP'
-    IFF = r'/IFF'
-    TOP = r'/TOP'
-    BOT = r'/BOT'
+    # NOT = notStr
+    # AND = andStr
+    # OR  = orStr
+    # XOR = xorStr
+    # IMP = impStr
+    # IFF = iffStr
+    # TOP = topStr
+    # BOT = botStr
+    NOT = r'/NOT|¬'
+    AND = r'/AND|∧'
+    OR  = r'/OR|∨'
+    XOR = r'/XOR|⊕'
+    IMP = r'/IMP|→'
+    IFF = r'/IFF|↔'
+    TOP = r'/TOP|⊤'
+    BOT = r'/BOT|⊥'
 
 
 class BasicParser(Parser):
@@ -128,11 +137,11 @@ class BasicParser(Parser):
 
     @_('TOP')
     def ex(self, p):
-        return Node(p.TOP, "⊤", lambda name, dict: True)
+        return Node(p.TOP, topSym, lambda name, dict: True)
 
     @_('BOT')
     def ex(self, p):
-        return Node(p.BOT, "⊥", lambda name, dict: False)
+        return Node(p.BOT, botSym, lambda name, dict: False)
 
     @_('"(" ex ")"')
     def ex(self, p):
@@ -140,14 +149,14 @@ class BasicParser(Parser):
 
     @_('NOT ex')
     def ex(self, p):
-        n = Node(p.NOT, "¬", lambda b: not b)
+        n = Node(p.NOT, notSym, lambda b: not b)
         n.addChild(p.ex)
         n.updateVariables()
         return n
 
     @_('ex AND ex')
     def ex(self, p):
-        n = Node(p.AND, "∧", lambda b1, b2: b1 and b2)
+        n = Node(p.AND, andSym, lambda b1, b2: b1 and b2)
         n.addChild(p.ex0)
         n.addChild(p.ex1)
         n.updateVariables()
@@ -155,7 +164,7 @@ class BasicParser(Parser):
 
     @_('ex OR ex')
     def ex(self, p):
-        n = Node(p.OR, "∨", lambda b1, b2: b1 or b2)
+        n = Node(p.OR, orSym, lambda b1, b2: b1 or b2)
         n.addChild(p.ex0)
         n.addChild(p.ex1)
         n.updateVariables()
@@ -163,7 +172,7 @@ class BasicParser(Parser):
 
     @_('ex XOR ex')
     def ex(self, p):
-        n = Node(p.XOR, "⊕", lambda b1, b2: b1 != b2)
+        n = Node(p.XOR, xorStr, lambda b1, b2: b1 != b2)
         n.addChild(p.ex0)
         n.addChild(p.ex1)
         n.updateVariables()
@@ -171,7 +180,7 @@ class BasicParser(Parser):
 
     @_('ex IFF ex')
     def ex(self, p):
-        n = Node(p.IFF, "↔", lambda b1, b2: b1 == b2)
+        n = Node(p.IFF, iffStr, lambda b1, b2: b1 == b2)
         n.addChild(p.ex0)
         n.addChild(p.ex1)
         n.updateVariables()
@@ -179,7 +188,7 @@ class BasicParser(Parser):
 
     @_('ex IMP ex')
     def ex(self, p):
-        n = Node(p.IMP, "→", lambda b1, b2: (not b1) or b2)
+        n = Node(p.IMP, impStr, lambda b1, b2: (not b1) or b2)
         n.addChild(p.ex0)
         n.addChild(p.ex1)
         n.updateVariables()
