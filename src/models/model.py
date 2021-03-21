@@ -9,8 +9,8 @@ from models.expression import Expression
 
 class Model():
     #getter methods
-    def getMainLibrary(self):
-        return Library()
+    def getMainLibrary(self, libraryId=1):
+        return Library(libraryId)
 
     def getUser(self):
         return User()
