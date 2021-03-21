@@ -173,7 +173,7 @@ class Database:
         lepDBCursor = lepDB.cursor()
 
         lepDBCursor.execute("""DELETE FROM Task
-                               WHERE TaskID = ?  """, (taskID,))
+                               WHERE TaskID = ?  """, (TaskID,))
 
         lepDB.commit()
         lepDB.close()
@@ -205,13 +205,13 @@ class Database:
         lepDB.close()
         return testTuple
 
-    def updateTestNameDB(self, testID, newTestName):
+    def updateTestNameDB(self, testID, newName):
         lepDB = sqlite3.connect(self.dataBasePath)
         lepDBCursor = lepDB.cursor()
 
         lepDBCursor.execute("""UPDATE Test
                                SET (TestName = ?)
-                               WHERE TestID = ?""", (newTestName, testID,))
+                               WHERE TestID = ?""", (newName, testID,))
 
         lepDB.commit()
         lepDB.close()
@@ -234,121 +234,7 @@ class Database:
         lepDBCursor.execute("""SELECT TaskID FROM Task
                                WHERE TestID = ?""", (testID,))
 
-        listOfTaskID = lepDB.fetchall()
-
-        lepDB.commit()
-        lepDB.close()
-
-        return listOfTaskID
-
-    def addNewLibraryDB(self):
-        lepDB = sqlite3.connect(self.dataBasePath)
-        lepDBCursor = lepDB.cursor()
-
-        lepDBCursor.execute("""INSERT INTO Library(LibraryName)
-                               VALUES(?)""", ("",))
-
-        lepDBCursor.execute("SELECT max(LibraryID) FROM Library")
-        lastLibraryID = lepDBCursor.fetchone[0]
-
-        lepDB.commit()
-        lepDB.close()
-
-        return lastLibraryID
-
-    def loadLibraryDB(self, libraryID):
-        lepDB = sqlite3.connect(self.dataBasePath)
-        lepDBCursor = lepDB.cursor()
-
-        lepDBCursor.execute("""SELECT * FROM Library 
-                               WHERE LibraryID = ?""", (libraryID,))
-        libraryTuple = lepDBCursor.fetchone()
-
-        lepDB.commit()
-        lepDB.close()
-
-        return libraryTuple
-
-    def updateLibraryNameDB(self, libraryID, newLibraryName):
-        lepDB = sqlite3.connect(self.dataBasePath)
-        lepDBCursor = lepDB.cursor()
-
-        lepDBCursor.execute("""UPDATE Library
-                               SET (LibraryName = ?)
-                               WHERE LibraryID = ?""", (newLibraryName, libraryID,))
-
-        lepDB.commit()
-        lepDB.close()
-
-    def lepDBAddTestIDandLibraryIDtoTesttoLibraryTableDB(self, testID, libraryID):
-        lepDB = sqlite3.connect(self.dataBasePath)
-        lepDBCursor = lepDB.cursor()
-
-        lepDBCursor.execute("""INSERT INTO TestToLibrary(TestID, LibraryID)
-                               VALUES(?,?)""", (testID,libraryID,))
-
-        lepDB.commit()
-        lepDB.close()
-
-    def deleteTestToLibraryDB(self, testID):
-        lepDB = sqlite3.connect(self.dataBasePath)
-        lepDBCursor = lepDB.cursor()
-
-        lepDBCursor.execute("""DELETE FROM TestToLibrary
-                               WHERE TestID = ?  """, (testID,))
-
-        lepDB.commit()
-        lepDB.close()
-
-    def getTestIDFromLibraryIDDB(self, libraryID):
-        lepDB = sqlite3.connect(self.dataBasePath)
-        lepDBCursor = lepDB.cursor()
-
-        lepDBCursor.execute("""SELECT TestID FROM TestToLibrary
-                               WHERE LibraryID = ?  """, (libraryID,))
-
-        listOfTestID = lepDBCursor.fetchall()
-
-        lepDB.commit()
-        lepDB.close()
-
-        return listOfTestID
-
-    def addNewUser(self, libraryID):
-        lepDB = sqlite3.connect(self.dataBasePath)
-        lepDBCursor = lepDB.cursor()
-
-        lepDBCursor.execute("""INSERT INTO Users(LibraryID, UserName)
-                               VALUES(?,?)""", (libraryID, "",))
-
-        lepDBCursor.execute("SELECT max(UserID) FROM Users")
-        lastUserID = lepDBCursor.fetchone[0]
-
-        lepDB.commit()
-        lepDB.close()
-
-        return lastUserID
-
-    def loadUsersDB(self, userID):
-        lepDB = sqlite3.connect(self.dataBasePath)
-        lepDBCursor = lepDB.cursor()
-
-        lepDBCursor.execute("""SELECT * FROM Users 
-                               WHERE UserID = ?""", (userID,))
-        userTuple = lepDBCursor.fetchone()
-
-        lepDB.commit()
-        lepDB.close()
-
-        return userTuple
-
-    def updateUserName(self, userID, newUserName):
-        lepDB = sqlite3.connect(self.dataBasePath)
-        lepDBCursor = lepDB.cursor()
-
-        lepDBCursor.execute("""UPDATE Users
-                               SET (UserName = ?)
-                               WHERE UserID = ?""", (newUserName, userID,))
+        listOfAnswerID = lepDB.fetchall()
 
         lepDB.commit()
         lepDB.close()
