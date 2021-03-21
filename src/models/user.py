@@ -1,7 +1,7 @@
-from library import Library
-from lexerParser import Node, getExpressionTree
-from expression import Expression
-from database import Database
+from models.library import Library
+from models.lexerParser import Node, getExpressionTree
+from models.expression import Expression
+from models.database import Database
 
 class User:
     def __init__(self, userId=None):
