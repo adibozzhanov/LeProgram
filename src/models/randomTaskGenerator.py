@@ -1,8 +1,8 @@
 import random
-from lexerParser import Node, getExpressionTree
-from task import Task
-from expression import Expression
-from answer import Answer
+from models.lexerParser import Node, getExpressionTree
+from models.task import Task
+from models.expression import Expression
+from models.answer import Answer
 
 #Question templates will be programmed into the application. Examples include:
 #-Which of the following expressions is equivalent to this logical DNF?
