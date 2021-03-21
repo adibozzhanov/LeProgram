@@ -5,6 +5,7 @@ class Test:
     # can either be initialized by the testId if it is already in the database
     # or by creating a new task if no id is given
     def __init__(self, testId=None):
+        # OSCAR NO CLUE HOW OR WHERE BUT YOU NEED TO CREATE THE LIBRARY TO TESTS TABLE AND ACTUALLY STICK THE DATA THERE SOMEHOW
 
         self.lepDB = Database()
 
@@ -96,4 +97,3 @@ class Test:
 
     def getScore(self):
         return [self.correctAnswers,len(self.tasks)]
-

@@ -1,34 +1,34 @@
-
-
+from lexerParser import getExpressionTree
+from library import Library
+from user import User
+from RandomTaskGenerator import TaskGenerator
+from test import Test
+from answer import Answer
+from task import Task
+from expression import Expression
 
 class Model():
     #getter methods
-    def getMainLibrary():
-        # return a library object
-        pass
+    def getMainLibrary(self):
+        return Library()
 
-    def getUser():
+    def getUser(self):
+        return User()
 
-        pass
+    def getRandomTaskGenerator(self, complexity):
+        return TaskGenerator(complexity)
 
-    def getRandomTask():
-
-        pass
-
-    
-
-    def getExpression(self):
+    def getExpression(self, inputString):
         # take a string in and return expression object
         # returns None if fails
-        pass
+        return Expression(getExpressionTree(inputString))
 
     #adder methods
-    def addNewTest(self):
+    def addNewTest(self): # again why do we need this here the library has this mehtod,
+        return Test()
 
-        pass
+    def addNewTask(slef, testId): #??
+        return Task(testId)
 
-    def addNewNewAnswer():
-
-        pass
-
-    
+    def addNewAnswer(self, taskId): # waaaaait adi why do we need this? the task has those methods
+        return Answer(taskId)
