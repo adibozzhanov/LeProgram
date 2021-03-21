@@ -10,6 +10,9 @@ class Home(Ui_mainFrame):
         self.view = view
         self.testButtons = []
         self.setupUi(master)
+        tests = library.getTests()
+        for test in tests:
+            self.addTestWidget(test)
 
     def addTestWidget(self,test = None):
         newFrame = QtWidgets.QFrame()

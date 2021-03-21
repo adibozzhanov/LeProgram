@@ -9,8 +9,9 @@ DEFAULT_USER_ID = 1
 
 class Controller:
     def __init__(self):
+        self.model = Model()
 
-        self.mainLibrary = None # set it to a model call
+        self.mainLibrary = self.model.getMainLibrary()
 
         
         self.view = View()
