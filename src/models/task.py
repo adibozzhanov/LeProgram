@@ -82,6 +82,7 @@ class Task:
 
     def getAnswer(self, answerId):
         if self.answers is None:
+            self.answers = {}
             ids = [answerId] #GET ALL THE ANSWER IDS FROME THE DATABASE
             for i in ids:
                 self.__loadAnswer(i[0])
@@ -89,6 +90,7 @@ class Task:
 
     def getAnswers(self):
         if self.answers is None:
+            self.answers = {}
             ids=self.lepDB.getAnswerIDfromTaskIDDB(self.id) #GET ALL THE ANSWER IDS FROME THE DATABASE
             for i in ids:
                 self.__loadAnswer(i[0])
