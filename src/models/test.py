@@ -63,13 +63,16 @@ class Test:
 
     def getTask(self, taskId):
         if self.tasks is None:
+            self.tasks = {}
             ids=[taskId] #GET ALL THE TASK IDS FROME THE DATABASE
+            
             for i in ids:
                 self.__loadTask(i)
         return self.tasks[taskId]
 
     def getTasks(self):
         if self.tasks is None:
+            self.tasks = {}
             ids=self.lepDB.getTaskIDFromTestIDDB(self.id) #GET ALL THE TASK IDS FROME THE DATABASE
             for i in ids:
                 self.__loadTask(i[0])

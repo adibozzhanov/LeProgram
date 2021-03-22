@@ -17,5 +17,5 @@ class Home(Ui_mainFrame):
 
     def addTestWidget(self,test = None):
         newFrame = QtWidgets.QFrame()
-        self.testsAreaContents.addWidget(newFrame)
+        self.testsAreaContents.insertWidget(0,newFrame)
         self.testButtons.append(TestButton(newFrame, self.view, test))
