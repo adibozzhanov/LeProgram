@@ -36,7 +36,10 @@ class View(Ui_MainWindow):
     def registerRequestHandler(self, handler):
         # called by controller
         # assigns request handler controller method to "self.request"
-        self.request = handler        
+        self.request = handler
+
+    def loadRandomTest(self, taskGenerator):
+        pass
 
 
         
