@@ -161,7 +161,7 @@ class Database:
         lepDBCursor.execute("""SELECT answerID FROM Answers
                                WHERE TaskID = ?""", (taskID,))
 
-        listOfAnswerID = lepDB.fetchall()
+        listOfAnswerID = lepDBCursor.fetchall()
 
         lepDB.commit()
         lepDB.close()
@@ -186,7 +186,7 @@ class Database:
                                VALUES(?, ?)""", ("", "",))
 
         lepDBCursor.execute("SELECT max(TestID) FROM Test")
-        lastTestID = lepDBCursor.fetchone[0]
+        lastTestID = lepDBCursor.fetchone()[0]
 
         lepDB.commit()
         lepDB.close()
@@ -234,7 +234,7 @@ class Database:
         lepDBCursor.execute("""SELECT TaskID FROM Task
                                WHERE TestID = ?""", (testID,))
 
-        listOfTaskID = lepDB.fetchall()
+        listOfTaskID = lepDBCursor.fetchall()
 
         lepDB.commit()
         lepDB.close()
@@ -249,7 +249,7 @@ class Database:
                                VALUES(?)""", ("",))
 
         lepDBCursor.execute("SELECT max(LibraryID) FROM Library")
-        lastLibraryID = lepDBCursor.fetchone[0]
+        lastLibraryID = lepDBCursor.fetchone()[0]
 
         lepDB.commit()
         lepDB.close()
@@ -322,7 +322,7 @@ class Database:
                                VALUES(?,?)""", (libraryID, "",))
 
         lepDBCursor.execute("SELECT max(UserID) FROM Users")
-        lastUserID = lepDBCursor.fetchone[0]
+        lastUserID = lepDBCursor.fetchone()[0]
 
         lepDB.commit()
         lepDB.close()
