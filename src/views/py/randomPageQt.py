@@ -65,9 +65,9 @@ class Ui_randomQuestionFrame(object):
         self.horizontalLayout_2.setObjectName("horizontalLayout_2")
         spacerItem1 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
         self.horizontalLayout_2.addItem(spacerItem1)
-        self.pushButton = QtWidgets.QPushButton(self.frame)
-        self.pushButton.setObjectName("pushButton")
-        self.horizontalLayout_2.addWidget(self.pushButton)
+        self.startButton = QtWidgets.QPushButton(self.frame)
+        self.startButton.setObjectName("startButton")
+        self.horizontalLayout_2.addWidget(self.startButton)
         spacerItem2 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
         self.horizontalLayout_2.addItem(spacerItem2)
         self.gridLayout.addWidget(self.frame, 1, 0, 1, 1)
@@ -92,7 +92,7 @@ class Ui_randomQuestionFrame(object):
         self.radioButton_4.setText(_translate("randomQuestionFrame", "4"))
         self.radioButton.setText(_translate("randomQuestionFrame", "5"))
         self.radioButton_2.setText(_translate("randomQuestionFrame", "6"))
-        self.pushButton.setText(_translate("randomQuestionFrame", "Start"))
+        self.startButton.setText(_translate("randomQuestionFrame", "Start"))
 
 
 if __name__ == "__main__":
