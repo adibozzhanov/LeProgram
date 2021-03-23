@@ -9,11 +9,25 @@ class AskLepWidget(Ui_askLepWidgetFrame):
         self.view = view
         self.expression = expression
         self.setupUi(master)
-        self.setExpression(self.expression)
+        self.setExpressionInfo(self.expression)
 
-    def setExpression(self, expression):
+    def setExpressionInfo(self, expression):
         if expression is not None:
+            # Set Expression
             self.logicalExpressionLabel.setText(expression.getString())
             self.logicalExpressionLabel.adjustSize()
+
+            # Set DNF
+            self.dnfFormTitleLabel.setText(expression.getDNF())
+            self.dnfFormTitleLabel.adjustSize()
+
+            # Set Satisfiability
+            self.satisfiabilityLabel.setText(expression.getSatisfiable())
+            self.satisfiabilityLabel.adjustSize()
+
+            # Set Validity
+            self.validityLabel.setText(expression.getValid())
+            self.validityLabel.adjustSize()
+
 
 
