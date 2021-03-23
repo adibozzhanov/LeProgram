@@ -38,6 +38,11 @@ class View(Ui_MainWindow):
         # assigns request handler controller method to "self.request"
         self.request = handler
 
+<<<<<<< HEAD
+=======
+    def loadRandomTest(self, taskGenerator):
+        pass
+>>>>>>> 718e3c5baed687603a0dce6877d8e1dd8bf2e0c1
 
 
     def loadHome(self, library):
