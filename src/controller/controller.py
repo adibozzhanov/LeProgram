@@ -6,9 +6,6 @@ from models.lexerParser import getExpressionTree
 from models.randomTaskGenerator import TaskGenerator
 
 
-DEFAULT_LIBRARY_ID = 1
-DEFAULT_USER_ID = 1
-
 
 
 class Controller:
@@ -33,7 +30,7 @@ class Controller:
             "randomQuestions": self.view.loadRandomQs,
             "newTest" : self.view.loadNewTest,
             "testPreview": self.view.loadTestPreview,
-            #"loadAskLep": self.loadAskLep,
+            "loadAskLep": self.loadAskLep,
             #"startRandomTest": self.loadRandomTaskGenerator
         }
 
@@ -41,10 +38,9 @@ class Controller:
     def run(self):
         self.view.run()
 
-    # def processTestPreview(self):
-    #     # get the test from the database
-    #     # load the test view
-    #     pass
+
+    
+
 
     def loadMainPage(self, *args):
         # get main library

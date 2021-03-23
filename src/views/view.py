@@ -63,8 +63,7 @@ class View(Ui_MainWindow):
 
     def loadTestPreview(self, test = None):
         self.cleanMain()
-        print("load test preview", test)
-        self.currentDisplay = TestPreview(self.masterFrame, None)
+        self.currentDisplay = TestPreview(self.masterFrame,self, test)
 
     def loadNotFound(self):
         self.cleanMain()
@@ -72,3 +71,6 @@ class View(Ui_MainWindow):
 
     def loadUser(self):
         self.cleanMain()
+
+    def updateAskLep(self,):
+        self.currentDisplay.updateAskLep()

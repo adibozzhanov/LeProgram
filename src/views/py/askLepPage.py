@@ -7,11 +7,22 @@ class AskLepPage(Ui_askLepPage):
     def __init__(self, master, view):
         self.view = view
         self.setupUi(master)
-        self.addAskLepWidget()
         self.connectedActions()
-
+        self.tmpFrame = None
     def connectedActions(self):
-        self.searchButton.clicked.connect(lambda: self.view.request("loadAskLep",self.expressionInput.toPlainText()))
+        self.searchButton.clicked.connect(self.requestExpression)
 
-    def addAskLepWidget(self, expression = None):
-        AskLepWidget(self.askLepWidgetFrame, self.view, None)
+    def requestExpression(self):
+        print(self.expressionInput.toPlainText())
+
+    def updateAskLep(self, expression = None):
+        self.deleteAskLep()
+        self.tmpFrame = QtWidgets.QFrame()
+        self.askLepLayout.addWidget(self.tmpFrame)
+        AskLepWidget(self.askLepWidgetFrame, self.view, expression)
+
+    def deleteAskLep(self):
+        if self.tmpFrame != None:
+            self.askLepLayout.removeWidget(self.tmpFrame)
+            self.tmpFrame.deleteLater()
+        
