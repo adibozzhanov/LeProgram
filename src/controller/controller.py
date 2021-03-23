@@ -31,9 +31,9 @@ class Controller:
             "askLep": self.view.loadLep,
             #"user": self.view.loadUser,
             "randomQuestions": self.view.loadRandomQs,
-            #"newTest" : self.view.loadNewTest,
+            "newTest" : self.view.loadNewTest,
             "testPreview": self.processTestPreview,
-            #"loadAskLep": self.loadAskLep
+            "loadAskLep": self.loadAskLep
         }
 
 
