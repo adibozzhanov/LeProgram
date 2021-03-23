@@ -49,7 +49,7 @@ class Ui_askLepPage(object):
         self.howToScrollArea.setWidgetResizable(True)
         self.howToScrollArea.setObjectName("howToScrollArea")
         self.scrollAreaWidgetContents_3 = QtWidgets.QWidget()
-        self.scrollAreaWidgetContents_3.setGeometry(QtCore.QRect(0, 0, 776, 549))
+        self.scrollAreaWidgetContents_3.setGeometry(QtCore.QRect(0, 0, 404, 41))
         self.scrollAreaWidgetContents_3.setObjectName("scrollAreaWidgetContents_3")
         self.horizontalLayout_2 = QtWidgets.QHBoxLayout(self.scrollAreaWidgetContents_3)
         self.horizontalLayout_2.setObjectName("horizontalLayout_2")
@@ -133,11 +133,11 @@ class Ui_askLepPage(object):
         self.expressionInput.setMaximumSize(QtCore.QSize(16777215, 100))
         self.expressionInput.setObjectName("expressionInput")
         self.horizontalLayout_5.addWidget(self.expressionInput)
-        self.pushButton = QtWidgets.QPushButton(self.frame)
-        self.pushButton.setMinimumSize(QtCore.QSize(60, 0))
-        self.pushButton.setMaximumSize(QtCore.QSize(60, 16777215))
-        self.pushButton.setObjectName("pushButton")
-        self.horizontalLayout_5.addWidget(self.pushButton)
+        self.searchButton = QtWidgets.QPushButton(self.frame)
+        self.searchButton.setMinimumSize(QtCore.QSize(60, 0))
+        self.searchButton.setMaximumSize(QtCore.QSize(60, 16777215))
+        self.searchButton.setObjectName("searchButton")
+        self.horizontalLayout_5.addWidget(self.searchButton)
         self.gridLayout.addWidget(self.frame, 1, 1, 1, 1)
 
         self.retranslateUi(askLepPage)
@@ -187,7 +187,7 @@ class Ui_askLepPage(object):
         self.askLepTabWidget.setTabText(self.askLepTabWidget.indexOf(self.cheatSheetTab), _translate("askLepPage", "Cheat Sheet"))
         self.askLepTabWidget.setTabText(self.askLepTabWidget.indexOf(self.myNotesTab), _translate("askLepPage", "My Nptes"))
         self.EnterExpressionLabel.setText(_translate("askLepPage", "Enter the Expression"))
-        self.pushButton.setText(_translate("askLepPage", "search"))
+        self.searchButton.setText(_translate("askLepPage", "search"))
 
 
 if __name__ == "__main__":

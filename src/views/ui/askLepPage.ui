@@ -101,8 +101,8 @@
            <rect>
             <x>0</x>
             <y>0</y>
-            <width>776</width>
-            <height>549</height>
+            <width>404</width>
+            <height>41</height>
            </rect>
           </property>
           <layout class="QHBoxLayout" name="horizontalLayout_2">
@@ -309,7 +309,7 @@ Quantifier negation laws
        </widget>
       </item>
       <item>
-       <widget class="QPushButton" name="pushButton">
+       <widget class="QPushButton" name="searchButton">
         <property name="minimumSize">
          <size>
           <width>60</width>
