@@ -1,6 +1,9 @@
 import sys
 from views.view import View
 from models.model import Model
+from models.expression import Expression
+from models.lexerParser import getExpressionTree
+
 
 DEFAULT_LIBRARY_ID = 1
 DEFAULT_USER_ID = 1
@@ -12,7 +15,7 @@ class Controller:
         self.model = Model()
         self.mainLibrary = self.model.getMainLibrary()
 
-        
+
         self.view = View()
         self.loadMainPage(self.mainLibrary)
         self.view.registerRequestHandler(self.handleRequest)
@@ -29,9 +32,10 @@ class Controller:
             "randomQuestions": self.view.loadRandomQs,
             #"newTest" : self.view.loadNewTest,
             "testPreview": self.processTestPreview,
+            "loadAskLep": self.loadAskLep
         }
-        
-        
+
+
     def run(self):
         self.view.run()
 
@@ -50,10 +54,16 @@ class Controller:
         complexity = args[0]
         # generateQuestion(complexity)
         # view.loadTask()
-        
-        
-        
-        
+
+    def loadAskLep(self, *args):
+        # takes [inputString]
+        # return an expression instance
+        inputString = args[0]
+        view.updateAskLep(Expression(getExpressionTree(inputString)))
+
+
+
+
 
     def handleRequest(self, request, *args):
         # args - view can pass parameters to a controller
@@ -64,4 +74,3 @@ class Controller:
         else:
             print(f"Error: request [{request}] not found, Loading not found screen")
             self.requests["notFound"]()
-        
