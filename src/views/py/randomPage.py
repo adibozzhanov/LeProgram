@@ -24,7 +24,7 @@ class RandomPage(Ui_randomQuestionFrame):
         pass
 
     def getComplexity(self):
-        pass
+        pass 
 
         
 
