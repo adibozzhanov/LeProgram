@@ -19,7 +19,15 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="71891026-2f3b-42d7-addd-2059c62dd774" name="Default Changelist" comment="" />
+    <list default="true" id="6d41d22a-78cf-4399-a64c-73185630425a" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../../../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/taskMaking.py" beforeDir="false" afterPath="$PROJECT_DIR$/taskMaking.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/taskMakingQt.py" beforeDir="false" afterPath="$PROJECT_DIR$/taskMakingQt.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testMaking.py" beforeDir="false" afterPath="$PROJECT_DIR$/testMaking.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testMakingQt.py" beforeDir="false" afterPath="$PROJECT_DIR$/testMakingQt.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ui/taskMaking.ui" beforeDir="false" afterPath="$PROJECT_DIR$/../ui/taskMaking.ui" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../view.py" beforeDir="false" afterPath="$PROJECT_DIR$/../view.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -33,10 +41,11 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
   </component>
   <component name="JupyterTrust" id="35b9f187-88e7-447b-8e33-3ef22285a599" />
-  <component name="ProjectId" id="1pl8fuiiBeRtkCXrlTI5Q8xTF7A" />
+  <component name="ProjectId" id="1pxpgzSPfHnioxXfn3MT3IoVl8j" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -44,7 +53,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../.." />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -55,14 +64,15 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="71891026-2f3b-42d7-addd-2059c62dd774" name="Default Changelist" comment="" />
-      <created>1615746422573</created>
+      <changelist id="6d41d22a-78cf-4399-a64c-73185630425a" name="Default Changelist" comment="" />
+      <created>1616134713306</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1615746422573</updated>
-      <workItem from="1615746423650" duration="1546000" />
-      <workItem from="1615843002179" duration="4000" />
-      <workItem from="1616139589767" duration="3540000" />
+      <updated>1616134713306</updated>
+      <workItem from="1616134715474" duration="177000" />
+      <workItem from="1616137776198" duration="1190000" />
+      <workItem from="1616424037917" duration="617000" />
+      <workItem from="1616513561152" duration="2688000" />
     </task>
     <servers />
   </component>
@@ -79,5 +89,22 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="596" y="236" key="FileChooserDialogImpl" timestamp="1616139586427">
+      <screen x="0" y="0" width="1500" height="960" />
+    </state>
+    <state x="596" y="236" key="FileChooserDialogImpl/0.0.1500.960@0.0.1500.960" timestamp="1616139586427" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/randomPage.py</url>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

@@ -10,11 +10,8 @@ class AskLepPage(Ui_askLepPage):
         self.addAskLepWidget()
         self.connectedActions()
 
-
     def connectedActions(self):
         self.searchButton.clicked.connect(lambda: self.view.request("loadAskLep",self.expressionInput.toPlainText()))
-
-
 
     def addAskLepWidget(self, expression = None):
         AskLepWidget(self.askLepWidgetFrame, self.view, None)
