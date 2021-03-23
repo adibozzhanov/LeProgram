@@ -39,13 +39,6 @@ class View(Ui_MainWindow):
         # assigns request handler controller method to "self.request"
         self.request = handler
 
-<<<<<<< HEAD
-    def loadRandomTest(self, taskGenerator):
-        pass
-
-
-=======
->>>>>>> 29dee1f685e1f2341925daee79fe1704e83cef55
     def loadHome(self, library):
         self.cleanMain()
         self.currentDisplay = Home(self.masterFrame, self, library)
