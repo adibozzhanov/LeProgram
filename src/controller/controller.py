@@ -3,6 +3,7 @@ from views.view import View
 from models.model import Model
 from models.expression import Expression
 from models.lexerParser import getExpressionTree
+from models.randomTaskGenerator import TaskGenerator
 
 
 DEFAULT_LIBRARY_ID = 1
@@ -32,7 +33,7 @@ class Controller:
             "randomQuestions": self.view.loadRandomQs,
             #"newTest" : self.view.loadNewTest,
             "testPreview": self.processTestPreview,
-            "loadAskLep": self.loadAskLep
+            #"loadAskLep": self.loadAskLep
         }
 
 
@@ -46,11 +47,10 @@ class Controller:
 
     def loadMainPage(self, *args):
         # get main library
-
         # pass it to loadHome method
         self.view.loadHome(self.mainLibrary)
 
-    def loadRandomTest(self, *args):
+    def loadRandomTest(self, *args): # I DID NOT LIKE THE MISLEADING NAME hah
         complexity = args[0]
         # generateQuestion(complexity)
         # view.loadTask()
@@ -59,11 +59,13 @@ class Controller:
         # takes [inputString]
         # return an expression instance
         inputString = args[0]
-        view.updateAskLep(Expression(getExpressionTree(inputString)))
+        self.view.updateAskLep(Expression(getExpressionTree(inputString)))
 
-
-
-
+    def loadRandomTaskGenerator(self, *args):
+        # takes [complexity]
+        # initializes and returns a generator where you can then get tasks from
+        complexity = args[0]
+        self.view.loadRandomTest(TaskGenerator(complexity))
 
     def handleRequest(self, request, *args):
         # args - view can pass parameters to a controller
