@@ -64,15 +64,14 @@ class View(Ui_MainWindow):
 
     def loadTestPreview(self, test = None):
         self.cleanMain()
-<<<<<<< HEAD
         self.currentDisplay = TestPreview(self.masterFrame,self, test)
-=======
-        self.currentDisplay = TestPreview(self.masterFrame, test)
+
+
 
     def loadTestTaking(self, test, taskId = None):
         self.cleanMain()
-        self.currentDisplay = TestTaking(self.masterFrame, self, test, taskId)
->>>>>>> 8095413211d00073c1dccece4e272eee15a36625
+        self.currentDisplay = TestTaking(self.masterFrame, self, test)
+
 
     def loadNotFound(self):
         self.cleanMain()
@@ -81,5 +80,5 @@ class View(Ui_MainWindow):
     def loadUser(self):
         self.cleanMain()
 
-    def updateAskLep(self,):
-        self.currentDisplay.updateAskLep()
+    def updateAskLep(self,expression):
+        self.currentDisplay.updateAskLep(expression)

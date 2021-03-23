@@ -13,13 +13,14 @@ class AskLepPage(Ui_askLepPage):
         self.searchButton.clicked.connect(self.requestExpression)
 
     def requestExpression(self):
-        self.expressionInput.toPlainText()
+        s = self.expressionInput.toPlainText()
+        self.view.request("loadAskLep", s)
 
     def updateAskLep(self, expression = None):
         self.deleteAskLep()
         self.tmpFrame = QtWidgets.QFrame()
         self.askLepLayout.addWidget(self.tmpFrame)
-        AskLepWidget(self.askLepWidgetFrame, self.view, expression)
+        AskLepWidget(self.tmpFrame, self.view, expression)
 
     def deleteAskLep(self):
         if self.tmpFrame != None:

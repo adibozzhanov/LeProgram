@@ -12,12 +12,9 @@ class Controller:
     def __init__(self):
         self.model = Model()
         self.mainLibrary = self.model.getMainLibrary()
-
-
         self.view = View()
         self.loadMainPage(self.mainLibrary)
         self.view.registerRequestHandler(self.handleRequest)
-
         # request handlers in a dictionary
         # view will send requests to a controller
         # controller will do some magic and tell the view what to do
@@ -30,13 +27,9 @@ class Controller:
             "randomQuestions": self.view.loadRandomQs,
             "newTest" : self.view.loadNewTest,
             "testPreview": self.view.loadTestPreview,
-<<<<<<< HEAD
             "loadAskLep": self.loadAskLep,
-=======
             "startTest": self.view.loadTestTaking
-            #"loadAskLep": self.loadAskLep,
->>>>>>> 8095413211d00073c1dccece4e272eee15a36625
-            #"startRandomTest": self.loadRandomTaskGenerator
+            
         }
 
 
@@ -44,7 +37,8 @@ class Controller:
         self.view.run()
 
 
-    
+    def startTest(self, test):
+        self.view.loadTestTaking(test)
 
 
     def loadMainPage(self, *args):

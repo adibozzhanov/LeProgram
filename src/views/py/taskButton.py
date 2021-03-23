@@ -5,7 +5,6 @@ import random
 class TaskButton(Ui_taskFrame):
 
     def __init__(self, master, view, task):
-        stubNames = ["aloha", "woaah", "nice", "this is a task", "what is a task"]
         self.task = task
         self.setupUi(master)
         

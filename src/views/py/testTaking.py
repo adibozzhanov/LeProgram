@@ -10,6 +10,7 @@ class TestTaking(Ui_testTakingFrame):
     def __init__(self, master, view, test, taskId = None):
         self.view = view
         self.test = test
+        self.tmpFrame = None
         self.setupUi(master)
         self.testNameLabel.setText(test.getName())
         self.test.resetTest()
@@ -31,8 +32,18 @@ class TestTaking(Ui_testTakingFrame):
         self.progressBar.setProperty("value", progression[0]/progression[1])
         # use task properties and "taskFrame" class to load a new instance of a task on the screen
         # clear the screen before loading new task
-        TaskFrame(self.taskFrame, self.view, task)
+        self.clearTask()
+        self.tmpFrame = QtWidgets.QFrame()
+        self.taskLayout.addWidget(self.tmpFrame)
+        TaskFrame(self.tmpFrame, self.view, task)
 
-        self.taskFrame = TaskFrame(self, self.view, task)
+    def clearTask(self):
+        if self.tmpFrame is not None:
+            self.taskLayout.removeWidget(self.tmpFrame)
+            self.tmpFrame.deleteLater()
+        
 
-    def loadNextTask(self):pass
+    def loadNextTask(self):
+        pass
+
+    

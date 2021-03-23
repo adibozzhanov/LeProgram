@@ -7,7 +7,6 @@ class AnswerFrame(Ui_answerFrame):
     def __init__(self, master, view, answer):
         self.view = view
         self.setupUi(master)
-
-        # change some text depending on the answer instance
-
+        self.answerButton.setText(answer.getExpression().getString())
+        
     

@@ -81,7 +81,7 @@ class Test:
             self.tasks = {}
             ids=self.lepDB.getTaskIDFromTestIDDB(self.id) #GET ALL THE TASK IDS FROME THE DATABASE
             for i in ids:
-                print("getTasks, ",i)
+                #print("getTasks, ",i)
                 self.__loadTask(i[0])
         return self.tasks
 
