@@ -10,7 +10,6 @@ DEFAULT_USER_ID = 1
 class Controller:
     def __init__(self):
         self.model = Model()
-
         self.mainLibrary = self.model.getMainLibrary()
 
         
@@ -46,6 +45,12 @@ class Controller:
 
         # pass it to loadHome method
         self.view.loadHome(self.mainLibrary)
+
+    def loadRandomTest(self, *args):
+        complexity = args[0]
+        # generateQuestion(complexity)
+        # view.loadTask()
+        
         
         
         
@@ -59,42 +64,4 @@ class Controller:
         else:
             print(f"Error: request [{request}] not found, Loading not found screen")
             self.requests["notFound"]()
-        
-
-
-
-    def nameIsValid(self, name):
-        # name: string
-        # returns: boolean
-
-        pass
-
-    
-    def validateExpression(self, expr):
-        # expr: string of the expression
-        # returns:   incorrect -> False
-        #              correct -> [AST]
-
-        pass
-
-    def createLibrary(self, fields):
-        # checks if the name of the library is valid and then
-        
-        pass
-
-    def createTask(self, fields):
-        # 
-        pass
-
-
-    # controller - Model communication
-
-    def getLibrary(self):
-
-        pass
-
-
-    def getTask(self,id):
-
-        pass
         
