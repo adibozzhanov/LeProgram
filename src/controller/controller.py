@@ -32,7 +32,7 @@ class Controller:
             "randomQuestions": self.view.loadRandomQs,
             #"newTest" : self.view.loadNewTest,
             "testPreview": self.processTestPreview,
-            "loadAskLep": self.loadAskLep
+            #"loadAskLep": self.loadAskLep
         }
 
 
