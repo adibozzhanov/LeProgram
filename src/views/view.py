@@ -9,7 +9,7 @@ from views.py.testMaking import TestMakingPage
 from views.py.notFound import NotFound
 
 class View(Ui_MainWindow):
-    
+
     def __init__(self):
         self.request = None
         self.currentDisplay = None
@@ -18,7 +18,7 @@ class View(Ui_MainWindow):
         self.MainWindow = QtWidgets.QMainWindow()
         self.setupUi(self.MainWindow)
         self.connectActions()
-    
+
 
     def run(self):
         self.MainWindow.show()
@@ -30,16 +30,16 @@ class View(Ui_MainWindow):
         self.userButton.clicked.connect(lambda: self.request("user"))
         self.randomQsButton.clicked.connect(lambda: self.request("randomQuestions"))
         self.newTestButton.clicked.connect(lambda:self.request("newTest"))
-        
 
-        
+
+
     def registerRequestHandler(self, handler):
         # called by controller
         # assigns request handler controller method to "self.request"
-        self.request = handler        
+        self.request = handler
 
 
-        
+
     def loadHome(self, library):
         self.cleanMain()
         self.currentDisplay = Home(self.masterFrame, self, library)
@@ -54,7 +54,7 @@ class View(Ui_MainWindow):
             self.masterFrame.deleteLater()
         self.masterFrame = QtWidgets.QFrame()
         self.mainFrameLayout.addWidget(self.masterFrame)
-            
+
     def loadLep(self):
         self.cleanMain()
         self.currentDisplay = AskLepPage(self.masterFrame, self)
@@ -65,6 +65,7 @@ class View(Ui_MainWindow):
 
     def loadTestPreview(self, test = None):
         self.cleanMain()
+        print("load test preview", test)
         self.currentDisplay = TestPreview(self.masterFrame, None)
 
     def loadNotFound(self):
@@ -73,4 +74,3 @@ class View(Ui_MainWindow):
 
     def loadUser(self):
         self.cleanMain()
-

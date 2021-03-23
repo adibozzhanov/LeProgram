@@ -32,7 +32,7 @@ class Controller:
             #"user": self.view.loadUser,
             "randomQuestions": self.view.loadRandomQs,
             "newTest" : self.view.loadNewTest,
-            "testPreview": self.processTestPreview,
+            "testPreview": self.view.loadTestPreview,
             #"loadAskLep": self.loadAskLep,
             #"startRandomTest": self.loadRandomTaskGenerator
         }
@@ -41,10 +41,10 @@ class Controller:
     def run(self):
         self.view.run()
 
-    def processTestPreview(self):
-        # get the test from the database
-        # load the test view
-        pass
+    # def processTestPreview(self):
+    #     # get the test from the database
+    #     # load the test view
+    #     pass
 
     def loadMainPage(self, *args):
         # get main library
