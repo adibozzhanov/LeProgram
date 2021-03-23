@@ -23,7 +23,7 @@ class Ui_testTakingFrame(object):
         self.testNameLabel.setObjectName("testNameLabel")
         self.verticalLayout.addWidget(self.testNameLabel)
         self.progressBar = QtWidgets.QProgressBar(testTakingFrame)
-        self.progressBar.setProperty("value", 24)
+        self.progressBar.setProperty("value", 0)
         self.progressBar.setObjectName("progressBar")
         self.verticalLayout.addWidget(self.progressBar)
         self.taskFrame = QtWidgets.QFrame(testTakingFrame)

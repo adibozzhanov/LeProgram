@@ -33,6 +33,7 @@ class Controller:
             "randomQuestions": self.view.loadRandomQs,
             "newTest" : self.view.loadNewTest,
             "testPreview": self.view.loadTestPreview,
+            "startTest": self.view.loadTestTaking
             #"loadAskLep": self.loadAskLep,
             #"startRandomTest": self.loadRandomTaskGenerator
         }

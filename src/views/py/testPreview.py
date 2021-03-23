@@ -16,13 +16,11 @@ class TestPreview(Ui_testPreviewFrame):
         TaskButton(newFrame, task)
 
     def initTasks(self):
-        if self.test != None:
-            for task in self.test.getTasks():
+        if self.test is not None:
+            tasks = self.test.getTasks()
+            print(tasks)
+            for _,task in tasks.items():
                 self.addTaskWidget(task)
         else:
             for i in range(20):
                 self.addTaskWidget(None)
-                
-                
-            
-    

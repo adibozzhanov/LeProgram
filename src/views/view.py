@@ -3,6 +3,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 from views.py.mainQt import Ui_MainWindow
 from views.py.home import Home
 from views.py.testPreview import TestPreview
+from views.py.testTaking import TestTaking
 from views.py.randomPage import RandomPage
 from views.py.askLepPage import AskLepPage
 from views.py.testMaking import TestMakingPage
@@ -38,11 +39,8 @@ class View(Ui_MainWindow):
         # assigns request handler controller method to "self.request"
         self.request = handler
 
-<<<<<<< HEAD
-=======
     def loadRandomTest(self, taskGenerator):
         pass
->>>>>>> 718e3c5baed687603a0dce6877d8e1dd8bf2e0c1
 
 
     def loadHome(self, library):
@@ -70,8 +68,11 @@ class View(Ui_MainWindow):
 
     def loadTestPreview(self, test = None):
         self.cleanMain()
-        print("load test preview", test)
-        self.currentDisplay = TestPreview(self.masterFrame, None)
+        self.currentDisplay = TestPreview(self.masterFrame, test)
+
+    def loadTestTaking(self, test, taskId = None):
+        self.cleanMain()
+        self.currentDisplay = TestTaking(self.masterFrame, self, test, taskId)
 
     def loadNotFound(self):
         self.cleanMain()

@@ -61,11 +61,17 @@ class Test:
     def getDescription(self):
         return self.description
 
+    def getTaskIds(self):
+        print(self.getTasks())
+        if (self.getTasks() is None):
+            return []
+        return list(self.getTasks().keys())
+
     def getTask(self, taskId):
         if self.tasks is None:
             self.tasks = {}
-            ids=[taskId] #GET ALL THE TASK IDS FROME THE DATABASE
-            
+            ids=self.lepDB.getTaskIDFromTestIDDB(self.id) #GET ALL THE TASK IDS FROME THE DATABASE
+
             for i in ids:
                 self.__loadTask(i)
         return self.tasks[taskId]
@@ -75,6 +81,7 @@ class Test:
             self.tasks = {}
             ids=self.lepDB.getTaskIDFromTestIDDB(self.id) #GET ALL THE TASK IDS FROME THE DATABASE
             for i in ids:
+                print("getTasks, ",i)
                 self.__loadTask(i[0])
         return self.tasks
 
@@ -83,7 +90,7 @@ class Test:
         self.tasks[t.getTaskId()] = t
 
     def resetTest(self):
-        for id, task in self.tasks.items():
+        for id, task in self.getTasks().items():
             task.removeAnswerGiven()
         self.tasksAnswered=0
         self.correctAnswers=0
@@ -96,7 +103,7 @@ class Test:
             self.correctAnswers+=1
 
     def getProgression(self):
-        return [self.tasksAnswered,len(self.tasks)]
+        return [self.tasksAnswered,len(self.getTasks())]
 
     def getScore(self):
-        return [self.correctAnswers,len(self.tasks)]
+        return [self.correctAnswers,len(self.getTasks())]
