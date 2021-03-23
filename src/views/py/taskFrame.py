@@ -13,19 +13,10 @@ class TaskFrame(Ui_taskFrame):
         answers = task.getAnswers()
         self.taskStatementLabel.setText(task.getStatement())
         #self.expressionLabel.setText()
-        for answerId in answers:
-            self.addAnswer(answers[answerId])
-            
-            
-        
+        for Id,answer in answers.items():
+            self.addAnswer(answer)
 
     def addAnswer(self, answer):
         newFrame = QtWidgets.QFrame()
         self.answersFrame.addWidget(newFrame)
         AnswerFrame(newFrame, self.view, answer)
-        
-        
-        
-
-
-    

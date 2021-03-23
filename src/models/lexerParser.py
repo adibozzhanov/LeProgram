@@ -1,5 +1,5 @@
 from sly import Lexer, Parser
-import models.stringSettings
+from models.stringSettings import *
 
 def pprint_tree(node, file=None, _prefix="", _last=True):
     print(_prefix, "`- " if _last else "|- ", node.data, sep="", file=file)
@@ -172,7 +172,7 @@ class BasicParser(Parser):
 
     @_('ex XOR ex')
     def ex(self, p):
-        n = Node(p.XOR, xorStr, lambda b1, b2: b1 != b2)
+        n = Node(p.XOR, xorSym, lambda b1, b2: b1 != b2)
         n.addChild(p.ex0)
         n.addChild(p.ex1)
         n.updateVariables()
@@ -180,7 +180,7 @@ class BasicParser(Parser):
 
     @_('ex IFF ex')
     def ex(self, p):
-        n = Node(p.IFF, iffStr, lambda b1, b2: b1 == b2)
+        n = Node(p.IFF, iffSym, lambda b1, b2: b1 == b2)
         n.addChild(p.ex0)
         n.addChild(p.ex1)
         n.updateVariables()
@@ -188,7 +188,7 @@ class BasicParser(Parser):
 
     @_('ex IMP ex')
     def ex(self, p):
-        n = Node(p.IMP, impStr, lambda b1, b2: (not b1) or b2)
+        n = Node(p.IMP, impSym, lambda b1, b2: (not b1) or b2)
         n.addChild(p.ex0)
         n.addChild(p.ex1)
         n.updateVariables()
@@ -199,7 +199,7 @@ def getExpressionTree(inputString):
     parser = BasicParser()
     try:
         tree = parser.parse(lexer.tokenize(inputString))
-        pprint_tree(tree)
+        #pprint_tree(tree)
     except:
         print("Parsing failed, btw how we doing errors:)")
         tree = None

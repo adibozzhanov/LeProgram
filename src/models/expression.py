@@ -1,6 +1,6 @@
 import sys
 from models.lexerParser import Node
-import models.stringSettings
+from models.stringSettings import *
 
 # NOT = "/NOT"
 # AND = "/AND"
@@ -17,9 +17,14 @@ import models.stringSettings
 class Expression(object): #can later add the function right to the node
     def __init__(self, exTree):
         self.exTree = exTree
-        self.str = exTree.getString()
-        self.displayStr = exTree.getDisplayString()
-        self.variableValues = dict.fromkeys(exTree.getVariables(), None)
+        if exTree is not None:
+            self.str = exTree.getString()
+            self.displayStr = exTree.getDisplayString()
+            self.variableValues = dict.fromkeys(exTree.getVariables(), None)
+        else:
+            self.str = None
+            self.displayStr = None
+            self.variableValues = None
         self.truthTable = None
         self.simpleTable = None
         self.tableFinalColumn = None
@@ -58,8 +63,9 @@ class Expression(object): #can later add the function right to the node
         return self.valid
 
     def __generateAll(self):
-        self.__generateTable()
-        self.__generateDNF()
+        if self.exTree is not None:
+            self.__generateTable()
+            self.__generateDNF()
 
     def __generateTable(self): #edge case str len =1 v 0
         var = sorted(self.variableValues)

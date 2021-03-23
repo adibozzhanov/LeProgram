@@ -7,7 +7,7 @@ from views.py.taskFrame import TaskFrame
 
 class TestTaking(Ui_testTakingFrame):
 
-    def __init__(self, master, view, test, taskId = None):
+    def __init__(self, master, view, test, task = None):
         self.view = view
         self.test = test
         self.tmpFrame = None
@@ -16,15 +16,14 @@ class TestTaking(Ui_testTakingFrame):
         self.test.resetTest()
         self.taskIds = self.test.getTaskIds()
         self.currentTaskIndex = None
-        if taskId is None:#taking the whole test
-            print(self.taskIds)
+        if task is None:#taking the whole test
             if len(self.taskIds)>0 :
                 self.currentTaskIndex = 0
                 self.__loadTask(self.test.getTask(self.taskIds[0]))
             else:
                 self.view.request("testPreview",self.test) # test is empty go back
         else: #viewing one task
-            self.__loadTask(self.test.getTask(taskId))
+            self.__loadTask(task)
 
 
     def __loadTask(self, task):
@@ -41,9 +40,13 @@ class TestTaking(Ui_testTakingFrame):
         if self.tmpFrame is not None:
             self.taskLayout.removeWidget(self.tmpFrame)
             self.tmpFrame.deleteLater()
-        
+
 
     def loadNextTask(self):
-        pass
-
-    
+        self.currentTaskIndex += 1
+        if self.currentTaskIndex == None:
+            self.view.request("testPreview",self.test) # only viewing th task: go back to preview
+        elif self.currentTaskIndex >= len(self.taskIds):
+            self.view.request("testResults",self.test) # out of questions
+        else:
+            self.__loadTask(self.test.getTask(self.taskIds[self.currentTaskIndex]))

@@ -14,7 +14,7 @@ class AskLepWidget(Ui_askLepWidgetFrame):
     def setExpressionInfo(self, expression):
         if expression is not None:
             # Set Expression
-            self.logicalExpressionLabel.setText(expression.getString())
+            self.logicalExpressionLabel.setText(expression.getDisplayString())
             self.logicalExpressionLabel.adjustSize()
 
             # Set DNF
@@ -22,12 +22,9 @@ class AskLepWidget(Ui_askLepWidgetFrame):
             self.dnfFormTitleLabel.adjustSize()
 
             # Set Satisfiability
-            self.satisfiabilityLabel.setText(expression.getSatisfiable())
+            self.satisfiabilityLabel.setText(str(expression.getSatisfiable()))
             self.satisfiabilityLabel.adjustSize()
 
             # Set Validity
-            self.validityLabel.setText(expression.getValid())
+            self.validityLabel.setText((expression.getValid()))
             self.validityLabel.adjustSize()
-
-
-

@@ -29,7 +29,6 @@ class Controller:
             "testPreview": self.view.loadTestPreview,
             "loadAskLep": self.loadAskLep,
             "startTest": self.view.loadTestTaking
-            
         }
 
 

@@ -9,7 +9,7 @@ class TestButton(Ui_testButtonFrame):
         self.view = view
         self.test = test
         self.setupUi(master)
-        if self.test != None:
+        if self.test is not None:
             self.testNameLabel.setText(self.test.getName())
             self.connectActions()
 

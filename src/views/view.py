@@ -58,6 +58,7 @@ class View(Ui_MainWindow):
         self.cleanMain()
         self.currentDisplay = AskLepPage(self.masterFrame, self)
 
+
     def loadRandomQs(self):
         self.cleanMain()
         self.currentDisplay = RandomPage(self.masterFrame, self)
@@ -67,10 +68,9 @@ class View(Ui_MainWindow):
         self.currentDisplay = TestPreview(self.masterFrame,self, test)
 
 
-
-    def loadTestTaking(self, test, taskId = None):
+    def loadTestTaking(self, test, task = None):
         self.cleanMain()
-        self.currentDisplay = TestTaking(self.masterFrame, self, test)
+        self.currentDisplay = TestTaking(self.masterFrame, self, test, task)
 
 
     def loadNotFound(self):

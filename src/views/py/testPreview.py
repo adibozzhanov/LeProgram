@@ -17,16 +17,16 @@ class TestPreview(Ui_testPreviewFrame):
     def addTaskWidget(self, task):
         newFrame = QtWidgets.QFrame()
         self.taskAreaLayout.insertWidget(0,newFrame)
-        t = TaskButton(newFrame, self.view, task)
+        t = TaskButton(newFrame, self.view, self.test, task)
         t.setName(f"Question#{self.numTasks - self.taskCount}")
         self.taskCount += 1
 
     def initTasks(self):
-        if self.test != None:
+        if self.test is not None:
             tasks = self.test.getTasks()
             self.numTasks = len(tasks)
-            for taskId in tasks:
-                self.addTaskWidget(tasks[taskId])
+            for id,task in tasks.items():
+                self.addTaskWidget(task)
         else:
             for i in range(20):
                 self.addTaskWidget(None)

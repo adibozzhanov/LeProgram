@@ -9,8 +9,9 @@ class AskLepPage(Ui_askLepPage):
         self.setupUi(master)
         self.connectedActions()
         self.tmpFrame = None
+
     def connectedActions(self):
-        self.searchButton.clicked.connect(self.requestExpression)
+        self.searchButton.clicked.connect(lambda: self.requestExpression())
 
     def requestExpression(self):
         s = self.expressionInput.toPlainText()
@@ -26,4 +27,3 @@ class AskLepPage(Ui_askLepPage):
         if self.tmpFrame != None:
             self.askLepLayout.removeWidget(self.tmpFrame)
             self.tmpFrame.deleteLater()
-        
