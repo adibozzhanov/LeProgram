@@ -5,6 +5,7 @@ from views.py.home import Home
 from views.py.testPreview import TestPreview
 from views.py.randomPage import RandomPage
 from views.py.askLepPage import AskLepPage
+from views.py.testMaking import TestMakingPage
 from views.py.notFound import NotFound
 
 class View(Ui_MainWindow):
@@ -45,6 +46,7 @@ class View(Ui_MainWindow):
 
     def loadNewTest(self):
         self.cleanMain()
+        self.currentDisplay = TestMakingPage(self.masterFrame, self)
 
     def cleanMain(self):
         if self.masterFrame != None:
@@ -60,7 +62,6 @@ class View(Ui_MainWindow):
     def loadRandomQs(self):
         self.cleanMain()
         self.currentDisplay = RandomPage(self.masterFrame, self)
-        
 
     def loadTestPreview(self, test = None):
         self.cleanMain()

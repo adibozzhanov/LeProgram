@@ -19,15 +19,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="71891026-2f3b-42d7-addd-2059c62dd774" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/views/py/askLepWidget.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/py/askLepQt.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/py/askLepWidgetQt.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/py/askLepWidgetQt.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/py/randomPage.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/py/randomPage.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/ui/askLePWidget.ui" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/ui/askLePWidget.ui" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/view.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/view.py" afterDir="false" />
-    </list>
+    <list default="true" id="71891026-2f3b-42d7-addd-2059c62dd774" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -70,7 +62,7 @@
       <updated>1615746422573</updated>
       <workItem from="1615746423650" duration="1546000" />
       <workItem from="1615843002179" duration="4000" />
-      <workItem from="1616139589767" duration="3427000" />
+      <workItem from="1616139589767" duration="3540000" />
     </task>
     <servers />
   </component>
