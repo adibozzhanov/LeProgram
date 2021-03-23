@@ -30,7 +30,12 @@ class Controller:
             "randomQuestions": self.view.loadRandomQs,
             "newTest" : self.view.loadNewTest,
             "testPreview": self.view.loadTestPreview,
+<<<<<<< HEAD
             "loadAskLep": self.loadAskLep,
+=======
+            "startTest": self.view.loadTestTaking
+            #"loadAskLep": self.loadAskLep,
+>>>>>>> 8095413211d00073c1dccece4e272eee15a36625
             #"startRandomTest": self.loadRandomTaskGenerator
         }
 

@@ -13,7 +13,7 @@ class AskLepPage(Ui_askLepPage):
         self.searchButton.clicked.connect(self.requestExpression)
 
     def requestExpression(self):
-        print(self.expressionInput.toPlainText())
+        self.expressionInput.toPlainText()
 
     def updateAskLep(self, expression = None):
         self.deleteAskLep()

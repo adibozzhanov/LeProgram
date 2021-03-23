@@ -12,7 +12,7 @@ class Database:
 
     def addTestDB(self, testObj):
         # testObj will be created before
-        # data can be accessed through getter methods 
+        # data can be accessed through getter methods
         pass
 
     def getTestDB(self, testId):
@@ -33,7 +33,7 @@ class Database:
         lepDB = sqlite3.connect(self.dataBasePath)
         lepDBCursor = lepDB.cursor()
 
-        lepDBCursor.execute("""SELECT * FROM Library 
+        lepDBCursor.execute("""SELECT * FROM Library
                                WHERE LibraryID = ?""", (libraryID,))
         libraryData = databaseCursor.fetchone()
 
@@ -64,7 +64,7 @@ class Database:
         lepDB = sqlite3.connect(self.dataBasePath)
         lepDBCursor = lepDB.cursor()
 
-        lepDBCursor.execute("""SELECT * FROM Answers 
+        lepDBCursor.execute("""SELECT * FROM Answers
                                WHERE AnswersID = ?""", (answerID,))
         answerTuple = lepDBCursor.fetchone()
 
@@ -123,7 +123,7 @@ class Database:
         lepDB = sqlite3.connect(self.dataBasePath)
         lepDBCursor = lepDB.cursor()
 
-        lepDBCursor.execute("""SELECT * FROM Task 
+        lepDBCursor.execute("""SELECT * FROM Task
                                WHERE TaskID = ?""", (taskID,))
         taskTuple = lepDBCursor.fetchone()
 
@@ -158,7 +158,7 @@ class Database:
         lepDB = sqlite3.connect(self.dataBasePath)
         lepDBCursor = lepDB.cursor()
 
-        lepDBCursor.execute("""SELECT answerID FROM Answers
+        lepDBCursor.execute("""SELECT AnswersID FROM Answers
                                WHERE TaskID = ?""", (taskID,))
 
         listOfAnswerID = lepDBCursor.fetchall()
@@ -197,7 +197,7 @@ class Database:
         lepDB = sqlite3.connect(self.dataBasePath)
         lepDBCursor = lepDB.cursor()
 
-        lepDBCursor.execute("""SELECT * FROM Test 
+        lepDBCursor.execute("""SELECT * FROM Test
                                WHERE TestID = ?""", (testID,))
         testTuple = lepDBCursor.fetchone()
 
@@ -260,7 +260,7 @@ class Database:
         lepDB = sqlite3.connect(self.dataBasePath)
         lepDBCursor = lepDB.cursor()
 
-        lepDBCursor.execute("""SELECT * FROM Library 
+        lepDBCursor.execute("""SELECT * FROM Library
                                WHERE LibraryID = ?""", (libraryID,))
         libraryTuple = lepDBCursor.fetchone()
 
@@ -333,7 +333,7 @@ class Database:
         lepDB = sqlite3.connect(self.dataBasePath)
         lepDBCursor = lepDB.cursor()
 
-        lepDBCursor.execute("""SELECT * FROM Users 
+        lepDBCursor.execute("""SELECT * FROM Users
                                WHERE UserID = ?""", (userID,))
         userTuple = lepDBCursor.fetchone()
 
