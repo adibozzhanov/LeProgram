@@ -24,9 +24,9 @@
      </property>
      <layout class="QHBoxLayout" name="horizontalLayout">
       <item>
-       <widget class="QPushButton" name="cancelButton">
+       <widget class="QPushButton" name="deleteButton">
         <property name="text">
-         <string>fuk go back</string>
+         <string>Delete</string>
         </property>
        </widget>
       </item>

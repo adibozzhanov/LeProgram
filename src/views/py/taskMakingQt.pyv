@@ -23,9 +23,9 @@ class Ui_taskMakingFrame(object):
         self.topFrame.setObjectName("topFrame")
         self.horizontalLayout = QtWidgets.QHBoxLayout(self.topFrame)
         self.horizontalLayout.setObjectName("horizontalLayout")
-        self.deleteButton = QtWidgets.QPushButton(self.topFrame)
-        self.deleteButton.setObjectName("deleteButton")
-        self.horizontalLayout.addWidget(self.deleteButton)
+        self.cancelButton = QtWidgets.QPushButton(self.topFrame)
+        self.cancelButton.setObjectName("cancelButton")
+        self.horizontalLayout.addWidget(self.cancelButton)
         self.saveButton = QtWidgets.QPushButton(self.topFrame)
         self.saveButton.setObjectName("saveButton")
         self.horizontalLayout.addWidget(self.saveButton)
@@ -81,7 +81,7 @@ class Ui_taskMakingFrame(object):
     def retranslateUi(self, taskMakingFrame):
         _translate = QtCore.QCoreApplication.translate
         taskMakingFrame.setWindowTitle(_translate("taskMakingFrame", "Frame"))
-        self.deleteButton.setText(_translate("taskMakingFrame", "Delete"))
+        self.cancelButton.setText(_translate("taskMakingFrame", "fuk go back"))
         self.saveButton.setText(_translate("taskMakingFrame", "Save"))
         self.taskNameLabel.setText(_translate("taskMakingFrame", "Task name"))
         self.questionStatementTextEdit.setPlaceholderText(_translate("taskMakingFrame", "Enter task description"))
