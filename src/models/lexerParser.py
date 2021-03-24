@@ -98,7 +98,7 @@ class BasicLexer(Lexer):
     literals = {'(', ')'}
 
     # Define tokens
-    NAME = r'[a-zA-Z]'
+
     # NOT = notStr
     # AND = andStr
     # OR  = orStr
@@ -107,19 +107,25 @@ class BasicLexer(Lexer):
     # IFF = iffStr
     # TOP = topStr
     # BOT = botStr
-    NOT = r'/NOT|¬'
-    AND = r'/AND|∧'
-    OR  = r'/OR|∨'
-    XOR = r'/XOR|⊕'
-    IMP = r'/IMP|→'
-    IFF = r'/IFF|↔'
-    TOP = r'/TOP|⊤'
-    BOT = r'/BOT|⊥'
 
+    AND = r'and|∧|&&'
+    OR  = r'or|∨|\|\|'
+    XOR = r'xor|⊕|!='
+    IMP = r'imp|→|=>'
+    IFF = r'iff|↔|=='
+    TOP = r'top|⊤|True'
+    BOT = r'bot|⊥|False'
+    NOT = r'not|¬|!'
+    NAME = r'[a-zA-Z]'
 
 class BasicParser(Parser):
     #debugfile = 'parser.out'
     tokens = BasicLexer.tokens
+
+    def error(self, p):
+        print("Whoa. You are seriously hosed.", p )
+        raise Exception("parser failed at",p)
+
 
     precedence = (
         ('left', IFF),
@@ -198,8 +204,9 @@ def getExpressionTree(inputString):
     lexer = BasicLexer()
     parser = BasicParser()
     try:
+
+        print("PARSING", inputString)
         tree = parser.parse(lexer.tokenize(inputString))
-        #pprint_tree(tree)
     except:
         print("Parsing failed, btw how we doing errors:)")
         tree = None
