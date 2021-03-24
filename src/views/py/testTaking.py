@@ -12,6 +12,7 @@ class TestTaking(Ui_testTakingFrame):
         self.test = test
         self.tmpFrame = None
         self.setupUi(master)
+        self.connectActions()
         self.testNameLabel.setText(test.getName())
         self.test.resetTest()
         self.taskIds = self.test.getTaskIds()
@@ -24,6 +25,9 @@ class TestTaking(Ui_testTakingFrame):
                 self.view.request("testPreview",self.test) # test is empty go back
         else: #viewing one task
             self.__loadTask(task)
+
+    def connectActions(self):
+        self.nextQButton.clicked.connect(self.loadNextTask)
 
 
     def __loadTask(self, task):
@@ -45,8 +49,8 @@ class TestTaking(Ui_testTakingFrame):
     def loadNextTask(self):
         self.currentTaskIndex += 1
         if self.currentTaskIndex == None:
-            self.view.request("testPreview",self.test) # only viewing th task: go back to preview
+            self.view.request("testPreview", self.test) # only viewing th task: go back to preview
         elif self.currentTaskIndex >= len(self.taskIds):
-            self.view.request("testResults",self.test) # out of questions
+            self.view.request("testResults", self.test) # out of questions
         else:
             self.__loadTask(self.test.getTask(self.taskIds[self.currentTaskIndex]))

@@ -57,6 +57,7 @@ class Controller:
         # takes [inputString]
         # return an expression instance
         inputString = args[0]
+        print(inputString)
         tree = getExpressionTree(inputString)
         print(tree)
 

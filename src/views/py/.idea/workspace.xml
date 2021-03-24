@@ -21,9 +21,9 @@
   <component name="ChangeListManager">
     <list default="true" id="6d41d22a-78cf-4399-a64c-73185630425a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mainQt.py" beforeDir="false" afterPath="$PROJECT_DIR$/mainQt.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/taskMaking.py" beforeDir="false" afterPath="$PROJECT_DIR$/taskMaking.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/testMaking.py" beforeDir="false" afterPath="$PROJECT_DIR$/testMaking.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testMakingQt.py" beforeDir="false" afterPath="$PROJECT_DIR$/testMakingQt.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ui/testMaking.ui" beforeDir="false" afterPath="$PROJECT_DIR$/../ui/testMaking.ui" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
