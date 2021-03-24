@@ -28,7 +28,7 @@ class Library:
         t = Test()
         self.tests[t.getTestId()] = t
         # UPDATE THE DATABASE update the joining table
-        self.lepDBAddTestIDandLibraryIDtoTesttoLibraryTableDB(t.getTestId(), self.id)
+        self.lepDB.addTestIDandLibraryIDtoTesttoLibraryTableDB(t.getTestId(), self.id)
         return t.getTestId()
 
     def removeTest(self, testId):
