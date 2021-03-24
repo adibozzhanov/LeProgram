@@ -30,7 +30,8 @@ class Test:
         self.tasksAnswered=0
         self.correctAnswers=0
 
-    def addThisTestToALibrary(self, LibraryId):
+    def addThisTestToALibrary(self, libraryId):
+        self.lepDB.addTestIDandLibraryIDtoTesttoLibraryTableDB(self.id, libraryId)
         pass
 
     def setName(self, newName):
