@@ -80,5 +80,9 @@ class View(Ui_MainWindow):
     def loadUser(self):
         self.cleanMain()
 
-    def updateAskLep(self,expression):
+    def updateAskLep(self, expression):
         self.currentDisplay.updateAskLep(expression)
+
+    def loadTestResult(self, test):
+        self.cleanMain()
+        self.currentDisplay = TestResultFrame(self.masterFrame, self, test)

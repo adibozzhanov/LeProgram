@@ -23,7 +23,7 @@ class Ui_testTakingFrame(object):
         self.testNameLabel.setObjectName("testNameLabel")
         self.verticalLayout.addWidget(self.testNameLabel)
         self.progressBar = QtWidgets.QProgressBar(testTakingFrame)
-        self.progressBar.setProperty("value", 0)
+        self.progressBar.setProperty("value", 24)
         self.progressBar.setObjectName("progressBar")
         self.verticalLayout.addWidget(self.progressBar)
         self.taskFrame = QtWidgets.QFrame(testTakingFrame)
@@ -33,6 +33,9 @@ class Ui_testTakingFrame(object):
         self.taskLayout = QtWidgets.QHBoxLayout(self.taskFrame)
         self.taskLayout.setObjectName("taskLayout")
         self.verticalLayout.addWidget(self.taskFrame)
+        self.nextQButton = QtWidgets.QPushButton(testTakingFrame)
+        self.nextQButton.setObjectName("nextQButton")
+        self.verticalLayout.addWidget(self.nextQButton)
         spacerItem = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
         self.verticalLayout.addItem(spacerItem)
 
@@ -43,6 +46,7 @@ class Ui_testTakingFrame(object):
         _translate = QtCore.QCoreApplication.translate
         testTakingFrame.setWindowTitle(_translate("testTakingFrame", "Frame"))
         self.testNameLabel.setText(_translate("testTakingFrame", "Test Name"))
+        self.nextQButton.setText(_translate("testTakingFrame", "Next Question"))
 
 
 if __name__ == "__main__":
