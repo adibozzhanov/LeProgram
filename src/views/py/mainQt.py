@@ -66,6 +66,7 @@ class Ui_MainWindow(object):
 "")
         icon = QtGui.QIcon()
         icon.addPixmap(QtGui.QPixmap("views/../../res/ui icons/home.png"), QtGui.QIcon.Normal, QtGui.QIcon.On)
+
         self.homeButton.setIcon(icon)
         self.homeButton.setIconSize(QtCore.QSize(24, 24))
         self.homeButton.setObjectName("homeButton")
@@ -91,6 +92,7 @@ class Ui_MainWindow(object):
 "selection-background-color: rgb(233, 234, 189);")
         icon1 = QtGui.QIcon()
         icon1.addPixmap(QtGui.QPixmap("views/../../res/ui icons/ask lep.png"), QtGui.QIcon.Normal, QtGui.QIcon.On)
+
         self.askLepButton.setIcon(icon1)
         self.askLepButton.setIconSize(QtCore.QSize(24, 24))
         self.askLepButton.setObjectName("askLepButton")
@@ -116,6 +118,7 @@ class Ui_MainWindow(object):
 "selection-background-color: rgb(233, 234, 189);")
         icon2 = QtGui.QIcon()
         icon2.addPixmap(QtGui.QPixmap("views/../../res/ui icons/random q.png"), QtGui.QIcon.Normal, QtGui.QIcon.On)
+
         self.randomQsButton.setIcon(icon2)
         self.randomQsButton.setIconSize(QtCore.QSize(24, 24))
         self.randomQsButton.setObjectName("randomQsButton")
@@ -140,6 +143,7 @@ class Ui_MainWindow(object):
 "selection-color:rgb(233, 234, 189);\n"
 "selection-background-color: rgb(233, 234, 189);")
         icon3 = QtGui.QIcon()
+
         icon3.addPixmap(QtGui.QPixmap("views/../../res/ui icons/new test.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         icon3.addPixmap(QtGui.QPixmap("views/../../res/ui icons/new test.png"), QtGui.QIcon.Normal, QtGui.QIcon.On)
         icon3.addPixmap(QtGui.QPixmap("views/../../res/ui icons/new test.png"), QtGui.QIcon.Disabled, QtGui.QIcon.Off)
@@ -148,6 +152,7 @@ class Ui_MainWindow(object):
         icon3.addPixmap(QtGui.QPixmap("views/../../res/ui icons/new test.png"), QtGui.QIcon.Active, QtGui.QIcon.On)
         icon3.addPixmap(QtGui.QPixmap("views/../../res/ui icons/new test.png"), QtGui.QIcon.Selected, QtGui.QIcon.Off)
         icon3.addPixmap(QtGui.QPixmap("views/../../res/ui icons/new test.png"), QtGui.QIcon.Selected, QtGui.QIcon.On)
+
         self.newTestButton.setIcon(icon3)
         self.newTestButton.setIconSize(QtCore.QSize(24, 24))
         self.newTestButton.setObjectName("newTestButton")
@@ -179,6 +184,7 @@ class Ui_MainWindow(object):
 "selection-background-color: rgb(233, 234, 189);")
         icon4 = QtGui.QIcon()
         icon4.addPixmap(QtGui.QPixmap("views/../../res/ui icons/user.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+
         self.userButton.setIcon(icon4)
         self.userButton.setIconSize(QtCore.QSize(24, 24))
         self.userButton.setObjectName("userButton")
