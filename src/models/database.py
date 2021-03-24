@@ -77,7 +77,7 @@ class Database:
         lepDBCursor = lepDB.cursor()
 
         lepDBCursor.execute("""UPDATE Answers
-                               SET (AnswerExp = ?)
+                               SET AnswerExp = ?
                                WHERE AnswersID = ?""", (newAnswerExpression, answerID,))
 
         lepDB.commit()
@@ -88,7 +88,7 @@ class Database:
         lepDBCursor = lepDB.cursor()
 
         lepDBCursor.execute("""UPDATE Answers
-                               SET (isCorrect = ?)
+                               SET isCorrect = ?
                                WHERE AnswersID = ?""", (isCorrectUpdate, answerID,))
 
         lepDB.commit()
@@ -137,7 +137,7 @@ class Database:
         lepDBCursor = lepDB.cursor()
 
         lepDBCursor.execute("""UPDATE Task
-                               SET (QuestionExpression = ?)
+                               SET QuestionExpression = ?
                                WHERE TaskID = ?""", (newTaskExpression, taskID,))
 
         lepDB.commit()
@@ -148,7 +148,7 @@ class Database:
         lepDBCursor = lepDB.cursor()
 
         lepDBCursor.execute("""UPDATE Task
-                               SET (QuestionStatement = ?)
+                               SET QuestionStatement = ?
                                WHERE TaskID = ?""", (newTaskStatement, taskID,))
 
         lepDB.commit()
@@ -210,7 +210,7 @@ class Database:
         lepDBCursor = lepDB.cursor()
 
         lepDBCursor.execute("""UPDATE Test
-                               SET (TestName = ?)
+                               SET TestName = ?
                                WHERE TestID = ?""", (newTestName, testID,))
 
         lepDB.commit()
@@ -221,7 +221,7 @@ class Database:
         lepDBCursor = lepDB.cursor()
 
         lepDBCursor.execute("""UPDATE Test
-                               SET (TestName = ?)
+                               SET TestDescription = ?
                                WHERE TestID = ?""", (newDescription, testID,))
 
         lepDB.commit()
@@ -274,7 +274,7 @@ class Database:
         lepDBCursor = lepDB.cursor()
 
         lepDBCursor.execute("""UPDATE Library
-                               SET (LibraryName = ?)
+                               SET LibraryName = ?
                                WHERE LibraryID = ?""", (newLibraryName, libraryID,))
 
         lepDB.commit()
@@ -347,12 +347,13 @@ class Database:
         lepDBCursor = lepDB.cursor()
 
         lepDBCursor.execute("""UPDATE Users
-                               SET (UserName = ?)
+                               SET UserName = ?
                                WHERE UserID = ?""", (newUserName, userID,))
 
         lepDB.commit()
         lepDB.close()
 
 
-#a = Database()
+a = Database()
 #a.loadTestDB(1)
+#a.updateUserName(1, "Hello")
