@@ -17,6 +17,7 @@ class TestTaking(Ui_testTakingFrame):
         self.test.resetTest()
         self.taskIds = self.test.getTaskIds()
         self.currentTaskIndex = None
+        self.nextQButton.setEnabled(False)
         if task is None:#taking the whole test
             if len(self.taskIds)>0 :
                 self.currentTaskIndex = 0
@@ -44,7 +45,6 @@ class TestTaking(Ui_testTakingFrame):
         if self.tmpFrame is not None:
             self.taskLayout.removeWidget(self.tmpFrame)
             self.tmpFrame.deleteLater()
-
 
     def loadNextTask(self):
         self.currentTaskIndex += 1
