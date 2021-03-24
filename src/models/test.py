@@ -30,6 +30,9 @@ class Test:
         self.tasksAnswered=0
         self.correctAnswers=0
 
+    def addThisTestToALibrary(self, LibraryId):
+        pass
+
     def setName(self, newName):
         self.name = newName
         # UPDATE THE DATABASE
