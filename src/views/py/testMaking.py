@@ -36,7 +36,7 @@ class TestMakingPage(Ui_testMakingPage):
 
     def renameTest(self):
         text = self.testNameInput.toPlainText()
-        text.replace("\n","")
-        text.replace("\r", "")
+        text = text.replace("\n","")
+        text = text.replace("\r","")
         self.test.setName(text)
         self.testNameLabel.setText(text)
