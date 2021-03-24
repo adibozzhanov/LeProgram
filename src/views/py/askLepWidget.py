@@ -18,13 +18,13 @@ class AskLepWidget(Ui_askLepWidgetFrame):
             self.logicalExpressionLabel.adjustSize()
 
             # Set DNF
-            self.dnfFormTitleLabel.setText(expression.getDNF())
+            self.dnfFormTitleLabel.setText(f"DNF: {expression.getDNF()}")
             self.dnfFormTitleLabel.adjustSize()
 
             # Set Satisfiability
-            self.satisfiabilityLabel.setText(str(expression.getSatisfiable()))
+            self.satisfiabilityLabel.setText(f"Satisfiable: {expression.getSatisfiable()}")
             self.satisfiabilityLabel.adjustSize()
 
             # Set Validity
-            self.validityLabel.setText((expression.getValid()))
+            self.validityLabel.setText(f"Valid: {expression.getValid()}")
             self.validityLabel.adjustSize()
