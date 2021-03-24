@@ -25,7 +25,7 @@ class Controller:
             "askLep": self.view.loadLep,
             #"user": self.view.loadUser,
             "randomQuestions": self.view.loadRandomQs,
-            "newTest" : self.view.loadNewTest,
+            "newTest" : self.loadTestMaking,
             "testPreview": self.view.loadTestPreview,
             "loadAskLep": self.loadAskLep,
             "startTest": self.view.loadTestTaking
@@ -47,7 +47,7 @@ class Controller:
         # get main library
         # pass it to loadHome method
         self.view.loadHome(self.mainLibrary)
-pp
+
     def loadRandomTest(self, *args): # I DID NOT LIKE THE MISLEADING NAME hah
         complexity = args[0]
         # generateQuestion(complexity)
