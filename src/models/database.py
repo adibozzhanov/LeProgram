@@ -73,12 +73,14 @@ class Database:
         return answerTuple
 
     def updateAnswerExp(self, answerID, newAnswerExpression):
+        
         lepDB = sqlite3.connect(self.dataBasePath)
         lepDBCursor = lepDB.cursor()
 
         lepDBCursor.execute("""UPDATE Answers
+
                                SET AnswerExp = ?
-                               WHERE AnswersID = ?""", (newAnswerExpression, answerID,))
+                               WHERE AnswersID = ?""", (newAnswerExpression.getString(), answerID,))
 
         lepDB.commit()
         lepDB.close()
