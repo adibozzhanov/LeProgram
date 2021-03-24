@@ -1,9 +1,9 @@
 import random
 from models.lexerParser import Node, getExpressionTree
 from models.task import Task
+from models.test import Test
 from models.expression import Expression
 from models.answer import Answer
-from models.stringSettings import *
 
 #Question templates will be programmed into the application. Examples include:
 #-Which of the following expressions is equivalent to this logical DNF?
@@ -15,16 +15,18 @@ from models.stringSettings import *
 #   maybe just generate one and make sure that the other ones are not the same..
 #... or just do not give a fuck and allow for multiple answers
 
-class TaskGenerator:
+class TestGenerator:
     # NB WHEN DISPLAYING THE TASK MAKE THE ORDER OF TASKS RANDOM AT SOME POINT CAUSE RN EVERY FIRST ANSWER IS THE CORRECT ONE!
     nrOfAnswers = 4
     probabilityOfNot = 0.3
-    binaryOp = [andStr,orStr,xorStr,impStr,iffStr]
-    notOp = notStr
-    values = [topStr,botStr]
-    def __init__(self, complexity):
+    binaryOp = ['and','or','xor','imp','iff']
+    notOp = 'not'
+    values = ['top','bot']
+    def __init__(self, complexity = 5, LibraryId = 1, amountOfTasks = 15):
         self.complexity = complexity
-        self.variables = [topStr,botStr]
+        self.LibraryId = LibraryId
+        self.amountOfTasks = amountOfTasks
+        self.variables = ['top','bot']
         self.nrOfVariables = min(int(3+(complexity-3)/4),complexity)
         self.unsatisfiableAnswers = []
         self.validAnswers = []
@@ -32,18 +34,26 @@ class TaskGenerator:
         self.tasksAnswered=0
         self.correctAnswers=0
 
-    def getTask(self):
+    def getTest(self):
+        test = Test()
+        test.addThisTestToALibrary(self.LibraryId)
+        for t in range(self.amountOfTasks):
+            test.addTask(self.__getTask())
+        return test
+
+
+    def __getTask(self):
         t = Task()
         self.__generateTask(t)
         return t
 
-    def addTaskAnswerGiven(self, task, answerId):
+    def __addTaskAnswerGiven(self, task, answerId):
         self.tasksAnswered+=1
         task.addAnswerGiven(answerId)
         if task.validityOfGivenAnswer():
             self.correctAnswers+=1
 
-    def getScore(self):
+    def __getScore(self):
         return [self.correctAnswers,self.tasksAnswered]
 
     def __generateTask(self, task): #PLZ IGNORE HOW POORLY THIS IS DONE RN!!!!
@@ -145,28 +155,13 @@ class TaskGenerator:
             ex = type(self).notOp + ex
         return ex
 
-    def test(self):
-        text = self.__generateExpressionString()
-        print(text)
-        tree = getExpressionTree(text)
-        ex = Expression(tree)
-        print("-"*20, "THE EXPRESSION:")
-        print("ex: ",ex.getString())
-        print("ex: ",ex.getDisplayString())
-        print("-"*20, "SIMPLIFIED TABLE:")
-        ex.printSimpleTable()
-        while True:
-            input()
-            task = self.getTask()
-            print(task.getStatement())
-            ans = task.getAnswers()
-            print(len(ans))
-            for i,a in ans.items():
-                print(a.getIsCorrect(), a.getExpression().getDisplayString())
 
-if __name__ == '__main__':
-    g = TaskGenerator(1)
-    g.test()
+
+if __name__ == '__main__': #testing
+    t = TestGenerator()
+    test = t.getTest()
+
+
 
 # generate the correct answers
 # if valid: ask to find valid
