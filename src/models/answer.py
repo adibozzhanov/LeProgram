@@ -30,9 +30,8 @@ class Answer:
             self.id = answerId
             # LOAD THE 3 VARIABLES FROM THE DATABASE
             answerInfoTuple = self.lepDB.loadAnswerDB(answerId)
-
             self.taskId = answerInfoTuple[1]
-            answerExpString = answerInfoTuple[2] # The database stores the Answer expression as a string
+            self.setExpression(answerInfoTuple[2])
             if answerInfoTuple[3] == 0:
                 self.isCorrect = False
             else:
