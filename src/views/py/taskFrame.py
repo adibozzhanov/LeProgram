@@ -18,5 +18,5 @@ class TaskFrame(Ui_taskFrame):
 
     def addAnswer(self, answer):
         newFrame = QtWidgets.QFrame()
-        self.answersFrame.addWidget(newFrame)
+        self.answersLayout.addWidget(newFrame)
         AnswerFrame(newFrame, self.view, answer)

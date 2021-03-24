@@ -60,6 +60,7 @@ class Ui_askLepWidgetFrame(object):
         self.dnfFormTitleLabel.setStyleSheet("background-color: rgb(24, 35, 32);\n"
 "color: rgb(255, 255, 242);")
         self.dnfFormTitleLabel.setAlignment(QtCore.Qt.AlignCenter)
+        self.dnfFormTitleLabel.setWordWrap(True)
         self.dnfFormTitleLabel.setObjectName("dnfFormTitleLabel")
         self.verticalLayout.addWidget(self.dnfFormTitleLabel)
         self.satisfiabilityLabel = QtWidgets.QLabel(askLepWidgetFrame)
