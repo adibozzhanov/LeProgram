@@ -53,7 +53,7 @@ class Database:
 
         # Getting the last ID
         lepDBCursor.execute("SELECT max(AnswersID) FROM Answers")
-        lastAnswerID = lepDBCursor.fetchone[0]
+        lastAnswerID = lepDBCursor.fetchone()[0]
 
         lepDB.commit()
         lepDB.close()
@@ -73,7 +73,7 @@ class Database:
         return answerTuple
 
     def updateAnswerExp(self, answerID, newAnswerExpression):
-        
+
         lepDB = sqlite3.connect(self.dataBasePath)
         lepDBCursor = lepDB.cursor()
 
