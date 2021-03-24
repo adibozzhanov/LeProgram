@@ -50,6 +50,10 @@ class Test:
         # UPDATE THE DATABASE (wait no the task class should manage by itself)
         return t.getTaskId()
 
+    def addTask(self,task):
+        self.tasks[task.getTaskId()] = task
+        # adding a premade task instance no need for databse stuff
+
     def removeTask(self, taskId):
         del self.tasks[taskId]
         # UPDATE THE DATABASE
