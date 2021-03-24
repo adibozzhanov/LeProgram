@@ -4,6 +4,7 @@ from views.py.taskMakingQt import Ui_taskMakingFrame
 
 class TaskMakingFrame(Ui_taskMakingFrame):
     def __init__(self, master, view, test, taskId):
+        self.master = master
         self.view = view
         self.test = test
         self.taskId = taskId
@@ -11,4 +12,8 @@ class TaskMakingFrame(Ui_taskMakingFrame):
         self.connectActions()
 
     def connectActions(self):
-        self.deleteButton.clicked.connect(lambda: self.test.remove(taskId))
+        self.deleteButton.clicked.connect(lambda: self.removeTask())
+
+    def removeTask(self):
+        self.test.removeTask(self.taskId)
+        self.master.deleteLater()
