@@ -24,7 +24,7 @@ class Library:
         # UPDATE THE DATABASE
         self.lepDB.updateLibraryNameDB(self.id, newName)
 
-    def addTestAndGetId(self):
+    def addNewTestAndGetId(self):
         t = Test()
         self.tests[t.getTestId()] = t
         # UPDATE THE DATABASE update the joining table

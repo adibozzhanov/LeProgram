@@ -33,14 +33,14 @@ class Test:
     def setName(self, newName):
         self.name = newName
         # UPDATE THE DATABASE
-        self.lepDB.updateTestNameDB(self, self.id, self.name)
+        self.lepDB.updateTestNameDB(self.id, self.name)
 
     def setDescription(self, newDescription):
         self.description = newDescription
         # UPDATE THE DATABASE
         self.lepDB.updateTestDescriptionDB(self.id, self.description)
 
-    def addTaskAndGetId(self):
+    def addNewTaskAndGetId(self):
         t = Task(testId=self.id)
         self.tasks[t.getTaskId()] = t
         # UPDATE THE DATABASE (wait no the task class should manage by itself)

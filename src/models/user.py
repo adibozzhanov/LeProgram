@@ -12,7 +12,7 @@ class User:
             self.name = None
             self.library = Library() # <-- adds a new lib to the db
             # ADD A NEW A NEW USER IN THE DATABASE
-            self.id = self.lepDB.addNewUser(self.library.getLibraryID()) # GET THE NEW ID FROM THE DATABASE
+            self.id = self.lepDB.addNewUser(self.library.getLibraryId()) # GET THE NEW ID FROM THE DATABASE
         else:
             self.id = userId
             # LOAD DATA FROM THE DATABASE
