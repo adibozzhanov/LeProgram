@@ -25,7 +25,7 @@ class Controller:
             "askLep": self.view.loadLep,
             #"user": self.view.loadUser,
             "randomQuestions": self.view.loadRandomQs,
-            "newTest" : self.view.loadNewTest,
+            "newTest" : self.loadTestMaking,
             "testPreview": self.view.loadTestPreview,
             "loadAskLep": self.loadAskLep,
             "startTest": self.view.loadTestTaking
@@ -38,6 +38,9 @@ class Controller:
 
     def startTest(self, test):
         self.view.loadTestTaking(test)
+
+    def loadTestMaking(self):
+        self.view.loadNewTest(self.mainLibrary)
 
 
     def loadMainPage(self, *args):
