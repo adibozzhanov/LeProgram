@@ -38,12 +38,12 @@ class TestGenerator:
         test = Test()
         test.addThisTestToALibrary(self.LibraryId)
         for t in range(self.amountOfTasks):
-            test.addTask(self.__getTask())
+            test.addTask(self.__getTask(test))
         return test
 
 
-    def __getTask(self):
-        t = Task()
+    def __getTask(self, test):
+        t = Task(testId = test.getTestId())
         self.__generateTask(t)
         return t
 
@@ -57,15 +57,15 @@ class TestGenerator:
         return [self.correctAnswers,self.tasksAnswered]
 
     def __generateTask(self, task): #PLZ IGNORE HOW POORLY THIS IS DONE RN!!!!
-        a = self.__generateCorrectAnswer()
+        a = self.__generateCorrectAnswer(task)
         answers = [a]
         if a.getExpression().getValid():
             for i in range(1,type(self).nrOfAnswers):
-                answers.append(self.__generateIncorrectAnswer(a.getExpression()))
+                answers.append(self.__generateIncorrectAnswer(a.getExpression(),task))
             self.__taskFindValid(task)
         elif not a.getExpression().getSatisfiable():
             for i in range(1,type(self).nrOfAnswers):
-                answers.append(self.__generateIncorrectAnswer(a.getExpression()))
+                answers.append(self.__generateIncorrectAnswer(a.getExpression(),task))
             self.__taskFindUnsatisfiable(task)
         else:
             if len(self.validAnswers)>=type(self).nrOfAnswers-1:
@@ -78,7 +78,7 @@ class TestGenerator:
                 self.__taskFindSatisfiable(task)
             else:
                 for i in range(1,type(self).nrOfAnswers):
-                    answers.append(self.__generateIncorrectAnswer(a.getExpression()))
+                    answers.append(self.__generateIncorrectAnswer(a.getExpression(),task))
                 self.__taskFindExpressionOfDNF(task, answers)
         random.shuffle(answers)
         for a in answers:
@@ -105,16 +105,16 @@ class TestGenerator:
 
 
 
-    def __generateCorrectAnswer(self):
+    def __generateCorrectAnswer(self, task):
         _ = getExpressionTree(self.__generateExpressionString())
         ex = Expression(_)
-        a = Answer()
+        a = Answer(task.getTaskId())
         a.setExpression(ex)
         a.setCorrect()
         return a
 
-    def __generateIncorrectAnswer(self, correctExpression):
-        a = Answer()
+    def __generateIncorrectAnswer(self, correctExpression, task):
+        a = Answer(task.getTaskId())
         a.setIncorrect()
         while True:
             _ = getExpressionTree(self.__generateExpressionString())
