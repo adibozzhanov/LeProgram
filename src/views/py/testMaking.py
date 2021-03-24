@@ -6,7 +6,7 @@ from views.py.askLepWidget import AskLepWidget
 
 
 class TestMakingPage(Ui_testMakingPage):
-    def __init__(self, master, view):
+    def __init__(self, master, view, library):
         self.view = view
         self.tasks = []
         self.setupUi(master)

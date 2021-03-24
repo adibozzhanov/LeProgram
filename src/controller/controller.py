@@ -39,12 +39,15 @@ class Controller:
     def startTest(self, test):
         self.view.loadTestTaking(test)
 
+    def loadTestMaking(self):
+        self.view.loadNewTest(self.mainLibrary)
+
 
     def loadMainPage(self, *args):
         # get main library
         # pass it to loadHome method
         self.view.loadHome(self.mainLibrary)
-
+pp
     def loadRandomTest(self, *args): # I DID NOT LIKE THE MISLEADING NAME hah
         complexity = args[0]
         # generateQuestion(complexity)
