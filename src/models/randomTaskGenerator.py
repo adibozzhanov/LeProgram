@@ -3,6 +3,7 @@ from models.lexerParser import Node, getExpressionTree
 from models.task import Task
 from models.expression import Expression
 from models.answer import Answer
+from models.stringSettings import *
 
 #Question templates will be programmed into the application. Examples include:
 #-Which of the following expressions is equivalent to this logical DNF?
@@ -18,12 +19,12 @@ class TaskGenerator:
     # NB WHEN DISPLAYING THE TASK MAKE THE ORDER OF TASKS RANDOM AT SOME POINT CAUSE RN EVERY FIRST ANSWER IS THE CORRECT ONE!
     nrOfAnswers = 4
     probabilityOfNot = 0.3
-    binaryOp = ['/AND','/OR','/XOR','/IMP','/IFF']
-    notOp = '/NOT'
-    values = ['/TOP','/BOT']
+    binaryOp = [andStr,orStr,xorStr,impStr,iffStr]
+    notOp = notStr
+    values = [topStr,botStr]
     def __init__(self, complexity):
         self.complexity = complexity
-        self.variables = ['/TOP','/BOT']
+        self.variables = [topStr,botStr]
         self.nrOfVariables = min(int(3+(complexity-3)/4),complexity)
         self.unsatisfiableAnswers = []
         self.validAnswers = []
