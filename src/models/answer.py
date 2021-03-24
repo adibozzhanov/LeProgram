@@ -1,5 +1,6 @@
 from models.expression import Expression
 from models.database import Database
+from models.lexerParser import getExpressionTree
 
 # the expression tree should be passed from the controller after it parsed the input
 
@@ -31,7 +32,7 @@ class Answer:
             # LOAD THE 3 VARIABLES FROM THE DATABASE
             answerInfoTuple = self.lepDB.loadAnswerDB(answerId)
             self.taskId = answerInfoTuple[1]
-            self.setExpression(answerInfoTuple[2])
+            self.expression = Expression(getExpressionTree(answerInfoTuple[2]))
             if answerInfoTuple[3] == 0:
                 self.isCorrect = False
             else:
@@ -42,14 +43,14 @@ class Answer:
             #self.expression = Expression(expressionTree)
 
     def setExpression(self, newExpression):
-        self.expression = (newExpression)
+        self.expression = newExpression
         # UPDATE THE DATABASE
         self.lepDB.updateAnswerExp(self.id, self.expression)
 
     def setExpressionFromTree(self, newExpressionTree):
         self.expression = Expression(newExpressionTree)
         # UPDATE THE DATABASE
-        self.lepDB.updateAnswerExp(self.id, self.expression.getString())
+        self.lepDB.updateAnswerExp(self.id, self.expression)
 
     def setCorrect(self):
         self.isCorrect = True

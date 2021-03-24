@@ -160,6 +160,7 @@ class TestGenerator:
 if __name__ == '__main__': #testing
     t = TestGenerator()
     test = t.getTest()
+    test.setName("Carmens Big Brain "+ str(test.getTestId()))
 
 
 
