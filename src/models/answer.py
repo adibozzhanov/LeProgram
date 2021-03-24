@@ -54,13 +54,13 @@ class Answer:
     def setCorrect(self):
         self.isCorrect = True
         # UPDATE THE DATABASE
-        self.lepDB.updateisCorrect(self.id, 1)
+        self.lepDB.updateIsCorrect(self.id, 1)
 
 
     def setIncorrect(self):
         self.isCorrect = False
         # UPDATE THE DATABASE
-        self.lepDB.updateisCorrect(self.id, 0)
+        self.lepDB.updateIsCorrect(self.id, 0)
 
 
     def getAnswerId(self):
