@@ -282,7 +282,7 @@ class Database:
         lepDB.commit()
         lepDB.close()
 
-    def lepDBAddTestIDandLibraryIDtoTesttoLibraryTableDB(self, testID, libraryID):
+    def addTestIDandLibraryIDtoTesttoLibraryTableDB(self, testID, libraryID):
         lepDB = sqlite3.connect(self.dataBasePath)
         lepDBCursor = lepDB.cursor()
 
