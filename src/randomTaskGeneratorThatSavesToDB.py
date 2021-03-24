@@ -1,6 +1,7 @@
 import random
 from models.lexerParser import Node, getExpressionTree
 from models.task import Task
+from models.test import Test
 from models.expression import Expression
 from models.answer import Answer
 
@@ -18,14 +19,14 @@ class TestGenerator:
     # NB WHEN DISPLAYING THE TASK MAKE THE ORDER OF TASKS RANDOM AT SOME POINT CAUSE RN EVERY FIRST ANSWER IS THE CORRECT ONE!
     nrOfAnswers = 4
     probabilityOfNot = 0.3
-    binaryOp = ['/AND','/OR','/XOR','/IMP','/IFF']
-    notOp = '/NOT'
-    values = ['/TOP','/BOT']
-    def __init__(self, complexity = 5, LibraryId = 1, amountOfTests = 5):
+    binaryOp = ['and','or','xor','imp','iff']
+    notOp = 'not'
+    values = ['top','bot']
+    def __init__(self, complexity = 5, LibraryId = 1, amountOfTasks = 15):
         self.complexity = complexity
         self.LibraryId = LibraryId
-        self.amountOfTests = amountOfTests
-        self.variables = ['/TOP','/BOT']
+        self.amountOfTasks = amountOfTasks
+        self.variables = ['top','bot']
         self.nrOfVariables = min(int(3+(complexity-3)/4),complexity)
         self.unsatisfiableAnswers = []
         self.validAnswers = []
@@ -35,6 +36,11 @@ class TestGenerator:
 
     def getTest(self):
         test = Test()
+        test.addThisTestToALibrary(self.LibraryId)
+        for t in range(self.amountOfTasks):
+            test.addTask(self.__getTask())
+        return test
+
 
     def __getTask(self):
         t = Task()
@@ -149,24 +155,13 @@ class TestGenerator:
             ex = type(self).notOp + ex
         return ex
 
-    def __test(self):
-        text = self.__generateExpressionString()
-        print(text)
-        tree = getExpressionTree(text)
-        ex = Expression(tree)
-        print("-"*20, "THE EXPRESSION:")
-        print("ex: ",ex.getString())
-        print("ex: ",ex.getDisplayString())
-        print("-"*20, "SIMPLIFIED TABLE:")
-        ex.printSimpleTable()
-        while True:
-            input()
-            task = self.getTask()
-            print(task.getStatement())
-            ans = task.getAnswers()
-            print(len(ans))
-            for i,a in ans.items():
-                print(a.getIsCorrect(), a.getExpression().getDisplayString())
+
+
+if __name__ == '__main__': #testing
+    t = TestGenerator()
+    test = t.getTest()
+    print(test.getTestId())
+
 
 
 # generate the correct answers

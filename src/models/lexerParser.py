@@ -204,8 +204,6 @@ def getExpressionTree(inputString):
     lexer = BasicLexer()
     parser = BasicParser()
     try:
-
-        print("PARSING", inputString)
         tree = parser.parse(lexer.tokenize(inputString))
     except:
         print("Parsing failed, btw how we doing errors:)")
