@@ -13,6 +13,7 @@ class TaskMakingFrame(Ui_taskMakingFrame):
         self.answerIDs = []
         self.answerFrames = []
         self.setupUi(master)
+        self.addAnswer()
         self.connectActions()
 
     def connectActions(self):
@@ -34,8 +35,9 @@ class TaskMakingFrame(Ui_taskMakingFrame):
         AnswerInputFrame(newFrame, self.view, self.task, self.answerIDs[-1])
 
     def removeAnswer(self):
-        self.task.removeAnswer(self.answerIDs[-1])
-        self.answerFrames[-1].deleteLater()
+        if len(self.answerIDs) > 1:
+            self.task.removeAnswer(self.answerIDs[-1])
+            self.answerFrames[-1].deleteLater()
 
     def addTaskDescription(self):
         text = self.taskDescriptionInput.toPlainText()
