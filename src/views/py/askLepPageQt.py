@@ -16,6 +16,16 @@ class Ui_askLepPage(object):
         askLepPage.resize(1116, 740)
         self.gridLayout = QtWidgets.QGridLayout(askLepPage)
         self.gridLayout.setObjectName("gridLayout")
+        self.EnterExpressionLabel = QtWidgets.QLabel(askLepPage)
+        self.EnterExpressionLabel.setMinimumSize(QtCore.QSize(0, 40))
+        self.EnterExpressionLabel.setMaximumSize(QtCore.QSize(16777215, 80))
+        font = QtGui.QFont()
+        font.setPointSize(22)
+        self.EnterExpressionLabel.setFont(font)
+        self.EnterExpressionLabel.setObjectName("EnterExpressionLabel")
+        self.gridLayout.addWidget(self.EnterExpressionLabel, 0, 0, 1, 1)
+        spacerItem = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        self.gridLayout.addItem(spacerItem, 2, 2, 1, 1)
         self.frame = QtWidgets.QFrame(askLepPage)
         self.frame.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.frame.setFrameShadow(QtWidgets.QFrame.Raised)
@@ -38,6 +48,19 @@ class Ui_askLepPage(object):
         self.searchButton.setObjectName("searchButton")
         self.horizontalLayout_5.addWidget(self.searchButton)
         self.gridLayout.addWidget(self.frame, 1, 0, 1, 1)
+        self.askLepWidgetFrame = QtWidgets.QFrame(askLepPage)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.askLepWidgetFrame.sizePolicy().hasHeightForWidth())
+        self.askLepWidgetFrame.setSizePolicy(sizePolicy)
+        self.askLepWidgetFrame.setMinimumSize(QtCore.QSize(0, 0))
+        self.askLepWidgetFrame.setFrameShape(QtWidgets.QFrame.NoFrame)
+        self.askLepWidgetFrame.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.askLepWidgetFrame.setObjectName("askLepWidgetFrame")
+        self.askLepLayout = QtWidgets.QHBoxLayout(self.askLepWidgetFrame)
+        self.askLepLayout.setObjectName("askLepLayout")
+        self.gridLayout.addWidget(self.askLepWidgetFrame, 2, 1, 2, 1)
         self.askLepTabWidget = QtWidgets.QTabWidget(askLepPage)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Expanding)
         sizePolicy.setHorizontalStretch(0)
@@ -54,7 +77,7 @@ class Ui_askLepPage(object):
         self.howToScrollArea.setWidgetResizable(True)
         self.howToScrollArea.setObjectName("howToScrollArea")
         self.scrollAreaWidgetContents_3 = QtWidgets.QWidget()
-        self.scrollAreaWidgetContents_3.setGeometry(QtCore.QRect(0, 0, 662, 523))
+        self.scrollAreaWidgetContents_3.setGeometry(QtCore.QRect(-72, -38, 711, 537))
         self.scrollAreaWidgetContents_3.setObjectName("scrollAreaWidgetContents_3")
         self.horizontalLayout_2 = QtWidgets.QHBoxLayout(self.scrollAreaWidgetContents_3)
         self.horizontalLayout_2.setObjectName("horizontalLayout_2")
@@ -80,7 +103,7 @@ class Ui_askLepPage(object):
         self.cheatSheetScrollArea.setWidgetResizable(True)
         self.cheatSheetScrollArea.setObjectName("cheatSheetScrollArea")
         self.scrollAreaWidgetContents = QtWidgets.QWidget()
-        self.scrollAreaWidgetContents.setGeometry(QtCore.QRect(0, 0, 662, 523))
+        self.scrollAreaWidgetContents.setGeometry(QtCore.QRect(0, 0, 660, 520))
         self.scrollAreaWidgetContents.setObjectName("scrollAreaWidgetContents")
         self.horizontalLayout_3 = QtWidgets.QHBoxLayout(self.scrollAreaWidgetContents)
         self.horizontalLayout_3.setObjectName("horizontalLayout_3")
@@ -105,39 +128,91 @@ class Ui_askLepPage(object):
         self.gridLayout_2.setObjectName("gridLayout_2")
         self.askLepTabWidget.addTab(self.myNotesTab, "")
         self.gridLayout.addWidget(self.askLepTabWidget, 3, 0, 1, 1)
-        self.askLepWidgetFrame = QtWidgets.QFrame(askLepPage)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
-        sizePolicy.setHorizontalStretch(0)
-        sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.askLepWidgetFrame.sizePolicy().hasHeightForWidth())
-        self.askLepWidgetFrame.setSizePolicy(sizePolicy)
-        self.askLepWidgetFrame.setMinimumSize(QtCore.QSize(0, 0))
-        self.askLepWidgetFrame.setFrameShape(QtWidgets.QFrame.NoFrame)
-        self.askLepWidgetFrame.setFrameShadow(QtWidgets.QFrame.Raised)
-        self.askLepWidgetFrame.setObjectName("askLepWidgetFrame")
-        self.askLepLayout = QtWidgets.QHBoxLayout(self.askLepWidgetFrame)
-        self.askLepLayout.setObjectName("askLepLayout")
-        self.gridLayout.addWidget(self.askLepWidgetFrame, 2, 1, 2, 1)
-        self.EnterExpressionLabel = QtWidgets.QLabel(askLepPage)
-        self.EnterExpressionLabel.setMinimumSize(QtCore.QSize(0, 40))
-        self.EnterExpressionLabel.setMaximumSize(QtCore.QSize(16777215, 80))
-        font = QtGui.QFont()
-        font.setPointSize(22)
-        self.EnterExpressionLabel.setFont(font)
-        self.EnterExpressionLabel.setObjectName("EnterExpressionLabel")
-        self.gridLayout.addWidget(self.EnterExpressionLabel, 0, 0, 1, 1)
-        spacerItem = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
-        self.gridLayout.addItem(spacerItem, 2, 2, 1, 1)
 
         self.retranslateUi(askLepPage)
-        self.askLepTabWidget.setCurrentIndex(1)
+        self.askLepTabWidget.setCurrentIndex(0)
         QtCore.QMetaObject.connectSlotsByName(askLepPage)
 
     def retranslateUi(self, askLepPage):
         _translate = QtCore.QCoreApplication.translate
         askLepPage.setWindowTitle(_translate("askLepPage", "Frame"))
+        self.EnterExpressionLabel.setText(_translate("askLepPage", "Enter the Expression"))
         self.searchButton.setText(_translate("askLepPage", "search"))
-        self.howToTextBox.setText(_translate("askLepPage", "Here\'s how to use the app: you just do it"))
+        self.howToTextBox.setText(_translate("askLepPage", "<html>\n"
+"<head>\n"
+"<style>\n"
+"table, th, td {\n"
+"  border: 1px solid black;\n"
+"  border-collapse: collapse;\n"
+"}\n"
+"</style>\n"
+"</head>\n"
+"        <body><p>How to use AskLep:</p>\n"
+"        <p>1) Variables are single English alphabet ,can be upper or lower case.</p>\n"
+"<p>2) Brackets () are used to alter precedence</p>\n"
+"<p>3) Type the expression in the box above and press search</p>\n"
+"        <p>Logical Expressions:</p>\n"
+"<table>\n"
+"  <tr>\n"
+"    <th>Operator</th>\n"
+"    <th>Char Form</th>\n"
+"    <th>Maths form</th>\n"
+"    <th>CS form</th>\n"
+"  </tr>\n"
+"  <tr>\n"
+"    <td>AND</td>\n"
+"    <td>and</td>\n"
+"    <td>∧</td>\n"
+"    <td>&&</td>\n"
+"  </tr>\n"
+"  <tr>\n"
+"    <td>OR</td>\n"
+"    <td>or</td>\n"
+"    <td>∨</td>\n"
+"    <td>|</td>\n"
+"  </tr>\n"
+"  <tr>\n"
+"    <td>XOR</td>\n"
+"    <td>xor</td>\n"
+"    <td>⊕</td>\n"
+"    <td>!=</td>\n"
+"  </tr>\n"
+"  <tr>\n"
+"    <td>IMP</td>\n"
+"    <td>imp</td>\n"
+"    <td>→</td>\n"
+"    <td>=></td>\n"
+"  </tr>\n"
+"  <tr>\n"
+"    <td>IFF</td>\n"
+"    <td>iff</td>\n"
+"    <td>↔</td>\n"
+"    <td>==</td>\n"
+"  </tr>\n"
+"  <tr>\n"
+"    <td>TOP</td>\n"
+"    <td>top</td>\n"
+"    <td>⊤</td>\n"
+"    <td>True</td>\n"
+"  </tr>\n"
+"  <tr>\n"
+"    <td>BOT</td>\n"
+"    <td>bot</td>\n"
+"    <td>⊥</td>\n"
+"    <td>False</td>\n"
+"  </tr>\n"
+"  <tr>\n"
+"    <td>NOT</td>\n"
+"    <td>not</td>\n"
+"    <td>¬</td>\n"
+"    <td>!</td>\n"
+"  </tr>\n"
+"  <tr>\n"
+"</table>\n"
+"        <p>For every operator, users are allowed to use any form they choose.</p>\n"
+"\n"
+"        </body>\n"
+"</html>"))
         self.askLepTabWidget.setTabText(self.askLepTabWidget.indexOf(self.howToTab), _translate("askLepPage", "How To"))
         self.cheatSheetTextBox.setText(_translate("askLepPage", "Double negation law\n"
 "¬¬P ≡ P\n"
@@ -175,8 +250,7 @@ class Ui_askLepPage(object):
 "¬∃x s.t. P ≡ ∀x, ¬P\n"
 "¬∀x, P ≡ ∃x s.t. P"))
         self.askLepTabWidget.setTabText(self.askLepTabWidget.indexOf(self.cheatSheetTab), _translate("askLepPage", "Cheat Sheet"))
-        self.askLepTabWidget.setTabText(self.askLepTabWidget.indexOf(self.myNotesTab), _translate("askLepPage", "My Nptes"))
-        self.EnterExpressionLabel.setText(_translate("askLepPage", "Enter the Expression"))
+        self.askLepTabWidget.setTabText(self.askLepTabWidget.indexOf(self.myNotesTab), _translate("askLepPage", "My Notes"))
 
 
 if __name__ == "__main__":
