@@ -20,9 +20,9 @@ class Database:
         lepDBCursor = lepDB.cursor()
 
         lepDBCursor.execute("SELECT * FROM Test WHERE TestID = ?", (testId,))
-        testData = databaseCursor.fetchone()
+        testData = lepDBCursor.fetchone()
 
-        databaseCursor.close()
+        lepDBCursor.close()
         lepDB.commit()
         lepDB.close()
 
@@ -35,9 +35,9 @@ class Database:
 
         lepDBCursor.execute("""SELECT * FROM Library
                                WHERE LibraryID = ?""", (libraryID,))
-        libraryData = databaseCursor.fetchone()
+        libraryData = lepDBCursor.fetchone()
 
-        databaseCursor.close()
+        lepDBCursor.close()
         lepDB.commit()
         lepDB.close()
 
@@ -96,7 +96,7 @@ class Database:
         lepDB.commit()
         lepDB.close()
 
-    def deleteAnswer(self, answerID):
+    def deleteAnswerDB(self, answerID):
         lepDB = sqlite3.connect(self.dataBasePath)
         lepDBCursor = lepDB.cursor()
 
@@ -327,6 +327,7 @@ class Database:
         lastUserID = lepDBCursor.fetchone()[0]
 
         lepDB.commit()
+        lepDB.close()
         lepDB.close()
 
         return lastUserID
