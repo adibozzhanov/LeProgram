@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>744</width>
-    <height>551</height>
+    <width>803</width>
+    <height>708</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -51,18 +51,6 @@
        </spacer>
       </item>
       <item>
-       <widget class="QLabel" name="taskNameLabel">
-        <property name="font">
-         <font>
-          <pointsize>20</pointsize>
-         </font>
-        </property>
-        <property name="text">
-         <string>Task name</string>
-        </property>
-       </widget>
-      </item>
-      <item>
        <spacer name="horizontalSpacer_2">
         <property name="orientation">
          <enum>Qt::Horizontal</enum>
@@ -79,7 +67,7 @@
     </widget>
    </item>
    <item>
-    <widget class="QTextEdit" name="questionStatementTextEdit">
+    <widget class="QTextEdit" name="taskDescriptionInput">
      <property name="placeholderText">
       <string>Enter task description</string>
      </property>
@@ -111,7 +99,7 @@
        </spacer>
       </item>
       <item>
-       <widget class="QLineEdit" name="expressionLineEdit">
+       <widget class="QLineEdit" name="expressionInput">
         <property name="text">
          <string/>
         </property>
@@ -140,7 +128,32 @@
     </widget>
    </item>
    <item>
-    <widget class="QFrame" name="answersFrame">
+    <widget class="QScrollArea" name="answersScrollArea">
+     <property name="lineWidth">
+      <number>0</number>
+     </property>
+     <property name="widgetResizable">
+      <bool>true</bool>
+     </property>
+     <widget class="QWidget" name="scrollAreaWidgetContents">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>783</width>
+        <height>171</height>
+       </rect>
+      </property>
+      <layout class="QVBoxLayout" name="verticalLayout_2">
+       <item>
+        <layout class="QVBoxLayout" name="answerScrollBarContents"/>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+   </item>
+   <item>
+    <widget class="QFrame" name="answerButtonFrame">
      <property name="frameShape">
       <enum>QFrame::StyledPanel</enum>
      </property>
@@ -162,9 +175,16 @@
        </spacer>
       </item>
       <item>
-       <widget class="QPushButton" name="pushButton">
+       <widget class="QPushButton" name="addAnswerButton">
         <property name="text">
          <string>Add an answer</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="removeAnswerButton">
+        <property name="text">
+         <string>Remove answer</string>
         </property>
        </widget>
       </item>

@@ -1,5 +1,7 @@
 from models.answer import Answer
 from models.database import Database
+from models.expression import Expression
+
 
 # using answer ids to reference them or something like the index? as in their order in the task
 

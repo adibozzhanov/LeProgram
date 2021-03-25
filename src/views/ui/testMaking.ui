@@ -117,7 +117,7 @@
    <item row="5" column="1" colspan="2">
     <widget class="QScrollArea" name="taskMakingScrollArea">
      <property name="sizePolicy">
-      <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+      <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
        <horstretch>0</horstretch>
        <verstretch>0</verstretch>
       </sizepolicy>
@@ -125,7 +125,7 @@
      <property name="minimumSize">
       <size>
        <width>800</width>
-       <height>600</height>
+       <height>900</height>
       </size>
      </property>
      <property name="widgetResizable">
@@ -137,7 +137,7 @@
         <x>0</x>
         <y>0</y>
         <width>879</width>
-        <height>598</height>
+        <height>898</height>
        </rect>
       </property>
       <layout class="QVBoxLayout" name="verticalLayout_2">
