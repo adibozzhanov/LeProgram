@@ -14,6 +14,43 @@
    <string>Frame</string>
   </property>
   <layout class="QGridLayout" name="gridLayout">
+   <item row="0" column="0">
+    <widget class="QLabel" name="EnterExpressionLabel">
+     <property name="minimumSize">
+      <size>
+       <width>0</width>
+       <height>40</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>16777215</width>
+       <height>80</height>
+      </size>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>22</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string>Enter the Expression</string>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="2">
+    <spacer name="horizontalSpacer">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>40</width>
+       <height>20</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
    <item row="1" column="0">
     <widget class="QFrame" name="frame">
      <property name="frameShape">
@@ -67,6 +104,29 @@
      </layout>
     </widget>
    </item>
+   <item row="2" column="1" rowspan="2">
+    <widget class="QFrame" name="askLepWidgetFrame">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>0</width>
+       <height>0</height>
+      </size>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::NoFrame</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Raised</enum>
+     </property>
+     <layout class="QHBoxLayout" name="askLepLayout"/>
+    </widget>
+   </item>
    <item row="3" column="0">
     <widget class="QTabWidget" name="askLepTabWidget">
      <property name="sizePolicy">
@@ -82,7 +142,7 @@
       </size>
      </property>
      <property name="currentIndex">
-      <number>1</number>
+      <number>0</number>
      </property>
      <widget class="QWidget" name="howToTab">
       <attribute name="title">
@@ -97,10 +157,10 @@
          <widget class="QWidget" name="scrollAreaWidgetContents_3">
           <property name="geometry">
            <rect>
-            <x>0</x>
-            <y>0</y>
-            <width>662</width>
-            <height>523</height>
+            <x>-72</x>
+            <y>-38</y>
+            <width>711</width>
+            <height>537</height>
            </rect>
           </property>
           <layout class="QHBoxLayout" name="horizontalLayout_2">
@@ -118,7 +178,81 @@
               </font>
              </property>
              <property name="text">
-              <string>Here's how to use the app: you just do it</string>
+              <string>&lt;html&gt;
+&lt;head&gt;
+&lt;style&gt;
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+&lt;/style&gt;
+&lt;/head&gt;
+        &lt;body&gt;&lt;p&gt;How to use AskLep:&lt;/p&gt;
+        &lt;p&gt;1) Variables are single English alphabet ,can be upper or lower case.&lt;/p&gt;
+&lt;p&gt;2) Brackets () are used to alter precedence&lt;/p&gt;
+&lt;p&gt;3) Type the expression in the box above and press search&lt;/p&gt;
+        &lt;p&gt;Logical Expressions:&lt;/p&gt;
+&lt;table&gt;
+  &lt;tr&gt;
+    &lt;th&gt;Operator&lt;/th&gt;
+    &lt;th&gt;Char Form&lt;/th&gt;
+    &lt;th&gt;Maths form&lt;/th&gt;
+    &lt;th&gt;CS form&lt;/th&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;AND&lt;/td&gt;
+    &lt;td&gt;and&lt;/td&gt;
+    &lt;td&gt;∧&lt;/td&gt;
+    &lt;td&gt;&amp;&amp;&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;OR&lt;/td&gt;
+    &lt;td&gt;or&lt;/td&gt;
+    &lt;td&gt;∨&lt;/td&gt;
+    &lt;td&gt;|&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;XOR&lt;/td&gt;
+    &lt;td&gt;xor&lt;/td&gt;
+    &lt;td&gt;⊕&lt;/td&gt;
+    &lt;td&gt;!=&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;IMP&lt;/td&gt;
+    &lt;td&gt;imp&lt;/td&gt;
+    &lt;td&gt;→&lt;/td&gt;
+    &lt;td&gt;=&gt;&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;IFF&lt;/td&gt;
+    &lt;td&gt;iff&lt;/td&gt;
+    &lt;td&gt;↔&lt;/td&gt;
+    &lt;td&gt;==&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;TOP&lt;/td&gt;
+    &lt;td&gt;top&lt;/td&gt;
+    &lt;td&gt;⊤&lt;/td&gt;
+    &lt;td&gt;True&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;BOT&lt;/td&gt;
+    &lt;td&gt;bot&lt;/td&gt;
+    &lt;td&gt;⊥&lt;/td&gt;
+    &lt;td&gt;False&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;NOT&lt;/td&gt;
+    &lt;td&gt;not&lt;/td&gt;
+    &lt;td&gt;¬&lt;/td&gt;
+    &lt;td&gt;!&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+&lt;/table&gt;
+        &lt;p&gt;For every operator, users are allowed to use any form they choose.&lt;/p&gt;
+
+        &lt;/body&gt;
+&lt;/html&gt;</string>
              </property>
             </widget>
            </item>
@@ -143,8 +277,8 @@
            <rect>
             <x>0</x>
             <y>0</y>
-            <width>662</width>
-            <height>523</height>
+            <width>660</width>
+            <height>520</height>
            </rect>
           </property>
           <layout class="QHBoxLayout" name="horizontalLayout_3">
@@ -214,71 +348,11 @@ Quantifier negation laws
      </widget>
      <widget class="QWidget" name="myNotesTab">
       <attribute name="title">
-       <string>My Nptes</string>
+       <string>My Notes</string>
       </attribute>
       <layout class="QGridLayout" name="gridLayout_2"/>
      </widget>
     </widget>
-   </item>
-   <item row="2" column="1" rowspan="2">
-    <widget class="QFrame" name="askLepWidgetFrame">
-     <property name="sizePolicy">
-      <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-       <horstretch>0</horstretch>
-       <verstretch>0</verstretch>
-      </sizepolicy>
-     </property>
-     <property name="minimumSize">
-      <size>
-       <width>0</width>
-       <height>0</height>
-      </size>
-     </property>
-     <property name="frameShape">
-      <enum>QFrame::NoFrame</enum>
-     </property>
-     <property name="frameShadow">
-      <enum>QFrame::Raised</enum>
-     </property>
-     <layout class="QHBoxLayout" name="askLepLayout"/>
-    </widget>
-   </item>
-   <item row="0" column="0">
-    <widget class="QLabel" name="EnterExpressionLabel">
-     <property name="minimumSize">
-      <size>
-       <width>0</width>
-       <height>40</height>
-      </size>
-     </property>
-     <property name="maximumSize">
-      <size>
-       <width>16777215</width>
-       <height>80</height>
-      </size>
-     </property>
-     <property name="font">
-      <font>
-       <pointsize>22</pointsize>
-      </font>
-     </property>
-     <property name="text">
-      <string>Enter the Expression</string>
-     </property>
-    </widget>
-   </item>
-   <item row="2" column="2">
-    <spacer name="horizontalSpacer">
-     <property name="orientation">
-      <enum>Qt::Horizontal</enum>
-     </property>
-     <property name="sizeHint" stdset="0">
-      <size>
-       <width>40</width>
-       <height>20</height>
-      </size>
-     </property>
-    </spacer>
    </item>
   </layout>
  </widget>
