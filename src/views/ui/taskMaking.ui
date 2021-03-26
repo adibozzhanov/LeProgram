@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>803</width>
-    <height>708</height>
+    <height>635</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -121,6 +121,21 @@
        </widget>
       </item>
       <item>
+       <widget class="QLabel" name="ifValidLabel">
+        <property name="font">
+         <font>
+          <pointsize>12</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: rgb(255, 0, 0);</string>
+        </property>
+        <property name="text">
+         <string>Invalid Expression</string>
+        </property>
+       </widget>
+      </item>
+      <item>
        <spacer name="horizontalSpacer_3">
         <property name="orientation">
          <enum>Qt::Horizontal</enum>
@@ -165,7 +180,7 @@
         <x>0</x>
         <y>0</y>
         <width>783</width>
-        <height>92</height>
+        <height>77</height>
        </rect>
       </property>
       <layout class="QVBoxLayout" name="verticalLayout_2">

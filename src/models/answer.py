@@ -17,16 +17,16 @@ class Answer:
             self.taskId = taskId
             self.expression = None
             self.isCorrect = False
-            # ADD A NEW ANSWER TO THE DATABASE
-            self.id = self.lepDB.addNewAnswerDB(self.taskId)
 
             # OOO WAIT UNLESS taskId IS NONE CAUSE THEN IT IS A RANDOMLY GENERATED TEST AND WE DO NOT NEED IT!
             #self.id = 0 # GET THE NEW ID FROM THE DATABASE
             if taskId is None: #no need to put int in a database but still needs an id to function during the test taking
                 self.id = type(self).counter
                 type(self).counter=type(self).counter%100+1
-
-
+            else:
+                # ADD A NEW ANSWER TO THE DATABASE
+                self.id = self.lepDB.addNewAnswerDB(self.taskId)
+                
         else:
             self.id = answerId
             # LOAD THE 3 VARIABLES FROM THE DATABASE
