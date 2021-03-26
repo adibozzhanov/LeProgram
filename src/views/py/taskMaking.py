@@ -29,6 +29,8 @@ class TaskMakingFrame(Ui_taskMakingFrame):
 
     def addAnswer(self):
         newFrame = QtWidgets.QFrame()
+        newFrame.setSizePolicy(QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Fixed)
+        newFrame.setMinimumSize(QtCore.QSize(0, 150))
         self.answerScrollBarContents.addWidget(newFrame)
         self.answerIDs.append(self.task.addNewAnswerAndGetId())
         self.answerFrames.append(newFrame)
@@ -37,7 +39,9 @@ class TaskMakingFrame(Ui_taskMakingFrame):
     def removeAnswer(self):
         if len(self.answerIDs) > 1:
             self.task.removeAnswer(self.answerIDs[-1])
+            self.answerIDs.pop()
             self.answerFrames[-1].deleteLater()
+            self.answerFrames.pop()
 
     def addTaskDescription(self):
         text = self.taskDescriptionInput.toPlainText()
@@ -45,4 +49,5 @@ class TaskMakingFrame(Ui_taskMakingFrame):
 
     def addExpression(self):
         text = self.expressionInput.text()
-        self.task.setExpressionFromTree(getExpressionTree(text))
+        tree = getExpressionTree(text)
+        self.task.setExpressionFromTree(tree)
