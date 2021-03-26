@@ -56,15 +56,12 @@ class Controller:
 
     def loadAskLep(self, *args):
         # takes [inputString]
-        # return an expression instance
+        # adds an expression instance to askLep
         inputString = args[0]
-        print(inputString)
         tree = getExpressionTree(inputString)
-        print(tree)
 
         if tree is not None:
             self.view.updateAskLep(Expression(tree))
-
 
     def loadRandomTaskGenerator(self, *args):
         # takes [complexity]

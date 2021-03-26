@@ -8,6 +8,7 @@ from models.expression import Expression
 class Task:
     # can either be initialized by the taskId if it is already in the database
     # or by giving the testID to create a new task
+    counter=0
     def __init__(self, testId=None, taskId=None):
 
         self.lepDB = Database()
@@ -17,12 +18,17 @@ class Task:
             self.statement = ""
             self.expression = None
             self.answers = {}
-            # ADD A NEW TASK IN THE DATABASE
-            self.id = self.lepDB.addNewTaskDB(self.testId)
 
             # OOO WAIT UNLESS testId IS NONE CAUSE THEN IT IS A RANDOMLY GENERATED TEST AND WE DO NOT NEED IT!
-            #self.id = 0 # GET THE NEW ID FROM THE DATABASE
+            # self.id = 0 # GET THE NEW ID FROM THE DATABASE
             # if testID is none dont bother with database and ID
+            if testId is None: #no need to put int in a database but still needs an id to function during the test taking
+                self.id = type(self).counter
+                type(self).counter=type(self).counter%100+1
+            else:
+                # ADD A NEW TASK IN THE DATABASE
+                self.id = self.lepDB.addNewTaskDB(self.testId)
+
         else:
             self.id = taskId
             self.answers = None # only when requested
