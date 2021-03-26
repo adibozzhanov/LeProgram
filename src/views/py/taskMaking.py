@@ -3,18 +3,30 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 from views.py.taskMakingQt import Ui_taskMakingFrame
 from views.py.answerInputFrame import AnswerInputFrame
 from models.lexerParser import getExpressionTree
+from models.expression import Expression
 
 
 class TaskMakingFrame(Ui_taskMakingFrame):
-    def __init__(self, master, view, test, taskId):
-        self.master = master
+    def __init__(self, master, view, parent, index):
         self.view = view
-        self.task = test.getTask(taskId)
-        self.answerIDs = []
+        self.task = ["Task statement", "Task expression", []]
+        self.index = index
+        self.parent = parent
+        self.numAnswers = 0
         self.answerFrames = []
+        self.answerMakingFrames = []
         self.setupUi(master)
         self.addAnswer()
         self.connectActions()
+
+    def getTask(self):
+        for c in range(self.numAnswers):
+            answer = self.answerMakingFrames[c].getAnswer()
+            if answer[0] is None:
+                continue
+            else:
+                self.task[2].append(answer)
+        return self.task
 
     def connectActions(self):
         self.deleteButton.clicked.connect(lambda: self.removeTask())
@@ -24,30 +36,46 @@ class TaskMakingFrame(Ui_taskMakingFrame):
         self.expressionInput.textChanged.connect(lambda: self.addExpression())
 
     def removeTask(self):
-        self.test.removeTask(self.taskId)
-        self.master.deleteLater()
+        self.parent.deleteTaskMakingFrame(self.index)
 
     def addAnswer(self):
         newFrame = QtWidgets.QFrame()
         newFrame.setSizePolicy(QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Fixed)
         newFrame.setMinimumSize(QtCore.QSize(0, 150))
         self.answerScrollBarContents.addWidget(newFrame)
-        self.answerIDs.append(self.task.addNewAnswerAndGetId())
         self.answerFrames.append(newFrame)
-        AnswerInputFrame(newFrame, self.view, self.task, self.answerIDs[-1])
+        self.answerMakingFrames.append(AnswerInputFrame(newFrame, self.view))
+        self.numAnswers += 1
+
+    def decreaseIndex(self):
+        self.index -= 1
 
     def removeAnswer(self):
         if len(self.answerIDs) > 1:
-            self.task.removeAnswer(self.answerIDs[-1])
-            self.answerIDs.pop()
             self.answerFrames[-1].deleteLater()
             self.answerFrames.pop()
+            self.answerMakingFrames.pop(
+
+            )
+            self.numAnswers -= 1
 
     def addTaskDescription(self):
         text = self.taskDescriptionInput.toPlainText()
-        self.task.setStatement(text)
+        self.task[0] = text
 
     def addExpression(self):
         text = self.expressionInput.text()
         tree = getExpressionTree(text)
-        self.task.setExpressionFromTree(tree)
+        if tree is None:
+            self.setInvalidLabel()
+        else:
+            self.task[1] = Expression(tree)
+            self.setValidLabel()
+
+    def setInvalidLabel(self):
+        self.ifValidLabel.setStyleSheet("color: rgb(255, 0, 0);")
+        self.ifValidLabel.setText("Invalid Expression")
+
+    def setValidLabel(self):
+        self.ifValidLabel.setStyleSheet("color: rgb(50, 168, 82);")
+        self.ifValidLabel.setText("Valid Expression")
