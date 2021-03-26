@@ -5,6 +5,7 @@ from models.expression import Expression
 from models.lexerParser import getExpressionTree
 from models.randomTaskGenerator import TaskGenerator
 from models.test import Test
+from models.task import Task
 
 
 
@@ -75,9 +76,11 @@ class Controller:
         #     answer - [ answerExpression, Correctness: Boolean]
         test = Test()
         test.addThisTestToALibrary(self.mainLibrary.getLibraryId())
+        print("0 " + args[0])
         test.setName(args[0])
         test.setDescription(args[1])
         argsTasks = args[2]
+        print(args[2])
         for t in argsTasks:
             task = Task(test.getTestId())
             task.setStatement(t[0])
