@@ -22,7 +22,7 @@ class TestGenerator:
     binaryOp = ['and','or','xor','imp','iff']
     notOp = 'not'
     values = ['top','bot']
-    def __init__(self, complexity = 3, LibraryId = 1, amountOfTasks = 15):
+    def __init__(self, complexity = 3, LibraryId = 1, amountOfTasks = 25):
         self.complexity = complexity
         self.LibraryId = LibraryId
         self.amountOfTasks = amountOfTasks
@@ -70,18 +70,26 @@ class TestGenerator:
         else:
             if len(self.validAnswers)>=type(self).nrOfAnswers-1:
                 for i in range(1,type(self).nrOfAnswers):
-                    answers.append(self.validAnswers.pop())
+                    answerNotInDB = self.validAnswers.pop()
+                    answerInDB = Answer(task.getTaskId())
+                    answerInDB.setExpression(answerNotInDB.getExpression())
+                    answers.append(answerInDB)
                 self.__taskFindInvalid(task)
             elif len(self.unsatisfiableAnswers)>=type(self).nrOfAnswers-1:
                 for i in range(1,type(self).nrOfAnswers):
-                    answers.append(self.unsatisfiableAnswers.pop())
+                    answerNotInDB = self.unsatisfiableAnswers.pop()
+                    answerInDB = Answer(task.getTaskId())
+                    answerInDB.setExpression(answerNotInDB.getExpression())
+                    answers.append(answerInDB)
                 self.__taskFindSatisfiable(task)
             else:
                 for i in range(1,type(self).nrOfAnswers):
                     answers.append(self.__generateIncorrectAnswer(a.getExpression(),task))
                 self.__taskFindExpressionOfDNF(task, answers)
         random.shuffle(answers)
+        print("task", task.getStatement())
         for a in answers:
+            print( " answer ", a.getExpression().getDisplayString())
             task.addAnswer(a)
         #print("invalid ",len(self.validAnswers))
         #print("satisfiable",len(self.unsatisfiableAnswers))
