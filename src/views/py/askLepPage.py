@@ -14,7 +14,7 @@ class AskLepPage(Ui_askLepPage):
         self.searchButton.clicked.connect(lambda: self.requestExpression())
 
     def requestExpression(self):
-        s = self.expressionInput.toPlainText()
+        s = self.expressionInput.text()
         self.view.request("loadAskLep", s)
 
     def updateAskLep(self, expression = None):
