@@ -18,11 +18,11 @@ from models.answer import Answer
 class TestGenerator:
     # NB WHEN DISPLAYING THE TASK MAKE THE ORDER OF TASKS RANDOM AT SOME POINT CAUSE RN EVERY FIRST ANSWER IS THE CORRECT ONE!
     nrOfAnswers = 4
-    probabilityOfNot = 0.3
+    probabilityOfNot = 0.2
     binaryOp = ['and','or','xor','imp','iff']
     notOp = 'not'
     values = ['top','bot']
-    def __init__(self, complexity = 5, LibraryId = 1, amountOfTasks = 15):
+    def __init__(self, complexity = 3, LibraryId = 1, amountOfTasks = 15):
         self.complexity = complexity
         self.LibraryId = LibraryId
         self.amountOfTasks = amountOfTasks

@@ -18,7 +18,7 @@ from models.stringSettings import *
 class TaskGenerator:
     # NB WHEN DISPLAYING THE TASK MAKE THE ORDER OF TASKS RANDOM AT SOME POINT CAUSE RN EVERY FIRST ANSWER IS THE CORRECT ONE!
     nrOfAnswers = 4
-    probabilityOfNot = 0.3
+    probabilityOfNot = 0.2
     binaryOp = [andStr,orStr,xorStr,impStr,iffStr]
     notOp = notStr
     values = [topStr,botStr]
