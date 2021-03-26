@@ -7,6 +7,7 @@ from views.py.askLepWidget import AskLepWidget
 class TestMakingPage(Ui_testMakingPage):
     def __init__(self, master, view, library):
         self.view = view
+        self.finished = False
         self.tasks = []
         self.testName = "Test Name"
         self.testDescription = "Test Description"
@@ -19,13 +20,16 @@ class TestMakingPage(Ui_testMakingPage):
         self.addTaskMakingFrame()
 
     def getTest(self):
-        for task in self.taskMakingFrames:
-            task = task.getTask()
-            if task[1] == "Task expression":
-                continue
-            else:
-                self.tasks.append(task)
-        self.view.request("saveTest", self.testName, self.testDescription, self.tasks)
+        if not self.finished:
+            for task in self.taskMakingFrames:
+                task = task.getTask()
+                if task[1] == "Task expression":
+                    continue
+                else:
+                    self.tasks.append(task)
+            self.finished = true
+            self.view.request("saveTest", self.testName, self.testDescription, self.tasks)
+
 
     def connectActions(self):
         self.addTaskButton.clicked.connect(lambda: self.addTaskMakingFrame())
