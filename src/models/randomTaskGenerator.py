@@ -70,7 +70,6 @@ class TaskGenerator:
                 for i in range(1,type(self).nrOfAnswers):
                     answers.append(self.__generateIncorrectAnswer(a.getExpression()))
                 self.__taskFindExpressionOfDNF(task, answers)
-        random.shuffle(answers)
         for a in answers:
             task.addAnswer(a)
         #print("invalid ",len(self.validAnswers))

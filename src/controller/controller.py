@@ -89,7 +89,7 @@ class Controller:
             for a in argsAnswers:
                 answer = Answer(task.getTaskId())
                 answer.setExpression(a[0])
-                if s[1]: answer.setCorrect()
+                if a[1]: answer.setCorrect()
                 task.addAnswer(a)
             test.addTask(task)
 

@@ -86,10 +86,7 @@ class TestGenerator:
                 for i in range(1,type(self).nrOfAnswers):
                     answers.append(self.__generateIncorrectAnswer(a.getExpression(),task))
                 self.__taskFindExpressionOfDNF(task, answers)
-        random.shuffle(answers)
-        print("task", task.getStatement())
         for a in answers:
-            print( " answer ", a.getExpression().getDisplayString())
             task.addAnswer(a)
         #print("invalid ",len(self.validAnswers))
         #print("satisfiable",len(self.unsatisfiableAnswers))
