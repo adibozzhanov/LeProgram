@@ -48,7 +48,7 @@ class Task:
     def setExpression(self, newExpression):
         self.expression = (newExpression)
         # UPDATE THE DATABASE
-        self.lepDB.updateTaskExpDB(self.id, self.expression)
+        self.lepDB.updateTaskExpDB(self.id, self.expression.getString())
 
 
     def setExpressionFromTree(self, newExpressionTree):
