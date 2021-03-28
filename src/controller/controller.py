@@ -6,7 +6,6 @@ from models.lexerParser import getExpressionTree
 from models.randomTaskGenerator import TaskGenerator
 from models.test import Test
 from models.task import Task
-from models.answer import Answer
 
 
 
@@ -91,7 +90,7 @@ class Controller:
                 answer = Answer(task.getTaskId())
                 answer.setExpression(a[0])
                 if a[1]: answer.setCorrect()
-                task.addAnswer(answer)
+                task.addAnswer(a)
             test.addTask(task)
 
     def handleRequest(self, request, *args):
