@@ -54,9 +54,7 @@ class TaskMakingFrame(Ui_taskMakingFrame):
         if len(self.answerIDs) > 1:
             self.answerFrames[-1].deleteLater()
             self.answerFrames.pop()
-            self.answerMakingFrames.pop(
-
-            )
+            self.answerMakingFrames.pop()
             self.numAnswers -= 1
 
     def addTaskDescription(self):
