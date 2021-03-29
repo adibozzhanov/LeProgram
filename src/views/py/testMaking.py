@@ -5,7 +5,7 @@ from views.py.taskMaking import TaskMakingFrame
 from views.py.askLepWidget import AskLepWidget
 
 class TestMakingPage(Ui_testMakingPage):
-    def __init__(self, master, view, library):
+    def __init__(self, master, view):
         self.view = view
         self.finished = False
         self.tasks = []

@@ -45,7 +45,7 @@ class View(Ui_MainWindow):
 
     def loadNewTest(self,library):
         self.cleanMain()
-        self.currentDisplay = TestMakingPage(self.masterFrame, self, library)
+        self.currentDisplay = TestMakingPage(self.masterFrame, self)
 
     def cleanMain(self):
         if self.masterFrame != None:
