@@ -1,6 +1,7 @@
 from models.answer import Answer
 from models.database import Database
 from models.expression import Expression
+from models.lexerParser import getExpressionTree
 
 
 # using answer ids to reference them or something like the index? as in their order in the task
@@ -38,7 +39,7 @@ class Task:
 
             self.testId = taskInfoTuple[1]
             self.statement = taskInfoTuple[2]
-            self.expression = taskInfoTuple[3]
+            self.expression = Expression(getExpressionTree(taskInfoTuple[3]))
 
             # self.testId = testId
             # self.statement = ""
@@ -84,6 +85,9 @@ class Task:
 
     def getExpression(self):
         return self.expression
+
+    def getExpressionString(self):
+        return self.expression.getString()
 
     def getStatement(self):
         return self.statement

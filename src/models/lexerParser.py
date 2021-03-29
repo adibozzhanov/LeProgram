@@ -123,7 +123,7 @@ class BasicParser(Parser):
     tokens = BasicLexer.tokens
 
     def error(self, p):
-        print("Whoa. You are seriously hosed.", p )
+        #print("Whoa. You are seriously hosed.", p )
         raise Exception("parser failed at",p)
 
 
@@ -206,7 +206,7 @@ def getExpressionTree(inputString):
     try:
         tree = parser.parse(lexer.tokenize(inputString))
     except:
-        print("Parsing failed, btw how we doing errors:)", inputString)
+        #print("Parsing failed, btw how we doing errors:)", inputString)
         tree = None
     return(tree)
 

@@ -15,7 +15,7 @@ class TaskFrame(Ui_taskFrame):
         answers = task.getAnswers()
         self.answerFrames = []
         self.taskStatementLabel.setText(task.getStatement())
-        #self.expressionLabel.setText()
+        self.expressionLabel.setText(task.getExpressionString())
         for Id,answer in answers.items():
             self.addAnswer(answer)
 
