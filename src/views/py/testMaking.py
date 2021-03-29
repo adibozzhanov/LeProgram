@@ -5,7 +5,7 @@ from views.py.taskMaking import TaskMakingFrame
 from views.py.askLepWidget import AskLepWidget
 
 class TestMakingPage(Ui_testMakingPage):
-    def __init__(self, master, view, library):
+    def __init__(self, master, view):
         self.view = view
         self.finished = False
         self.tasks = []
@@ -22,12 +22,8 @@ class TestMakingPage(Ui_testMakingPage):
     def getTest(self):
         if not self.finished:
             for task in self.taskMakingFrames:
-                task = task.getTask()
-                if task[1] == "Task expression":
-                    continue
-                else:
-                    self.tasks.append(task)
-            self.finished = true
+                 self.tasks.append(task.getTask())
+            self.finished = True
             self.view.request("saveTest", self.testName, self.testDescription, self.tasks)
 
 
