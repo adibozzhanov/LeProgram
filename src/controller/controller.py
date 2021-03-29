@@ -9,7 +9,6 @@ from models.task import Task
 from models.answer import Answer
 
 
-
 class Controller:
     def __init__(self):
         self.model = Model()
