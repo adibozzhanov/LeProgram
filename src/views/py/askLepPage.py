@@ -12,6 +12,7 @@ class AskLepPage(Ui_askLepPage):
 
     def connectedActions(self):
         self.searchButton.clicked.connect(lambda: self.requestExpression())
+        self.expressionInput.returnPressed.connect(lambda: self.requestExpression())
 
     def requestExpression(self):
         s = self.expressionInput.text()
