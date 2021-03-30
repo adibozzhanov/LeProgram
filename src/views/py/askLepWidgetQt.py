@@ -19,6 +19,8 @@ class Ui_askLepWidgetFrame(object):
 "border-color: rgb(246, 247, 200);\n"
 "")
         self.verticalLayout = QtWidgets.QVBoxLayout(askLepWidgetFrame)
+        self.verticalLayout.setContentsMargins(45, 30, 45, 30)
+        self.verticalLayout.setSpacing(10)
         self.verticalLayout.setObjectName("verticalLayout")
         self.askLeProgramLabel = QtWidgets.QLabel(askLepWidgetFrame)
         font = QtGui.QFont()
@@ -51,7 +53,7 @@ class Ui_askLepWidgetFrame(object):
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.truthTableWidget.sizePolicy().hasHeightForWidth())
         self.truthTableWidget.setSizePolicy(sizePolicy)
-        self.truthTableWidget.setMinimumSize(QtCore.QSize(500, 500))
+        self.truthTableWidget.setMinimumSize(QtCore.QSize(400, 500))
         self.truthTableWidget.setBaseSize(QtCore.QSize(0, 0))
         self.truthTableWidget.setStyleSheet("background-color: rgb(246, 247, 200);\n"
 "border-color: rgb(246, 247, 200);\n"
@@ -92,15 +94,6 @@ class Ui_askLepWidgetFrame(object):
         self.validityLabel.setAlignment(QtCore.Qt.AlignCenter)
         self.validityLabel.setObjectName("validityLabel")
         self.verticalLayout.addWidget(self.validityLabel)
-        self.dnfExpressionLabel = QtWidgets.QLabel(askLepWidgetFrame)
-        font = QtGui.QFont()
-        font.setPointSize(14)
-        self.dnfExpressionLabel.setFont(font)
-        self.dnfExpressionLabel.setStyleSheet("color: rgb(24, 35, 32);\n"
-"background-color: rgb(255, 255, 242);")
-        self.dnfExpressionLabel.setAlignment(QtCore.Qt.AlignCenter)
-        self.dnfExpressionLabel.setObjectName("dnfExpressionLabel")
-        self.verticalLayout.addWidget(self.dnfExpressionLabel)
 
         self.retranslateUi(askLepWidgetFrame)
         QtCore.QMetaObject.connectSlotsByName(askLepWidgetFrame)
@@ -114,7 +107,6 @@ class Ui_askLepWidgetFrame(object):
         self.dnfFormTitleLabel.setText(_translate("askLepWidgetFrame", "DNF form:"))
         self.satisfiabilityLabel.setText(_translate("askLepWidgetFrame", "Satisfiability:"))
         self.validityLabel.setText(_translate("askLepWidgetFrame", "Validity:"))
-        self.dnfExpressionLabel.setText(_translate("askLepWidgetFrame", "DNF form (also the thing above is a table widget)"))
 
 
 if __name__ == "__main__":

@@ -13,13 +13,83 @@
   <property name="windowTitle">
    <string>Frame</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(255, 255, 242);
+border-color: rgb(255, 255, 242);</string>
+  </property>
   <layout class="QGridLayout" name="gridLayout">
+   <item row="1" column="0">
+    <widget class="QFrame" name="frame">
+     <property name="frameShape">
+      <enum>QFrame::StyledPanel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Raised</enum>
+     </property>
+     <layout class="QHBoxLayout" name="horizontalLayout_5">
+      <item>
+       <widget class="QLineEdit" name="expressionInput">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>300</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="font">
+         <font>
+          <family>Helvetica Neue</family>
+          <pointsize>12</pointsize>
+         </font>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="searchButton">
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>68</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>16777215</width>
+          <height>16777215</height>
+         </size>
+        </property>
+        <property name="font">
+         <font>
+          <family>Helvetica Neue</family>
+          <pointsize>14</pointsize>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(24, 35, 32);
+color: rgb(246, 247, 200);
+</string>
+        </property>
+        <property name="text">
+         <string>Search</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
    <item row="0" column="0">
     <widget class="QLabel" name="EnterExpressionLabel">
      <property name="minimumSize">
       <size>
        <width>0</width>
-       <height>40</height>
+       <height>0</height>
       </size>
      </property>
      <property name="maximumSize">
@@ -30,7 +100,11 @@
      </property>
      <property name="font">
       <font>
-       <pointsize>22</pointsize>
+       <family>Helvetica Neue</family>
+       <pointsize>36</pointsize>
+       <weight>50</weight>
+       <italic>true</italic>
+       <bold>false</bold>
       </font>
      </property>
      <property name="text">
@@ -38,22 +112,86 @@
      </property>
     </widget>
    </item>
-   <item row="3" column="0">
-    <widget class="QTabWidget" name="askLepTabWidget">
+   <item row="2" column="1">
+    <spacer name="horizontalSpacer_2">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="sizeType">
+      <enum>QSizePolicy::Minimum</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>400</width>
+       <height>20</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item row="2" column="3">
+    <widget class="QFrame" name="askLepWidgetFrame">
      <property name="sizePolicy">
-      <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+      <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
        <horstretch>0</horstretch>
        <verstretch>0</verstretch>
       </sizepolicy>
      </property>
      <property name="minimumSize">
       <size>
-       <width>400</width>
+       <width>100</width>
+       <height>400</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>900</width>
+       <height>16777215</height>
+      </size>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(246, 247, 200);
+border-color: rgb(246, 247, 200);
+</string>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::Panel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Raised</enum>
+     </property>
+     <property name="lineWidth">
+      <number>2</number>
+     </property>
+     <layout class="QHBoxLayout" name="askLepLayout"/>
+    </widget>
+   </item>
+   <item row="2" column="0">
+    <widget class="QTabWidget" name="askLepTabWidget">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>500</width>
        <height>200</height>
       </size>
      </property>
+     <property name="maximumSize">
+      <size>
+       <width>1500</width>
+       <height>16777215</height>
+      </size>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border-color: rgb(246, 247, 200);
+alternate-background-color: rgb(255, 255, 255);
+background-color: rgb(246, 247, 200);</string>
+     </property>
      <property name="currentIndex">
-      <number>0</number>
+      <number>2</number>
      </property>
      <widget class="QWidget" name="howToTab">
       <attribute name="title">
@@ -61,35 +199,21 @@
       </attribute>
       <layout class="QHBoxLayout" name="horizontalLayout">
        <item>
-        <widget class="QScrollArea" name="howToScrollArea">
-         <property name="widgetResizable">
-          <bool>true</bool>
+        <widget class="QLabel" name="howToTextBox">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
          </property>
-         <widget class="QWidget" name="scrollAreaWidgetContents_3">
-          <property name="geometry">
-           <rect>
-            <x>0</x>
-            <y>0</y>
-            <width>920</width>
-            <height>502</height>
-           </rect>
-          </property>
-          <layout class="QHBoxLayout" name="horizontalLayout_2">
-           <item>
-            <widget class="QLabel" name="howToTextBox">
-             <property name="sizePolicy">
-              <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-               <horstretch>0</horstretch>
-               <verstretch>0</verstretch>
-              </sizepolicy>
-             </property>
-             <property name="font">
-              <font>
-               <pointsize>14</pointsize>
-              </font>
-             </property>
-             <property name="text">
-              <string>&lt;html&gt;
+         <property name="font">
+          <font>
+           <family>Helvetica Neue</family>
+           <pointsize>14</pointsize>
+          </font>
+         </property>
+         <property name="text">
+          <string>&lt;html&gt;
 &lt;head&gt;
 &lt;style&gt;
 table, th, td {
@@ -164,11 +288,7 @@ table, th, td {
 
         &lt;/body&gt;
 &lt;/html&gt;</string>
-             </property>
-            </widget>
-           </item>
-          </layout>
-         </widget>
+         </property>
         </widget>
        </item>
       </layout>
@@ -179,41 +299,33 @@ table, th, td {
       </attribute>
       <layout class="QGridLayout" name="gridLayout_3">
        <item row="0" column="0">
-        <widget class="QScrollArea" name="cheatSheetScrollArea">
-         <property name="widgetResizable">
-          <bool>true</bool>
+        <widget class="QLabel" name="cheatSheetTextBox">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
          </property>
-         <widget class="QWidget" name="scrollAreaWidgetContents">
-          <property name="geometry">
-           <rect>
-            <x>0</x>
-            <y>0</y>
-            <width>467</width>
-            <height>502</height>
-           </rect>
-          </property>
-          <layout class="QHBoxLayout" name="horizontalLayout_3">
-           <item>
-            <widget class="QLabel" name="cheatSheetTextBox">
-             <property name="sizePolicy">
-              <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-               <horstretch>0</horstretch>
-               <verstretch>0</verstretch>
-              </sizepolicy>
-             </property>
-             <property name="minimumSize">
-              <size>
-               <width>300</width>
-               <height>300</height>
-              </size>
-             </property>
-             <property name="font">
-              <font>
-               <pointsize>14</pointsize>
-              </font>
-             </property>
-             <property name="text">
-              <string>Double negation law
+         <property name="minimumSize">
+          <size>
+           <width>200</width>
+           <height>500</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>1500</width>
+           <height>16777215</height>
+          </size>
+         </property>
+         <property name="font">
+          <font>
+           <family>Helvetica Neue</family>
+           <pointsize>14</pointsize>
+          </font>
+         </property>
+         <property name="text">
+          <string>Double negation law
 ¬¬P ≡ P
 Commutative laws
 P ∧ Q ≡ Q ∧ P
@@ -248,11 +360,7 @@ P ∨ (a contradiction) ≡ P
 Quantifier negation laws
 ¬∃x s.t. P ≡ ∀x, ¬P
 ¬∀x, P ≡ ∃x s.t. P</string>
-             </property>
-            </widget>
-           </item>
-          </layout>
-         </widget>
+         </property>
         </widget>
        </item>
       </layout>
@@ -264,79 +372,6 @@ Quantifier negation laws
       <layout class="QGridLayout" name="gridLayout_2"/>
      </widget>
     </widget>
-   </item>
-   <item row="1" column="0">
-    <widget class="QFrame" name="frame">
-     <property name="frameShape">
-      <enum>QFrame::StyledPanel</enum>
-     </property>
-     <property name="frameShadow">
-      <enum>QFrame::Raised</enum>
-     </property>
-     <layout class="QHBoxLayout" name="horizontalLayout_5">
-      <item>
-       <widget class="QLineEdit" name="expressionInput"/>
-      </item>
-      <item>
-       <widget class="QPushButton" name="searchButton">
-        <property name="minimumSize">
-         <size>
-          <width>60</width>
-          <height>0</height>
-         </size>
-        </property>
-        <property name="maximumSize">
-         <size>
-          <width>60</width>
-          <height>16777215</height>
-         </size>
-        </property>
-        <property name="text">
-         <string>search</string>
-        </property>
-       </widget>
-      </item>
-     </layout>
-    </widget>
-   </item>
-   <item row="2" column="1" rowspan="2">
-    <widget class="QFrame" name="askLepWidgetFrame">
-     <property name="sizePolicy">
-      <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-       <horstretch>0</horstretch>
-       <verstretch>0</verstretch>
-      </sizepolicy>
-     </property>
-     <property name="minimumSize">
-      <size>
-       <width>100</width>
-       <height>0</height>
-      </size>
-     </property>
-     <property name="frameShape">
-      <enum>QFrame::NoFrame</enum>
-     </property>
-     <property name="frameShadow">
-      <enum>QFrame::Raised</enum>
-     </property>
-     <layout class="QHBoxLayout" name="askLepLayout"/>
-    </widget>
-   </item>
-   <item row="2" column="2">
-    <spacer name="horizontalSpacer">
-     <property name="orientation">
-      <enum>Qt::Horizontal</enum>
-     </property>
-     <property name="sizeType">
-      <enum>QSizePolicy::Fixed</enum>
-     </property>
-     <property name="sizeHint" stdset="0">
-      <size>
-       <width>40</width>
-       <height>20</height>
-      </size>
-     </property>
-    </spacer>
    </item>
   </layout>
  </widget>

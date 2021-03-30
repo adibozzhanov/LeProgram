@@ -16,11 +16,11 @@ class TestMakingPage(Ui_testMakingPage):
         self.taskMakingFrames = []
         self.setupUi(master)
         self.connectActions()
-        self.addAskLepWidget()
         self.addTaskMakingFrame()
         self.addTaskMakingFrame()
         self.testDescriptionInput.setPlainText("")
         self.testNameInput.setFocus()
+        self.tmpFrame = None
 
     def getTest(self):
         if not self.finished:
@@ -35,10 +35,23 @@ class TestMakingPage(Ui_testMakingPage):
         self.testNameInput.textChanged.connect(lambda: self.renameTest())
         self.testDescriptionInput.textChanged.connect(lambda: self.addDescription())
         self.finishButton.clicked.connect(lambda: self.getTest())
-        # self.askLepButton.clicked.connect()
+        self.askLepButton.clicked.connect(lambda: self.requestExpression())
 
-    def addAskLepWidget(self, expression=None):
-        AskLepWidget(self.askLepWidgetFrame, self.view, None)
+
+    def requestExpression(self):
+        s = self.askLepInput.toPlainText()
+        self.view.request("loadAskLep", s)
+
+    def updateAskLep(self, expression=None):
+        self.deleteAskLep()
+        self.tmpFrame = QtWidgets.QFrame()
+        self.askLepLayout.addWidget(self.tmpFrame)
+        AskLepWidget(self.tmpFrame, self.view, expression)
+
+    def deleteAskLep(self):
+        if self.tmpFrame != None:
+            self.askLepLayout.removeWidget(self.tmpFrame)
+            self.tmpFrame.deleteLater()
 
     def addTaskMakingFrame(self):
         newFrame = QtWidgets.QFrame()
