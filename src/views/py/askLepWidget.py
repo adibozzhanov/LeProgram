@@ -35,7 +35,6 @@ class AskLepWidget(Ui_askLepWidgetFrame):
 
             columnInfo = truthTable[0]
             expressionSplit = list(columnInfo[-1])
-            print(expressionSplit)
 
             self.truthTableWidget.setRowCount(len(expResults) + 1)
             self.truthTableWidget.setColumnCount(len(columnInfo) + len(expressionSplit) - 1)
@@ -59,7 +58,7 @@ class AskLepWidget(Ui_askLepWidgetFrame):
 
                     self.truthTableWidget.setItem(expResultsInd + 1, expVarInpInd, QTableWidgetItem(stringRes))
 
-                outRes = truthTable[expResultsInd + 1][2]
+                outRes = truthTable[expResultsInd + 1][-1]
 
                 for outResInd in range(len(outRes)):
                     if outRes[outResInd] == True:
@@ -68,7 +67,6 @@ class AskLepWidget(Ui_askLepWidgetFrame):
                         outResString = "False"
                     else:
                         outResString = ""
-
                     self.truthTableWidget.setItem(expResultsInd + 1, expVarInpInd + outResInd + 1, QTableWidgetItem(outResString))
 
         # Resize the cells to make table look better
