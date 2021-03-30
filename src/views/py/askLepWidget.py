@@ -73,3 +73,7 @@ class AskLepWidget(Ui_askLepWidgetFrame):
         header = self.truthTableWidget.horizontalHeader()
         header.setSectionResizeMode(QHeaderView.ResizeToContents)
 
+        self.truthTableWidget.verticalHeader().setVisible(False)
+        self.truthTableWidget.horizontalHeader().setVisible(False)
+
+
