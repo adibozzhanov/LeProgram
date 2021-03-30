@@ -44,7 +44,7 @@ class Ui_MainWindow(object):
         self.mainFrameLayout.setObjectName("mainFrameLayout")
         self.gridLayout.addWidget(self.mainFrame, 2, 0, 1, 1)
         self.menuBar = QtWidgets.QFrame(self.centralwidget)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Maximum)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Maximum)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.menuBar.sizePolicy().hasHeightForWidth())
