@@ -13,7 +13,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_askLepPage(object):
     def setupUi(self, askLepPage):
         askLepPage.setObjectName("askLepPage")
-        askLepPage.resize(1036, 671)
+        askLepPage.resize(993, 705)
         askLepPage.setStyleSheet("background-color: rgb(255, 255, 242);\n"
 "border-color: rgb(255, 255, 242);")
         self.gridLayout = QtWidgets.QGridLayout(askLepPage)
@@ -54,7 +54,7 @@ class Ui_askLepPage(object):
         self.searchButton.setObjectName("searchButton")
         self.horizontalLayout_5.addWidget(self.searchButton)
         self.gridLayout.addWidget(self.frame, 1, 1, 1, 1)
-        spacerItem = QtWidgets.QSpacerItem(100, 20, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Minimum)
+        spacerItem = QtWidgets.QSpacerItem(0, 20, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Minimum)
         self.gridLayout.addItem(spacerItem, 2, 2, 1, 1)
         self.EnterExpressionLabel = QtWidgets.QLabel(askLepPage)
         self.EnterExpressionLabel.setMinimumSize(QtCore.QSize(0, 0))
@@ -117,6 +117,11 @@ class Ui_askLepPage(object):
         self.askLepTabWidget.addTab(self.myNotesTab, "")
         self.gridLayout.addWidget(self.askLepTabWidget, 2, 1, 1, 1)
         self.askLepWidgetFrame = QtWidgets.QFrame(askLepPage)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Maximum, QtWidgets.QSizePolicy.Preferred)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.askLepWidgetFrame.sizePolicy().hasHeightForWidth())
+        self.askLepWidgetFrame.setSizePolicy(sizePolicy)
         self.askLepWidgetFrame.setMinimumSize(QtCore.QSize(0, 0))
         self.askLepWidgetFrame.setMaximumSize(QtCore.QSize(16777215, 16777215))
         self.askLepWidgetFrame.setStyleSheet("background-color: rgb(255,255,242);\n"
@@ -129,9 +134,11 @@ class Ui_askLepPage(object):
         self.askLepWidgetFrame.setObjectName("askLepWidgetFrame")
         self.askLepLayout = QtWidgets.QHBoxLayout(self.askLepWidgetFrame)
         self.askLepLayout.setObjectName("askLepLayout")
+        spacerItem1 = QtWidgets.QSpacerItem(0, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        self.askLepLayout.addItem(spacerItem1)
         self.gridLayout.addWidget(self.askLepWidgetFrame, 1, 3, 2, 1)
-        spacerItem1 = QtWidgets.QSpacerItem(0, 20, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Minimum)
-        self.gridLayout.addItem(spacerItem1, 2, 0, 1, 1)
+        spacerItem2 = QtWidgets.QSpacerItem(0, 20, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Minimum)
+        self.gridLayout.addItem(spacerItem2, 2, 0, 1, 1)
 
         self.retranslateUi(askLepPage)
         self.askLepTabWidget.setCurrentIndex(2)

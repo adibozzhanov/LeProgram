@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1036</width>
-    <height>671</height>
+    <width>993</width>
+    <height>705</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -103,7 +103,7 @@ color: rgb(246, 247, 200);
      </property>
      <property name="sizeHint" stdset="0">
       <size>
-       <width>100</width>
+       <width>0</width>
        <height>20</height>
       </size>
      </property>
@@ -374,6 +374,12 @@ p, li { white-space: pre-wrap; }
    </item>
    <item row="1" column="3" rowspan="2">
     <widget class="QFrame" name="askLepWidgetFrame">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
      <property name="minimumSize">
       <size>
        <width>0</width>
@@ -403,7 +409,21 @@ border-color: rgb(246, 247, 200);
      <property name="midLineWidth">
       <number>0</number>
      </property>
-     <layout class="QHBoxLayout" name="askLepLayout"/>
+     <layout class="QHBoxLayout" name="askLepLayout">
+      <item>
+       <spacer name="horizontalSpacer_3">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>0</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+     </layout>
     </widget>
    </item>
    <item row="2" column="0">
