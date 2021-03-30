@@ -18,6 +18,7 @@ class Ui_askLepPage(object):
         askLepPage.setStyleSheet("background-color: rgb(255, 255, 242);\n"
 "border-color: rgb(255, 255, 242);")
         self.gridLayout = QtWidgets.QGridLayout(askLepPage)
+        self.gridLayout.setVerticalSpacing(0)
         self.gridLayout.setObjectName("gridLayout")
         self.frame = QtWidgets.QFrame(askLepPage)
         self.frame.setFrameShape(QtWidgets.QFrame.StyledPanel)
@@ -31,7 +32,7 @@ class Ui_askLepPage(object):
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.expressionInput.sizePolicy().hasHeightForWidth())
         self.expressionInput.setSizePolicy(sizePolicy)
-        self.expressionInput.setMinimumSize(QtCore.QSize(300, 0))
+        self.expressionInput.setMinimumSize(QtCore.QSize(450, 0))
         font = QtGui.QFont()
         font.setFamily("Helvetica Neue")
         font.setPointSize(12)
@@ -86,13 +87,13 @@ class Ui_askLepPage(object):
         self.askLepLayout.setObjectName("askLepLayout")
         self.gridLayout.addWidget(self.askLepWidgetFrame, 2, 3, 1, 1)
         self.askLepTabWidget = QtWidgets.QTabWidget(askLepPage)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Maximum)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.askLepTabWidget.sizePolicy().hasHeightForWidth())
         self.askLepTabWidget.setSizePolicy(sizePolicy)
         self.askLepTabWidget.setMinimumSize(QtCore.QSize(500, 200))
-        self.askLepTabWidget.setMaximumSize(QtCore.QSize(1500, 16777215))
+        self.askLepTabWidget.setMaximumSize(QtCore.QSize(1500, 1000))
         self.askLepTabWidget.setStyleSheet("border-color: rgb(246, 247, 200);\n"
 "alternate-background-color: rgb(255, 255, 255);\n"
 "background-color: rgb(246, 247, 200);")
