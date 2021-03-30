@@ -18,6 +18,9 @@
   <property name="windowTitle">
    <string>Leprogram</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(255, 255, 242);</string>
+  </property>
   <property name="tabShape">
    <enum>QTabWidget::Triangular</enum>
   </property>
@@ -66,7 +69,16 @@
         <number>24</number>
        </property>
        <property name="leftMargin">
-        <number>9</number>
+        <number>0</number>
+       </property>
+       <property name="topMargin">
+        <number>0</number>
+       </property>
+       <property name="rightMargin">
+        <number>0</number>
+       </property>
+       <property name="bottomMargin">
+        <number>0</number>
        </property>
        <item>
         <spacer name="leftSpacer">

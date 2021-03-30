@@ -18,80 +18,120 @@
 border-color: rgb(255, 255, 242);</string>
   </property>
   <layout class="QGridLayout" name="gridLayout">
-   <item row="4" column="2">
-    <widget class="QPushButton" name="finishButton">
+   <property name="verticalSpacing">
+    <number>0</number>
+   </property>
+   <item row="7" column="1">
+    <widget class="QPlainTextEdit" name="testDescriptionInput">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>100</width>
+       <height>60</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>16777215</width>
+       <height>60</height>
+      </size>
+     </property>
      <property name="font">
       <font>
        <family>Helvetica Neue</family>
-       <pointsize>18</pointsize>
-       <weight>75</weight>
-       <bold>true</bold>
+       <pointsize>11</pointsize>
       </font>
      </property>
      <property name="styleSheet">
-      <string notr="true">background-color: rgb(255, 253, 78);
-border-color: rgb(255, 253, 78);
-selection-color:rgb(233, 234, 189);
-selection-background-color: rgb(233, 234, 189);</string>
+      <string notr="true">border-color: rgb(246, 247, 200)</string>
      </property>
-     <property name="text">
-      <string>Finish</string>
+     <property name="frameShape">
+      <enum>QFrame::NoFrame</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Plain</enum>
+     </property>
+     <property name="lineWidth">
+      <number>0</number>
+     </property>
+     <property name="verticalScrollBarPolicy">
+      <enum>Qt::ScrollBarAlwaysOff</enum>
+     </property>
+     <property name="horizontalScrollBarPolicy">
+      <enum>Qt::ScrollBarAlwaysOff</enum>
+     </property>
+     <property name="tabChangesFocus">
+      <bool>false</bool>
+     </property>
+     <property name="plainText">
+      <string/>
+     </property>
+     <property name="placeholderText">
+      <string>Input test description</string>
      </property>
     </widget>
    </item>
-   <item row="4" column="3">
-    <spacer name="horizontalSpacer_3">
-     <property name="orientation">
-      <enum>Qt::Horizontal</enum>
+   <item row="0" column="6" rowspan="14">
+    <widget class="QFrame" name="askLepWidgetFrame">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
      </property>
-     <property name="sizeType">
-      <enum>QSizePolicy::Preferred</enum>
-     </property>
-     <property name="sizeHint" stdset="0">
+     <property name="minimumSize">
       <size>
-       <width>30</width>
-       <height>20</height>
+       <width>100</width>
+       <height>400</height>
       </size>
      </property>
-    </spacer>
-   </item>
-   <item row="4" column="1">
-    <widget class="QPushButton" name="addTaskButton">
-     <property name="font">
-      <font>
-       <family>Helvetica Neue</family>
-       <pointsize>18</pointsize>
-       <weight>75</weight>
-       <bold>true</bold>
-      </font>
+     <property name="maximumSize">
+      <size>
+       <width>900</width>
+       <height>16777215</height>
+      </size>
      </property>
      <property name="styleSheet">
-      <string notr="true">background-color: rgb(24, 35, 32);
-color: rgb(246, 247, 200);
+      <string notr="true">background-color: rgb(246, 247, 200);
+border-color: rgb(246, 247, 200);
 </string>
      </property>
-     <property name="text">
-      <string>Add Task</string>
+     <property name="frameShape">
+      <enum>QFrame::Panel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Raised</enum>
+     </property>
+     <property name="lineWidth">
+      <number>2</number>
      </property>
     </widget>
    </item>
-   <item row="4" column="0">
-    <spacer name="horizontalSpacer">
-     <property name="orientation">
-      <enum>Qt::Horizontal</enum>
+   <item row="3" column="1">
+    <widget class="QLabel" name="testNameLabel">
+     <property name="font">
+      <font>
+       <family>Helvetica Neue</family>
+       <pointsize>28</pointsize>
+       <weight>50</weight>
+       <italic>true</italic>
+       <bold>false</bold>
+      </font>
      </property>
-     <property name="sizeType">
-      <enum>QSizePolicy::Preferred</enum>
+     <property name="lineWidth">
+      <number>0</number>
      </property>
-     <property name="sizeHint" stdset="0">
-      <size>
-       <width>60</width>
-       <height>20</height>
-      </size>
+     <property name="text">
+      <string>Test Name</string>
      </property>
-    </spacer>
+    </widget>
    </item>
-   <item row="2" column="1">
+   <item row="5" column="1">
     <widget class="QPlainTextEdit" name="testNameInput">
      <property name="sizePolicy">
       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
@@ -120,66 +160,27 @@ color: rgb(246, 247, 200);
      <property name="styleSheet">
       <string notr="true">border-color: rgb(246, 247, 200)</string>
      </property>
+     <property name="frameShape">
+      <enum>QFrame::NoFrame</enum>
+     </property>
      <property name="frameShadow">
       <enum>QFrame::Plain</enum>
      </property>
      <property name="lineWidth">
       <number>0</number>
      </property>
+     <property name="verticalScrollBarPolicy">
+      <enum>Qt::ScrollBarAlwaysOff</enum>
+     </property>
+     <property name="horizontalScrollBarPolicy">
+      <enum>Qt::ScrollBarAlwaysOff</enum>
+     </property>
      <property name="placeholderText">
       <string>Input test name</string>
      </property>
     </widget>
    </item>
-   <item row="5" column="1">
-    <spacer name="verticalSpacer">
-     <property name="orientation">
-      <enum>Qt::Vertical</enum>
-     </property>
-     <property name="sizeType">
-      <enum>QSizePolicy::Preferred</enum>
-     </property>
-     <property name="sizeHint" stdset="0">
-      <size>
-       <width>20</width>
-       <height>40</height>
-      </size>
-     </property>
-    </spacer>
-   </item>
-   <item row="0" column="1">
-    <spacer name="verticalSpacer_2">
-     <property name="orientation">
-      <enum>Qt::Vertical</enum>
-     </property>
-     <property name="sizeType">
-      <enum>QSizePolicy::Preferred</enum>
-     </property>
-     <property name="sizeHint" stdset="0">
-      <size>
-       <width>20</width>
-       <height>40</height>
-      </size>
-     </property>
-    </spacer>
-   </item>
-   <item row="1" column="1" colspan="2">
-    <widget class="QLabel" name="testNameLabel">
-     <property name="font">
-      <font>
-       <family>Helvetica Neue</family>
-       <pointsize>28</pointsize>
-       <weight>50</weight>
-       <italic>true</italic>
-       <bold>false</bold>
-      </font>
-     </property>
-     <property name="text">
-      <string>Test Name</string>
-     </property>
-    </widget>
-   </item>
-   <item row="6" column="1" colspan="2">
+   <item row="13" column="1" colspan="4">
     <widget class="QScrollArea" name="taskMakingScrollArea">
      <property name="sizePolicy">
       <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
@@ -193,8 +194,18 @@ color: rgb(246, 247, 200);
        <height>200</height>
       </size>
      </property>
+     <property name="maximumSize">
+      <size>
+       <width>1500</width>
+       <height>16777215</height>
+      </size>
+     </property>
      <property name="styleSheet">
-      <string notr="true">border-color: rgb(246, 247, 200)</string>
+      <string notr="true">border-color: rgb(246, 247, 200);
+background-color: rgb(246, 247, 200);</string>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::NoFrame</enum>
      </property>
      <property name="lineWidth">
       <number>0</number>
@@ -207,8 +218,8 @@ color: rgb(246, 247, 200);
        <rect>
         <x>0</x>
         <y>0</y>
-        <width>474</width>
-        <height>212</height>
+        <width>472</width>
+        <height>216</height>
        </rect>
       </property>
       <layout class="QVBoxLayout" name="verticalLayout_2">
@@ -223,97 +234,100 @@ color: rgb(246, 247, 200);
      </widget>
     </widget>
    </item>
-   <item row="3" column="1">
-    <widget class="QPlainTextEdit" name="testDescriptionInput">
-     <property name="sizePolicy">
-      <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
-       <horstretch>0</horstretch>
-       <verstretch>0</verstretch>
-      </sizepolicy>
+   <item row="7" column="0">
+    <spacer name="horizontalSpacer">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
      </property>
-     <property name="minimumSize">
+     <property name="sizeType">
+      <enum>QSizePolicy::Preferred</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
       <size>
-       <width>0</width>
-       <height>60</height>
+       <width>100</width>
+       <height>20</height>
       </size>
      </property>
-     <property name="maximumSize">
+    </spacer>
+   </item>
+   <item row="0" column="5">
+    <spacer name="horizontalSpacer_3">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="sizeType">
+      <enum>QSizePolicy::Preferred</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
       <size>
-       <width>16777215</width>
-       <height>60</height>
+       <width>50</width>
+       <height>20</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item row="8" column="3">
+    <widget class="QPushButton" name="finishButton">
+     <property name="font">
+      <font>
+       <family>Helvetica Neue</family>
+       <pointsize>14</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(255, 253, 78);
+border-color: rgb(255, 253, 78);
+selection-color:rgb(233, 234, 189);
+selection-background-color: rgb(233, 234, 189);</string>
+     </property>
+     <property name="text">
+      <string>Finish</string>
+     </property>
+    </widget>
+   </item>
+   <item row="8" column="2">
+    <widget class="QPushButton" name="addTaskButton">
+     <property name="minimumSize">
+      <size>
+       <width>150</width>
+       <height>0</height>
       </size>
      </property>
      <property name="font">
       <font>
        <family>Helvetica Neue</family>
-       <pointsize>11</pointsize>
+       <pointsize>14</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
       </font>
      </property>
      <property name="styleSheet">
-      <string notr="true">border-color: rgb(246, 247, 200)</string>
+      <string notr="true">background-color: rgb(24, 35, 32);
+color: rgb(246, 247, 200);
+</string>
      </property>
-     <property name="frameShadow">
-      <enum>QFrame::Plain</enum>
-     </property>
-     <property name="lineWidth">
-      <number>0</number>
-     </property>
-     <property name="plainText">
-      <string/>
-     </property>
-     <property name="placeholderText">
-      <string>Input test description</string>
+     <property name="text">
+      <string>Add Task</string>
      </property>
     </widget>
    </item>
-   <item row="6" column="3">
-    <spacer name="verticalSpacer_3">
+   <item row="9" column="1">
+    <spacer name="horizontalSpacer_2">
      <property name="orientation">
-      <enum>Qt::Vertical</enum>
+      <enum>Qt::Horizontal</enum>
      </property>
      <property name="sizeType">
-      <enum>QSizePolicy::Maximum</enum>
+      <enum>QSizePolicy::Preferred</enum>
      </property>
      <property name="sizeHint" stdset="0">
       <size>
-       <width>20</width>
-       <height>700</height>
+       <width>100</width>
+       <height>20</height>
       </size>
      </property>
     </spacer>
-   </item>
-   <item row="0" column="4" rowspan="7">
-    <widget class="QFrame" name="askLepWidgetFrame">
-     <property name="sizePolicy">
-      <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
-       <horstretch>0</horstretch>
-       <verstretch>0</verstretch>
-      </sizepolicy>
-     </property>
-     <property name="minimumSize">
-      <size>
-       <width>100</width>
-       <height>400</height>
-      </size>
-     </property>
-     <property name="maximumSize">
-      <size>
-       <width>900</width>
-       <height>16777215</height>
-      </size>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">background-color: rgb(246, 247, 200);
-border-color: rgb(246, 247, 200);
-</string>
-     </property>
-     <property name="frameShape">
-      <enum>QFrame::StyledPanel</enum>
-     </property>
-     <property name="frameShadow">
-      <enum>QFrame::Raised</enum>
-     </property>
-    </widget>
    </item>
   </layout>
  </widget>

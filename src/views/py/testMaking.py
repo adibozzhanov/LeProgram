@@ -18,6 +18,9 @@ class TestMakingPage(Ui_testMakingPage):
         self.connectActions()
         self.addAskLepWidget()
         self.addTaskMakingFrame()
+        self.addTaskMakingFrame()
+        self.testDescriptionInput.setPlainText("")
+        self.testNameInput.setFocus()
 
     def getTest(self):
         if not self.finished:

@@ -14,16 +14,23 @@
    <string>Frame</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-color: rgb(255, 255, 242);</string>
+   <string notr="true">background-color: rgb(246, 247, 200);
+border-color: rgb(246, 247, 200);</string>
   </property>
   <layout class="QGridLayout" name="gridLayout">
    <property name="leftMargin">
     <number>0</number>
    </property>
+   <property name="topMargin">
+    <number>0</number>
+   </property>
    <property name="rightMargin">
     <number>0</number>
    </property>
-   <property name="verticalSpacing">
+   <property name="bottomMargin">
+    <number>0</number>
+   </property>
+   <property name="spacing">
     <number>0</number>
    </property>
    <item row="1" column="0">
@@ -34,7 +41,7 @@
      <property name="sizeHint" stdset="0">
       <size>
        <width>40</width>
-       <height>20</height>
+       <height>5</height>
       </size>
      </property>
     </spacer>
@@ -57,52 +64,27 @@
           <italic>true</italic>
          </font>
         </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(24, 35, 32);
+color: rgb(246, 247, 200);
+</string>
+        </property>
         <property name="text">
          <string>Delete</string>
         </property>
        </widget>
       </item>
       <item>
-       <widget class="QPushButton" name="saveButton">
-        <property name="font">
-         <font>
-          <family>Helvetica Neue</family>
-          <pointsize>11</pointsize>
-          <italic>true</italic>
-         </font>
-        </property>
-        <property name="text">
-         <string>Save</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <spacer name="horizontalSpacer_4">
-        <property name="orientation">
-         <enum>Qt::Horizontal</enum>
-        </property>
-        <property name="sizeType">
-         <enum>QSizePolicy::Expanding</enum>
-        </property>
-        <property name="sizeHint" stdset="0">
-         <size>
-          <width>40</width>
-          <height>20</height>
-         </size>
-        </property>
-       </spacer>
-      </item>
-      <item>
        <widget class="QLineEdit" name="expressionInput">
         <property name="sizePolicy">
-         <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+         <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
           <horstretch>0</horstretch>
           <verstretch>0</verstretch>
          </sizepolicy>
         </property>
         <property name="minimumSize">
          <size>
-          <width>200</width>
+          <width>300</width>
           <height>0</height>
          </size>
         </property>
@@ -111,6 +93,12 @@
           <family>Helvetica Neue</family>
           <pointsize>11</pointsize>
          </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(246, 247, 200);
+border-color: rgb(246, 247, 200);
+alternate-background-color: rgb(246, 247, 200);
+selection-background-color: rgb(246, 247, 200);</string>
         </property>
         <property name="text">
          <string/>
@@ -135,27 +123,14 @@
         </property>
        </widget>
       </item>
-      <item>
-       <spacer name="horizontalSpacer_3">
-        <property name="orientation">
-         <enum>Qt::Horizontal</enum>
-        </property>
-        <property name="sizeType">
-         <enum>QSizePolicy::MinimumExpanding</enum>
-        </property>
-        <property name="sizeHint" stdset="0">
-         <size>
-          <width>40</width>
-          <height>20</height>
-         </size>
-        </property>
-       </spacer>
-      </item>
      </layout>
     </widget>
    </item>
    <item row="5" column="0">
     <widget class="QFrame" name="answerButtonFrame">
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(24, 35, 32);</string>
+     </property>
      <property name="frameShape">
       <enum>QFrame::StyledPanel</enum>
      </property>
@@ -184,10 +159,30 @@
           <pointsize>11</pointsize>
          </font>
         </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(246, 247, 200);
+border-color: rgb(246, 247, 200);</string>
+        </property>
         <property name="text">
-         <string>Add an answer</string>
+         <string>  Add answer  </string>
         </property>
        </widget>
+      </item>
+      <item>
+       <spacer name="horizontalSpacer_2">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeType">
+         <enum>QSizePolicy::Fixed</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>20</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
       </item>
       <item>
        <widget class="QPushButton" name="removeAnswerButton">
@@ -199,8 +194,12 @@
           <bold>false</bold>
          </font>
         </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(246, 247, 200);
+border-color: rgb(246, 247, 200);</string>
+        </property>
         <property name="text">
-         <string>Remove answer</string>
+         <string>  Remove answer  </string>
         </property>
        </widget>
       </item>
@@ -234,6 +233,13 @@
        <height>300</height>
       </size>
      </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(255, 255, 242);
+border-color: rgb(255, 255, 242);</string>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::NoFrame</enum>
+     </property>
      <property name="lineWidth">
       <number>0</number>
      </property>
@@ -248,8 +254,8 @@
        <rect>
         <x>0</x>
         <y>0</y>
-        <width>775</width>
-        <height>391</height>
+        <width>803</width>
+        <height>466</height>
        </rect>
       </property>
       <layout class="QVBoxLayout" name="verticalLayout_2">
@@ -277,7 +283,7 @@
      </property>
      <property name="sizeHint" stdset="0">
       <size>
-       <width>20</width>
+       <width>0</width>
        <height>300</height>
       </size>
      </property>
@@ -298,8 +304,8 @@
       </size>
      </property>
      <property name="styleSheet">
-      <string notr="true">background-color: rgb(255, 255, 242);
-border-color: rgb(255, 255, 242);</string>
+      <string notr="true">background-color: rgb(246, 247, 200);
+border-color: rgb(246, 247, 200);</string>
      </property>
      <property name="frameShape">
       <enum>QFrame::StyledPanel</enum>
@@ -308,10 +314,16 @@ border-color: rgb(255, 255, 242);</string>
       <enum>QFrame::Raised</enum>
      </property>
      <layout class="QHBoxLayout" name="horizontalLayout">
+      <property name="leftMargin">
+       <number>0</number>
+      </property>
+      <property name="rightMargin">
+       <number>0</number>
+      </property>
       <item>
        <widget class="QPlainTextEdit" name="taskDescriptionInput">
         <property name="sizePolicy">
-         <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+         <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
           <horstretch>0</horstretch>
           <verstretch>0</verstretch>
          </sizepolicy>
@@ -325,7 +337,7 @@ border-color: rgb(255, 255, 242);</string>
         <property name="maximumSize">
          <size>
           <width>16777215</width>
-          <height>100</height>
+          <height>60</height>
          </size>
         </property>
         <property name="font">
@@ -335,7 +347,14 @@ border-color: rgb(255, 255, 242);</string>
          </font>
         </property>
         <property name="styleSheet">
-         <string notr="true">border-color: rgb(255, 255, 242)</string>
+         <string notr="true">background-color: rgb(255, 255, 242);
+border-color: rgb(255, 255, 242);</string>
+        </property>
+        <property name="frameShape">
+         <enum>QFrame::Panel</enum>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Raised</enum>
         </property>
         <property name="placeholderText">
          <string>Enter task description</string>
