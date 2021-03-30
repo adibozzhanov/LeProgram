@@ -157,7 +157,7 @@ alternate-background-color: rgb(255, 255, 255);
 background-color: rgb(246, 247, 200);</string>
      </property>
      <property name="currentIndex">
-      <number>2</number>
+      <number>1</number>
      </property>
      <widget class="QWidget" name="howToTab">
       <attribute name="title">
@@ -175,7 +175,7 @@ background-color: rgb(246, 247, 200);</string>
          <property name="maximumSize">
           <size>
            <width>16777215</width>
-           <height>800</height>
+           <height>16777215</height>
           </size>
          </property>
          <property name="font">
