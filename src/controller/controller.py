@@ -30,7 +30,8 @@ class Controller:
             "testPreview": self.view.loadTestPreview,
             "loadAskLep": self.loadAskLep,
             "startTest": self.view.loadTestTaking,
-            "saveTest": self.saveTest
+            "saveTest": self.saveTest,
+            "loadTestResultsPls": self.loadResultPage
         }
 
 
@@ -92,6 +93,10 @@ class Controller:
                 if a[1]: answer.setCorrect()
                 task.addAnswer(answer)
             test.addTask(task)
+
+    def loadResultPage(self, test):
+        self.view.loadTestResult(test)
+        
 
     def handleRequest(self, request, *args):
         # args - view can pass parameters to a controller
