@@ -2,7 +2,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 
 from views.py.testTakingQt import Ui_testTakingFrame
 from views.py.taskFrame import TaskFrame
-
+from views.py.askLepWidget import AskLepWidget
 
 
 class TestTaking(Ui_testTakingFrame):
@@ -11,6 +11,7 @@ class TestTaking(Ui_testTakingFrame):
         self.view = view
         self.test = test
         self.tmpFrame = None
+        self.askLePtmpFrame = None
         self.setupUi(master)
         self.connectActions()
         self.testNameLabel.setText(test.getName())
@@ -44,10 +45,20 @@ class TestTaking(Ui_testTakingFrame):
         TaskFrame(self.tmpFrame, self.view, task, self)
         self.nextQButton.setEnabled(False)
 
+    def updateAskLep(self, expression=None):
+        if self.askLePtmpFrame != None:
+            self.askLepLayout.removeWidget(self.askLePtmpFrame)
+        self.askLePtmpFrame = QtWidgets.QFrame()
+        self.askLepLayout.addWidget(self.askLePtmpFrame)
+        AskLepWidget(self.askLePtmpFrame, self.view, expression)
 
-        
+    def deleteAskLep(self):
+        if self.askLePtmpFrame != None:
+            self.askLepLayout.removeWidget(self.askLePtmpFrame)
+            #self.askLePtmpFrame.deleteLater()
 
     def clearTask(self):
+        self.deleteAskLep()
         if self.tmpFrame is not None:
             self.taskLayout.removeWidget(self.tmpFrame)
             self.tmpFrame.deleteLater()
@@ -63,6 +74,3 @@ class TestTaking(Ui_testTakingFrame):
                 self.__loadTask(self.test.getTask(self.taskIds[self.currentTaskIndex]))
         else:
             self.view.request("testPreview", self.test)
-
-
-
