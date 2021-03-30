@@ -22,6 +22,8 @@ class Ui_testPreviewFrame(object):
         self.taskArea = QtWidgets.QScrollArea(testPreviewFrame)
         self.taskArea.setMinimumSize(QtCore.QSize(500, 500))
         self.taskArea.setMaximumSize(QtCore.QSize(1500, 16777215))
+        self.taskArea.setToolTipDuration(-1)
+        self.taskArea.setStyleSheet("background-color: rgb(246, 247, 200);")
         self.taskArea.setWidgetResizable(True)
         self.taskArea.setObjectName("taskArea")
         self.taskAreaContents = QtWidgets.QWidget()
@@ -55,7 +57,7 @@ class Ui_testPreviewFrame(object):
         self.testNameLabel.setObjectName("testNameLabel")
         self.verticalLayout.addWidget(self.testNameLabel)
         self.startButton = QtWidgets.QPushButton(self.leftFrame)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Preferred)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.startButton.sizePolicy().hasHeightForWidth())
@@ -74,7 +76,7 @@ class Ui_testPreviewFrame(object):
         self.startButton.setObjectName("startButton")
         self.verticalLayout.addWidget(self.startButton)
         self.addToLibraryButton = QtWidgets.QPushButton(self.leftFrame)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Preferred)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.addToLibraryButton.sizePolicy().hasHeightForWidth())
@@ -124,12 +126,12 @@ class Ui_testPreviewFrame(object):
         testPreviewFrame.setWindowTitle(_translate("testPreviewFrame", "Frame"))
         self.testNameLabel.setText(_translate("testPreviewFrame", "Test Name"))
         self.startButton.setText(_translate("testPreviewFrame", "Start"))
-        self.addToLibraryButton.setText(_translate("testPreviewFrame", "Add to my library"))
+        self.addToLibraryButton.setText(_translate("testPreviewFrame", "  Add to my library  "))
         self.textBrowser.setHtml(_translate("testPreviewFrame", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
 "</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:7.875pt; font-weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'Fira Sans Semi-Light\'; font-size:10pt;\">This is my test. It is a test that tests you on logic. Have fun.</span></p></body></html>"))
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'Fira Sans Semi-Light\'; font-size:10pt;\">  This is my test. It is a test that tests you on logic. Have fun.</span></p></body></html>"))
 
 
 if __name__ == "__main__":
