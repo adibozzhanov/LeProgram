@@ -41,7 +41,7 @@ border-color: rgb(255, 255, 242);</string>
         <property name="minimumSize">
          <size>
           <width>450</width>
-          <height>0</height>
+          <height>68</height>
          </size>
         </property>
         <property name="font">
@@ -142,13 +142,13 @@ color: rgb(246, 247, 200);
      <property name="minimumSize">
       <size>
        <width>500</width>
-       <height>200</height>
+       <height>0</height>
       </size>
      </property>
      <property name="maximumSize">
       <size>
-       <width>1500</width>
-       <height>1000</height>
+       <width>16777215</width>
+       <height>16777215</height>
       </size>
      </property>
      <property name="styleSheet">
@@ -167,10 +167,16 @@ background-color: rgb(246, 247, 200);</string>
        <item>
         <widget class="QLabel" name="howToTextBox">
          <property name="sizePolicy">
-          <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+          <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
            <horstretch>0</horstretch>
            <verstretch>0</verstretch>
           </sizepolicy>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>16777215</width>
+           <height>800</height>
+          </size>
          </property>
          <property name="font">
           <font>
@@ -267,7 +273,7 @@ table, th, td {
        <item row="0" column="0">
         <widget class="QLabel" name="cheatSheetTextBox">
          <property name="sizePolicy">
-          <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+          <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
            <horstretch>0</horstretch>
            <verstretch>0</verstretch>
           </sizepolicy>
@@ -281,7 +287,7 @@ table, th, td {
          <property name="maximumSize">
           <size>
            <width>1500</width>
-           <height>16777215</height>
+           <height>800</height>
           </size>
          </property>
          <property name="font">
@@ -335,7 +341,30 @@ Quantifier negation laws
       <attribute name="title">
        <string>My Notes</string>
       </attribute>
-      <layout class="QGridLayout" name="gridLayout_2"/>
+      <layout class="QGridLayout" name="gridLayout_2">
+       <item row="0" column="0">
+        <widget class="QTextEdit" name="textEdit">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="font">
+          <font>
+           <family>Helvetica Neue</family>
+           <pointsize>12</pointsize>
+          </font>
+         </property>
+         <property name="frameShape">
+          <enum>QFrame::NoFrame</enum>
+         </property>
+         <property name="placeholderText">
+          <string>Type your notes here</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
      </widget>
     </widget>
    </item>
