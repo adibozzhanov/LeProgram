@@ -61,9 +61,15 @@ class AskLepWidget(Ui_askLepWidgetFrame):
 
                 outRes = truthTable[expResultsInd + 1][2]
 
-                for expCharResInd in range(len(expressionSplit)):
+                for outResInd in range(len(outRes)):
+                    if outRes[outResInd] == True:
+                        outResString = "True"
+                    elif outRes[outResInd] == False:
+                        outResString = "False"
+                    else:
+                        outResString = ""
 
-                    self.truthTableWidget.setItem(expResultsInd + 1, expVarInpInd, QTableWidgetItem(stringRes))
+                    self.truthTableWidget.setItem(expResultsInd + 1, expVarInpInd + outResInd + 1, QTableWidgetItem(outResString))
                     #print(type(truthTable[expResultsInd + 1][expVarInpInd][0]))
             #print(truthTable)
 
