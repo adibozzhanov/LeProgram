@@ -44,6 +44,12 @@ border-color: rgb(255, 255, 242);</string>
           <height>68</height>
          </size>
         </property>
+        <property name="maximumSize">
+         <size>
+          <width>16777215</width>
+          <height>68</height>
+         </size>
+        </property>
         <property name="font">
          <font>
           <family>Helvetica Neue</family>
@@ -142,7 +148,7 @@ color: rgb(246, 247, 200);
      <property name="minimumSize">
       <size>
        <width>500</width>
-       <height>0</height>
+       <height>500</height>
       </size>
      </property>
      <property name="maximumSize">
@@ -157,7 +163,7 @@ alternate-background-color: rgb(255, 255, 255);
 background-color: rgb(246, 247, 200);</string>
      </property>
      <property name="currentIndex">
-      <number>2</number>
+      <number>0</number>
      </property>
      <widget class="QWidget" name="howToTab">
       <attribute name="title">
@@ -332,7 +338,7 @@ p, li { white-space: pre-wrap; }
      <property name="minimumSize">
       <size>
        <width>100</width>
-       <height>400</height>
+       <height>0</height>
       </size>
      </property>
      <property name="maximumSize">
