@@ -13,6 +13,11 @@
   <property name="windowTitle">
    <string>Form</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(246, 247, 200);
+border-color: rgb(246, 247, 200);
+</string>
+  </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
     <widget class="QLabel" name="askLeProgramLabel">
@@ -20,6 +25,11 @@
       <font>
        <pointsize>18</pointsize>
       </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(246, 247, 200);
+border-color: rgb(246, 247, 200);
+</string>
      </property>
      <property name="text">
       <string>Ask Le Program</string>
@@ -85,7 +95,9 @@ color: rgb(255, 255, 242);</string>
       <string>Truth Table</string>
      </property>
      <property name="styleSheet">
-      <string notr="true">background-color: rgb(255, 255, 242);</string>
+      <string notr="true">background-color: rgb(246, 247, 200);
+border-color: rgb(246, 247, 200);
+</string>
      </property>
      <property name="lineWidth">
       <number>-3</number>

@@ -14,7 +14,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_answerInputFrame(object):
     def setupUi(self, answerInputFrame):
         answerInputFrame.setObjectName("answerInputFrame")
-        answerInputFrame.resize(828, 50)
+        answerInputFrame.resize(828, 78)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
@@ -22,6 +22,7 @@ class Ui_answerInputFrame(object):
         answerInputFrame.setSizePolicy(sizePolicy)
         answerInputFrame.setMinimumSize(QtCore.QSize(0, 0))
         answerInputFrame.setMaximumSize(QtCore.QSize(16777215, 16777215))
+        answerInputFrame.setStyleSheet("background-color: rgb(255, 255, 242);")
         self.gridLayout = QtWidgets.QGridLayout(answerInputFrame)
         self.gridLayout.setContentsMargins(0, -1, 0, -1)
         self.gridLayout.setVerticalSpacing(0)
