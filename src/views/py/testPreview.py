@@ -12,7 +12,9 @@ class TestPreview(Ui_testPreviewFrame):
         self.numTasks = 0
         self.setupUi(master)
         self.testNameLabel.setText(self.test.getName())
+        self.textBrowser.setText(self.test.getDescription())
         self.initTasks()
+        self.startButton.clicked.connect(lambda: self.view.request("startTest", self.test))
 
     def addTaskWidget(self, task):
         newFrame = QtWidgets.QFrame()
