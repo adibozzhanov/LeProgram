@@ -12,6 +12,7 @@ class TestPreview(Ui_testPreviewFrame):
         self.numTasks = 0
         self.setupUi(master)
         self.testNameLabel.setText(self.test.getName())
+        self.textBrowser.setText(self.test.getDescription())
         self.initTasks()
 
     def addTaskWidget(self, task):
