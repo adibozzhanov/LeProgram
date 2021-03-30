@@ -13,9 +13,19 @@
   <property name="windowTitle">
    <string>Frame</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(246, 247, 200);</string>
+  </property>
   <layout class="QHBoxLayout" name="horizontalLayout">
    <item>
     <widget class="QPushButton" name="answerButton">
+     <property name="font">
+      <font>
+       <family>Helvetica Neue</family>
+       <pointsize>14</pointsize>
+       <italic>true</italic>
+      </font>
+     </property>
      <property name="text">
       <string>Answer</string>
      </property>
