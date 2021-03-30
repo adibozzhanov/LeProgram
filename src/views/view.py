@@ -8,6 +8,8 @@ from views.py.randomPage import RandomPage
 from views.py.askLepPage import AskLepPage
 from views.py.testMaking import TestMakingPage
 from views.py.notFound import NotFound
+from views.py.testResultFrame import TestResultFrame
+
 
 class View(Ui_MainWindow):
 
@@ -78,7 +80,7 @@ class View(Ui_MainWindow):
         self.currentDisplay = NotFound(self.masterFrame, self)
 
     def loadUser(self):
-        self.cleanMain()
+        self.cleanMain()        
 
     def updateAskLep(self, expression):
         self.currentDisplay.updateAskLep(expression)

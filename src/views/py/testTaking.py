@@ -43,6 +43,9 @@ class TestTaking(Ui_testTakingFrame):
         TaskFrame(self.tmpFrame, self.view, task, self)
         self.nextQButton.setEnabled(False)
 
+
+        
+
     def clearTask(self):
         if self.tmpFrame is not None:
             self.taskLayout.removeWidget(self.tmpFrame)
@@ -53,6 +56,9 @@ class TestTaking(Ui_testTakingFrame):
         if self.currentTaskIndex == None:
             self.view.request("testPreview", self.test) # only viewing th task: go back to preview
         elif self.currentTaskIndex >= len(self.taskIds):
-            self.view.request("testResults", self.test) # out of questions
+            self.view.request("loadTestResultsPls", self.test) # out of questions
         else:
             self.__loadTask(self.test.getTask(self.taskIds[self.currentTaskIndex]))
+
+
+
