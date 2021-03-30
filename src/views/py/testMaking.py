@@ -48,8 +48,7 @@ class TestMakingPage(Ui_testMakingPage):
         self.taskFrames[index].deleteLater()
         del self.taskFrames[index]
         del self.taskMakingFrames[index]
-        for c in range(index, len(self.taskFrames) - 1):
-            self.taskFrames[c].decreaseIndex()
+        for c in range(index, len(self.taskFrames)):
             self.taskMakingFrames[c].decreaseIndex()
         self.numTasks -= 1
 

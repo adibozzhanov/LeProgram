@@ -35,11 +35,11 @@ class AnswerInputFrame(Ui_answerInputFrame):
 
     def setInvalidLabel(self):
         self.ifValidLabel.setStyleSheet("color: rgb(255, 0, 0);")
-        self.ifValidLabel.setText("Invalid Expression")
+        self.ifValidLabel.setText("Invalid")
 
     def setValidLabel(self):
         self.ifValidLabel.setStyleSheet("color: rgb(50, 168, 82);")
-        self.ifValidLabel.setText("Valid Expression")
+        self.ifValidLabel.setText("Valid")
 
     def changeCorrect(self):
         val = True if self.ifCorrectCheckBox.isChecked() else False
