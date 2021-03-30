@@ -1,8 +1,9 @@
 
 
+
 from PyQt5 import QtCore, QtGui, QtWidgets
 
-from views.py.testResultFrameQt.py import Ui_testResultFrame
+from views.py.testResultFrameQt import Ui_testResultFrame
 
 
 class TestResultFrame(Ui_testResultFrame):
@@ -11,4 +12,6 @@ class TestResultFrame(Ui_testResultFrame):
         self.view = view
         self.test = test
         self.setupUi(master)
-    
+        self.testNameLabel.setText(test.getName())
+        result = test.getScore()
+        self.scoreLabel.setText(f"Your score is: {result[0]}/{result[1]}")

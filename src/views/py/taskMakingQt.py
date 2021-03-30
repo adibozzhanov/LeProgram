@@ -114,6 +114,7 @@ class Ui_taskMakingFrame(object):
         self.answersScrollArea.setFrameShape(QtWidgets.QFrame.NoFrame)
         self.answersScrollArea.setLineWidth(0)
         self.answersScrollArea.setVerticalScrollBarPolicy(QtCore.Qt.ScrollBarAsNeeded)
+        self.answersScrollArea.setHorizontalScrollBarPolicy(QtCore.Qt.ScrollBarAlwaysOff)
         self.answersScrollArea.setWidgetResizable(True)
         self.answersScrollArea.setObjectName("answersScrollArea")
         self.scrollAreaWidgetContents = QtWidgets.QWidget()

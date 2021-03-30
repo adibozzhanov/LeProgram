@@ -19,16 +19,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6d41d22a-78cf-4399-a64c-73185630425a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/askLepPageQt.py" beforeDir="false" afterPath="$PROJECT_DIR$/askLepPageQt.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/askLepWidgetQt.py" beforeDir="false" afterPath="$PROJECT_DIR$/askLepWidgetQt.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/taskMakingQt.py" beforeDir="false" afterPath="$PROJECT_DIR$/taskMakingQt.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testMaking.py" beforeDir="false" afterPath="$PROJECT_DIR$/testMaking.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testMakingQt.py" beforeDir="false" afterPath="$PROJECT_DIR$/testMakingQt.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ui/askLePWidget.ui" beforeDir="false" afterPath="$PROJECT_DIR$/../ui/askLePWidget.ui" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ui/taskMaking.ui" beforeDir="false" afterPath="$PROJECT_DIR$/../ui/taskMaking.ui" afterDir="false" />
-    </list>
+    <list default="true" id="6d41d22a-78cf-4399-a64c-73185630425a" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -80,7 +71,7 @@
       <workItem from="1617020049847" duration="1321000" />
       <workItem from="1617029777190" duration="337000" />
       <workItem from="1617089289260" duration="6278000" />
-      <workItem from="1617106462139" duration="2302000" />
+      <workItem from="1617106462139" duration="3159000" />
     </task>
     <servers />
   </component>
