@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>500</width>
+    <width>750</width>
     <height>628</height>
    </rect>
   </property>
@@ -29,13 +29,13 @@ border-color: rgb(246, 247, 200);
     <number>10</number>
    </property>
    <property name="leftMargin">
-    <number>45</number>
+    <number>0</number>
    </property>
    <property name="topMargin">
     <number>30</number>
    </property>
    <property name="rightMargin">
-    <number>45</number>
+    <number>0</number>
    </property>
    <property name="bottomMargin">
     <number>30</number>
@@ -126,7 +126,7 @@ color: rgb(255, 255, 242);</string>
      </property>
      <property name="minimumSize">
       <size>
-       <width>200</width>
+       <width>300</width>
        <height>200</height>
       </size>
      </property>
@@ -171,7 +171,7 @@ border-color: rgb(246, 247, 200);
        <rect>
         <x>0</x>
         <y>0</y>
-        <width>408</width>
+        <width>748</width>
         <height>173</height>
        </rect>
       </property>
