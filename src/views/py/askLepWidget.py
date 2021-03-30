@@ -1,5 +1,5 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
-from PyQt5.QtWidgets import QTableWidgetItem
+from PyQt5.QtWidgets import QTableWidgetItem, QHeaderView
 
 from views.py.askLepWidgetQt import Ui_askLepWidgetFrame
 
@@ -70,7 +70,8 @@ class AskLepWidget(Ui_askLepWidgetFrame):
                         outResString = ""
 
                     self.truthTableWidget.setItem(expResultsInd + 1, expVarInpInd + outResInd + 1, QTableWidgetItem(outResString))
-                    #print(type(truthTable[expResultsInd + 1][expVarInpInd][0]))
-            #print(truthTable)
 
-            #print(truthTable)
+        # Resize the cells to make table look better
+        header = self.truthTableWidget.horizontalHeader()
+        header.setSectionResizeMode(QHeaderView.ResizeToContents)
+
