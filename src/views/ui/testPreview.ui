@@ -13,6 +13,10 @@
   <property name="windowTitle">
    <string>Frame</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(255, 255, 242);
+border-color: rgb(255, 255, 242);</string>
+  </property>
   <layout class="QGridLayout" name="gridLayout">
    <item row="0" column="4">
     <widget class="QScrollArea" name="taskArea">
@@ -27,6 +31,12 @@
        <width>1500</width>
        <height>16777215</height>
       </size>
+     </property>
+     <property name="toolTipDuration">
+      <number>-1</number>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(246, 247, 200);</string>
      </property>
      <property name="widgetResizable">
       <bool>true</bool>
@@ -121,7 +131,9 @@
         </property>
         <property name="font">
          <font>
+          <family>Helvetica Neue</family>
           <pointsize>36</pointsize>
+          <italic>true</italic>
          </font>
         </property>
         <property name="text">
@@ -132,7 +144,7 @@
       <item>
        <widget class="QPushButton" name="startButton">
         <property name="sizePolicy">
-         <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+         <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
           <horstretch>0</horstretch>
           <verstretch>0</verstretch>
          </sizepolicy>
@@ -149,6 +161,19 @@
           <height>16777215</height>
          </size>
         </property>
+        <property name="font">
+         <font>
+          <family>Helvetica Neue</family>
+          <pointsize>12</pointsize>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(24, 35, 32);
+color: rgb(255, 255, 255);
+</string>
+        </property>
         <property name="text">
          <string>Start</string>
         </property>
@@ -157,7 +182,7 @@
       <item>
        <widget class="QPushButton" name="addToLibraryButton">
         <property name="sizePolicy">
-         <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+         <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
           <horstretch>0</horstretch>
           <verstretch>0</verstretch>
          </sizepolicy>
@@ -174,8 +199,23 @@
           <height>16777215</height>
          </size>
         </property>
+        <property name="font">
+         <font>
+          <family>Helvetica Neue</family>
+          <pointsize>12</pointsize>
+          <weight>75</weight>
+          <italic>false</italic>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(255, 253, 78);
+border-color: rgb(255, 253, 78);
+selection-color:rgb(233, 234, 189);
+selection-background-color: rgb(233, 234, 189);</string>
+        </property>
         <property name="text">
-         <string>Add to my library</string>
+         <string>  Add to my library  </string>
         </property>
        </widget>
       </item>
@@ -199,13 +239,18 @@
           <height>16777215</height>
          </size>
         </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(246, 247, 200);</string>
+        </property>
+        <property name="frameShape">
+         <enum>QFrame::NoFrame</enum>
+        </property>
         <property name="html">
          <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Fira Sans Semi-Light'; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Some sample description.&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:7.875pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Fira Sans Semi-Light'; font-size:10pt;&quot;&gt;  This is my test. It is a test that tests you on logic. Have fun.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
         </property>
        </widget>
       </item>

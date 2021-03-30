@@ -19,7 +19,12 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6d41d22a-78cf-4399-a64c-73185630425a" name="Default Changelist" comment="" />
+    <list default="true" id="6d41d22a-78cf-4399-a64c-73185630425a" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/mainQt.py" beforeDir="false" afterPath="$PROJECT_DIR$/mainQt.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/taskButtonQt.py" beforeDir="false" afterPath="$PROJECT_DIR$/taskButtonQt.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testPreviewQt.py" beforeDir="false" afterPath="$PROJECT_DIR$/testPreviewQt.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ui/testPreview.ui" beforeDir="false" afterPath="$PROJECT_DIR$/../ui/testPreview.ui" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -71,7 +76,7 @@
       <workItem from="1617020049847" duration="1321000" />
       <workItem from="1617029777190" duration="337000" />
       <workItem from="1617089289260" duration="6278000" />
-      <workItem from="1617106462139" duration="3159000" />
+      <workItem from="1617106462139" duration="4159000" />
     </task>
     <servers />
   </component>

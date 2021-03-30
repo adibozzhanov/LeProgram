@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1488</width>
-    <height>712</height>
+    <width>1036</width>
+    <height>671</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -40,8 +40,14 @@ border-color: rgb(255, 255, 242);</string>
         </property>
         <property name="minimumSize">
          <size>
-          <width>450</width>
-          <height>68</height>
+          <width>300</width>
+          <height>30</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>16777215</width>
+          <height>30</height>
          </size>
         </property>
         <property name="font">
@@ -56,14 +62,14 @@ border-color: rgb(255, 255, 242);</string>
        <widget class="QPushButton" name="searchButton">
         <property name="minimumSize">
          <size>
-          <width>0</width>
-          <height>68</height>
+          <width>80</width>
+          <height>30</height>
          </size>
         </property>
         <property name="maximumSize">
          <size>
-          <width>16777215</width>
-          <height>16777215</height>
+          <width>80</width>
+          <height>30</height>
          </size>
         </property>
         <property name="font">
@@ -86,6 +92,22 @@ color: rgb(246, 247, 200);
       </item>
      </layout>
     </widget>
+   </item>
+   <item row="2" column="2">
+    <spacer name="horizontalSpacer_2">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="sizeType">
+      <enum>QSizePolicy::Minimum</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>100</width>
+       <height>20</height>
+      </size>
+     </property>
+    </spacer>
    </item>
    <item row="0" column="1">
     <widget class="QLabel" name="EnterExpressionLabel">
@@ -115,34 +137,18 @@ color: rgb(246, 247, 200);
      </property>
     </widget>
    </item>
-   <item row="2" column="0">
-    <spacer name="horizontalSpacer">
-     <property name="orientation">
-      <enum>Qt::Horizontal</enum>
-     </property>
-     <property name="sizeType">
-      <enum>QSizePolicy::Preferred</enum>
-     </property>
-     <property name="sizeHint" stdset="0">
-      <size>
-       <width>100</width>
-       <height>20</height>
-      </size>
-     </property>
-    </spacer>
-   </item>
    <item row="2" column="1">
     <widget class="QTabWidget" name="askLepTabWidget">
      <property name="sizePolicy">
-      <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+      <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
        <horstretch>0</horstretch>
        <verstretch>0</verstretch>
       </sizepolicy>
      </property>
      <property name="minimumSize">
       <size>
-       <width>500</width>
-       <height>0</height>
+       <width>300</width>
+       <height>300</height>
       </size>
      </property>
      <property name="maximumSize">
@@ -157,7 +163,7 @@ alternate-background-color: rgb(255, 255, 255);
 background-color: rgb(246, 247, 200);</string>
      </property>
      <property name="currentIndex">
-      <number>1</number>
+      <number>2</number>
      </property>
      <widget class="QWidget" name="howToTab">
       <attribute name="title">
@@ -165,101 +171,108 @@ background-color: rgb(246, 247, 200);</string>
       </attribute>
       <layout class="QHBoxLayout" name="horizontalLayout">
        <item>
-        <widget class="QLabel" name="howToTextBox">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
+        <widget class="QTextEdit" name="howToTextBox">
+         <property name="enabled">
+          <bool>false</bool>
          </property>
-         <property name="maximumSize">
-          <size>
-           <width>16777215</width>
-           <height>16777215</height>
-          </size>
-         </property>
-         <property name="font">
-          <font>
-           <family>Helvetica Neue</family>
-           <pointsize>14</pointsize>
-          </font>
-         </property>
-         <property name="text">
-          <string>&lt;html&gt;
-&lt;head&gt;
-&lt;style&gt;
-table, th, td {
-  border: 1px solid black;
-  border-collapse: collapse;
-}
-&lt;/style&gt;
-&lt;/head&gt;
-        &lt;body&gt;&lt;p&gt;How to use AskLep:&lt;/p&gt;
-        &lt;p&gt;1) Variables are single English alphabet ,can be upper or lower case.&lt;/p&gt;
-&lt;p&gt;2) Brackets () are used to alter precedence&lt;/p&gt;
-&lt;p&gt;3) Type the expression in the box above and press search&lt;/p&gt;
-        &lt;p&gt;Logical Expressions:&lt;/p&gt;
-&lt;table&gt;
-  &lt;tr&gt;
-    &lt;th&gt;Operator&lt;/th&gt;
-    &lt;th&gt;Char Form&lt;/th&gt;
-    &lt;th&gt;Maths form&lt;/th&gt;
-    &lt;th&gt;CS form&lt;/th&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-    &lt;td&gt;AND&lt;/td&gt;
-    &lt;td&gt;and&lt;/td&gt;
-    &lt;td&gt;∧&lt;/td&gt;
-    &lt;td&gt;&amp;&amp;&lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-    &lt;td&gt;OR&lt;/td&gt;
-    &lt;td&gt;or&lt;/td&gt;
-    &lt;td&gt;∨&lt;/td&gt;
-    &lt;td&gt;|&lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-    &lt;td&gt;XOR&lt;/td&gt;
-    &lt;td&gt;xor&lt;/td&gt;
-    &lt;td&gt;⊕&lt;/td&gt;
-    &lt;td&gt;!=&lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-    &lt;td&gt;IMP&lt;/td&gt;
-    &lt;td&gt;imp&lt;/td&gt;
-    &lt;td&gt;→&lt;/td&gt;
-    &lt;td&gt;=&gt;&lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-    &lt;td&gt;IFF&lt;/td&gt;
-    &lt;td&gt;iff&lt;/td&gt;
-    &lt;td&gt;↔&lt;/td&gt;
-    &lt;td&gt;==&lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-    &lt;td&gt;TOP&lt;/td&gt;
-    &lt;td&gt;top&lt;/td&gt;
-    &lt;td&gt;⊤&lt;/td&gt;
-    &lt;td&gt;True&lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-    &lt;td&gt;BOT&lt;/td&gt;
-    &lt;td&gt;bot&lt;/td&gt;
-    &lt;td&gt;⊥&lt;/td&gt;
-    &lt;td&gt;False&lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-    &lt;td&gt;NOT&lt;/td&gt;
-    &lt;td&gt;not&lt;/td&gt;
-    &lt;td&gt;¬&lt;/td&gt;
-    &lt;td&gt;!&lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-&lt;/table&gt;
-        &lt;p&gt;For every operator, users are allowed to use any form they choose.&lt;/p&gt;
-
-        &lt;/body&gt;
-&lt;/html&gt;</string>
+         <property name="html">
+          <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Fira Sans Semi-Light'; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'MS Shell Dlg 2'; font-size:14pt;&quot;&gt;How to use AskLep: &lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'MS Shell Dlg 2'; font-size:14pt;&quot;&gt;1) Variables are single English alphabet ,can be upper or lower case.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'MS Shell Dlg 2'; font-size:14pt;&quot;&gt;2) Brackets () are used to alter precedence&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'MS Shell Dlg 2'; font-size:14pt;&quot;&gt;3) Type the expression in the box above and press search &lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'MS Shell Dlg 2'; font-size:14pt;&quot;&gt;Logical Expressions:&lt;/span&gt;&lt;/p&gt;
+&lt;table border=&quot;0&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px;&quot; cellspacing=&quot;2&quot; cellpadding=&quot;0&quot;&gt;
+&lt;tr&gt;
+&lt;td&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'MS Shell Dlg 2'; font-size:14pt; font-weight:600;&quot;&gt;Operator&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;
+&lt;td&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'MS Shell Dlg 2'; font-size:14pt; font-weight:600;&quot;&gt;Char Form&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;
+&lt;td&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'MS Shell Dlg 2'; font-size:14pt; font-weight:600;&quot;&gt;Maths form&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;
+&lt;td&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'MS Shell Dlg 2'; font-size:14pt; font-weight:600;&quot;&gt;CS form&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'MS Shell Dlg 2'; font-size:14pt;&quot;&gt;AND&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;
+&lt;td&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'MS Shell Dlg 2'; font-size:14pt;&quot;&gt;and&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;
+&lt;td&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'MS Shell Dlg 2'; font-size:14pt;&quot;&gt;∧&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;
+&lt;td&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'MS Shell Dlg 2'; font-size:14pt;&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'MS Shell Dlg 2'; font-size:14pt;&quot;&gt;OR&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;
+&lt;td&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'MS Shell Dlg 2'; font-size:14pt;&quot;&gt;or&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;
+&lt;td&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'MS Shell Dlg 2'; font-size:14pt;&quot;&gt;∨&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;
+&lt;td&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'MS Shell Dlg 2'; font-size:14pt;&quot;&gt;|&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'MS Shell Dlg 2'; font-size:14pt;&quot;&gt;XOR&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;
+&lt;td&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'MS Shell Dlg 2'; font-size:14pt;&quot;&gt;xor&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;
+&lt;td&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'MS Shell Dlg 2'; font-size:14pt;&quot;&gt;⊕&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;
+&lt;td&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'MS Shell Dlg 2'; font-size:14pt;&quot;&gt;!=&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'MS Shell Dlg 2'; font-size:14pt;&quot;&gt;IMP&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;
+&lt;td&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'MS Shell Dlg 2'; font-size:14pt;&quot;&gt;imp&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;
+&lt;td&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'MS Shell Dlg 2'; font-size:14pt;&quot;&gt;→&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;
+&lt;td&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'MS Shell Dlg 2'; font-size:14pt;&quot;&gt;=&amp;gt;&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'MS Shell Dlg 2'; font-size:14pt;&quot;&gt;IFF&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;
+&lt;td&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'MS Shell Dlg 2'; font-size:14pt;&quot;&gt;iff&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;
+&lt;td&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'MS Shell Dlg 2'; font-size:14pt;&quot;&gt;↔&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;
+&lt;td&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'MS Shell Dlg 2'; font-size:14pt;&quot;&gt;==&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'MS Shell Dlg 2'; font-size:14pt;&quot;&gt;TOP&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;
+&lt;td&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'MS Shell Dlg 2'; font-size:14pt;&quot;&gt;top&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;
+&lt;td&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'MS Shell Dlg 2'; font-size:14pt;&quot;&gt;⊤&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;
+&lt;td&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'MS Shell Dlg 2'; font-size:14pt;&quot;&gt;True&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'MS Shell Dlg 2'; font-size:14pt;&quot;&gt;BOT&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;
+&lt;td&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'MS Shell Dlg 2'; font-size:14pt;&quot;&gt;bot&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;
+&lt;td&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'MS Shell Dlg 2'; font-size:14pt;&quot;&gt;⊥&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;
+&lt;td&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'MS Shell Dlg 2'; font-size:14pt;&quot;&gt;False&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'MS Shell Dlg 2'; font-size:14pt;&quot;&gt;NOT&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;
+&lt;td&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'MS Shell Dlg 2'; font-size:14pt;&quot;&gt;not&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;
+&lt;td&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'MS Shell Dlg 2'; font-size:14pt;&quot;&gt;¬&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;
+&lt;td&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'MS Shell Dlg 2'; font-size:14pt;&quot;&gt;!&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'MS Shell Dlg 2'; font-size:14pt;&quot;&gt;For every operator, users are allowed to use any form they choose. &lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
          </property>
         </widget>
        </item>
@@ -271,67 +284,58 @@ table, th, td {
       </attribute>
       <layout class="QGridLayout" name="gridLayout_3">
        <item row="0" column="0">
-        <widget class="QLabel" name="cheatSheetTextBox">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="minimumSize">
-          <size>
-           <width>200</width>
-           <height>500</height>
-          </size>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>1500</width>
-           <height>800</height>
-          </size>
-         </property>
-         <property name="font">
-          <font>
-           <family>Helvetica Neue</family>
-           <pointsize>14</pointsize>
-          </font>
-         </property>
-         <property name="text">
-          <string>Double negation law
-¬¬P ≡ P
-Commutative laws
-P ∧ Q ≡ Q ∧ P
-P ∨ Q ≡ Q ∨ P
-Associative laws
-P ∧ (Q ∧ R) ≡ (P ∧ Q) ∧ R
-P ∨ (Q ∨ R) ≡ (P ∨ Q) ∨ R
-Idempotent laws
-P ∧ P ≡ P
-P ∨ P ≡ P
-Distributive laws
-P ∧ (Q ∨ R) ≡ (P ∧ Q) ∨ (P ∧ R)
-P ∨ (Q ∧ R) ≡ (P ∨ Q) ∧ (P ∨ R)
-DeMorgan’s laws
-¬(P ∧ Q) ≡ ¬P ∨ ¬Q
-¬(P ∨ Q) ≡ ¬P ∧ ¬Q
-Conditional laws
-P ⇒ Q ≡ ¬P ∨ Q
-P ⇒ Q ≡ ¬(P ∧ ¬Q)
-Biconditional law
-P ⇔ Q ≡ (P ⇒ Q) ∧ (Q ⇒ P)
-Contrapositive law
-P ⇒ Q ≡ ¬Q ⇒ ¬P
-Tautology laws
-P ∧ (a tautalogy) ≡ P
-P ∨ (a tautology) is a tautology
-¬(a tautology) is a contradiction
-Contradiction laws
-P ∧ (a contradiction) is a contradiction
-P ∨ (a contradiction) ≡ P
-¬(a contradiction) is a tautology
-Quantifier negation laws
-¬∃x s.t. P ≡ ∀x, ¬P
-¬∀x, P ≡ ∃x s.t. P</string>
+        <widget class="QTextEdit" name="textEdit_2">
+         <property name="html">
+          <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Fira Sans Semi-Light'; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Georgia,Times New Roman,Times,serif'; font-size:12pt; color:#242729; background-color:#ffffff;&quot;&gt;aw of Double Negation or Negation Elimination&lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:18px; margin-bottom:18px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; background-color:#000000;&quot;&gt;&lt;a name=&quot;MathJax-Element-6-Frame&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Main'; font-size:12pt; color:#ffffff;&quot;&gt;¬&lt;/span&gt;&lt;a name=&quot;MathJax-Span-14&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Main'; font-size:12pt; color:#ffffff;&quot;&gt;(&lt;/span&gt;&lt;a name=&quot;MathJax-Span-15&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Main'; font-size:12pt; color:#ffffff;&quot;&gt;¬&lt;/span&gt;&lt;a name=&quot;MathJax-Span-16&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Math-italic'; font-size:12pt; color:#ffffff;&quot;&gt;p&lt;/span&gt;&lt;a name=&quot;MathJax-Span-17&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Main'; font-size:12pt; color:#ffffff;&quot;&gt;)&lt;/span&gt;&lt;a name=&quot;MathJax-Span-18&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Main'; font-size:12pt; color:#ffffff;&quot;&gt;≡&lt;/span&gt;&lt;a name=&quot;MathJax-Span-19&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Math-italic'; font-size:12pt; color:#ffffff;&quot;&gt;p&lt;/span&gt;&lt;span style=&quot; font-family:'inherit'; font-size:12pt; color:#ffffff;&quot;&gt;¬(¬p)≡p&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Georgia,Times New Roman,Times,serif'; font-size:12pt; color:#242729; background-color:#ffffff;&quot;&gt;DeMorgan's Laws&lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:18px; margin-bottom:18px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; background-color:#000000;&quot;&gt;&lt;a name=&quot;MathJax-Element-7-Frame&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Main'; font-size:12pt; color:#ffffff;&quot;&gt;¬&lt;/span&gt;&lt;a name=&quot;MathJax-Span-23&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Main'; font-size:12pt; color:#ffffff;&quot;&gt;(&lt;/span&gt;&lt;a name=&quot;MathJax-Span-24&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Math-italic'; font-size:12pt; color:#ffffff;&quot;&gt;p&lt;/span&gt;&lt;a name=&quot;MathJax-Span-25&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Main'; font-size:12pt; color:#ffffff;&quot;&gt;∧&lt;/span&gt;&lt;a name=&quot;MathJax-Span-26&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Math-italic'; font-size:12pt; color:#ffffff;&quot;&gt;q&lt;/span&gt;&lt;a name=&quot;MathJax-Span-27&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Main'; font-size:12pt; color:#ffffff;&quot;&gt;)&lt;/span&gt;&lt;a name=&quot;MathJax-Span-28&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Main'; font-size:12pt; color:#ffffff;&quot;&gt;≡&lt;/span&gt;&lt;a name=&quot;MathJax-Span-29&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Main'; font-size:12pt; color:#ffffff;&quot;&gt;(&lt;/span&gt;&lt;a name=&quot;MathJax-Span-30&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Main'; font-size:12pt; color:#ffffff;&quot;&gt;¬&lt;/span&gt;&lt;a name=&quot;MathJax-Span-31&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Math-italic'; font-size:12pt; color:#ffffff;&quot;&gt;p&lt;/span&gt;&lt;a name=&quot;MathJax-Span-32&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Main'; font-size:12pt; color:#ffffff;&quot;&gt;)&lt;/span&gt;&lt;a name=&quot;MathJax-Span-33&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Main'; font-size:12pt; color:#ffffff;&quot;&gt;∨&lt;/span&gt;&lt;a name=&quot;MathJax-Span-34&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Main'; font-size:12pt; color:#ffffff;&quot;&gt;(&lt;/span&gt;&lt;a name=&quot;MathJax-Span-35&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Main'; font-size:12pt; color:#ffffff;&quot;&gt;¬&lt;/span&gt;&lt;a name=&quot;MathJax-Span-36&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Math-italic'; font-size:12pt; color:#ffffff;&quot;&gt;q&lt;/span&gt;&lt;a name=&quot;MathJax-Span-37&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Main'; font-size:12pt; color:#ffffff;&quot;&gt;)&lt;/span&gt;&lt;span style=&quot; font-family:'inherit'; font-size:12pt; color:#ffffff;&quot;&gt;¬(p∧q)≡(¬p)∨(¬q)&lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:18px; margin-bottom:18px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; background-color:#000000;&quot;&gt;&lt;a name=&quot;MathJax-Element-8-Frame&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Main'; font-size:12pt; color:#ffffff;&quot;&gt;¬&lt;/span&gt;&lt;a name=&quot;MathJax-Span-41&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Main'; font-size:12pt; color:#ffffff;&quot;&gt;(&lt;/span&gt;&lt;a name=&quot;MathJax-Span-42&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Math-italic'; font-size:12pt; color:#ffffff;&quot;&gt;p&lt;/span&gt;&lt;a name=&quot;MathJax-Span-43&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Main'; font-size:12pt; color:#ffffff;&quot;&gt;∨&lt;/span&gt;&lt;a name=&quot;MathJax-Span-44&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Math-italic'; font-size:12pt; color:#ffffff;&quot;&gt;q&lt;/span&gt;&lt;a name=&quot;MathJax-Span-45&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Main'; font-size:12pt; color:#ffffff;&quot;&gt;)&lt;/span&gt;&lt;a name=&quot;MathJax-Span-46&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Main'; font-size:12pt; color:#ffffff;&quot;&gt;≡&lt;/span&gt;&lt;a name=&quot;MathJax-Span-47&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Main'; font-size:12pt; color:#ffffff;&quot;&gt;(&lt;/span&gt;&lt;a name=&quot;MathJax-Span-48&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Main'; font-size:12pt; color:#ffffff;&quot;&gt;¬&lt;/span&gt;&lt;a name=&quot;MathJax-Span-49&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Math-italic'; font-size:12pt; color:#ffffff;&quot;&gt;p&lt;/span&gt;&lt;a name=&quot;MathJax-Span-50&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Main'; font-size:12pt; color:#ffffff;&quot;&gt;)&lt;/span&gt;&lt;a name=&quot;MathJax-Span-51&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Main'; font-size:12pt; color:#ffffff;&quot;&gt;∧&lt;/span&gt;&lt;a name=&quot;MathJax-Span-52&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Main'; font-size:12pt; color:#ffffff;&quot;&gt;(&lt;/span&gt;&lt;a name=&quot;MathJax-Span-53&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Main'; font-size:12pt; color:#ffffff;&quot;&gt;¬&lt;/span&gt;&lt;a name=&quot;MathJax-Span-54&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Math-italic'; font-size:12pt; color:#ffffff;&quot;&gt;q&lt;/span&gt;&lt;a name=&quot;MathJax-Span-55&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Main'; font-size:12pt; color:#ffffff;&quot;&gt;)&lt;/span&gt;&lt;span style=&quot; font-family:'inherit'; font-size:12pt; color:#ffffff;&quot;&gt;¬(p∨q)≡(¬p)∧(¬q)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Georgia,Times New Roman,Times,serif'; font-size:12pt; color:#242729; background-color:#ffffff;&quot;&gt;Commutative Laws for Conjunction, Disjunction and Biconditional&lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:18px; margin-bottom:18px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; background-color:#000000;&quot;&gt;&lt;a name=&quot;MathJax-Element-9-Frame&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Math-italic'; font-size:12pt; color:#ffffff;&quot;&gt;p&lt;/span&gt;&lt;a name=&quot;MathJax-Span-59&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Main'; font-size:12pt; color:#ffffff;&quot;&gt;∧&lt;/span&gt;&lt;a name=&quot;MathJax-Span-60&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Math-italic'; font-size:12pt; color:#ffffff;&quot;&gt;q&lt;/span&gt;&lt;a name=&quot;MathJax-Span-61&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Main'; font-size:12pt; color:#ffffff;&quot;&gt;≡&lt;/span&gt;&lt;a name=&quot;MathJax-Span-62&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Math-italic'; font-size:12pt; color:#ffffff;&quot;&gt;q&lt;/span&gt;&lt;a name=&quot;MathJax-Span-63&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Main'; font-size:12pt; color:#ffffff;&quot;&gt;∧&lt;/span&gt;&lt;a name=&quot;MathJax-Span-64&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Math-italic'; font-size:12pt; color:#ffffff;&quot;&gt;p&lt;/span&gt;&lt;span style=&quot; font-family:'inherit'; font-size:12pt; color:#ffffff;&quot;&gt;p∧q≡q∧p&lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:18px; margin-bottom:18px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; background-color:#000000;&quot;&gt;&lt;a name=&quot;MathJax-Element-10-Frame&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Math-italic'; font-size:12pt; color:#ffffff;&quot;&gt;p&lt;/span&gt;&lt;a name=&quot;MathJax-Span-68&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Main'; font-size:12pt; color:#ffffff;&quot;&gt;∨&lt;/span&gt;&lt;a name=&quot;MathJax-Span-69&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Math-italic'; font-size:12pt; color:#ffffff;&quot;&gt;q&lt;/span&gt;&lt;a name=&quot;MathJax-Span-70&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Main'; font-size:12pt; color:#ffffff;&quot;&gt;≡&lt;/span&gt;&lt;a name=&quot;MathJax-Span-71&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Math-italic'; font-size:12pt; color:#ffffff;&quot;&gt;q&lt;/span&gt;&lt;a name=&quot;MathJax-Span-72&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Main'; font-size:12pt; color:#ffffff;&quot;&gt;∨&lt;/span&gt;&lt;a name=&quot;MathJax-Span-73&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Math-italic'; font-size:12pt; color:#ffffff;&quot;&gt;p&lt;/span&gt;&lt;span style=&quot; font-family:'inherit'; font-size:12pt; color:#ffffff;&quot;&gt;p∨q≡q∨p&lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:18px; margin-bottom:18px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; background-color:#000000;&quot;&gt;&lt;a name=&quot;MathJax-Element-11-Frame&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Math-italic'; font-size:12pt; color:#ffffff;&quot;&gt;p&lt;/span&gt;&lt;a name=&quot;MathJax-Span-77&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Main'; font-size:12pt; color:#ffffff;&quot;&gt;↔&lt;/span&gt;&lt;a name=&quot;MathJax-Span-78&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Math-italic'; font-size:12pt; color:#ffffff;&quot;&gt;q&lt;/span&gt;&lt;a name=&quot;MathJax-Span-79&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Main'; font-size:12pt; color:#ffffff;&quot;&gt;≡&lt;/span&gt;&lt;a name=&quot;MathJax-Span-80&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Math-italic'; font-size:12pt; color:#ffffff;&quot;&gt;q&lt;/span&gt;&lt;a name=&quot;MathJax-Span-81&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Main'; font-size:12pt; color:#ffffff;&quot;&gt;↔&lt;/span&gt;&lt;a name=&quot;MathJax-Span-82&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Math-italic'; font-size:12pt; color:#ffffff;&quot;&gt;p&lt;/span&gt;&lt;span style=&quot; font-family:'inherit'; font-size:12pt; color:#ffffff;&quot;&gt;p↔q≡q↔p&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Georgia,Times New Roman,Times,serif'; font-size:12pt; color:#242729; background-color:#ffffff;&quot;&gt;Associative Laws for Conjunction, Disjunction and Bicondional&lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:18px; margin-bottom:18px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; background-color:#000000;&quot;&gt;&lt;a name=&quot;MathJax-Element-12-Frame&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Main'; font-size:12pt; color:#ffffff;&quot;&gt;(&lt;/span&gt;&lt;a name=&quot;MathJax-Span-86&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Math-italic'; font-size:12pt; color:#ffffff;&quot;&gt;p&lt;/span&gt;&lt;a name=&quot;MathJax-Span-87&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Main'; font-size:12pt; color:#ffffff;&quot;&gt;∧&lt;/span&gt;&lt;a name=&quot;MathJax-Span-88&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Math-italic'; font-size:12pt; color:#ffffff;&quot;&gt;q&lt;/span&gt;&lt;a name=&quot;MathJax-Span-89&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Main'; font-size:12pt; color:#ffffff;&quot;&gt;)&lt;/span&gt;&lt;a name=&quot;MathJax-Span-90&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Main'; font-size:12pt; color:#ffffff;&quot;&gt;∧&lt;/span&gt;&lt;a name=&quot;MathJax-Span-91&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Math-italic'; font-size:12pt; color:#ffffff;&quot;&gt;r&lt;/span&gt;&lt;a name=&quot;MathJax-Span-92&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Main'; font-size:12pt; color:#ffffff;&quot;&gt;≡&lt;/span&gt;&lt;a name=&quot;MathJax-Span-93&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Math-italic'; font-size:12pt; color:#ffffff;&quot;&gt;p&lt;/span&gt;&lt;a name=&quot;MathJax-Span-94&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Main'; font-size:12pt; color:#ffffff;&quot;&gt;∧&lt;/span&gt;&lt;a name=&quot;MathJax-Span-95&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Main'; font-size:12pt; color:#ffffff;&quot;&gt;(&lt;/span&gt;&lt;a name=&quot;MathJax-Span-96&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Math-italic'; font-size:12pt; color:#ffffff;&quot;&gt;q&lt;/span&gt;&lt;a name=&quot;MathJax-Span-97&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Main'; font-size:12pt; color:#ffffff;&quot;&gt;∧&lt;/span&gt;&lt;a name=&quot;MathJax-Span-98&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Math-italic'; font-size:12pt; color:#ffffff;&quot;&gt;r&lt;/span&gt;&lt;a name=&quot;MathJax-Span-99&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Main'; font-size:12pt; color:#ffffff;&quot;&gt;)&lt;/span&gt;&lt;span style=&quot; font-family:'inherit'; font-size:12pt; color:#ffffff;&quot;&gt;(p∧q)∧r≡p∧(q∧r)&lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:18px; margin-bottom:18px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; background-color:#000000;&quot;&gt;&lt;a name=&quot;MathJax-Element-13-Frame&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Main'; font-size:12pt; color:#ffffff;&quot;&gt;(&lt;/span&gt;&lt;a name=&quot;MathJax-Span-103&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Math-italic'; font-size:12pt; color:#ffffff;&quot;&gt;p&lt;/span&gt;&lt;a name=&quot;MathJax-Span-104&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Main'; font-size:12pt; color:#ffffff;&quot;&gt;∨&lt;/span&gt;&lt;a name=&quot;MathJax-Span-105&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Math-italic'; font-size:12pt; color:#ffffff;&quot;&gt;q&lt;/span&gt;&lt;a name=&quot;MathJax-Span-106&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Main'; font-size:12pt; color:#ffffff;&quot;&gt;)&lt;/span&gt;&lt;a name=&quot;MathJax-Span-107&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Main'; font-size:12pt; color:#ffffff;&quot;&gt;∨&lt;/span&gt;&lt;a name=&quot;MathJax-Span-108&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Math-italic'; font-size:12pt; color:#ffffff;&quot;&gt;r&lt;/span&gt;&lt;a name=&quot;MathJax-Span-109&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Main'; font-size:12pt; color:#ffffff;&quot;&gt;≡&lt;/span&gt;&lt;a name=&quot;MathJax-Span-110&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Math-italic'; font-size:12pt; color:#ffffff;&quot;&gt;p&lt;/span&gt;&lt;a name=&quot;MathJax-Span-111&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Main'; font-size:12pt; color:#ffffff;&quot;&gt;∨&lt;/span&gt;&lt;a name=&quot;MathJax-Span-112&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Main'; font-size:12pt; color:#ffffff;&quot;&gt;(&lt;/span&gt;&lt;a name=&quot;MathJax-Span-113&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Math-italic'; font-size:12pt; color:#ffffff;&quot;&gt;q&lt;/span&gt;&lt;a name=&quot;MathJax-Span-114&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Main'; font-size:12pt; color:#ffffff;&quot;&gt;∨&lt;/span&gt;&lt;a name=&quot;MathJax-Span-115&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Math-italic'; font-size:12pt; color:#ffffff;&quot;&gt;r&lt;/span&gt;&lt;a name=&quot;MathJax-Span-116&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Main'; font-size:12pt; color:#ffffff;&quot;&gt;)&lt;/span&gt;&lt;span style=&quot; font-family:'inherit'; font-size:12pt; color:#ffffff;&quot;&gt;(p∨q)∨r≡p∨(q∨r)&lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:18px; margin-bottom:18px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; background-color:#000000;&quot;&gt;&lt;a name=&quot;MathJax-Element-14-Frame&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Main'; font-size:12pt; color:#ffffff;&quot;&gt;(&lt;/span&gt;&lt;a name=&quot;MathJax-Span-120&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Math-italic'; font-size:12pt; color:#ffffff;&quot;&gt;p&lt;/span&gt;&lt;a name=&quot;MathJax-Span-121&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Main'; font-size:12pt; color:#ffffff;&quot;&gt;↔&lt;/span&gt;&lt;a name=&quot;MathJax-Span-122&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Math-italic'; font-size:12pt; color:#ffffff;&quot;&gt;q&lt;/span&gt;&lt;a name=&quot;MathJax-Span-123&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Main'; font-size:12pt; color:#ffffff;&quot;&gt;)&lt;/span&gt;&lt;a name=&quot;MathJax-Span-124&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Main'; font-size:12pt; color:#ffffff;&quot;&gt;↔&lt;/span&gt;&lt;a name=&quot;MathJax-Span-125&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Math-italic'; font-size:12pt; color:#ffffff;&quot;&gt;r&lt;/span&gt;&lt;a name=&quot;MathJax-Span-126&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Main'; font-size:12pt; color:#ffffff;&quot;&gt;≡&lt;/span&gt;&lt;a name=&quot;MathJax-Span-127&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Math-italic'; font-size:12pt; color:#ffffff;&quot;&gt;p&lt;/span&gt;&lt;a name=&quot;MathJax-Span-128&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Main'; font-size:12pt; color:#ffffff;&quot;&gt;↔&lt;/span&gt;&lt;a name=&quot;MathJax-Span-129&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Main'; font-size:12pt; color:#ffffff;&quot;&gt;(&lt;/span&gt;&lt;a name=&quot;MathJax-Span-130&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Math-italic'; font-size:12pt; color:#ffffff;&quot;&gt;q&lt;/span&gt;&lt;a name=&quot;MathJax-Span-131&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Main'; font-size:12pt; color:#ffffff;&quot;&gt;↔&lt;/span&gt;&lt;a name=&quot;MathJax-Span-132&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Math-italic'; font-size:12pt; color:#ffffff;&quot;&gt;r&lt;/span&gt;&lt;a name=&quot;MathJax-Span-133&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Main'; font-size:12pt; color:#ffffff;&quot;&gt;)&lt;/span&gt;&lt;span style=&quot; font-family:'inherit'; font-size:12pt; color:#ffffff;&quot;&gt;(p↔q)↔r≡p↔(q↔&lt;/span&gt;&lt;span style=&quot; font-family:'inherit'; font-size:12pt; color:#242729;&quot;&gt;r)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Georgia,Times New Roman,Times,serif'; font-size:12pt; color:#242729; background-color:#ffffff;&quot;&gt;Distributive Laws&lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:18px; margin-bottom:18px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; background-color:#000000;&quot;&gt;&lt;a name=&quot;MathJax-Element-15-Frame&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Math-italic'; font-size:12pt; color:#ffffff;&quot;&gt;p&lt;/span&gt;&lt;a name=&quot;MathJax-Span-137&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Main'; font-size:12pt; color:#ffffff;&quot;&gt;∨&lt;/span&gt;&lt;a name=&quot;MathJax-Span-138&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Main'; font-size:12pt; color:#ffffff;&quot;&gt;(&lt;/span&gt;&lt;a name=&quot;MathJax-Span-139&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Math-italic'; font-size:12pt; color:#ffffff;&quot;&gt;q&lt;/span&gt;&lt;a name=&quot;MathJax-Span-140&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Main'; font-size:12pt; color:#ffffff;&quot;&gt;∧&lt;/span&gt;&lt;a name=&quot;MathJax-Span-141&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Math-italic'; font-size:12pt; color:#ffffff;&quot;&gt;r&lt;/span&gt;&lt;a name=&quot;MathJax-Span-142&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Main'; font-size:12pt; color:#ffffff;&quot;&gt;)&lt;/span&gt;&lt;a name=&quot;MathJax-Span-143&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Main'; font-size:12pt; color:#ffffff;&quot;&gt;≡&lt;/span&gt;&lt;a name=&quot;MathJax-Span-144&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Main'; font-size:12pt; color:#ffffff;&quot;&gt;(&lt;/span&gt;&lt;a name=&quot;MathJax-Span-145&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Math-italic'; font-size:12pt; color:#ffffff;&quot;&gt;p&lt;/span&gt;&lt;a name=&quot;MathJax-Span-146&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Main'; font-size:12pt; color:#ffffff;&quot;&gt;∨&lt;/span&gt;&lt;a name=&quot;MathJax-Span-147&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Math-italic'; font-size:12pt; color:#ffffff;&quot;&gt;q&lt;/span&gt;&lt;a name=&quot;MathJax-Span-148&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Main'; font-size:12pt; color:#ffffff;&quot;&gt;)&lt;/span&gt;&lt;a name=&quot;MathJax-Span-149&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Main'; font-size:12pt; color:#ffffff;&quot;&gt;∧&lt;/span&gt;&lt;a name=&quot;MathJax-Span-150&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Main'; font-size:12pt; color:#ffffff;&quot;&gt;(&lt;/span&gt;&lt;a name=&quot;MathJax-Span-151&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Math-italic'; font-size:12pt; color:#ffffff;&quot;&gt;p&lt;/span&gt;&lt;a name=&quot;MathJax-Span-152&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Main'; font-size:12pt; color:#ffffff;&quot;&gt;∨&lt;/span&gt;&lt;a name=&quot;MathJax-Span-153&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Math-italic'; font-size:12pt; color:#ffffff;&quot;&gt;r&lt;/span&gt;&lt;a name=&quot;MathJax-Span-154&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Main'; font-size:12pt; color:#ffffff;&quot;&gt;)&lt;/span&gt;&lt;span style=&quot; font-family:'inherit'; font-size:12pt; color:#ffffff;&quot;&gt;p∨(q∧r)≡(p∨q)∧(p∨r)&lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:18px; margin-bottom:18px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; background-color:#000000;&quot;&gt;&lt;a name=&quot;MathJax-Element-16-Frame&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Math-italic'; font-size:12pt; color:#ffffff;&quot;&gt;p&lt;/span&gt;&lt;a name=&quot;MathJax-Span-158&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Main'; font-size:12pt; color:#ffffff;&quot;&gt;∧&lt;/span&gt;&lt;a name=&quot;MathJax-Span-159&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Main'; font-size:12pt; color:#ffffff;&quot;&gt;(&lt;/span&gt;&lt;a name=&quot;MathJax-Span-160&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Math-italic'; font-size:12pt; color:#ffffff;&quot;&gt;q&lt;/span&gt;&lt;a name=&quot;MathJax-Span-161&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Main'; font-size:12pt; color:#ffffff;&quot;&gt;∨&lt;/span&gt;&lt;a name=&quot;MathJax-Span-162&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Math-italic'; font-size:12pt; color:#ffffff;&quot;&gt;r&lt;/span&gt;&lt;a name=&quot;MathJax-Span-163&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Main'; font-size:12pt; color:#ffffff;&quot;&gt;)&lt;/span&gt;&lt;a name=&quot;MathJax-Span-164&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Main'; font-size:12pt; color:#ffffff;&quot;&gt;≡&lt;/span&gt;&lt;a name=&quot;MathJax-Span-165&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Main'; font-size:12pt; color:#ffffff;&quot;&gt;(&lt;/span&gt;&lt;a name=&quot;MathJax-Span-166&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Math-italic'; font-size:12pt; color:#ffffff;&quot;&gt;p&lt;/span&gt;&lt;a name=&quot;MathJax-Span-167&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Main'; font-size:12pt; color:#ffffff;&quot;&gt;∧&lt;/span&gt;&lt;a name=&quot;MathJax-Span-168&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Math-italic'; font-size:12pt; color:#ffffff;&quot;&gt;q&lt;/span&gt;&lt;a name=&quot;MathJax-Span-169&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Main'; font-size:12pt; color:#ffffff;&quot;&gt;)&lt;/span&gt;&lt;a name=&quot;MathJax-Span-170&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Main'; font-size:12pt; color:#ffffff;&quot;&gt;∨&lt;/span&gt;&lt;a name=&quot;MathJax-Span-171&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Main'; font-size:12pt; color:#ffffff;&quot;&gt;(&lt;/span&gt;&lt;a name=&quot;MathJax-Span-172&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Math-italic'; font-size:12pt; color:#ffffff;&quot;&gt;p&lt;/span&gt;&lt;a name=&quot;MathJax-Span-173&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Main'; font-size:12pt; color:#ffffff;&quot;&gt;∧&lt;/span&gt;&lt;a name=&quot;MathJax-Span-174&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Math-italic'; font-size:12pt; color:#ffffff;&quot;&gt;r&lt;/span&gt;&lt;a name=&quot;MathJax-Span-175&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Main'; font-size:12pt; color:#ffffff;&quot;&gt;)&lt;/span&gt;&lt;span style=&quot; font-family:'inherit'; font-size:12pt; color:#ffffff;&quot;&gt;p∧(q∨r)≡(p∧q)∨(p∧r)&lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:18px; margin-bottom:18px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; background-color:#000000;&quot;&gt;&lt;a name=&quot;MathJax-Element-17-Frame&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Math-italic'; font-size:12pt; color:#ffffff;&quot;&gt;p&lt;/span&gt;&lt;a name=&quot;MathJax-Span-179&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Main'; font-size:12pt; color:#ffffff;&quot;&gt;→&lt;/span&gt;&lt;a name=&quot;MathJax-Span-180&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Main'; font-size:12pt; color:#ffffff;&quot;&gt;(&lt;/span&gt;&lt;a name=&quot;MathJax-Span-181&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Math-italic'; font-size:12pt; color:#ffffff;&quot;&gt;q&lt;/span&gt;&lt;a name=&quot;MathJax-Span-182&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Main'; font-size:12pt; color:#ffffff;&quot;&gt;∧&lt;/span&gt;&lt;a name=&quot;MathJax-Span-183&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Math-italic'; font-size:12pt; color:#ffffff;&quot;&gt;r&lt;/span&gt;&lt;a name=&quot;MathJax-Span-184&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Main'; font-size:12pt; color:#ffffff;&quot;&gt;)&lt;/span&gt;&lt;a name=&quot;MathJax-Span-185&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Main'; font-size:12pt; color:#ffffff;&quot;&gt;≡&lt;/span&gt;&lt;a name=&quot;MathJax-Span-186&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Main'; font-size:12pt; color:#ffffff;&quot;&gt;(&lt;/span&gt;&lt;a name=&quot;MathJax-Span-187&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Math-italic'; font-size:12pt; color:#ffffff;&quot;&gt;p&lt;/span&gt;&lt;a name=&quot;MathJax-Span-188&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Main'; font-size:12pt; color:#ffffff;&quot;&gt;→&lt;/span&gt;&lt;a name=&quot;MathJax-Span-189&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Math-italic'; font-size:12pt; color:#ffffff;&quot;&gt;q&lt;/span&gt;&lt;a name=&quot;MathJax-Span-190&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Main'; font-size:12pt; color:#ffffff;&quot;&gt;)&lt;/span&gt;&lt;a name=&quot;MathJax-Span-191&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Main'; font-size:12pt; color:#ffffff;&quot;&gt;∧&lt;/span&gt;&lt;a name=&quot;MathJax-Span-192&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Main'; font-size:12pt; color:#ffffff;&quot;&gt;(&lt;/span&gt;&lt;a name=&quot;MathJax-Span-193&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Math-italic'; font-size:12pt; color:#ffffff;&quot;&gt;p&lt;/span&gt;&lt;a name=&quot;MathJax-Span-194&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Main'; font-size:12pt; color:#ffffff;&quot;&gt;→&lt;/span&gt;&lt;a name=&quot;MathJax-Span-195&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Math-italic'; font-size:12pt; color:#ffffff;&quot;&gt;r&lt;/span&gt;&lt;a name=&quot;MathJax-Span-196&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Main'; font-size:12pt; color:#ffffff;&quot;&gt;)&lt;/span&gt;&lt;span style=&quot; font-family:'inherit'; font-size:12pt; color:#ffffff;&quot;&gt;p→(q∧r)≡(p→q)∧(p→r)&lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:18px; margin-bottom:18px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; background-color:#000000;&quot;&gt;&lt;a name=&quot;MathJax-Element-18-Frame&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Math-italic'; font-size:12pt; color:#ffffff;&quot;&gt;p&lt;/span&gt;&lt;a name=&quot;MathJax-Span-200&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Main'; font-size:12pt; color:#ffffff;&quot;&gt;→&lt;/span&gt;&lt;a name=&quot;MathJax-Span-201&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Main'; font-size:12pt; color:#ffffff;&quot;&gt;(&lt;/span&gt;&lt;a name=&quot;MathJax-Span-202&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Math-italic'; font-size:12pt; color:#ffffff;&quot;&gt;q&lt;/span&gt;&lt;a name=&quot;MathJax-Span-203&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Main'; font-size:12pt; color:#ffffff;&quot;&gt;∨&lt;/span&gt;&lt;a name=&quot;MathJax-Span-204&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Math-italic'; font-size:12pt; color:#ffffff;&quot;&gt;r&lt;/span&gt;&lt;a name=&quot;MathJax-Span-205&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Main'; font-size:12pt; color:#ffffff;&quot;&gt;)&lt;/span&gt;&lt;a name=&quot;MathJax-Span-206&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Main'; font-size:12pt; color:#ffffff;&quot;&gt;≡&lt;/span&gt;&lt;a name=&quot;MathJax-Span-207&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Main'; font-size:12pt; color:#ffffff;&quot;&gt;(&lt;/span&gt;&lt;a name=&quot;MathJax-Span-208&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Math-italic'; font-size:12pt; color:#ffffff;&quot;&gt;p&lt;/span&gt;&lt;a name=&quot;MathJax-Span-209&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Main'; font-size:12pt; color:#ffffff;&quot;&gt;→&lt;/span&gt;&lt;a name=&quot;MathJax-Span-210&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Math-italic'; font-size:12pt; color:#ffffff;&quot;&gt;q&lt;/span&gt;&lt;a name=&quot;MathJax-Span-211&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Main'; font-size:12pt; color:#ffffff;&quot;&gt;)&lt;/span&gt;&lt;a name=&quot;MathJax-Span-212&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Main'; font-size:12pt; color:#ffffff;&quot;&gt;∨&lt;/span&gt;&lt;a name=&quot;MathJax-Span-213&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Main'; font-size:12pt; color:#ffffff;&quot;&gt;(&lt;/span&gt;&lt;a name=&quot;MathJax-Span-214&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Math-italic'; font-size:12pt; color:#ffffff;&quot;&gt;p&lt;/span&gt;&lt;a name=&quot;MathJax-Span-215&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Main'; font-size:12pt; color:#ffffff;&quot;&gt;→&lt;/span&gt;&lt;a name=&quot;MathJax-Span-216&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Math-italic'; font-size:12pt; color:#ffffff;&quot;&gt;r&lt;/span&gt;&lt;a name=&quot;MathJax-Span-217&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Main'; font-size:12pt; color:#ffffff;&quot;&gt;)&lt;/span&gt;&lt;span style=&quot; font-family:'inherit'; font-size:12pt; color:#ffffff;&quot;&gt;p→(q∨r)≡(p→q)∨(p→r)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Georgia,Times New Roman,Times,serif'; font-size:12pt; color:#242729; background-color:#ffffff;&quot;&gt;Idempotent Laws&lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:18px; margin-bottom:18px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; background-color:#000000;&quot;&gt;&lt;a name=&quot;MathJax-Element-19-Frame&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Math-italic'; font-size:12pt; color:#ffffff;&quot;&gt;p&lt;/span&gt;&lt;a name=&quot;MathJax-Span-221&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Main'; font-size:12pt; color:#ffffff;&quot;&gt;∨&lt;/span&gt;&lt;a name=&quot;MathJax-Span-222&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Math-italic'; font-size:12pt; color:#ffffff;&quot;&gt;p&lt;/span&gt;&lt;a name=&quot;MathJax-Span-223&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Main'; font-size:12pt; color:#ffffff;&quot;&gt;≡&lt;/span&gt;&lt;a name=&quot;MathJax-Span-224&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Math-italic'; font-size:12pt; color:#ffffff;&quot;&gt;p&lt;/span&gt;&lt;span style=&quot; font-family:'inherit'; font-size:12pt; color:#ffffff;&quot;&gt;p∨p≡p&lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:18px; margin-bottom:18px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; background-color:#000000;&quot;&gt;&lt;a name=&quot;MathJax-Element-20-Frame&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Math-italic'; font-size:12pt; color:#ffffff;&quot;&gt;p&lt;/span&gt;&lt;a name=&quot;MathJax-Span-228&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Main'; font-size:12pt; color:#ffffff;&quot;&gt;∧&lt;/span&gt;&lt;a name=&quot;MathJax-Span-229&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Math-italic'; font-size:12pt; color:#ffffff;&quot;&gt;p&lt;/span&gt;&lt;a name=&quot;MathJax-Span-230&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Main'; font-size:12pt; color:#ffffff;&quot;&gt;≡&lt;/span&gt;&lt;a name=&quot;MathJax-Span-231&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Math-italic'; font-size:12pt; color:#ffffff;&quot;&gt;p&lt;/span&gt;&lt;span style=&quot; font-family:'inherit'; font-size:12pt; color:#ffffff;&quot;&gt;p∧p≡p&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Georgia,Times New Roman,Times,serif'; font-size:12pt; color:#242729; background-color:#ffffff;&quot;&gt;Identity Laws&lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:18px; margin-bottom:18px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; background-color:#000000;&quot;&gt;&lt;a name=&quot;MathJax-Element-21-Frame&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Math-italic'; font-size:12pt; color:#ffffff;&quot;&gt;p&lt;/span&gt;&lt;a name=&quot;MathJax-Span-235&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Main'; font-size:12pt; color:#ffffff;&quot;&gt;∨&lt;/span&gt;&lt;a name=&quot;MathJax-Span-236&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Math-italic'; font-size:12pt; color:#ffffff;&quot;&gt;F&lt;/span&gt;&lt;a name=&quot;MathJax-Span-237&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Main'; font-size:12pt; color:#ffffff;&quot;&gt;≡&lt;/span&gt;&lt;a name=&quot;MathJax-Span-238&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Math-italic'; font-size:12pt; color:#ffffff;&quot;&gt;p&lt;/span&gt;&lt;span style=&quot; font-family:'inherit'; font-size:12pt; color:#ffffff;&quot;&gt;p∨F≡p&lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:18px; margin-bottom:18px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; background-color:#000000;&quot;&gt;&lt;a name=&quot;MathJax-Element-22-Frame&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Math-italic'; font-size:12pt; color:#ffffff;&quot;&gt;p&lt;/span&gt;&lt;a name=&quot;MathJax-Span-242&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Main'; font-size:12pt; color:#ffffff;&quot;&gt;∧&lt;/span&gt;&lt;a name=&quot;MathJax-Span-243&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Math-italic'; font-size:12pt; color:#ffffff;&quot;&gt;T&lt;/span&gt;&lt;a name=&quot;MathJax-Span-244&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Main'; font-size:12pt; color:#ffffff;&quot;&gt;≡&lt;/span&gt;&lt;a name=&quot;MathJax-Span-245&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Math-italic'; font-size:12pt; color:#ffffff;&quot;&gt;p&lt;/span&gt;&lt;span style=&quot; font-family:'inherit'; font-size:12pt; color:#ffffff;&quot;&gt;p∧T≡p&lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:18px; margin-bottom:18px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; background-color:#000000;&quot;&gt;&lt;a name=&quot;MathJax-Element-23-Frame&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Math-italic'; font-size:12pt; color:#ffffff;&quot;&gt;T&lt;/span&gt;&lt;a name=&quot;MathJax-Span-249&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Main'; font-size:12pt; color:#ffffff;&quot;&gt;→&lt;/span&gt;&lt;a name=&quot;MathJax-Span-250&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Math-italic'; font-size:12pt; color:#ffffff;&quot;&gt;p&lt;/span&gt;&lt;a name=&quot;MathJax-Span-251&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Main'; font-size:12pt; color:#ffffff;&quot;&gt;≡&lt;/span&gt;&lt;a name=&quot;MathJax-Span-252&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Math-italic'; font-size:12pt; color:#ffffff;&quot;&gt;p&lt;/span&gt;&lt;span style=&quot; font-family:'inherit'; font-size:12pt; color:#ffffff;&quot;&gt;T→p≡p&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Georgia,Times New Roman,Times,serif'; font-size:12pt; color:#242729; background-color:#ffffff;&quot;&gt;Inverse Laws&lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:18px; margin-bottom:18px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; background-color:#000000;&quot;&gt;&lt;a name=&quot;MathJax-Element-24-Frame&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Math-italic'; font-size:12pt; color:#ffffff;&quot;&gt;p&lt;/span&gt;&lt;a name=&quot;MathJax-Span-256&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Main'; font-size:12pt; color:#ffffff;&quot;&gt;∨&lt;/span&gt;&lt;a name=&quot;MathJax-Span-257&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Main'; font-size:12pt; color:#ffffff;&quot;&gt;(&lt;/span&gt;&lt;a name=&quot;MathJax-Span-258&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Main'; font-size:12pt; color:#ffffff;&quot;&gt;¬&lt;/span&gt;&lt;a name=&quot;MathJax-Span-259&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Math-italic'; font-size:12pt; color:#ffffff;&quot;&gt;p&lt;/span&gt;&lt;a name=&quot;MathJax-Span-260&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Main'; font-size:12pt; color:#ffffff;&quot;&gt;)&lt;/span&gt;&lt;a name=&quot;MathJax-Span-261&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Main'; font-size:12pt; color:#ffffff;&quot;&gt;≡&lt;/span&gt;&lt;a name=&quot;MathJax-Span-262&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Math-italic'; font-size:12pt; color:#ffffff;&quot;&gt;T&lt;/span&gt;&lt;span style=&quot; font-family:'inherit'; font-size:12pt; color:#ffffff;&quot;&gt;p∨(¬p)≡T&lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:18px; margin-bottom:18px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; background-color:#000000;&quot;&gt;&lt;a name=&quot;MathJax-Element-25-Frame&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Math-italic'; font-size:12pt; color:#ffffff;&quot;&gt;p&lt;/span&gt;&lt;a name=&quot;MathJax-Span-266&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Main'; font-size:12pt; color:#ffffff;&quot;&gt;∧&lt;/span&gt;&lt;a name=&quot;MathJax-Span-267&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Main'; font-size:12pt; color:#ffffff;&quot;&gt;(&lt;/span&gt;&lt;a name=&quot;MathJax-Span-268&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Main'; font-size:12pt; color:#ffffff;&quot;&gt;¬&lt;/span&gt;&lt;a name=&quot;MathJax-Span-269&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Math-italic'; font-size:12pt; color:#ffffff;&quot;&gt;p&lt;/span&gt;&lt;a name=&quot;MathJax-Span-270&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Main'; font-size:12pt; color:#ffffff;&quot;&gt;)&lt;/span&gt;&lt;a name=&quot;MathJax-Span-271&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Main'; font-size:12pt; color:#ffffff;&quot;&gt;≡&lt;/span&gt;&lt;a name=&quot;MathJax-Span-272&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Math-italic'; font-size:12pt; color:#ffffff;&quot;&gt;F&lt;/span&gt;&lt;span style=&quot; font-family:'inherit'; font-size:12pt; color:#ffffff;&quot;&gt;p∧(¬p)≡F&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Georgia,Times New Roman,Times,serif'; font-size:12pt; color:#242729; background-color:#ffffff;&quot;&gt;Domination Laws&lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:18px; margin-bottom:18px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; background-color:#000000;&quot;&gt;&lt;a name=&quot;MathJax-Element-26-Frame&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Math-italic'; font-size:12pt; color:#ffffff;&quot;&gt;p&lt;/span&gt;&lt;a name=&quot;MathJax-Span-276&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Main'; font-size:12pt; color:#ffffff;&quot;&gt;∨&lt;/span&gt;&lt;a name=&quot;MathJax-Span-277&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Math-italic'; font-size:12pt; color:#ffffff;&quot;&gt;T&lt;/span&gt;&lt;a name=&quot;MathJax-Span-278&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Main'; font-size:12pt; color:#ffffff;&quot;&gt;≡&lt;/span&gt;&lt;a name=&quot;MathJax-Span-279&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Math-italic'; font-size:12pt; color:#ffffff;&quot;&gt;T&lt;/span&gt;&lt;span style=&quot; font-family:'inherit'; font-size:12pt; color:#ffffff;&quot;&gt;p∨T≡T&lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:18px; margin-bottom:18px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; background-color:#000000;&quot;&gt;&lt;a name=&quot;MathJax-Element-27-Frame&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Math-italic'; font-size:12pt; color:#ffffff;&quot;&gt;p&lt;/span&gt;&lt;a name=&quot;MathJax-Span-283&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Main'; font-size:12pt; color:#ffffff;&quot;&gt;∧&lt;/span&gt;&lt;a name=&quot;MathJax-Span-284&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Math-italic'; font-size:12pt; color:#ffffff;&quot;&gt;F&lt;/span&gt;&lt;a name=&quot;MathJax-Span-285&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Main'; font-size:12pt; color:#ffffff;&quot;&gt;≡&lt;/span&gt;&lt;a name=&quot;MathJax-Span-286&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Math-italic'; font-size:12pt; color:#ffffff;&quot;&gt;F&lt;/span&gt;&lt;span style=&quot; font-family:'inherit'; font-size:12pt; color:#ffffff;&quot;&gt;p∧F≡F&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Georgia,Times New Roman,Times,serif'; font-size:12pt; color:#242729; background-color:#ffffff;&quot;&gt;Absortion Laws&lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:18px; margin-bottom:18px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; background-color:#000000;&quot;&gt;&lt;a name=&quot;MathJax-Element-28-Frame&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Math-italic'; font-size:12pt; color:#ffffff;&quot;&gt;p&lt;/span&gt;&lt;a name=&quot;MathJax-Span-290&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Main'; font-size:12pt; color:#ffffff;&quot;&gt;∨&lt;/span&gt;&lt;a name=&quot;MathJax-Span-291&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Main'; font-size:12pt; color:#ffffff;&quot;&gt;(&lt;/span&gt;&lt;a name=&quot;MathJax-Span-292&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Math-italic'; font-size:12pt; color:#ffffff;&quot;&gt;p&lt;/span&gt;&lt;a name=&quot;MathJax-Span-293&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Main'; font-size:12pt; color:#ffffff;&quot;&gt;∧&lt;/span&gt;&lt;a name=&quot;MathJax-Span-294&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Math-italic'; font-size:12pt; color:#ffffff;&quot;&gt;q&lt;/span&gt;&lt;a name=&quot;MathJax-Span-295&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Main'; font-size:12pt; color:#ffffff;&quot;&gt;)&lt;/span&gt;&lt;a name=&quot;MathJax-Span-296&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Main'; font-size:12pt; color:#ffffff;&quot;&gt;≡&lt;/span&gt;&lt;a name=&quot;MathJax-Span-297&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Math-italic'; font-size:12pt; color:#ffffff;&quot;&gt;p&lt;/span&gt;&lt;span style=&quot; font-family:'inherit'; font-size:12pt; color:#ffffff;&quot;&gt;p∨(p∧q)≡p&lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:18px; margin-bottom:18px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; background-color:#000000;&quot;&gt;&lt;a name=&quot;MathJax-Element-29-Frame&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Math-italic'; font-size:12pt; color:#ffffff;&quot;&gt;p&lt;/span&gt;&lt;a name=&quot;MathJax-Span-301&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Main'; font-size:12pt; color:#ffffff;&quot;&gt;∧&lt;/span&gt;&lt;a name=&quot;MathJax-Span-302&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Main'; font-size:12pt; color:#ffffff;&quot;&gt;(&lt;/span&gt;&lt;a name=&quot;MathJax-Span-303&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Math-italic'; font-size:12pt; color:#ffffff;&quot;&gt;p&lt;/span&gt;&lt;a name=&quot;MathJax-Span-304&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Main'; font-size:12pt; color:#ffffff;&quot;&gt;∨&lt;/span&gt;&lt;a name=&quot;MathJax-Span-305&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Math-italic'; font-size:12pt; color:#ffffff;&quot;&gt;q&lt;/span&gt;&lt;a name=&quot;MathJax-Span-306&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Main'; font-size:12pt; color:#ffffff;&quot;&gt;)&lt;/span&gt;&lt;a name=&quot;MathJax-Span-307&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Main'; font-size:12pt; color:#ffffff;&quot;&gt;≡&lt;/span&gt;&lt;a name=&quot;MathJax-Span-308&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Math-italic'; font-size:12pt; color:#ffffff;&quot;&gt;p&lt;/span&gt;&lt;span style=&quot; font-family:'inherit'; font-size:12pt; color:#ffffff;&quot;&gt;p∧(p∨q)≡p&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Georgia,Times New Roman,Times,serif'; font-size:12pt; color:#242729; background-color:#ffffff;&quot;&gt;The &amp;quot;Switcheroo&amp;quot; Law&lt;/span&gt;&lt;a name=&quot;MathJax-Element-30-Frame&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Main'; font-size:12pt; color:#242729; background-color:#ffffff;&quot;&gt;(&lt;/span&gt;&lt;a name=&quot;MathJax-Span-316&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Main'; font-size:12pt; color:#242729; background-color:#ffffff;&quot;&gt;2&lt;/span&gt;&lt;a name=&quot;MathJax-Span-317&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Main'; font-size:12pt; color:#242729; background-color:#ffffff;&quot;&gt;)&lt;/span&gt;&lt;span style=&quot; font-family:'inherit'; font-size:12pt; color:#242729; background-color:#ffffff;&quot;&gt;(2)&lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:18px; margin-bottom:18px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; background-color:#000000;&quot;&gt;&lt;a name=&quot;MathJax-Element-31-Frame&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Math-italic'; font-size:12pt; color:#ffffff;&quot;&gt;p&lt;/span&gt;&lt;a name=&quot;MathJax-Span-321&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Main'; font-size:12pt; color:#ffffff;&quot;&gt;→&lt;/span&gt;&lt;a name=&quot;MathJax-Span-322&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Math-italic'; font-size:12pt; color:#ffffff;&quot;&gt;q&lt;/span&gt;&lt;a name=&quot;MathJax-Span-323&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Main'; font-size:12pt; color:#ffffff;&quot;&gt;≡&lt;/span&gt;&lt;a name=&quot;MathJax-Span-324&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Main'; font-size:12pt; color:#ffffff;&quot;&gt;(&lt;/span&gt;&lt;a name=&quot;MathJax-Span-325&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Main'; font-size:12pt; color:#ffffff;&quot;&gt;¬&lt;/span&gt;&lt;a name=&quot;MathJax-Span-326&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Math-italic'; font-size:12pt; color:#ffffff;&quot;&gt;p&lt;/span&gt;&lt;a name=&quot;MathJax-Span-327&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Main'; font-size:12pt; color:#ffffff;&quot;&gt;)&lt;/span&gt;&lt;a name=&quot;MathJax-Span-328&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Main'; font-size:12pt; color:#ffffff;&quot;&gt;∨&lt;/span&gt;&lt;a name=&quot;MathJax-Span-329&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Math-italic'; font-size:12pt; color:#ffffff;&quot;&gt;q&lt;/span&gt;&lt;span style=&quot; font-family:'inherit'; font-size:12pt; color:#ffffff;&quot;&gt;p→q≡(¬p)∨q&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Georgia,Times New Roman,Times,serif'; font-size:12pt; color:#242729; background-color:#ffffff;&quot;&gt;Equivalence of the Contrapositive of a Conditional Statement&lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:18px; margin-bottom:18px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; background-color:#000000;&quot;&gt;&lt;a name=&quot;MathJax-Element-32-Frame&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Math-italic'; font-size:12pt; color:#ffffff;&quot;&gt;p&lt;/span&gt;&lt;a name=&quot;MathJax-Span-333&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Main'; font-size:12pt; color:#ffffff;&quot;&gt;→&lt;/span&gt;&lt;a name=&quot;MathJax-Span-334&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Math-italic'; font-size:12pt; color:#ffffff;&quot;&gt;q&lt;/span&gt;&lt;a name=&quot;MathJax-Span-335&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Main'; font-size:12pt; color:#ffffff;&quot;&gt;≡&lt;/span&gt;&lt;a name=&quot;MathJax-Span-336&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Main'; font-size:12pt; color:#ffffff;&quot;&gt;(&lt;/span&gt;&lt;a name=&quot;MathJax-Span-337&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Main'; font-size:12pt; color:#ffffff;&quot;&gt;¬&lt;/span&gt;&lt;a name=&quot;MathJax-Span-338&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Math-italic'; font-size:12pt; color:#ffffff;&quot;&gt;q&lt;/span&gt;&lt;a name=&quot;MathJax-Span-339&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Main'; font-size:12pt; color:#ffffff;&quot;&gt;)&lt;/span&gt;&lt;a name=&quot;MathJax-Span-340&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Main'; font-size:12pt; color:#ffffff;&quot;&gt;→&lt;/span&gt;&lt;a name=&quot;MathJax-Span-341&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Main'; font-size:12pt; color:#ffffff;&quot;&gt;(&lt;/span&gt;&lt;a name=&quot;MathJax-Span-342&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Main'; font-size:12pt; color:#ffffff;&quot;&gt;¬&lt;/span&gt;&lt;a name=&quot;MathJax-Span-343&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Math-italic'; font-size:12pt; color:#ffffff;&quot;&gt;p&lt;/span&gt;&lt;a name=&quot;MathJax-Span-344&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Main'; font-size:12pt; color:#ffffff;&quot;&gt;)&lt;/span&gt;&lt;span style=&quot; font-family:'inherit'; font-size:12pt; color:#ffffff;&quot;&gt;p→q≡(¬q)→(¬p)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Georgia,Times New Roman,Times,serif'; font-size:12pt; color:#242729; background-color:#ffffff;&quot;&gt;Meaning of Biconditional&lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:18px; margin-bottom:18px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; background-color:#000000;&quot;&gt;&lt;a name=&quot;MathJax-Element-33-Frame&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Math-italic'; font-size:12pt; color:#ffffff;&quot;&gt;p&lt;/span&gt;&lt;a name=&quot;MathJax-Span-348&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Main'; font-size:12pt; color:#ffffff;&quot;&gt;↔&lt;/span&gt;&lt;a name=&quot;MathJax-Span-349&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Math-italic'; font-size:12pt; color:#ffffff;&quot;&gt;q&lt;/span&gt;&lt;a name=&quot;MathJax-Span-350&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Main'; font-size:12pt; color:#ffffff;&quot;&gt;≡&lt;/span&gt;&lt;a name=&quot;MathJax-Span-351&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Main'; font-size:12pt; color:#ffffff;&quot;&gt;(&lt;/span&gt;&lt;a name=&quot;MathJax-Span-352&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Math-italic'; font-size:12pt; color:#ffffff;&quot;&gt;p&lt;/span&gt;&lt;a name=&quot;MathJax-Span-353&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Main'; font-size:12pt; color:#ffffff;&quot;&gt;→&lt;/span&gt;&lt;a name=&quot;MathJax-Span-354&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Math-italic'; font-size:12pt; color:#ffffff;&quot;&gt;q&lt;/span&gt;&lt;a name=&quot;MathJax-Span-355&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Main'; font-size:12pt; color:#ffffff;&quot;&gt;)&lt;/span&gt;&lt;a name=&quot;MathJax-Span-356&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Main'; font-size:12pt; color:#ffffff;&quot;&gt;∧&lt;/span&gt;&lt;a name=&quot;MathJax-Span-357&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Main'; font-size:12pt; color:#ffffff;&quot;&gt;(&lt;/span&gt;&lt;a name=&quot;MathJax-Span-358&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Math-italic'; font-size:12pt; color:#ffffff;&quot;&gt;q&lt;/span&gt;&lt;a name=&quot;MathJax-Span-359&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Main'; font-size:12pt; color:#ffffff;&quot;&gt;→&lt;/span&gt;&lt;a name=&quot;MathJax-Span-360&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Math-italic'; font-size:12pt; color:#ffffff;&quot;&gt;p&lt;/span&gt;&lt;a name=&quot;MathJax-Span-361&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Main'; font-size:12pt; color:#ffffff;&quot;&gt;)&lt;/span&gt;&lt;span style=&quot; font-family:'inherit'; font-size:12pt; color:#ffffff;&quot;&gt;p↔q≡(p→q)∧(q→p)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Georgia,Times New Roman,Times,serif'; font-size:12pt; color:#242729; background-color:#ffffff;&quot;&gt;Iteration Rule&lt;/span&gt;&lt;a name=&quot;MathJax-Element-34-Frame&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Main'; font-size:12pt; color:#242729; background-color:#ffffff;&quot;&gt;(&lt;/span&gt;&lt;a name=&quot;MathJax-Span-369&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Main'; font-size:12pt; color:#242729; background-color:#ffffff;&quot;&gt;3&lt;/span&gt;&lt;a name=&quot;MathJax-Span-370&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Main'; font-size:12pt; color:#242729; background-color:#ffffff;&quot;&gt;)&lt;/span&gt;&lt;span style=&quot; font-family:'inherit'; font-size:12pt; color:#242729; background-color:#ffffff;&quot;&gt;(3)&lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:18px; margin-bottom:18px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; background-color:#000000;&quot;&gt;&lt;a name=&quot;MathJax-Element-35-Frame&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Math-italic'; font-size:12pt; color:#ffffff;&quot;&gt;p&lt;/span&gt;&lt;a name=&quot;MathJax-Span-374&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Main'; font-size:12pt; color:#ffffff;&quot;&gt;≡&lt;/span&gt;&lt;a name=&quot;MathJax-Span-375&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Math-italic'; font-size:12pt; color:#ffffff;&quot;&gt;p&lt;/span&gt;&lt;span style=&quot; font-family:'inherit'; font-size:12pt; color:#ffffff;&quot;&gt;p≡p&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Georgia,Times New Roman,Times,serif'; font-size:12pt; color:#242729; background-color:#ffffff;&quot;&gt;Conditional Expansion Laws&lt;/span&gt;&lt;a name=&quot;MathJax-Element-36-Frame&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Main'; font-size:12pt; color:#242729; background-color:#ffffff;&quot;&gt;(&lt;/span&gt;&lt;a name=&quot;MathJax-Span-383&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Main'; font-size:12pt; color:#242729; background-color:#ffffff;&quot;&gt;4&lt;/span&gt;&lt;a name=&quot;MathJax-Span-384&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Main'; font-size:12pt; color:#242729; background-color:#ffffff;&quot;&gt;)&lt;/span&gt;&lt;span style=&quot; font-family:'inherit'; font-size:12pt; color:#242729; background-color:#ffffff;&quot;&gt;(4)&lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:18px; margin-bottom:18px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; background-color:#000000;&quot;&gt;&lt;a name=&quot;MathJax-Element-37-Frame&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Math-italic'; font-size:12pt; color:#242729;&quot;&gt;p&lt;/span&gt;&lt;a name=&quot;MathJax-Span-388&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Main'; font-size:12pt; color:#242729;&quot;&gt;→&lt;/span&gt;&lt;a name=&quot;MathJax-Span-389&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Math-italic'; font-size:12pt; color:#242729;&quot;&gt;q&lt;/span&gt;&lt;a name=&quot;MathJax-Span-390&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Main'; font-size:12pt; color:#ffffff;&quot;&gt;≡&lt;/span&gt;&lt;a name=&quot;MathJax-Span-391&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Math-italic'; font-size:12pt; color:#ffffff;&quot;&gt;p&lt;/span&gt;&lt;a name=&quot;MathJax-Span-392&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Main'; font-size:12pt; color:#ffffff;&quot;&gt;↔&lt;/span&gt;&lt;a name=&quot;MathJax-Span-393&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Main'; font-size:12pt; color:#ffffff;&quot;&gt;(&lt;/span&gt;&lt;a name=&quot;MathJax-Span-394&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Math-italic'; font-size:12pt; color:#ffffff;&quot;&gt;p&lt;/span&gt;&lt;a name=&quot;MathJax-Span-395&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Main'; font-size:12pt; color:#ffffff;&quot;&gt;∧&lt;/span&gt;&lt;a name=&quot;MathJax-Span-396&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Math-italic'; font-size:12pt; color:#ffffff;&quot;&gt;q&lt;/span&gt;&lt;a name=&quot;MathJax-Span-397&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Main'; font-size:12pt; color:#ffffff;&quot;&gt;)&lt;/span&gt;&lt;span style=&quot; font-family:'inherit'; font-size:12pt; color:#ffffff;&quot;&gt;p→q≡p↔(p∧q)&lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:18px; margin-bottom:18px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; background-color:#000000;&quot;&gt;&lt;a name=&quot;MathJax-Element-38-Frame&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Math-italic'; font-size:12pt; color:#ffffff;&quot;&gt;p&lt;/span&gt;&lt;a name=&quot;MathJax-Span-401&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Main'; font-size:12pt; color:#ffffff;&quot;&gt;→&lt;/span&gt;&lt;a name=&quot;MathJax-Span-402&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Math-italic'; font-size:12pt; color:#ffffff;&quot;&gt;q&lt;/span&gt;&lt;a name=&quot;MathJax-Span-403&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Main'; font-size:12pt; color:#ffffff;&quot;&gt;≡&lt;/span&gt;&lt;a name=&quot;MathJax-Span-404&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Math-italic'; font-size:12pt; color:#ffffff;&quot;&gt;q&lt;/span&gt;&lt;a name=&quot;MathJax-Span-405&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Main'; font-size:12pt; color:#ffffff;&quot;&gt;↔&lt;/span&gt;&lt;a name=&quot;MathJax-Span-406&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Main'; font-size:12pt; color:#ffffff;&quot;&gt;(&lt;/span&gt;&lt;a name=&quot;MathJax-Span-407&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Math-italic'; font-size:12pt; color:#ffffff;&quot;&gt;p&lt;/span&gt;&lt;a name=&quot;MathJax-Span-408&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Main'; font-size:12pt; color:#ffffff;&quot;&gt;∨&lt;/span&gt;&lt;a name=&quot;MathJax-Span-409&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Math-italic'; font-size:12pt; color:#ffffff;&quot;&gt;q&lt;/span&gt;&lt;a name=&quot;MathJax-Span-410&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MathJax_Main'; font-size:12pt; color:#ffffff;&quot;&gt;)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'MS Shell Dlg 2'; font-size:12pt;&quot;&gt;&lt;br /&gt;&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
          </property>
         </widget>
        </item>
@@ -368,8 +372,42 @@ Quantifier negation laws
      </widget>
     </widget>
    </item>
-   <item row="2" column="2">
-    <spacer name="horizontalSpacer_2">
+   <item row="1" column="3" rowspan="2">
+    <widget class="QFrame" name="askLepWidgetFrame">
+     <property name="minimumSize">
+      <size>
+       <width>0</width>
+       <height>0</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>16777215</width>
+       <height>16777215</height>
+      </size>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(255,255,242);
+border-color: rgb(246, 247, 200);
+</string>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::NoFrame</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Plain</enum>
+     </property>
+     <property name="lineWidth">
+      <number>2</number>
+     </property>
+     <property name="midLineWidth">
+      <number>0</number>
+     </property>
+     <layout class="QHBoxLayout" name="askLepLayout"/>
+    </widget>
+   </item>
+   <item row="2" column="0">
+    <spacer name="horizontalSpacer">
      <property name="orientation">
       <enum>Qt::Horizontal</enum>
      </property>
@@ -378,48 +416,11 @@ Quantifier negation laws
      </property>
      <property name="sizeHint" stdset="0">
       <size>
-       <width>400</width>
+       <width>0</width>
        <height>20</height>
       </size>
      </property>
     </spacer>
-   </item>
-   <item row="1" column="3" rowspan="2">
-    <widget class="QFrame" name="askLepWidgetFrame">
-     <property name="sizePolicy">
-      <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
-       <horstretch>0</horstretch>
-       <verstretch>0</verstretch>
-      </sizepolicy>
-     </property>
-     <property name="minimumSize">
-      <size>
-       <width>100</width>
-       <height>400</height>
-      </size>
-     </property>
-     <property name="maximumSize">
-      <size>
-       <width>900</width>
-       <height>16777215</height>
-      </size>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">background-color: rgb(246, 247, 200);
-border-color: rgb(246, 247, 200);
-</string>
-     </property>
-     <property name="frameShape">
-      <enum>QFrame::Panel</enum>
-     </property>
-     <property name="frameShadow">
-      <enum>QFrame::Raised</enum>
-     </property>
-     <property name="lineWidth">
-      <number>2</number>
-     </property>
-     <layout class="QHBoxLayout" name="askLepLayout"/>
-    </widget>
    </item>
   </layout>
  </widget>

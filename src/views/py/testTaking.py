@@ -25,6 +25,7 @@ class TestTaking(Ui_testTakingFrame):
             else:
                 self.view.request("testPreview",self.test) # test is empty go back
         else: #viewing one task
+            self.nextQButton.setText("go back")
             self.__loadTask(task)
 
     def connectActions(self):
@@ -52,13 +53,16 @@ class TestTaking(Ui_testTakingFrame):
             self.tmpFrame.deleteLater()
 
     def loadNextTask(self):
-        self.currentTaskIndex += 1
-        if self.currentTaskIndex == None:
-            self.view.request("testPreview", self.test) # only viewing th task: go back to preview
-        elif self.currentTaskIndex >= len(self.taskIds):
-            self.view.request("loadTestResultsPls", self.test) # out of questions
+        if self.currentTaskIndex is not None:
+            self.currentTaskIndex += 1
+            if self.currentTaskIndex == None:
+                self.view.request("testPreview", self.test) # only viewing th task: go back to preview
+            elif self.currentTaskIndex >= len(self.taskIds):
+                self.view.request("loadTestResultsPls", self.test) # out of questions
+            else:
+                self.__loadTask(self.test.getTask(self.taskIds[self.currentTaskIndex]))
         else:
-            self.__loadTask(self.test.getTask(self.taskIds[self.currentTaskIndex]))
+            self.view.request("testPreview", self.test)
 
 
 
