@@ -67,7 +67,7 @@ class Ui_MainWindow(object):
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.logo.sizePolicy().hasHeightForWidth())
         self.logo.setSizePolicy(sizePolicy)
-        self.logo.setMinimumSize(QtCore.QSize(96, 150))
+        self.logo.setMinimumSize(QtCore.QSize(48, 75))
         self.logo.setMaximumSize(QtCore.QSize(96, 150))
         self.logo.setText("")
         self.logo.setPixmap(QtGui.QPixmap("views/ui\\../../../res/logo.png"))
