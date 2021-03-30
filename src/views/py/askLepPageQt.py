@@ -90,7 +90,7 @@ class Ui_askLepPage(object):
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.howToTextBox.sizePolicy().hasHeightForWidth())
         self.howToTextBox.setSizePolicy(sizePolicy)
-        self.howToTextBox.setMaximumSize(QtCore.QSize(16777215, 800))
+        self.howToTextBox.setMaximumSize(QtCore.QSize(16777215, 16777215))
         font = QtGui.QFont()
         font.setFamily("Helvetica Neue")
         font.setPointSize(14)
@@ -158,7 +158,7 @@ class Ui_askLepPage(object):
         self.gridLayout.addWidget(self.askLepWidgetFrame, 1, 3, 2, 1)
 
         self.retranslateUi(askLepPage)
-        self.askLepTabWidget.setCurrentIndex(2)
+        self.askLepTabWidget.setCurrentIndex(1)
         QtCore.QMetaObject.connectSlotsByName(askLepPage)
 
     def retranslateUi(self, askLepPage):
