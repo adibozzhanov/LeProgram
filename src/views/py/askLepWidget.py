@@ -1,5 +1,5 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
-from PyQt5.QtWidgets import QTableWidgetItem
+from PyQt5.QtWidgets import QTableWidgetItem, QHeaderView
 
 from views.py.askLepWidgetQt import Ui_askLepWidgetFrame
 
@@ -35,7 +35,6 @@ class AskLepWidget(Ui_askLepWidgetFrame):
 
             columnInfo = truthTable[0]
             expressionSplit = list(columnInfo[-1])
-            print(expressionSplit)
 
             self.truthTableWidget.setRowCount(len(expResults) + 1)
             self.truthTableWidget.setColumnCount(len(columnInfo) + len(expressionSplit) - 1)
@@ -50,6 +49,7 @@ class AskLepWidget(Ui_askLepWidgetFrame):
             # Populate the table
             for expResultsInd in range(len(expResults)):
 
+                # Filling in the variable inputs
                 for expVarInpInd in range(len(columnInfo) - 1):
 
                     if truthTable[expResultsInd + 1][expVarInpInd][0] == True:
@@ -59,18 +59,29 @@ class AskLepWidget(Ui_askLepWidgetFrame):
 
                     self.truthTableWidget.setItem(expResultsInd + 1, expVarInpInd, QTableWidgetItem(stringRes))
 
-                outRes = truthTable[expResultsInd + 1][2]
+                # Filling in the expression outputs
+                outRes = truthTable[expResultsInd + 1][-1]
 
                 for outResInd in range(len(outRes)):
+
                     if outRes[outResInd] == True:
                         outResString = "True"
                     elif outRes[outResInd] == False:
                         outResString = "False"
                     else:
                         outResString = ""
-
                     self.truthTableWidget.setItem(expResultsInd + 1, expVarInpInd + outResInd + 1, QTableWidgetItem(outResString))
-                    #print(type(truthTable[expResultsInd + 1][expVarInpInd][0]))
-            #print(truthTable)
 
-            #print(truthTable)
+        # Resize the cells to make table look better
+        self.truthTableWidget.horizontalHeader().setSectionResizeMode(QHeaderView.ResizeToContents)
+
+        # Hiding the column and row headers
+        self.truthTableWidget.verticalHeader().setVisible(False)
+        self.truthTableWidget.horizontalHeader().setVisible(False)
+
+        # Removed the empty columns
+        for remIndex in range(self.truthTableWidget.columnCount(), 0, -1):
+            if self.truthTableWidget.item(0, remIndex - 1).text() == " ":
+                self.truthTableWidget.removeColumn(remIndex - 1)
+
+

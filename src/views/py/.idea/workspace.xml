@@ -19,10 +19,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6d41d22a-78cf-4399-a64c-73185630425a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ui/askLepPage.ui" beforeDir="false" afterPath="$PROJECT_DIR$/../ui/askLepPage.ui" afterDir="false" />
-    </list>
+    <list default="true" id="6d41d22a-78cf-4399-a64c-73185630425a" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -75,6 +72,7 @@
       <workItem from="1617029777190" duration="337000" />
       <workItem from="1617089289260" duration="6278000" />
       <workItem from="1617106462139" duration="4516000" />
+      <workItem from="1617117621790" duration="705000" />
     </task>
     <servers />
   </component>
