@@ -96,7 +96,7 @@ class Ui_testMakingPage(object):
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.askLepWidgetFrame.sizePolicy().hasHeightForWidth())
         self.askLepWidgetFrame.setSizePolicy(sizePolicy)
-        self.askLepWidgetFrame.setMinimumSize(QtCore.QSize(100, 400))
+        self.askLepWidgetFrame.setMinimumSize(QtCore.QSize(50, 400))
         self.askLepWidgetFrame.setMaximumSize(QtCore.QSize(900, 16777215))
         self.askLepWidgetFrame.setStyleSheet("background-color: rgb(246, 247, 200);\n"
 "border-color: rgb(246, 247, 200);\n"
@@ -114,7 +114,7 @@ class Ui_testMakingPage(object):
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.taskMakingScrollArea.sizePolicy().hasHeightForWidth())
         self.taskMakingScrollArea.setSizePolicy(sizePolicy)
-        self.taskMakingScrollArea.setMinimumSize(QtCore.QSize(500, 200))
+        self.taskMakingScrollArea.setMinimumSize(QtCore.QSize(250, 200))
         self.taskMakingScrollArea.setMaximumSize(QtCore.QSize(1500, 16777215))
         self.taskMakingScrollArea.setStyleSheet("border-color: rgb(246, 247, 200);\n"
 "background-color: rgb(246, 247, 200);")
@@ -124,7 +124,7 @@ class Ui_testMakingPage(object):
         self.taskMakingScrollArea.setWidgetResizable(True)
         self.taskMakingScrollArea.setObjectName("taskMakingScrollArea")
         self.scrollAreaWidgetContents_2 = QtWidgets.QWidget()
-        self.scrollAreaWidgetContents_2.setGeometry(QtCore.QRect(0, 0, 498, 330))
+        self.scrollAreaWidgetContents_2.setGeometry(QtCore.QRect(0, 0, 458, 330))
         self.scrollAreaWidgetContents_2.setObjectName("scrollAreaWidgetContents_2")
         self.verticalLayout_2 = QtWidgets.QVBoxLayout(self.scrollAreaWidgetContents_2)
         self.verticalLayout_2.setObjectName("verticalLayout_2")
@@ -189,7 +189,7 @@ class Ui_testMakingPage(object):
         self.gridLayout.addWidget(self.testDescriptionInput, 5, 1, 1, 1)
         spacerItem2 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
         self.gridLayout.addItem(spacerItem2, 10, 1, 1, 1)
-        spacerItem3 = QtWidgets.QSpacerItem(400, 20, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Minimum)
+        spacerItem3 = QtWidgets.QSpacerItem(200, 20, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Minimum)
         self.gridLayout.addItem(spacerItem3, 10, 5, 1, 1)
 
         self.retranslateUi(testMakingPage)

@@ -197,7 +197,7 @@ color: rgb(255, 255, 255);
      </property>
      <property name="minimumSize">
       <size>
-       <width>100</width>
+       <width>50</width>
        <height>400</height>
       </size>
      </property>
@@ -234,7 +234,7 @@ border-color: rgb(246, 247, 200);
      </property>
      <property name="minimumSize">
       <size>
-       <width>500</width>
+       <width>250</width>
        <height>200</height>
       </size>
      </property>
@@ -265,7 +265,7 @@ background-color: rgb(246, 247, 200);</string>
        <rect>
         <x>0</x>
         <y>0</y>
-        <width>498</width>
+        <width>458</width>
         <height>330</height>
        </rect>
       </property>
@@ -426,7 +426,7 @@ color: rgb(246, 247, 200);
      </property>
      <property name="sizeHint" stdset="0">
       <size>
-       <width>400</width>
+       <width>200</width>
        <height>20</height>
       </size>
      </property>
