@@ -162,12 +162,16 @@
         <x>0</x>
         <y>0</y>
         <width>474</width>
-        <height>198</height>
+        <height>304</height>
        </rect>
       </property>
       <layout class="QVBoxLayout" name="verticalLayout_2">
        <item>
-        <layout class="QVBoxLayout" name="taskScrollBarContents"/>
+        <layout class="QVBoxLayout" name="taskScrollBarContents">
+         <property name="spacing">
+          <number>0</number>
+         </property>
+        </layout>
        </item>
       </layout>
      </widget>
@@ -203,6 +207,24 @@
    </item>
    <item row="3" column="1">
     <widget class="QPlainTextEdit" name="testDescriptionInput">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>0</width>
+       <height>60</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>16777215</width>
+       <height>60</height>
+      </size>
+     </property>
      <property name="plainText">
       <string/>
      </property>
@@ -210,6 +232,22 @@
       <string>Input your test description here </string>
      </property>
     </widget>
+   </item>
+   <item row="6" column="3">
+    <spacer name="verticalSpacer_3">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeType">
+      <enum>QSizePolicy::Maximum</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>20</width>
+       <height>700</height>
+      </size>
+     </property>
+    </spacer>
    </item>
   </layout>
  </widget>

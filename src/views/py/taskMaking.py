@@ -51,7 +51,7 @@ class TaskMakingFrame(Ui_taskMakingFrame):
         self.index -= 1
 
     def removeAnswer(self):
-        if len(self.answerIDs) > 1:
+        if len(self.answerFrames) > 1:
             self.answerFrames[-1].deleteLater()
             self.answerFrames.pop()
             self.answerMakingFrames.pop()
@@ -64,11 +64,11 @@ class TaskMakingFrame(Ui_taskMakingFrame):
     def addExpression(self):
         text = self.expressionInput.text()
         tree = getExpressionTree(text)
-        if tree is None:
-            self.setInvalidLabel()
-        else:
+        if tree is not None or text == "":
             self.task[1] = Expression(tree)
             self.setValidLabel()
+        else:
+            self.setInvalidLabel()
 
     def setInvalidLabel(self):
         self.ifValidLabel.setStyleSheet("color: rgb(255, 0, 0);")
