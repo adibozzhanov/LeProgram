@@ -148,14 +148,14 @@
          </property>
          <property name="minimumSize">
           <size>
-           <width>96</width>
-           <height>150</height>
+           <width>48</width>
+           <height>75</height>
           </size>
          </property>
          <property name="maximumSize">
           <size>
-           <width>96</width>
-           <height>150</height>
+           <width>48</width>
+           <height>75</height>
           </size>
          </property>
          <property name="text">
@@ -250,7 +250,7 @@ color: rgb(246, 247, 200);
          <property name="sizeHint" stdset="0">
           <size>
            <width>5</width>
-           <height>150</height>
+           <height>75</height>
           </size>
          </property>
         </spacer>
