@@ -16,7 +16,7 @@
   <property name="styleSheet">
    <string notr="true">background-color: rgb(255, 255, 242);</string>
   </property>
-  <layout class="QHBoxLayout" name="askLepLayout">
+  <layout class="QHBoxLayout" name="mainLayout">
    <item>
     <spacer name="horizontalSpacer">
      <property name="orientation">
@@ -117,7 +117,7 @@ color: rgb(246, 247, 200);
      <property name="frameShadow">
       <enum>QFrame::Raised</enum>
      </property>
-     <layout class="QHBoxLayout" name="horizontalLayout_2"/>
+     <layout class="QHBoxLayout" name="askLepLayout"/>
     </widget>
    </item>
    <item>

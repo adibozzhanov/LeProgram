@@ -11,14 +11,15 @@ class AnswerFrame(Ui_answerFrame):
         self.answer = answer
         self.answerButton.setText(answer.getExpression().getDisplayString())
         self.answerButton.clicked.connect(self.onClick)
+        self.isAnswered = False
 
     def onClick(self):
-        if self.answer.getIsCorrect():
-            self.answerButton.setStyleSheet("background-color : green")
+        if not self.isAnswered:
+            if self.answer.getIsCorrect():
+                self.answerButton.setStyleSheet("background-color : green")
+            else:
+                self.answerButton.setStyleSheet("background-color : red")
+            
+            self.taskFrame.checkAnswers(self.answer.getAnswerId())
         else:
-            self.answerButton.setStyleSheet("background-color : red")
-        
-        self.taskFrame.checkAnswers(self.answer.getAnswerId())
-        
-        
-    
+            self.taskFrame.testFrame.updateAskLep(self.answer.getExpression())

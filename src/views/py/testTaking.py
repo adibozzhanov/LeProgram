@@ -19,6 +19,11 @@ class TestTaking(Ui_testTakingFrame):
         self.taskIds = self.test.getTaskIds()
         self.currentTaskIndex = None
         self.nextQButton.setEnabled(False)
+        tmpFrame = QtWidgets.QFrame(self.askLepFrame)
+        self.askLepLayout.addWidget(tmpFrame)
+        self.askLep = AskLepWidget(tmpFrame, view, None)
+        self.hideAskLep()
+        
         if task is None:#taking the whole test
             if len(self.taskIds)>0 :
                 self.currentTaskIndex = 0
@@ -32,6 +37,16 @@ class TestTaking(Ui_testTakingFrame):
     def connectActions(self):
         self.nextQButton.clicked.connect(self.loadNextTask)
 
+    def hideAskLep(self):
+        self.askLepFrame.hide()
+
+    def showAskLep(self):
+        self.askLepFrame.show()
+
+    def updateAskLep(self, expression = None):
+        self.showAskLep()
+        self.askLep.setExpressionInfo(expression)
+
 
     def __loadTask(self, task):
         progression = self.test.getProgression()
@@ -44,26 +59,18 @@ class TestTaking(Ui_testTakingFrame):
         self.taskLayout.addWidget(self.tmpFrame)
         TaskFrame(self.tmpFrame, self.view, task, self)
         self.nextQButton.setEnabled(False)
+        
 
-    def updateAskLep(self, expression=None):
-        if self.askLePtmpFrame != None:
-            self.askLepLayout.removeWidget(self.askLePtmpFrame)
-        self.askLePtmpFrame = QtWidgets.QFrame()
-        self.askLepLayout.addWidget(self.askLePtmpFrame)
-        AskLepWidget(self.askLePtmpFrame, self.view, expression)
 
-    def deleteAskLep(self):
-        if self.askLePtmpFrame != None:
-            self.askLepLayout.removeWidget(self.askLePtmpFrame)
-            #self.askLePtmpFrame.deleteLater()
+
 
     def clearTask(self):
-        self.deleteAskLep()
         if self.tmpFrame is not None:
             self.taskLayout.removeWidget(self.tmpFrame)
             self.tmpFrame.deleteLater()
 
     def loadNextTask(self):
+        self.hideAskLep()
         if self.currentTaskIndex is not None:
             self.currentTaskIndex += 1
             if self.currentTaskIndex == None:

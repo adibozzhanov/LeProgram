@@ -27,8 +27,7 @@ class TaskFrame(Ui_taskFrame):
 
     def checkAnswers(self, answerId):
         for answerFrame in self.answerFrames:
-            answerFrame.answerButton.clicked.disconnect()
-            answerFrame.answerButton.clicked.connect(lambda: self.testFrame.updateAskLep(answerFrame.answer.getExpression()))
+            answerFrame.isAnswered = True
             if answerFrame.answer.getIsCorrect():
                 answerFrame.answerButton.setStyleSheet("background-color : green")
         self.testFrame.test.addTaskAnswerGiven(self.task.getTaskId(), answerId)
