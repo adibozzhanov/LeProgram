@@ -40,8 +40,6 @@ class TaskMakingFrame(Ui_taskMakingFrame):
 
     def addAnswer(self):
         newFrame = QtWidgets.QFrame()
-        newFrame.setSizePolicy(QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Fixed)
-        newFrame.setMinimumSize(QtCore.QSize(0, 150))
         self.answerScrollBarContents.addWidget(newFrame)
         self.answerFrames.append(newFrame)
         self.answerMakingFrames.append(AnswerInputFrame(newFrame, self.view))
@@ -51,7 +49,7 @@ class TaskMakingFrame(Ui_taskMakingFrame):
         self.index -= 1
 
     def removeAnswer(self):
-        if len(self.answerIDs) > 1:
+        if len(self.answerFrames) > 1:
             self.answerFrames[-1].deleteLater()
             self.answerFrames.pop()
             self.answerMakingFrames.pop()
@@ -63,17 +61,18 @@ class TaskMakingFrame(Ui_taskMakingFrame):
 
     def addExpression(self):
         text = self.expressionInput.text()
+        text = text.replace(" ", "")
         tree = getExpressionTree(text)
-        if tree is None:
-            self.setInvalidLabel()
-        else:
+        if tree is not None or text == "":
             self.task[1] = Expression(tree)
             self.setValidLabel()
+        else:
+            self.setInvalidLabel()
 
     def setInvalidLabel(self):
         self.ifValidLabel.setStyleSheet("color: rgb(255, 0, 0);")
-        self.ifValidLabel.setText("Invalid Expression")
+        self.ifValidLabel.setText("Invalid")
 
     def setValidLabel(self):
         self.ifValidLabel.setStyleSheet("color: rgb(50, 168, 82);")
-        self.ifValidLabel.setText("Valid Expression")
+        self.ifValidLabel.setText("Valid")

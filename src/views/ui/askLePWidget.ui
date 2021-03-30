@@ -13,13 +13,38 @@
   <property name="windowTitle">
    <string>Form</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(246, 247, 200);
+border-color: rgb(246, 247, 200);
+</string>
+  </property>
   <layout class="QVBoxLayout" name="verticalLayout">
+   <property name="spacing">
+    <number>10</number>
+   </property>
+   <property name="leftMargin">
+    <number>45</number>
+   </property>
+   <property name="topMargin">
+    <number>30</number>
+   </property>
+   <property name="rightMargin">
+    <number>45</number>
+   </property>
+   <property name="bottomMargin">
+    <number>30</number>
+   </property>
    <item>
     <widget class="QLabel" name="askLeProgramLabel">
      <property name="font">
       <font>
        <pointsize>18</pointsize>
       </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(246, 247, 200);
+border-color: rgb(246, 247, 200);
+</string>
      </property>
      <property name="text">
       <string>Ask Le Program</string>
@@ -71,7 +96,7 @@ color: rgb(255, 255, 242);</string>
      </property>
      <property name="minimumSize">
       <size>
-       <width>500</width>
+       <width>400</width>
        <height>500</height>
       </size>
      </property>
@@ -85,7 +110,9 @@ color: rgb(255, 255, 242);</string>
       <string>Truth Table</string>
      </property>
      <property name="styleSheet">
-      <string notr="true">background-color: rgb(255, 255, 242);</string>
+      <string notr="true">background-color: rgb(246, 247, 200);
+border-color: rgb(246, 247, 200);
+</string>
      </property>
      <property name="lineWidth">
       <number>-3</number>
@@ -164,25 +191,6 @@ color: rgb(255, 255, 242);</string>
      </property>
      <property name="text">
       <string>Validity:</string>
-     </property>
-     <property name="alignment">
-      <set>Qt::AlignCenter</set>
-     </property>
-    </widget>
-   </item>
-   <item>
-    <widget class="QLabel" name="dnfExpressionLabel">
-     <property name="font">
-      <font>
-       <pointsize>14</pointsize>
-      </font>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">color: rgb(24, 35, 32);
-background-color: rgb(255, 255, 242);</string>
-     </property>
-     <property name="text">
-      <string>DNF form (also the thing above is a table widget)</string>
      </property>
      <property name="alignment">
       <set>Qt::AlignCenter</set>

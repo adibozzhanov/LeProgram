@@ -6,12 +6,12 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>754</width>
-    <height>68</height>
+    <width>828</width>
+    <height>78</height>
    </rect>
   </property>
   <property name="sizePolicy">
-   <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+   <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
     <horstretch>0</horstretch>
     <verstretch>0</verstretch>
    </sizepolicy>
@@ -19,45 +19,48 @@
   <property name="minimumSize">
    <size>
     <width>0</width>
-    <height>50</height>
+    <height>0</height>
    </size>
   </property>
   <property name="maximumSize">
    <size>
     <width>16777215</width>
-    <height>100</height>
+    <height>16777215</height>
    </size>
   </property>
   <property name="windowTitle">
    <string>Frame</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(255, 255, 242);</string>
+  </property>
   <layout class="QGridLayout" name="gridLayout">
-   <item row="0" column="1">
-    <widget class="QPlainTextEdit" name="answerInputField">
-     <property name="sizePolicy">
-      <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
-       <horstretch>0</horstretch>
-       <verstretch>0</verstretch>
-      </sizepolicy>
+   <property name="leftMargin">
+    <number>0</number>
+   </property>
+   <property name="rightMargin">
+    <number>0</number>
+   </property>
+   <property name="verticalSpacing">
+    <number>0</number>
+   </property>
+   <item row="0" column="2">
+    <spacer name="verticalSpacer">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
      </property>
-     <property name="minimumSize">
-      <size>
-       <width>500</width>
-       <height>68</height>
-      </size>
+     <property name="sizeType">
+      <enum>QSizePolicy::Preferred</enum>
      </property>
-     <property name="maximumSize">
+     <property name="sizeHint" stdset="0">
       <size>
-       <width>800</width>
+       <width>20</width>
        <height>50</height>
       </size>
      </property>
-     <property name="placeholderText">
-      <string>Write answer here</string>
-     </property>
-    </widget>
+    </spacer>
    </item>
-   <item row="0" column="3">
+   <item row="0" column="4">
     <widget class="QCheckBox" name="ifCorrectCheckBox">
      <property name="sizePolicy">
       <sizepolicy hsizetype="Maximum" vsizetype="Maximum">
@@ -68,13 +71,13 @@
      <property name="minimumSize">
       <size>
        <width>90</width>
-       <height>68</height>
+       <height>50</height>
       </size>
      </property>
      <property name="maximumSize">
       <size>
        <width>250</width>
-       <height>16777215</height>
+       <height>100</height>
       </size>
      </property>
      <property name="font">
@@ -87,24 +90,24 @@
      </property>
     </widget>
    </item>
-   <item row="0" column="2">
+   <item row="0" column="0">
     <widget class="QLabel" name="ifValidLabel">
      <property name="sizePolicy">
-      <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+      <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
        <horstretch>0</horstretch>
        <verstretch>0</verstretch>
       </sizepolicy>
      </property>
      <property name="minimumSize">
       <size>
-       <width>200</width>
-       <height>68</height>
+       <width>0</width>
+       <height>50</height>
       </size>
      </property>
      <property name="maximumSize">
       <size>
-       <width>250</width>
-       <height>16777215</height>
+       <width>150</width>
+       <height>100</height>
       </size>
      </property>
      <property name="font">
@@ -116,10 +119,53 @@
       <string notr="true">color: rgb(255, 0, 0);</string>
      </property>
      <property name="text">
-      <string>Invalid Expression</string>
+      <string>Invalid</string>
      </property>
      <property name="textFormat">
       <enum>Qt::PlainText</enum>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="1">
+    <widget class="QTextEdit" name="answerInputField">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>500</width>
+       <height>60</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>4000</width>
+       <height>75</height>
+      </size>
+     </property>
+     <property name="font">
+      <font>
+       <family>Helvetica Neue</family>
+       <pointsize>12</pointsize>
+      </font>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::NoFrame</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Plain</enum>
+     </property>
+     <property name="verticalScrollBarPolicy">
+      <enum>Qt::ScrollBarAlwaysOff</enum>
+     </property>
+     <property name="horizontalScrollBarPolicy">
+      <enum>Qt::ScrollBarAlwaysOff</enum>
+     </property>
+     <property name="placeholderText">
+      <string>Write expression here</string>
      </property>
     </widget>
    </item>
