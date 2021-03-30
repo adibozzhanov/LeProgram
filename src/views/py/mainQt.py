@@ -102,7 +102,7 @@ class Ui_MainWindow(object):
         self.homeButton.setIconSize(QtCore.QSize(24, 24))
         self.homeButton.setObjectName("homeButton")
         self.horizontalLayout.addWidget(self.homeButton)
-        spacerItem2 = QtWidgets.QSpacerItem(5, 150, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Fixed)
+        spacerItem2 = QtWidgets.QSpacerItem(5, 75, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Fixed)
         self.horizontalLayout.addItem(spacerItem2)
         self.askLepButton = QtWidgets.QPushButton(self.menuBar)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Preferred)
