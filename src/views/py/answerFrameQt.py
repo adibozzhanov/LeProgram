@@ -13,14 +13,14 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_answerFrame(object):
     def setupUi(self, answerFrame):
         answerFrame.setObjectName("answerFrame")
-        answerFrame.resize(516, 71)
+        answerFrame.resize(516, 66)
         answerFrame.setStyleSheet("background-color: rgb(255, 255, 242);")
         self.horizontalLayout = QtWidgets.QHBoxLayout(answerFrame)
+        self.horizontalLayout.setContentsMargins(0, -1, 0, -1)
+        self.horizontalLayout.setSpacing(0)
         self.horizontalLayout.setObjectName("horizontalLayout")
-        spacerItem = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
-        self.horizontalLayout.addItem(spacerItem)
         self.answerButton = QtWidgets.QPushButton(answerFrame)
-        self.answerButton.setMaximumSize(QtCore.QSize(700, 16777215))
+        self.answerButton.setMaximumSize(QtCore.QSize(900, 16777215))
         font = QtGui.QFont()
         font.setFamily("Helvetica Neue")
         font.setPointSize(14)
@@ -28,8 +28,6 @@ class Ui_answerFrame(object):
         self.answerButton.setFont(font)
         self.answerButton.setObjectName("answerButton")
         self.horizontalLayout.addWidget(self.answerButton)
-        spacerItem1 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
-        self.horizontalLayout.addItem(spacerItem1)
 
         self.retranslateUi(answerFrame)
         QtCore.QMetaObject.connectSlotsByName(answerFrame)
