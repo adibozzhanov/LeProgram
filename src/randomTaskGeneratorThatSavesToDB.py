@@ -2,6 +2,7 @@ import random
 from models.lexerParser import Node, getExpressionTree
 from models.task import Task
 from models.test import Test
+from models.library import Library
 from models.expression import Expression
 from models.answer import Answer
 from models.randomTaskGenerator import TaskGenerator
@@ -163,14 +164,43 @@ class TestGenerator:
 
 
 if __name__ == '__main__': #testing
+    t = TestGenerator(complexity=1)
+    test = t.getTest()
+    test.setName("Beginner Test")
+    t = TestGenerator(complexity=3)
+    test = t.getTest()
+    test.setName("Normal Test")
+    t = TestGenerator(complexity=5)
+    test = t.getTest()
+    test.setName("Advanced Test")
+    t = TestGenerator(complexity=10)
+    test = t.getTest()
+    test.setName("Superhuman Test")
+    t = TestGenerator(complexity=15)
+    test = t.getTest()
+    test.setName("God Level")
+
+    t = TestGenerator(complexity=2)
+    test = t.getTest()
+    test.setName("Demo Test")
+    t = TestGenerator(complexity=4)
+    test = t.getTest()
+    test.setName("Oscers's Test")
+    t = TestGenerator(complexity=3)
+    test = t.getTest()
+    test.setName("GREG")
+    t = TestGenerator(complexity=1)
+    test = t.getTest()
+    test.setName("Adi's OogaBooga")
     t = TestGenerator(complexity=6)
     test = t.getTest()
     test.setName("Carmen's Big Brain")
-    #test.setName("Adi's OogaBooga")
-    #test.setName("GREG")
-    #test.setName("Oscers's test")
-    # g = TaskGenerator(3)
-    # g.test()
+    t = TestGenerator(complexity=2)
+    test = t.getTest()
+    test.setName("Demo Test")
+    test.setDescription("This should be a fairly easy test. I believe in you! you can do it<3")
+
+
 
 
 # generate the correct answers
