@@ -84,6 +84,7 @@ class AskLepWidget(Ui_askLepWidgetFrame):
                     self.truthTableWidget.setItem(expResultsInd + 1, expVarInpInd + outResInd + 1, QTableWidgetItem(outResString))
 
         # Resize the cells to make table look better
+        self.truthTableWidget.horizontalHeader().setMinimumSectionSize(0)
         self.truthTableWidget.horizontalHeader().setSectionResizeMode(QHeaderView.ResizeToContents)
 
         # Hiding the column and row headers
@@ -94,5 +95,3 @@ class AskLepWidget(Ui_askLepWidgetFrame):
         for remIndex in range(self.truthTableWidget.columnCount(), 0, -1):
             if self.truthTableWidget.item(0, remIndex - 1).text() == " ":
                 self.truthTableWidget.removeColumn(remIndex - 1)
-
-
