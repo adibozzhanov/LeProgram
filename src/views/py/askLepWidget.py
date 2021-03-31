@@ -50,14 +50,25 @@ class AskLepWidget(Ui_askLepWidgetFrame):
             for expResultsInd in range(len(expResults)):
 
                 # Filling in the variable inputs
-                for expVarInpInd in range(len(columnInfo) - 1):
 
-                    if truthTable[expResultsInd + 1][expVarInpInd][0] == True:
-                        stringRes = "True"
-                    else:
-                        stringRes = "False"
+                if len(columnInfo) == 1:
+                    for expVarInpInd in range(len(columnInfo)):
+                        if truthTable[expResultsInd + 1][expVarInpInd][0] == True:
+                            stringRes = "T"
+                        else:
+                            stringRes = "F"
 
-                    self.truthTableWidget.setItem(expResultsInd + 1, expVarInpInd, QTableWidgetItem(stringRes))
+                        self.truthTableWidget.setItem(expResultsInd + 1, expVarInpInd, QTableWidgetItem(stringRes))
+
+                else:
+                    for expVarInpInd in range(len(columnInfo) - 1):
+
+                        if truthTable[expResultsInd + 1][expVarInpInd][0] == True:
+                            stringRes = "T"
+                        else:
+                            stringRes = "F"
+
+                        self.truthTableWidget.setItem(expResultsInd + 1, expVarInpInd, QTableWidgetItem(stringRes))
 
                 # Filling in the expression outputs
                 outRes = truthTable[expResultsInd + 1][-1]
@@ -65,9 +76,9 @@ class AskLepWidget(Ui_askLepWidgetFrame):
                 for outResInd in range(len(outRes)):
 
                     if outRes[outResInd] == True:
-                        outResString = "True"
+                        outResString = "T"
                     elif outRes[outResInd] == False:
-                        outResString = "False"
+                        outResString = "F"
                     else:
                         outResString = ""
                     self.truthTableWidget.setItem(expResultsInd + 1, expVarInpInd + outResInd + 1, QTableWidgetItem(outResString))
