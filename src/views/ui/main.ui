@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1075</width>
+    <width>1076</width>
     <height>119</height>
    </rect>
   </property>
@@ -37,10 +37,30 @@
    <bool>false</bool>
   </property>
   <widget class="QWidget" name="centralwidget">
+   <property name="font">
+    <font>
+     <kerning>true</kerning>
+    </font>
+   </property>
    <property name="autoFillBackground">
     <bool>false</bool>
    </property>
    <layout class="QGridLayout" name="gridLayout">
+    <property name="leftMargin">
+     <number>0</number>
+    </property>
+    <property name="topMargin">
+     <number>0</number>
+    </property>
+    <property name="rightMargin">
+     <number>0</number>
+    </property>
+    <property name="bottomMargin">
+     <number>0</number>
+    </property>
+    <property name="spacing">
+     <number>0</number>
+    </property>
     <item row="1" column="0">
      <widget class="QFrame" name="mainFrame">
       <property name="sizePolicy">
@@ -135,6 +155,22 @@
         <number>9</number>
        </property>
        <item>
+        <spacer name="horizontalSpacer_3">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeType">
+          <enum>QSizePolicy::Minimum</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item>
         <widget class="QLabel" name="logo">
          <property name="sizePolicy">
           <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
@@ -200,13 +236,13 @@
             </property>
             <property name="minimumSize">
              <size>
-              <width>100</width>
+              <width>120</width>
               <height>50</height>
              </size>
             </property>
             <property name="maximumSize">
              <size>
-              <width>100</width>
+              <width>120</width>
               <height>50</height>
              </size>
             </property>
@@ -254,13 +290,13 @@ color: rgb(246, 247, 200);
             </property>
             <property name="minimumSize">
              <size>
-              <width>120</width>
+              <width>130</width>
               <height>50</height>
              </size>
             </property>
             <property name="maximumSize">
              <size>
-              <width>120</width>
+              <width>130</width>
               <height>50</height>
              </size>
             </property>
@@ -307,13 +343,13 @@ selection-background-color: rgb(233, 234, 189);</string>
             </property>
             <property name="minimumSize">
              <size>
-              <width>160</width>
+              <width>180</width>
               <height>50</height>
              </size>
             </property>
             <property name="maximumSize">
              <size>
-              <width>160</width>
+              <width>180</width>
               <height>50</height>
              </size>
             </property>
@@ -360,13 +396,13 @@ selection-background-color: rgb(233, 234, 189);</string>
             </property>
             <property name="minimumSize">
              <size>
-              <width>120</width>
+              <width>140</width>
               <height>50</height>
              </size>
             </property>
             <property name="maximumSize">
              <size>
-              <width>120</width>
+              <width>140</width>
               <height>50</height>
              </size>
             </property>
@@ -451,13 +487,13 @@ selection-background-color: rgb(233, 234, 189);</string>
          </property>
          <property name="minimumSize">
           <size>
-           <width>100</width>
+           <width>140</width>
            <height>50</height>
           </size>
          </property>
          <property name="maximumSize">
           <size>
-           <width>100</width>
+           <width>140</width>
            <height>50</height>
           </size>
          </property>

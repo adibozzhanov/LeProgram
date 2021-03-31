@@ -7,6 +7,7 @@ from views.py.askLepWidget import AskLepWidget
 
 class TestTaking(Ui_testTakingFrame):
 
+    
     def __init__(self, master, view, test, task = None):
         self.view = view
         self.test = test
