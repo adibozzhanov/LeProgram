@@ -13,7 +13,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_testTakingFrame(object):
     def setupUi(self, testTakingFrame):
         testTakingFrame.setObjectName("testTakingFrame")
-        testTakingFrame.resize(763, 564)
+        testTakingFrame.resize(763, 573)
         testTakingFrame.setStyleSheet("background-color: rgb(255, 255, 242);")
         self.mainLayout = QtWidgets.QHBoxLayout(testTakingFrame)
         self.mainLayout.setObjectName("mainLayout")
@@ -55,7 +55,7 @@ class Ui_testTakingFrame(object):
         font = QtGui.QFont()
         font.setFamily("Helvetica Neue")
         font.setPointSize(14)
-        font.setItalic(True)
+        font.setItalic(False)
         self.nextQButton.setFont(font)
         self.nextQButton.setStyleSheet("background-color: rgb(24, 35, 32);\n"
 "color: rgb(246, 247, 200);\n"
