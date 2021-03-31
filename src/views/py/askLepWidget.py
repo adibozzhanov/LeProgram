@@ -57,10 +57,13 @@ class AskLepWidget(Ui_askLepWidgetFrame):
                     for expVarInpInd in range(len(columnInfo)):
                         if truthTable[expResultsInd + 1][expVarInpInd][0] == True:
                             stringRes = "T"
+                            self.truthTableWidget.setItem(expResultsInd + 1, expVarInpInd, QTableWidgetItem(stringRes))
+                            self.truthTableWidget.item(expResultsInd + 1, expVarInpInd).setForeground(QtGui.QColor(204,54,20))
                         else:
                             stringRes = "F"
+                            self.truthTableWidget.setItem(expResultsInd + 1, expVarInpInd, QTableWidgetItem(stringRes))
+                            self.truthTableWidget.item(expResultsInd + 1, expVarInpInd).setForeground(QtGui.QColor(204,54,20))
 
-                        self.truthTableWidget.setItem(expResultsInd + 1, expVarInpInd, QTableWidgetItem(stringRes))
 
                 else:
                     for expVarInpInd in range(len(columnInfo) - 1):
@@ -93,7 +96,9 @@ class AskLepWidget(Ui_askLepWidgetFrame):
 
 
                     print(expression.getTableFinalColumn())
-                    if outResInd == expression.getTableFinalColumn():
+                    if expression.getTableFinalColumn() == 0:
+                        self.truthTableWidget.item(expResultsInd + 1, 0).setBackground(QtGui.QColor(255, 237, 102))
+                    elif outResInd == expression.getTableFinalColumn():
                         self.truthTableWidget.item(expResultsInd + 1, expVarInpInd + outResInd + 1).setBackground(QtGui.QColor(255,237,102))
 
 
