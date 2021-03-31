@@ -97,7 +97,7 @@ class Ui_taskMakingFrame(object):
         font = QtGui.QFont()
         font.setFamily("Helvetica Neue")
         font.setPointSize(14)
-        font.setItalic(True)
+        font.setItalic(False)
         self.deleteButton.setFont(font)
         self.deleteButton.setStyleSheet("background-color: rgb(24, 35, 32);\n"
 "color: rgb(246, 247, 200);\n"

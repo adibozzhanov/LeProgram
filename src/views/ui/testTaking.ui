@@ -91,7 +91,7 @@ QProgressBar::chunk {
          <font>
           <family>Helvetica Neue</family>
           <pointsize>14</pointsize>
-          <italic>true</italic>
+          <italic>false</italic>
          </font>
         </property>
         <property name="styleSheet">

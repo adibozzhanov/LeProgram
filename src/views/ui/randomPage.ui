@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>649</width>
+    <width>719</width>
     <height>523</height>
    </rect>
   </property>
@@ -187,7 +187,7 @@ p, li { white-space: pre-wrap; }
          <font>
           <family>Helvetica Neue</family>
           <pointsize>12</pointsize>
-          <italic>true</italic>
+          <italic>false</italic>
          </font>
         </property>
         <property name="styleSheet">

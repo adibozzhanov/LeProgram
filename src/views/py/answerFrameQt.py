@@ -24,7 +24,7 @@ class Ui_answerFrame(object):
         font = QtGui.QFont()
         font.setFamily("Helvetica Neue")
         font.setPointSize(14)
-        font.setItalic(True)
+        font.setItalic(False)
         self.answerButton.setFont(font)
         self.answerButton.setObjectName("answerButton")
         self.horizontalLayout.addWidget(self.answerButton)

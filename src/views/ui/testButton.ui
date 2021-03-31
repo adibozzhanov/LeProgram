@@ -84,7 +84,7 @@ border-color: rgb(23, 161, 145);</string>
       <font>
        <family>Helvetica Neue</family>
        <pointsize>11</pointsize>
-       <italic>true</italic>
+       <italic>false</italic>
       </font>
      </property>
      <property name="styleSheet">
@@ -104,7 +104,7 @@ selection-background-color: rgb(233, 234, 189);</string>
       <font>
        <family>Helvetica Neue</family>
        <pointsize>11</pointsize>
-       <italic>true</italic>
+       <italic>false</italic>
       </font>
      </property>
      <property name="styleSheet">
