@@ -46,10 +46,10 @@ class Controller:
     def loadTestMaking(self):
         self.view.loadNewTest(self.mainLibrary)
 
-    def startRandomTest(self, complexity, score = 0):
+    def startRandomTest(self, complexity, score = 0, total = 0):
         generator = TaskGenerator(complexity)
         newTask = generator.getTask()
-        self.view.startRandomTest(newTask, score, complexity)
+        self.view.startRandomTest(newTask, score, total,complexity)
         
         
 
