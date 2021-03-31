@@ -47,7 +47,7 @@ class Ui_askLepPage(object):
         font.setFamily("Helvetica Neue")
         font.setPointSize(36)
         font.setBold(False)
-        font.setItalic(True)
+        font.setItalic(False)
         font.setWeight(50)
         self.EnterExpressionLabel.setFont(font)
         self.EnterExpressionLabel.setObjectName("EnterExpressionLabel")
