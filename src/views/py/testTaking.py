@@ -19,7 +19,7 @@ class TestTaking(Ui_testTakingFrame):
         self.test.resetTest()
         self.taskIds = self.test.getTaskIds()
         self.currentTaskIndex = None
-        self.nextQButton.setEnabled(False)
+
         tmpFrame = QtWidgets.QFrame(self.askLepFrame)
         self.askLepLayout.addWidget(tmpFrame)
         self.askLep = AskLepWidget(tmpFrame, view, None)
@@ -34,7 +34,9 @@ class TestTaking(Ui_testTakingFrame):
         else: #viewing one task
             self.nextQButton.setText("go back")
             self.__loadTask(task)
+            self.nextQButton.setEnabled(True)
 
+            
     def connectActions(self):
         self.nextQButton.clicked.connect(self.loadNextTask)
 
