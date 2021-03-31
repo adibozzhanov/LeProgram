@@ -1,3 +1,0 @@
-#MAIN_LIBRARY_ID = 1
-#MAIN_USER_ID = 1
-

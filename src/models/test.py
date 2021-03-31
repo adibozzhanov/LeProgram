@@ -70,7 +70,6 @@ class Test:
         return self.description
 
     def getTaskIds(self):
-        print(self.getTasks())
         if (self.getTasks() is None):
             return []
         return list(self.getTasks().keys())

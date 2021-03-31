@@ -97,9 +97,7 @@ class Controller:
     def handleRequest(self, request, *args):
         # args - view can pass parameters to a controller
         # if args is empty it's equivalent to an empty function call
-        print("Handling request: ", request)
         if request in self.requests:
             self.requests[request](*args)
         else:
-            print(f"Error: request [{request}] not found, Loading not found screen")
             self.requests["notFound"]()
