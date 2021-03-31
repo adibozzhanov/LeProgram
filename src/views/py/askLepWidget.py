@@ -1,4 +1,5 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
+from PyQt5.QtGui import QBrush, QColor
 from PyQt5.QtWidgets import QTableWidgetItem, QHeaderView
 
 from views.py.askLepWidgetQt import Ui_askLepWidgetFrame
@@ -13,6 +14,7 @@ class AskLepWidget(Ui_askLepWidgetFrame):
         self.setExpressionInfo(self.expression)
 
     def setExpressionInfo(self, expression):
+
         if expression is not None:
             # Set Expression
             self.logicalExpressionLabel.setText(expression.getDisplayString())
@@ -65,10 +67,12 @@ class AskLepWidget(Ui_askLepWidgetFrame):
 
                         if truthTable[expResultsInd + 1][expVarInpInd][0] == True:
                             stringRes = "T"
+                            self.truthTableWidget.setItem(expResultsInd + 1, expVarInpInd, QTableWidgetItem(stringRes))
+                            self.truthTableWidget.item(expResultsInd + 1, expVarInpInd).setForeground(QtGui.QColor(23,161,145))
                         else:
                             stringRes = "F"
-
-                        self.truthTableWidget.setItem(expResultsInd + 1, expVarInpInd, QTableWidgetItem(stringRes))
+                            self.truthTableWidget.setItem(expResultsInd + 1, expVarInpInd, QTableWidgetItem(stringRes))
+                            self.truthTableWidget.item(expResultsInd + 1, expVarInpInd).setForeground(QtGui.QColor(204,54,20))
 
                 # Filling in the expression outputs
                 outRes = truthTable[expResultsInd + 1][-1]
@@ -77,15 +81,27 @@ class AskLepWidget(Ui_askLepWidgetFrame):
 
                     if outRes[outResInd] == True:
                         outResString = "T"
+                        self.truthTableWidget.setItem(expResultsInd + 1, expVarInpInd + outResInd + 1, QTableWidgetItem(outResString))
+                        self.truthTableWidget.item(expResultsInd + 1, expVarInpInd + outResInd + 1).setForeground(QtGui.QColor(23,161,145))
                     elif outRes[outResInd] == False:
                         outResString = "F"
+                        self.truthTableWidget.setItem(expResultsInd + 1, expVarInpInd + outResInd + 1, QTableWidgetItem(outResString))
+                        self.truthTableWidget.item(expResultsInd + 1, expVarInpInd + outResInd + 1).setForeground(QtGui.QColor(204,54,20))
                     else:
                         outResString = ""
-                    self.truthTableWidget.setItem(expResultsInd + 1, expVarInpInd + outResInd + 1, QTableWidgetItem(outResString))
+                        self.truthTableWidget.setItem(expResultsInd + 1, expVarInpInd + outResInd + 1, QTableWidgetItem(outResString))
+
+
+                    print(expression.getTableFinalColumn())
+                    if outResInd == expression.getTableFinalColumn():
+                        self.truthTableWidget.item(expResultsInd + 1, expVarInpInd + outResInd + 1).setBackground(QtGui.QColor(255,237,102))
+
 
         # Resize the cells to make table look better
         self.truthTableWidget.horizontalHeader().setMinimumSectionSize(0)
         self.truthTableWidget.horizontalHeader().setSectionResizeMode(QHeaderView.ResizeToContents)
+
+
 
         # Hiding the column and row headers
         self.truthTableWidget.verticalHeader().setVisible(False)
