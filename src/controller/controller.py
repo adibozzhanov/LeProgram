@@ -25,6 +25,7 @@ class Controller:
             "notFound" : self.view.loadNotFound,
             "askLep": self.view.loadLep,
             #"user": self.view.loadUser,
+            "startRandomTest": self.startRandomTest, 
             "randomQuestions": self.view.loadRandomQs,
             "newTest" : self.loadTestMaking,
             "testPreview": self.view.loadTestPreview,
@@ -45,10 +46,11 @@ class Controller:
     def loadTestMaking(self):
         self.view.loadNewTest(self.mainLibrary)
 
-    def startRandomTest(self, complexity):
+    def startRandomTest(self, complexity, score = 0):
         generator = TaskGenerator(complexity)
-        
         newTask = generator.getTask()
+        self.view.startRandomTest(newTask, score, complexity)
+        
         
 
 
@@ -57,10 +59,6 @@ class Controller:
         # pass it to loadHome method
         self.view.loadHome(self.mainLibrary)
 
-    def loadRandomTest(self, *args): # I DID NOT LIKE THE MISLEADING NAME hah
-        complexity = args[0]
-        # generateQuestion(complexity)
-        # view.loadTask()
 
     def loadAskLep(self, *args):
         # takes [inputString]
@@ -71,23 +69,15 @@ class Controller:
         if tree is not None:
             self.view.updateAskLep(Expression(tree))
 
-    def loadRandomTaskGenerator(self, *args):
-        # takes [complexity]
-        # initializes and returns a generator where you can then get tasks from
-        complexity = args[0]
-        self.view.loadRandomTest(TaskGenerator(complexity))
-
     def saveTest(self, *args):
         # args - [TestName, Test Description, TaskArray]        #
         #     Task Array - [Task Statement, taskExpressoin ,(answers)]        #
         #     answer - [ answerExpression, Correctness: Boolean]
         test = Test()
         test.addThisTestToALibrary(self.mainLibrary.getLibraryId())
-        print("0 " + args[0])
         test.setName(args[0])
         test.setDescription(args[1])
         argsTasks = args[2]
-        print(args[2])
         for t in argsTasks:
             task = Task(test.getTestId())
             task.setStatement(t[0])

@@ -87,7 +87,10 @@ class Task:
         return self.expression
 
     def getExpressionString(self):
-        return self.expression.getString()
+        if self.expression is not None:
+            return self.expression.getString()
+        else:
+            return ""
 
     def getStatement(self):
         return self.statement

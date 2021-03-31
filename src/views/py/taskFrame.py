@@ -8,8 +8,9 @@ from views.py.answerFrame import AnswerFrame
 
 class TaskFrame(Ui_taskFrame):
 
-    def __init__(self, master, view, task, testFrame):
+    def __init__(self, master, view, task, testFrame, randomTest = False):
         self.view = view
+        self.randomTest = randomTest
         self.setupUi(master)
         self.testFrame = testFrame
         self.task = task
@@ -36,5 +37,6 @@ class TaskFrame(Ui_taskFrame):
             answerFrame.isAnswered = True
             if answerFrame.answer.getIsCorrect():
                 answerFrame.answerButton.setStyleSheet("background-color : rgb(23, 161, 145)")
-        self.testFrame.test.addTaskAnswerGiven(self.task.getTaskId(), answerId)
+        if not self.randomTest:
+            self.testFrame.test.addTaskAnswerGiven(self.task.getTaskId(), answerId)
         self.testFrame.nextQButton.setEnabled(True)
