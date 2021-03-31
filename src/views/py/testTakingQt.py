@@ -35,6 +35,12 @@ class Ui_testTakingFrame(object):
         self.testNameLabel.setObjectName("testNameLabel")
         self.verticalLayout_2.addWidget(self.testNameLabel)
         self.progressBar = QtWidgets.QProgressBar(self.frame)
+        self.progressBar.setStyleSheet("QProgressBar{\n"
+"    text-align : center;\n"
+"}\n"
+"QProgressBar::chunk {\n"
+"    background-color: rgb(23, 161, 145);\n"
+"}")
         self.progressBar.setProperty("value", 24)
         self.progressBar.setObjectName("progressBar")
         self.verticalLayout_2.addWidget(self.progressBar)

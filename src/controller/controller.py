@@ -45,6 +45,12 @@ class Controller:
     def loadTestMaking(self):
         self.view.loadNewTest(self.mainLibrary)
 
+    def startRandomTest(self, complexity):
+        generator = TaskGenerator(complexity)
+        
+        newTask = generator.getTask()
+        
+
 
     def loadMainPage(self, *args):
         # get main library

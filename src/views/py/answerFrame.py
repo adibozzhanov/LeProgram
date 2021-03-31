@@ -16,9 +16,9 @@ class AnswerFrame(Ui_answerFrame):
     def onClick(self):
         if not self.isAnswered:
             if self.answer.getIsCorrect():
-                self.answerButton.setStyleSheet("background-color : green")
+                self.answerButton.setStyleSheet("background-color : rgb(23, 161, 145)")
             else:
-                self.answerButton.setStyleSheet("background-color : red")
+                self.answerButton.setStyleSheet("background-color : rgb(204, 54, 20)")
             
             self.taskFrame.checkAnswers(self.answer.getAnswerId())
         else:

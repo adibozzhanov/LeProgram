@@ -1,5 +1,6 @@
-from PyQt5 import QtCore, QtGui, QtWidgets
+import random
 
+from PyQt5 import QtCore, QtGui, QtWidgets
 from views.py.taskFrameQt import Ui_taskFrame
 from views.py.answerFrame import AnswerFrame
 
@@ -16,7 +17,12 @@ class TaskFrame(Ui_taskFrame):
         self.answerFrames = []
         self.taskStatementLabel.setText(task.getStatement())
         self.expressionLabel.setText(task.getExpressionString())
+        answerArray = []
         for Id,answer in answers.items():
+            answerArray.append(answer)
+
+        random.shuffle(answerArray)
+        for answer in answerArray:
             self.addAnswer(answer)
 
     def addAnswer(self, answer):
@@ -29,6 +35,6 @@ class TaskFrame(Ui_taskFrame):
         for answerFrame in self.answerFrames:
             answerFrame.isAnswered = True
             if answerFrame.answer.getIsCorrect():
-                answerFrame.answerButton.setStyleSheet("background-color : green")
+                answerFrame.answerButton.setStyleSheet("background-color : rgb(23, 161, 145)")
         self.testFrame.test.addTaskAnswerGiven(self.task.getTaskId(), answerId)
         self.testFrame.nextQButton.setEnabled(True)

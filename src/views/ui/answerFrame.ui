@@ -19,6 +19,12 @@
   <layout class="QHBoxLayout" name="horizontalLayout">
    <item>
     <widget class="QPushButton" name="answerButton">
+     <property name="maximumSize">
+      <size>
+       <width>300</width>
+       <height>16777215</height>
+      </size>
+     </property>
      <property name="font">
       <font>
        <family>Helvetica Neue</family>

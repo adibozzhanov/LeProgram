@@ -14,7 +14,7 @@
    <string>Frame</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-color: rgb(246, 247, 200);
+   <string notr="true">background-color: rgb(255, 255, 242);
 border-color: rgb(246, 247, 200);</string>
   </property>
   <layout class="QGridLayout" name="gridLayout">
@@ -270,7 +270,7 @@ color: rgb(246, 247, 200);
          </font>
         </property>
         <property name="styleSheet">
-         <string notr="true">background-color: rgb(246, 247, 200);
+         <string notr="true">background-color: rgb(255, 255, 242);
 border-color: rgb(246, 247, 200);
 alternate-background-color: rgb(246, 247, 200);
 selection-background-color: rgb(246, 247, 200);</string>
@@ -316,7 +316,7 @@ selection-background-color: rgb(246, 247, 200);</string>
       </size>
      </property>
      <property name="styleSheet">
-      <string notr="true">background-color: rgb(246, 247, 200);
+      <string notr="true">background-color: rgb(255, 255, 242);
 border-color: rgb(246, 247, 200);</string>
      </property>
      <property name="frameShape">

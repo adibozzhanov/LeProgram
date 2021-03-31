@@ -39,7 +39,7 @@ class TestMakingPage(Ui_testMakingPage):
 
 
     def requestExpression(self):
-        s = self.askLepInput.toPlainText()
+        s = self.askLepInput.text()
         self.view.request("loadAskLep", s)
 
     def updateAskLep(self, expression=None):

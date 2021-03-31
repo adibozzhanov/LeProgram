@@ -18,6 +18,7 @@ class RandomPage(Ui_randomQuestionFrame):
     def toggledComplexity(self, radio):
         if radio.isChecked() == True:
             self.complexity = int(radio.text())
+
         
 
     def getComplexity(self):
