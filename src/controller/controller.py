@@ -89,6 +89,7 @@ class Controller:
                 if a[1]: answer.setCorrect()
                 task.addAnswer(answer)
             test.addTask(task)
+        self.mainLibrary = self.model.getMainLibrary()
         self.loadMainPage()
 
     def loadResultPage(self, test):
