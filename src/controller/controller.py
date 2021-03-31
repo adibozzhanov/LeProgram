@@ -25,7 +25,7 @@ class Controller:
             "notFound" : self.view.loadNotFound,
             "askLep": self.view.loadLep,
             #"user": self.view.loadUser,
-            "startRandomTest": self.startRandomTest, 
+            "startRandomTest": self.startRandomTest,
             "randomQuestions": self.view.loadRandomQs,
             "newTest" : self.loadTestMaking,
             "testPreview": self.view.loadTestPreview,
@@ -50,8 +50,8 @@ class Controller:
         generator = TaskGenerator(complexity)
         newTask = generator.getTask()
         self.view.startRandomTest(newTask, score, total,complexity)
-        
-        
+
+
 
 
     def loadMainPage(self, *args):
@@ -89,10 +89,11 @@ class Controller:
                 if a[1]: answer.setCorrect()
                 task.addAnswer(answer)
             test.addTask(task)
+        self.loadMainPage()
 
     def loadResultPage(self, test):
         self.view.loadTestResult(test)
-        
+
 
     def handleRequest(self, request, *args):
         # args - view can pass parameters to a controller
