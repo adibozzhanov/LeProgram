@@ -4,7 +4,8 @@ from models.task import Task
 from models.test import Test
 from models.expression import Expression
 from models.answer import Answer
-
+from models.randomTaskGenerator import TaskGenerator
+import copy
 #Question templates will be programmed into the application. Examples include:
 #-Which of the following expressions is equivalent to this logical DNF?
 #   create une expression and its dnf and then just make sure that the other random ones do not have the same tt
@@ -27,7 +28,7 @@ class TestGenerator:
         self.LibraryId = LibraryId
         self.amountOfTasks = amountOfTasks
         self.variables = ['top','bot']
-        self.nrOfVariables = min(int(3+(complexity-3)/4),complexity)
+        self.nrOfVariables = min(int(3+(complexity-3)/4),max(complexity,1))
         self.unsatisfiableAnswers = []
         self.validAnswers = []
         self.__generateVariables()
@@ -125,11 +126,11 @@ class TestGenerator:
             ex = Expression(_)
             if ex.getValid():
                 a.setExpression(ex)
-                self.validAnswers.append(a)
+                self.validAnswers.append(copy.copy(a))
                 continue
             if not ex.getSatisfiable():
                 a.setExpression(ex)
-                self.unsatisfiableAnswers.append(a)
+                self.unsatisfiableAnswers.append(copy.copy(a))
                 continue
             if ex.getSimpleTable() != correctExpression.getSimpleTable():
                 break
@@ -162,13 +163,14 @@ class TestGenerator:
 
 
 if __name__ == '__main__': #testing
-    t = TestGenerator(complexity=11)
+    t = TestGenerator(complexity=6)
     test = t.getTest()
     test.setName("Carmen's Big Brain")
     #test.setName("Adi's OogaBooga")
     #test.setName("GREG")
     #test.setName("Oscers's test")
-
+    # g = TaskGenerator(3)
+    # g.test()
 
 
 # generate the correct answers

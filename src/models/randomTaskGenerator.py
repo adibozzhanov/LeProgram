@@ -4,6 +4,7 @@ from models.task import Task
 from models.expression import Expression
 from models.answer import Answer
 from models.stringSettings import *
+import copy
 
 #Question templates will be programmed into the application. Examples include:
 #-Which of the following expressions is equivalent to this logical DNF?
@@ -25,9 +26,9 @@ class TaskGenerator:
     def __init__(self, complexity):
         self.complexity = complexity
         self.variables = [topStr,botStr]
-        self.nrOfVariables = min(int(3+(complexity-3)/4),complexity)
-        self.unsatisfiableAnswers = []
-        self.validAnswers = []
+        self.nrOfVariables = min(int(3+(complexity-3)/4),max(complexity,1))
+        self.unsatisfiableAnswers = set()
+        self.validAnswers = set()
         self.__generateVariables()
         self.tasksAnswered=0
         self.correctAnswers=0
@@ -106,15 +107,16 @@ class TaskGenerator:
         a = Answer()
         a.setIncorrect()
         while True:
+            a = Answer() #THIS!
             _ = getExpressionTree(self.__generateExpressionString())
             ex = Expression(_)
             if ex.getValid():
                 a.setExpression(ex)
-                self.validAnswers.append(a)
+                self.validAnswers.add(copy.copy(a))
                 continue
             if not ex.getSatisfiable():
                 a.setExpression(ex)
-                self.unsatisfiableAnswers.append(a)
+                self.unsatisfiableAnswers.add(copy.copy(a))
                 continue
             if ex.getSimpleTable() != correctExpression.getSimpleTable():
                 break
@@ -159,7 +161,6 @@ class TaskGenerator:
             task = self.getTask()
             print(task.getStatement())
             ans = task.getAnswers()
-            print(len(ans))
             for i,a in ans.items():
                 print(a.getIsCorrect(), a.getExpression().getDisplayString())
 
