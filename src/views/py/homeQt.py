@@ -65,7 +65,7 @@ class Ui_mainFrame(object):
         self.decor.setSizePolicy(sizePolicy)
         self.decor.setMinimumSize(QtCore.QSize(0, 0))
         self.decor.setText("")
-        self.decor.setPixmap(QtGui.QPixmap("ui/../../../res/decor.png"))
+        self.decor.setPixmap(QtGui.QPixmap("../res/decor.png"))
         self.decor.setScaledContents(True)
         self.decor.setObjectName("decor")
         self.horizontalLayout.addWidget(self.decor)

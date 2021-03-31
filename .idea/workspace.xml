@@ -20,9 +20,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="451f5891-0566-4011-80ef-4b053aa31419" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/database/lepDB.db" beforeDir="false" afterPath="$PROJECT_DIR$/data/database/lepDB.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/py/askLepWidget.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/py/askLepWidget.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/user.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/user.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/testingDB.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/py/homeQt.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/py/homeQt.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/views/py/mainQt.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/py/mainQt.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -112,22 +113,22 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="483" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1617198459940" />
-    <state width="1493" height="163" key="GridCell.Tab.0.bottom" timestamp="1617204061224">
+    <state width="1493" height="163" key="GridCell.Tab.0.bottom" timestamp="1617204157123">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="163" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1617204061224" />
-    <state width="1493" height="163" key="GridCell.Tab.0.center" timestamp="1617204061224">
+    <state width="1493" height="163" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1617204157123" />
+    <state width="1493" height="163" key="GridCell.Tab.0.center" timestamp="1617204157123">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="163" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1617204061224" />
-    <state width="1493" height="163" key="GridCell.Tab.0.left" timestamp="1617204061224">
+    <state width="1493" height="163" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1617204157123" />
+    <state width="1493" height="163" key="GridCell.Tab.0.left" timestamp="1617204157123">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="163" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1617204061224" />
-    <state width="1493" height="163" key="GridCell.Tab.0.right" timestamp="1617204061224">
+    <state width="1493" height="163" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1617204157123" />
+    <state width="1493" height="163" key="GridCell.Tab.0.right" timestamp="1617204157123">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="163" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1617204061224" />
+    <state width="1493" height="163" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1617204157123" />
     <state x="277" y="57" key="SettingsEditor" timestamp="1616614162509">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -138,6 +139,6 @@
     <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1617113812618" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/view_py$run.coverage" NAME="run Coverage Results" MODIFIED="1617204061214" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
+    <SUITE FILE_PATH="coverage/view_py$run.coverage" NAME="run Coverage Results" MODIFIED="1617204143122" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
   </component>
 </project>
