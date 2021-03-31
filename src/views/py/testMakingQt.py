@@ -13,7 +13,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_testMakingPage(object):
     def setupUi(self, testMakingPage):
         testMakingPage.setObjectName("testMakingPage")
-        testMakingPage.resize(790, 738)
+        testMakingPage.resize(804, 738)
         testMakingPage.setStyleSheet("background-color: rgb(255, 255, 242);\n"
 "border-color: rgb(255, 255, 242);")
         self.gridLayout = QtWidgets.QGridLayout(testMakingPage)
@@ -160,7 +160,7 @@ class Ui_testMakingPage(object):
         self.verticalLayout_3.setSpacing(0)
         self.verticalLayout_3.setObjectName("verticalLayout_3")
         self.frame_4 = QtWidgets.QFrame(self.frame_3)
-        self.frame_4.setMaximumSize(QtCore.QSize(16777215, 40))
+        self.frame_4.setMaximumSize(QtCore.QSize(900, 40))
         self.frame_4.setStyleSheet("background-color : rgb(246, 247, 200)")
         self.frame_4.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.frame_4.setFrameShadow(QtWidgets.QFrame.Raised)

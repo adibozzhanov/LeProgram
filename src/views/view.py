@@ -75,9 +75,9 @@ class View(Ui_MainWindow):
         self.cleanMain()
         self.currentDisplay = TestTaking(self.masterFrame, self, test, task)
 
-    def startRandomTest(self, randomTask, score, complexity):
+    def startRandomTest(self, randomTask, score,total ,complexity):
         self.cleanMain()
-        self.currentDisplay = RandomTest(self.masterFrame, self, randomTask, score, complexity)
+        self.currentDisplay = RandomTest(self.masterFrame, self, randomTask, score, total,complexity)
 
 
     def loadNotFound(self):

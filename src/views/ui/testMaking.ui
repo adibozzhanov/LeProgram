@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>790</width>
+    <width>804</width>
     <height>738</height>
    </rect>
   </property>
@@ -366,7 +366,7 @@ background-color: rgb(255, 255, 242);</string>
        <widget class="QFrame" name="frame_4">
         <property name="maximumSize">
          <size>
-          <width>16777215</width>
+          <width>900</width>
           <height>40</height>
          </size>
         </property>

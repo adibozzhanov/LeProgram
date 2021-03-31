@@ -6,14 +6,15 @@ from views.py.askLepWidget import AskLepWidget
 
 class RandomTest(Ui_randomTakingFrame):
 
-    def __init__(self, master, view, task, score, complexity):
+    def __init__(self, master, view, task, score, total, complexity):
         self.master = master
         self.view = view
         self.complexity = complexity
         self.task = task
         self.score = score
+        self.total = total
         self.setupUi(master)
-        self.scoreLabel.setText(f"Score: {self.score}")
+        self.scoreLabel.setText(f"Score: {self.score}/{self.total}")
         newFrame = QtWidgets.QFrame(self.taskFrame)
         self.taskLayout.addWidget(newFrame)
         TaskFrame(newFrame, view, task, self, True)
@@ -34,7 +35,7 @@ class RandomTest(Ui_randomTakingFrame):
         self.askLep.setExpressionInfo(expression)
 
     def loadNextTask(self):
-        self.view.request("startRandomTest", self.complexity, self.score)
+        self.view.request("startRandomTest", self.complexity, self.score, self.total + 1)
 
         
         
