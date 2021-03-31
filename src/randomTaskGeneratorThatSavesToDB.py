@@ -41,7 +41,6 @@ class TestGenerator:
             test.addTask(self.__getTask(test))
         return test
 
-
     def __getTask(self, test):
         t = Task(testId = test.getTestId())
         self.__generateTask(t)
@@ -163,9 +162,12 @@ class TestGenerator:
 
 
 if __name__ == '__main__': #testing
-    t = TestGenerator()
+    t = TestGenerator(complexity=11)
     test = t.getTest()
-    test.setName("Carmens Big Brain "+ str(test.getTestId()))
+    test.setName("Carmen's Big Brain")
+    #test.setName("Adi's OogaBooga")
+    #test.setName("GREG")
+    #test.setName("Oscers's test")
 
 
 
