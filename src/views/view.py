@@ -9,6 +9,7 @@ from views.py.askLepPage import AskLepPage
 from views.py.testMaking import TestMakingPage
 from views.py.notFound import NotFound
 from views.py.testResultFrame import TestResultFrame
+from views.py.randomTaking import RandomTest
 
 
 class View(Ui_MainWindow):
@@ -73,6 +74,10 @@ class View(Ui_MainWindow):
     def loadTestTaking(self, test, task = None):
         self.cleanMain()
         self.currentDisplay = TestTaking(self.masterFrame, self, test, task)
+
+    def startRandomTest(self, randomTask, score, complexity):
+        self.cleanMain()
+        self.currentDisplay = RandomTest(self.masterFrame, self, randomTask, score, complexity)
 
 
     def loadNotFound(self):
