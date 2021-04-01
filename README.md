@@ -13,4 +13,4 @@ Logical expression program. Group-8 coursework submission for ENGF0002 - Scenari
 Just clone the repository
 
 # How to run:
-cd into src directory and run ```python3 run.py```
+cd into src directory and run ```python run.py```
