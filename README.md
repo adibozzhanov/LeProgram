@@ -8,3 +8,9 @@ Logical expression program. Group-8 coursework submission for ENGF0002 - Scenari
  - pyqt5: ```pip install PyQt5```
  - sly: ```pip install sly```
  - sqlite3: should be included in python's standarad library but if something goes wrong: ```pip install pysqlite3```
+
+# Installation guide:
+Just clone the repository
+
+# How to run:
+cd into src directory and run ```python3 run.py```
